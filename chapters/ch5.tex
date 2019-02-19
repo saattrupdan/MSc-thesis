@@ -1,0 +1,199 @@
+\chapter{Condensation and solidity}
+\thispagestyle{fancy}
+\label{ch5}
+
+Given the theory on iterability from the previous chapter, we're able to prove two key results on mice, condensation and that $k$-sound mice are $(k+1)$-solid. The style of the argument is quite typical in inner model theory and involves coiterating a suitable pair of mice.
+
+\section{Condensation}
+
+\theo{
+\label{theo.cond}
+Let $k\leq\omega$, $\M$ a $k$-sound $(k,\omega_1,\omega_1+1)$-mouse and let $\pi:\H\to\M$ be a near $k$-embedding such that $\crit\pi\geq\rho_k(\H)$. Assume that $k<\omega$ only if $\M$ has a unique $(k,\omega_1,\omega_1+1)$-strategy. Then either
+\begin{enumerate}
+\item $\H\pinit\M$, or
+\item $\H\pinit\ult_0(\M,E)$ for some extender $E$ on the $\M$-sequence of length $\rho_k(\H)$.
+\end{enumerate}
+}
+\proofretard{
+Note first that $\crit\pi>\rho_k(\H)$ is impossible, since then $\rho_k(\H)=\rho_k(\M)$ as $\pi$ is a near $k$-embedding, so $k$-soundness of $\M$ implies that $\crit\pi$ is $\b{r\Sigma}_k$-definable with parameters from $\ran\pi$, $\contr$. Thus $\crit\pi=\rho_k(\H)$.
+
+\qquad Assume both (i) and (ii) fails for some $\H$ and $\M$. We can firstly without loss of generality assume that $\M$ is countable. Indeed, if it was not then fix some sufficiently large limit ordinal $\eta$ such that $\H,\M\in V_\eta$ and let
+\eq{
+\pi:\chull^{V_\eta}(\{\H,\M\})\to V_\eta
+}
+
+be the uncollapse. It is then not too hard to see that $\pi^{-1}(\H)$ and $\pi^{-1}(\M)$ also witness a counterexample to the theorem, so we could just as well have started with $\pi^{-1}(\M)$ instead of $\M$.
+
+\qquad Assume thus $\M$ is countable and let $\vec e$ be an enumeration of $\M$ in order-type $\omega$. By the Weak Dodd-Jensen Theorem \ref{theo.wkDJ} we can fix a $(k,\omega_1,\omega_1+1)$-iteration strategy $\Sigma$ with the $\vec e$-weak Dodd-Jensen property for $\M$. Our strategy now is to compare $\M$ with $\H$, but due to some complications we will see later in the proof, we will have to modify this plan slightly.
+
+\qquad Define the phalanx $\Phi:=(\bra{\M,\H},\bra{\rho_k(\H)})$, which is really a phalanx because $\rho_k(\H)$ is an $\H$-cardinal and $\crit\pi\geq\rho_k(\H)$ implies that $\H$ and $\M$ agree below $\rho_k(\H)$. Furthermore define the phalanx $\Psi:=(\bra{\M,\M},\bra{\omega})$ and the near $k$-embedding $\vec\pi:=\bra{\id_{\M},\pi}:\Phi\to\Psi$.
+
+\qquad We can then form the coiteration of $\Phi$ and $\Psi$, forming $k$-iteration trees $\T$ and $\U$ with last models $\P$ and $\Q$ on $\Phi$ and $\M$ by $\Sigma^{\vec\pi}$ and $\Sigma$, respectively. Then the copying construction \ref{lemm.copy} grants us with a fully elementary $\tau:\P\to\R$, where $\R$ is the last model of the copied tree $\vec\pi\T$ on $\Psi$ by $\Sigma$.
+
+\begin{figure}
+\begin{center}
+\begin{tikzcd}[column sep=0.5cm]
+\R && \P\arrow[ll,"\tau"'] && \Q\\\\
+\Psi\arrow[uu,tree={}{\vec\pi\T}] && \Phi\arrow[uu,tree={i}{\T}]\arrow[ll,"\vec\pi"] && \Psi \arrow[uu,treeplain={}{\U}]
+\end{tikzcd}
+\end{center}
+\caption{The conclusion of Claim \ref{clai.PhitoPnodrop}.}
+\label{fig.PhitoPnodrop}
+\end{figure}
+
+\clai{
+\label{clai.PhitoPnodrop}
+The $\Phi$-to-$\P$ branch doesn't drop (see Figure \ref{fig.PhitoPnodrop}).
+}
+
+\cproof{
+If it dropped, then the $\M$-to-$\Q$ branch does not drop, so we get an iteration map $j:\M\to\Q$. Then $\Q\neq\P$ as $\Q$ is $k$-sound and $\P$ isn't, and $\P$ isn't an initial segment of $\Q$ as $\P$ isn't sound, so $\Q\pinit\P$. But now $\tau\circ j$ maps $\M$ to a proper initial segment of $\R$, contradicting the $\vec e$-weak Dodd-Jensen property of $\Sigma$. Thus the $\Phi$-to-$\P$ branch doesn't drop.
+}
+
+We then get an iteration map $i$ from the root of the $\Phi$-to-$\P$ branch to $\P$. Since the $\Phi$-to-$\P$ branch doesn't drop, we have that $\crit i<\rho_k(\H)$.
+
+\clai{
+$\P$ lies above $\H$ in $\T$.
+}
+
+\begin{adjustwidth}{0.5cm}{0pt}
+\textsc{Proof of claim.}
+Assume it's not the case, so that $\P$ lies above $\M$. Assume furthermore that the $\M$-to-$\Q$ branch drops -- we'll show that this implies that $\P\pinit\Q$. If $k=\omega$ then it is simply because $\T$ and $\U$ are $\omega$-iteration trees on sound mice. If $k<\omega$ we have that $\M$ has a unique $(k,\omega_1,\omega_1+1)$-iteration strategy by assumption, so we've got the Dodd-Jensen Theorem \ref{theo.DJ} at our disposal, which implies that the $\M$-to-$\Q$ branch doesn't drop, $\contr$. Thus $\P\pinit\Q$.
+
+\qquad Then since $\T$ and $\U$ are $k$-iteration trees on $k$-sound mice we get that $\P\pinit\Q$. But now $i$ maps $\M$ to a proper initial segment of a $\Sigma$-iterate of $\M$, contradicting the $\vec e$-weak Dodd-Jensen property of $\Sigma$. Thus the $\M$-to-$\Q$ branch doesn't drop and we get the iteration map $j:\M\to\Q$. The situation now looks as follows:
+
+\begin{center}
+\begin{tikzcd}[column sep=0]
+\R & \ \ \ \  & \P\arrow[ll,"\tau"'] & = & \Q\\\\
+\M\arrow[uu,tree={}{\vec\pi\T}] && \M\arrow[uu,tree={i}{\T}]\arrow[ll,"\id"] && \M \arrow[uu,tree={j}{\U}]
+\end{tikzcd}
+\end{center}
+
+Here $\P=\Q$ as if $\P\pinit\Q$, $i$ maps $\M$ into a proper initial segment of a $\Sigma$-iterate of $\M$, $\contr$, and if $\Q\pinit\P$ then $\tau\circ j$ maps $\M$ into a proper initial segment of a $\Sigma$-iterate of $\M$, $\contr$.
+
+\qquad We next claim that $i=j$, so assume that it's not the case. Let $x$ be the $<_{\vec e}$-least element of $\M$ such that $i(x)\neq j(x)$. If $i(x)<_{\P}j(x)$ then $j$ is an iteration map given by $\Sigma$ which isn't $\vec e$-minimal, contradicting the $\vec e$-weak Dodd-Jensen property of $\Sigma$. So $j(x)<_{\P}i(x)$. As the $\M$-to-$\P$ branch in $\T$ doesn't drop, the $\M$-to-$\R$ branch in $\vec\pi\T$ doesn't drop either, so we get an iteration map $k:\M\to\R$. Now we get that
+\eq{
+(\tau\circ j)(x)<_{\P}(\tau\circ i)(x)=k(x),
+}
+
+where we used that the copying construction gives us that $\tau\circ i=k\circ\id_{\M}=k$. Thus $\tau\circ j$ witnesses that $k$ is not $\vec e$-minimal, $\contr$. Thus $i=j$. Letting $\alpha+1$ be the $T$-successor of $0$, $\beta+1$ the $U$-successor of $0$, $\nu:=\inf(\nu_{E_\alpha^{\T}},\nu_{E_\beta^{\U}})$, $a\in[\nu]^{<\omega}$ and $B\in\M$,
+\eq{
+B\in(E_\alpha^{\T})_a\quad&\text{iff}\quad a\in i_{0,\alpha+1}(B)\\
+&\text{iff}\quad a\in i(B)\\
+&\text{iff}\quad a\in j(B)\\
+&\text{iff}\quad a\in j_{0,\beta+1}(B)\\
+&\text{iff}\quad B\in(E_\beta^{\U})_a,
+}
+
+so that $E_\alpha^{\T}$ is compatible with $E_\beta^{\U}$, contradicting Claim \ref{clai.incomp}. Thus $\P$ is indeed above $\H$ in $\T$.
+$\hfill\dashv$\\
+\end{adjustwidth}
+
+Now, if $i:\H\to\P$ is not the identity, our rules for $\T$ ensure the $\crit i\geq\rho_k(\H)$, so that the $\H$-to-$\P$ branch would have to drop, $\contr$. Thus $i$ is the identity and $\H=\P$.
+
+\qquad Furthermore $\Q$ cannot be a proper initial segment of $\H$, as otherwise the $\M$-to-$\Q$ branch doesn't drop and we get an iteration map $j:\M\to\Q$. Then $\tau\circ j$ maps $\M$ to a proper initial segment of itself, $\contr$. Thus $\H\init\Q$. We cannot have that $\Q=\H$ either, because otherwise we get $j:\M\to\Q$ again and then it holds that
+\eq{
+\rho_k(\H)<\pi(\rho_k(\H))=\rho_k(\M)\leq j(\rho_k(\M))=\rho_k(\Q)=\rho_k(\H),
+}
+
+a contradiction. The current scenario thus looks like the following, where the initial segment is proper in the case where $k=\omega$ and $\crit\pi=\rho(\H)$.
+\begin{center}
+\begin{tikzcd}[column sep=0]
+\H & \pinit & \Q\\\\
+\H\arrow[uu,tree={\id}{\T}] && \M \arrow[uu,treeplain={}{\U}]
+\end{tikzcd}
+\end{center}
+
+Now suppose that $\H$ is not an intial segment of $\M$, so that $\U$ uses at least one extender $E:=E_0^{\U}$. As $\H$ agrees with $\M$ below $\rho_k(\H)$, we must have that $\rho_k(\H)\leq\lh E$. Furthermore we also have that $\lh E\leq\on^{\H}$ as $\H$ isn't an initial segment of $\M$, so that a disagreement occurs below $\on^{\H}+1$. But as there's a surjection $\rho_k(\H)\to\on^{\H}$ in $\Q$ by $k$-soundness of $\H$, we have that $|\on^{\H}|\leq\rho_k(\H)$ in $\Q$, and since $\lh E$ is a cardinal in $\Q$, $\lh E\leq|\on^{\H}|$. Thus $\lh E=\rho_k(\H)$.
+
+\qquad If $E_1^{\U}$ exists then $|\on^{\H}|=\lh E<\lh E_1^{\U}$, and since $\lh E_1^{\U}$ is a cardinal in $\Q$, we also get that $\on^{\H}<\lh E_1^{\U}$, so that $E_1^{\U}$ does not exist. This then means that $\Q=\ult_k(\M,E)$ for some $k\leq\omega$. Since $\ult_0(\M,E)$ and $\ult_k(\M,E)$ agree below their common value of $(\lh E)^+$ and $(\lh E)^{+\ult}=\rho(\H)^{+\ult}>\on^{\H}$, we get that $\H\pinit\ult_0(\M,E)$.
+$\qed$\\
+
+
+Note that if $\rho_k(\H)$ is an $\M$-cardinal then part (ii) of the conclusion in the Condensation Theorem isn't possible, since $\lh E$ is not a cardinal in $\M$. We will isolate a part of the proof of the above theorem for future use.
+
+\lemm[The Dodd-Jensen trick]{
+\label{lemm.DJtrick}
+Let $\M$ be a countable $k$-sound $(k,\omega_1,\omega_1+1)$-mouse with $\vec e$ enumerating its universe and $\pi:\H\to\M$ a near $k$-embedding, where $\H$ agrees with $\M$ below some $\H$-cardinal $\kappa$. Then there are $k$-iteration trees $\T,\U$ on $\H,\M$ with last models $\P,\Q$ by $\Sigma^\pi,\Sigma$ such that $\Sigma$ has the $\vec e$-weak Dodd-Jensen property, $\P\init\Q$ and $\crit i^{\T}\geq\kappa$.
+}
+\proof{
+Just as in the proof of the Condensation Theorem \ref{theo.cond}.
+}
+
+\begin{figure}
+\begin{center}
+\begin{tikzcd}[column sep=0]
+\P & \init & \Q\\\\
+\H\arrow[uu,tree={i}{\T}] && \M\arrow[uu,treeplain={}{\U}]
+\end{tikzcd}
+\end{center}
+\caption{The conclusion of the Dodd-Jensen trick.}
+\end{figure}
+
+\section{Solidity}
+
+\theo{
+\label{theo.solid}
+Let $k<\omega$ and $\M$ a $k$-sound $(k,\omega_1,\omega_1+1)$-mouse. Then $\M$ is $(k+1)$-solid and $\core_{k+1}(\M)$ agrees with $\M$ below every $\gamma$ of $\M$-cardinality $\rho_{k+1}(\M)$.
+}
+\proofretard{
+Let $\M$ be a counter-example to the theorem and let $p:=p_{k+1}(\M)$ and $\rho:=\rho_{k+1}(\M)$. We first claim that we without loss of generality can assume that $\M$ is countable. Otherwise we can fix a sufficiently large limit ordinal $\eta$ such that $p,\M\in V_\eta$, let $\H:=\chull^{V_\eta}(\{p,\M\})$ and $\pi:\H\to V_\eta$ the uncollapse map. Since $\H$ inherits the $(k,\omega_1,\omega_1+1)$-iterability from $\M$ and the failure of the theorem is expressible as a first-order sentence, $\pi^{-1}(p)$ and $\pi^{-1}(\M)$ is still a counter-example to the theorem.
+
+\qquad Assume thus that $\M$ is countable. Write $\bra{\alpha_0,\hdots,\alpha_n}$ for the last parameter of $p$, and let $\vec e$ be an enumeration of $\M$ in order-type $\omega$, satisfying that $e_i=\alpha_i$ for every $i\leq n$ and $e_{n+1}=\rho$. Fix a $(k,\omega_1,\omega_1+1)$-iteration strategy $\Sigma$ for $\M$ with the $\vec e$-weak Dodd-Jensen property.
+
+\qquad Let $i\leq n+1$ be least such that there exists an $r\Sigma_{k+1}^{\M}(e_i\cup\{p\restr n,e_0,\hdots,e_{i-1}\})$ set $A\notin\M$, which exists as $\M$ is $k$-sound, so $i=n$ would always satisfy this. Set $\H:=\hull_{k+1}^{\M}(e_i\cup\{p\restr n,e_0,\hdots,e_{i-1}\})$. Since $e_i$ is an $\H$-cardinal and $\M$ agrees with $\H$ below $e_i$, the Dodd-Jensen trick gives us the coiteration
+
+\begin{center}
+\begin{tikzcd}[column sep=0]
+\P & \init & \Q\\\\
+\H\arrow[uu,tree={i}{\T}] && \M \arrow[uu,treeplain={}{\U}]
+\end{tikzcd}
+\end{center}
+
+where $\crit i\geq e_i$. Since $A\notin\Q$ we also get that $\P$ is not a proper initial segment of $\Q$ as $A$ is definable over $\P$, so $\P=\Q$. This also entails that the $\M$-to-$\Q$ branch doesn't drop as $\P$ is $k$-sound. We thus get an embedding $j:\M\to\Q$. Let $\bar x:=\pi^{-1}(x)$ for $x\in\ran\pi$.
+
+\clai{
+$i(\bar\alpha_s)=j(\alpha_s)$ for every $s<i$.
+}
+
+\cproof{
+For $\geq$ this follows as in Proposition \ref{prop.solidity}, where the parameter $\bra{i(\bar\alpha_0),\hdots,i(\bar\alpha_{i-1})}$ plays the role as the standard parameter in this case, using our set $A$. For $\leq$, if $s<i$ is least such that $j(\alpha_s)<_{\P}i(\bar\alpha_s)$, we get that
+\eq{
+(\tau\circ j)(\alpha_s)<_{\R}(\tau\circ i)(\alpha_s)=k(\alpha_s),
+}
+
+with $\tau:\P\to\R$ being the copy map to the iteration tree $(\id_{\M},\pi)\T$ on the phalanx $(\bra{\M,\M},\bra{\omega})$ with last model $\R$. This contradicts the $\vec e$-minimality of $k$. Note that we used here our specific choice of enumeration $\vec e$, so that the least disagreement between $\tau\circ j$ and $k$ \textit{is} actually one of the $\alpha_s$'s.
+}
+
+\clai{
+$\crit j\geq e_i$.
+}
+
+\cproof{
+Let $\kappa:=\crit j$ and assume that $\kappa<e_i$. Then
+\eq{
+S:=\Th_{k+1}^{\M}(\kappa\cup\{p\restr n,\alpha_0,\hdots,\alpha_{i-1}\})\in\M,
+}
+
+so $j(S)\in\Q$, and from $j(S)$ one can compute\footnote{This is not entirely trivial, as we can't just apply $j$ to $\M$ in ``$\M\models\varphi[x]$", so we have to apply it to initial segments of $\M$ and consider the limit of these images. For details see \cite[Lemma 4.6]{FSIT}.}
+\eq{
+\Th_{k+1}^{\Q}(j(\kappa)\cup\{j(p\restr n),j(\alpha_0),\hdots,j(\alpha_{i-1})\}).
+}
+
+Note also that since $\H$ and $\M$ agree below $e_i$, the first extender used along the $\M$-to-$\Q$ branch must have length $\geq e_i$, so that $e_i<j(\kappa)$. Using this fact together with $\P=\Q$ and the previous claim gives us that
+\eq{
+\Th_{k+1}^{\P}(e_i\cup\{i(\bar p\restr n),i(\bar\alpha_0),\hdots,i(\bar\alpha_{i-1})\})\in\P
+}
+
+entailing $A\in\M$ since $\crit i,\crit\pi\geq e_i$, $\contr$.
+}
+
+Now, assuming that $p$ isn't solid, we have that $i\leq n$. Let $B\subset\rho$ be $\b{r\Sigma}_{k+1}^{\M}$ such that $B\notin\M$. Then $B$ is $\b{r\Sigma}_{k+1}^{\Q}$ as well, thus $\b{r\Sigma}_{k+1}^{\P}$ and finally also $\b{r\Sigma}_{k+1}^{\H}$. But this means that $B$ is definable with parameters from $\alpha_i\cup\{p\restr n,\alpha_0,\hdots,\alpha_{i-1}\}$, which then contradicts the minimality of $p$. Thus $i=n+1$ and $p$ is solid.
+
+\qquad To show universality of $p$, note that the above scenario with $e_i=\rho$ and thus also $\H=\core_{k+1}(\M)$ says that $\crit i,\crit j\geq\rho$. This means that we have that
+\eq{
+\P^{\H}(\rho)=\P^{\P}(\rho)=\P^{\Q}(\rho)=\P^{\M}(\rho),
+}
+
+so that $\P^{\M}(\rho)\subset\H$, which is exactly universality. Finally, for any $\gamma$ such that $\M\models|\gamma|=\rho$ we have that $\H$ agrees with $\P$ below $\gamma$ and $\Q$ agrees with $\M$ below $\gamma$, concluding that $\H$ agrees with $\M$ below $\gamma$ as well as $\P=\Q$.
+$\qed$\\

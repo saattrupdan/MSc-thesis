@@ -1,0 +1,44 @@
+Input File::titlepage.tex::0::0::Input File
+LaTeX Error::titlepage.tex::1::0::Environment titlepage undefined. |\begin{titlepage}  
+LaTeX Error::titlepage.tex::2::0::Undefined control sequence. |	\ThisLRCornerWallPaper {1}{/home/leidem/Dropbox/nat-en.png}
+LaTeX Error::titlepage.tex::2::0::Missing \begin{document}. |	\ThisLRCornerWallPaper{1 }{/home/leidem/Dropbox/nat-en.png} 
+LaTeX Error::titlepage.tex::3::0::Undefined control sequence. |	\ThisLRCornerWallPaper {1}{/home/leidem/Dropbox/nat-farve.pdf}
+LaTeX Error::titlepage.tex::5::0::Undefined control sequence. |        {\Large An Introduction to}\\[0.2cm]
+LaTeX Error::titlepage.tex::6::0::Undefined control sequence. |	{\huge \textsc{Inner model theory}}\\[0.3cm]
+LaTeX Error::titlepage.tex::7::0::Undefined control sequence. |	{\large Master's thesis in mathematics}\\[0.6cm]
+LaTeX Error::titlepage.tex::8::0::Undefined control sequence. |	{\large Dan Saattrup Nielsen}\\[6.0cm]
+LaTeX Error::titlepage.tex::9::0::Undefined control sequence. |	{\large \textit{Advisors: Asger Törnquist and David Schrittesser}}\\[0....
+LaTeX Error::titlepage.tex::10::0::Undefined control sequence. |	{\large \textit{Date: 08/08-2016}}
+LaTeX Error::titlepage.tex::12::0::\begin{document} ended by \end{titlepage}. |\end{titlepage}  
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (13.96655pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (17.73326pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (30.77763pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (21.39987pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (18.04434pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (15.611pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (11.24435pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (20.5721pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (15.0999pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (13.41655pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (19.8054pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (20.4443pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (15.84436pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (25.43872pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (51.93155pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (23.64983pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (29.13316pt too wide) in paragraph at lines 2--13
+hbox Warning::titlepage.tex::2::0::Overfull \hbox (20.44434pt too wide) in paragraph at lines 2--13
+LaTeX Error::titlepage.tex::15::0::Missing \begin{document}. |\noindent  
+LaTeX Error::titlepage.tex::16::0::Undefined control sequence. |\pagestyle{fancy}  | <argument> \undefinedpagestyle  
+LaTeX Error::titlepage.tex::17::0::Undefined control sequence. |\fancyhead [RO,LE]{\thepage\ of \pageref{LastPage}}
+LaTeX Error::titlepage.tex::17::0::Undefined control sequence. |\fancyhead[RO,LE]{\thepage \ of \pageref{LastPage}}
+LaTeX Error::titlepage.tex::17::0::Undefined control sequence. |...ead[RO,LE]{\thepage\ of \pageref{LastPage} } | <write> ... Reference `LastPage' on page \thepage  \space undefined\on@line .
+Reference LaTeX Warning::titlepage.tex::17::0::Reference `LastPage' on page  undefined.
+LaTeX Error::titlepage.tex::18::0::Undefined control sequence. |\fancyhead [LO]{\nouppercase\leftmark}
+LaTeX Error::titlepage.tex::18::0::Undefined control sequence. |\fancyhead[LO]{\nouppercase \leftmark}
+LaTeX Error::titlepage.tex::19::0::Undefined control sequence. |\fancyhead [RE]{Dan Saattrup Nielsen}
+LaTeX Error::titlepage.tex::20::0::Undefined control sequence. |\fancyfoot {}
+hbox Warning::titlepage.tex::15::0::Overfull \hbox (10.86105pt too wide) in paragraph at lines 15--22
+LaTeX Error::...ter's thesis/frontbackmatter/titlepage.tex"::0::0::Emergency stop. (job aborted, no legal \end found)
+LaTeX Error::0::0::0:: ==> Fatal error occurred, no output PDF file produced! 

@@ -1,0 +1,452 @@
+\chapter{Robust $K^c$-constructions}
+\thispagestyle{fancy}
+\label{ch6}
+
+So far we have only been working with mice abstractly, but we've yet to actually construct any. As mentioned in the discussion at the end of chapter 2, our goal is to produce ppms $\M$ such that $\core(\M)$ is sound, so that these can then constitute legal initial segments of some premouse. To prove this we mentioned in the same discussion that it suffices to show that $\core_k(\M)$ is fully $k$-iterable, since we now have access to Theorem \ref{theo.solid}.
+
+\qquad This was done in \cite{CMIP} using something called \textit{background certified extenders}\footnote{This is where the superscript ``c" comes from in $K^c$.}, but unfortunately this construction was done inside $V_\kappa$ where $\kappa$ was a measurable cardinal. This assumption was removed in \cite{Kwithoutmeasurable}, replacing these certified extenders with \textit{robust} extenders, a notion which is due to Jensen, introduced in \cite{RobustExtenders}. We will solely be working with robust extenders.
+
+
+\section{Robustness}
+
+\defin{
+Let $u$ be any set. Then the (strong) \textbf{Chang model relative to $u$} is the class $C_{\infty}(u)$ defined recursively as follows:
+\begin{itemize}
+\item $C_0(u):=\trcl(\{u\})$;
+\item $C_{\xi+1}(u):=\Def(C_\xi(u))\cup[\xi]^\omega$;
+\item $C_\lambda(u):=\bigcup_{\xi<\lambda}C_\xi(u)$ for $\lambda$ limit;
+\item $C_{\infty}(u):=\bigcup_{\xi\in\on}C_\xi(u)$.\dit
+\end{itemize}
+}
+
+The Chang model relative to $u$ is the smallest inner model containing $u$ and all countable sets of ordinals. We need the following variant of this model.
+
+\defi{
+Define the language $\mathcal L_0:=\{\in,A\}$ with $A$ a predicate symbol. Then setting $\bar C_{\tau,\eta}^E:=C_\eta(\bra{J_\tau^E,E\cap J_\tau^E)}$ for any predicate $E$, define the $\mathcal L_0$-structure $C_{\tau,\eta}^E:=\bra{\bar C_{\tau,\eta}^E,\in,\bra{\bar C_{\tau,\xi}^E\mid\xi<\eta}}$.
+}
+
+\defi{
+Let $\M$ be a ppm and $\U\subset\M$. Then set
+\eq{
+\sat(\U):=\{\bra{k,x}\mid x\in\U^\omega\land C_{\tau,\infty}\models\varphi_k[x]\},
+}
+
+where $\tau:=\sup(\U\cap\on^{\M})$ and $\bra{\varphi_k\mid k<\omega}$ recursively enumerates the $\Sigma_1$ formulas in $\mathcal L_0$. If furthermore $\psi:\U\to\M$ then set
+\eq{
+\sat(U,\psi):=\{\bra{k,x}\mid x\in\U^\omega\land C_{\bar\tau,\infty}\models\varphi[\psi\circ x]\},
+}
+
+where $\bar\tau:=\sup(\ran\psi\cap\on^{\M})$.
+}
+
+\defin{
+Let $\M$ be an active premouse with last extender $E$, $\kappa:=\crit E$ and $\lambda:=\lh E$. Then $E$ is \textbf{robust with respect to $\M$} if whenever $\U\subset\M$ is countable then there is a function $\pi:\U\to\M|\kappa$ such that the following holds.\footnote{This is not the definition used in \cite{RobustExtenders}, but is an equivalent formulation used in \cite{Kwithoutmeasurable}.}
+\begin{enumerate}
+\item $\pi\restr\U\cap\kappa=\id$;
+\item $\sat(\U)=\sat(\U,\pi)$;
+\item For every $a\in[\U\cap\ \lambda]^{<\omega}$ and $x\in\U\cap\P([\kappa]^{|a|})$, $\pi(a)\in x$ iff $x\in E_a$.\dit
+\end{enumerate}
+}
+
+Robustness can be seen as $\M$ ``reflects" $\Sigma_1$ statements involving countable sets of ordinals down to $\M|\crit E$, while ``retaining knowledge" of $E$, really making $\M|\crit E$ the ``robust part".
+
+\defin{
+\label{defi.Kc}
+A \textbf{robust $K^c$-construction} is a sequence $\bra{\N_\alpha\mid\alpha<\theta}$ of premice such that
+\begin{enumerate}
+\item $\N_0:=\bra{V_\omega,\in,\emptyset,\emptyset}$;
+\item If $\alpha+1<\theta$ then $\N_\alpha$ is solid and either
+  \begin{enumerate}
+  \item $\core(\N_\alpha)$ is passive and $\N_{\alpha+1}$ is $\core(\N_\alpha)$ with a robust top extender, or
+  \item If $\core(\N_\alpha)=\bra{J_\gamma^{\E},\in,\E,F}$ then $\N_{\alpha+1}=\bra{J_{\gamma+1}^{\E},\in,\E\oplus F,\emptyset}$;
+  \end{enumerate}
+\item If $\lambda<\theta$ is a limit ordinal then $\N_\lambda$ is the unique passive premouse such that
+\begin{enumerate}
+\item $\omega\beta<\on^{\N_\lambda}$ iff $\N_\alpha|\beta$ is defined and eventually constant as $\alpha\to\lambda$;
+\item $\N_\lambda|\beta=$ eventual value of $\N_\alpha|\beta$ as $\alpha\to\lambda$, for $\beta$ with $\omega\beta<\on^{\N_\lambda}$.\dit
+\end{enumerate}
+\end{enumerate}
+}
+
+As we're taking cores in our definition of robust $K^c$-constructions, it's not at all clear that the construction would wind up in a proper class model after $\on$-many steps. This \textit{is} actually the case though, as the following proposition shows.
+
+\prop{
+Let $\kappa$ be an uncountable regular cardinal or $\kappa=\on$, and let $\bra{\N_\alpha\mid\alpha<\kappa}$ be a robust $K^c$-construction. Then there exists a unique premouse $\N_\kappa$ of ordinal height $\kappa$ such that $\bra{\N_\alpha\mid\alpha\leq\kappa}$ is a robust $K^c$-construction as well.
+}
+\proof{
+It is clear that there is in fact a unique premouse $\N_\kappa$ satisfying that $\bra{\N_\alpha\mid\alpha\leq\kappa}$ is a robust $K^c$-construction, just by letting it be defined as in clause (iii) in Definition \ref{defi.Kc} -- note that this makes sense because if $\N_\alpha|\beta$ is defined and eventually constant as $\alpha\to\lambda$ then this also holds for any $\gamma<\beta$. We thus only need to check that $|\N_\kappa|=\kappa$. Since $|\N_\alpha|<\kappa$ for every $\alpha<\kappa$ we get that $|\N_\kappa|\leq\kappa$. For $\gamma<\kappa$ define
+\eq{
+\theta_\gamma:=\inf\{\rho(\N_\alpha)\mid\alpha\in[\gamma,\kappa)\},
+}
+(
+so that $\theta_0=\omega$ and the $\theta_\gamma$'s are nondecreasing. Since $\N_\alpha$ agrees with $\core(\N_\alpha)$ below any ordinal of cardinality $\rho(\N_\alpha)$ by Theorem \ref{theo.solid}, we get that $\N_\gamma$ agrees with $\N_\alpha$ below $\theta_\gamma$ for every $\alpha\in[\gamma,\kappa)$, so if $\kappa$ is the sup of the $\theta_\gamma$'s then $|\N_\kappa|\geq\kappa$ by definition of $\N_\kappa$ and we're done.
+
+\qquad If $\kappa$ is not the sup of the $\theta_\gamma$'s then the $\theta_\gamma$'s have to be eventually constant by regularity of $\kappa$, so say $\rho:=\theta_\gamma$ for every $\gamma\in[\eta,\kappa)$, for some $\eta$. This means that $\rho(\N_\gamma)=\rho$ for cofinally many $\gamma<\kappa$ and thus also for club many $\gamma<\kappa$ by picking out the limit points.
+
+\qquad Because case (ii)(b) in the definition of robust $K^c$-constructions happens cofinally often, and thus also club often, we can intersect these two clubs to get club many $\gamma<\kappa$ in case (ii)(b) such that $\rho(\N_\gamma)=\rho$. For these $\gamma$ it holds that $\core(\N_\gamma)\pinit\N_{\gamma+1}$ and thus $\core(\N_\gamma)\in\N_{\gamma+1}$ as well by definability of the core.
+
+\qquad Since $\N_{\gamma+1}\models|\core(\N_\gamma)|=\rho$ we have that $\core(\N_\gamma)\init\N_\alpha$ for every $\alpha\in[\gamma,\kappa)$. As $\rho$ was the infimum of the projecta, we then get that $\core(\N_\gamma)\init\core(\N_\alpha)$ for all $\alpha\in[\gamma,\kappa)$ as well. Note that these are strict initial segments. Indeed, the subset $x\subset\rho$ witnessing that $\rho=\rho(\N_\gamma)$ is definable over $\N_\gamma$, so that $x\in\N_{\gamma+1}$. This means that the new subset $y\subset\rho(\N_{\gamma+1})$ has to be defined with at least one parameter $p$ from $\N_{\gamma+1}-\N_\gamma$, so that $p\in\core(\N_{\gamma+1})-\core(\N_\gamma)$.
+
+\qquad As there are cofinally many such $\gamma$, we get that $|\N_\kappa|=\kappa$.
+}
+
+Even though a $K^c$-construction provides us with a proper class model after $\on$-many steps, it's not necessarily the case that we actually \textit{can} continue for that many steps, as we require that $\N_\alpha$ is solid. This is the goal of the remaining part of this chapter.
+
+
+\section{Iterability of robust $K^c$}
+
+Having defined our proposed mice, we move towards showing the iterability of these structures. Iterability arguments usually are split up into two parts: branch existence and uniqueness. These will then entail that not only is the given structure iterable, but is \textit{uniquely iterable}. This property is very useful, as it allows us to use the (strong) Dodd-Jensen Theorem \ref{theo.DJ}, since every tree according to the strategy will then be unambiguous.
+
+\qquad Branch existence itself is split up into a countable case and an uncountable case, where the uncountable case involves a reflection argument. We won't provide a proof of the countable case of branch existence. This is the main theorem in \cite{RobustExtenders} and requires introducing even more new terminology. As this argument itself isn't essential to the rest of the theory, we will leave it out.
+
+\theo[Branch existence]{
+\label{theo.branchexistence}
+Let $\bra{\N_\alpha\mid\alpha\leq\theta}$ be a robust $K^c$-construction, $\pi:\M\to\core_k(\N_\theta)$ a near $k$-embedding with $\M$ countable and $\T$ a countable putative $k$-iteration tree on $\M$. Then either there is a maximal branch of $\T$ with limit model $\P$ or $\T$ has a last model $\P$, such that, letting $n$ be the degree of $\P$,
+\begin{enumerate}
+\item There are no drops along the $\M$-to-$\P$ branch, $n=k$ and there is a near $n$-embedding $\sigma:\P\to\core_n(\N_\theta)$ such that, letting $i:\M\to\P$ be the iteration embedding, $\sigma\circ i=\pi$, or
+\item There is a drop along the $\M$-to-$\P$ branch or $n<k$, and there is a near $n$-embedding $\sigma:\P\to\core_n(\N_\alpha)$ for some $\alpha\leq\theta$ where $\alpha<\theta$ if a drop occured along the $\M$-to-$\P$ branch.
+\end{enumerate}
+}
+\textsc{``Proof".}
+See \cite{RobustExtenders}.
+$\qed$\\
+
+We will now introduce a new game, the \textbf{weak iteration game} $\W_k(\M,\omega)$, which will be a helpful gadget in showing the iterability of our $K^c$-constructions in the next section. There are $\omega$ many rounds, played as follows:
+\game{\T_0}{b_0}{\P_1,i_i,\T_1}{b_1}{\P_2,i_2,\T_2}{b_2}{\cdots}{\cdots}
+
+The game starts with player I playing a countable putative $k$-iteration tree $\T_0$ on $\M$. Then player II plays $b_0$, which is either ``accept" or a maximal wellfounded branch of $\T_0$, but only allowing her to accept if $\T_0$ has a last model. Let $\Q_1$ be the last model of $\T_0$ if she accepts, and $\M_{b_0}^{\T_0}$ otherwise. Set $k_1$ to be the degree of $\Q_1$.
+
+\qquad Player I then picks an initial segment $\P_1\init\Q_1$ and $i_1\leq\omega$ such that $i_1\leq k_1$ if $\P_1=\Q_1$. He also plays a countable putative $i_1$-iteration tree $\T_1$ on $\P_1$. Then player II either accepts or plays a maximal wellfounded branch of $\T_1$, and the game continues in this fashion. Player II then wins if the cofinal branch through the composition of all the $\T_i$'s is wellfounded.
+
+\defi{
+A \textbf{weak $(k,\omega)$-iteration strategy for $\M$} is a winning strategy for player II in $\W_k(\M,\omega)$. $\M$ is \textbf{weakly $(k,\omega)$-iterable} if such a strategy exists.
+}
+
+\coro{
+\label{coro.Kcwkit}
+Let $\bra{\N_\alpha\mid\alpha\leq\theta}$ be a robust $K^c$-construction, $\pi:\M\to\core_k(\N_\theta)$ a near $k$-embedding with $\M$ countable. Then $\M$ is weakly $(k,\omega)$-iterable.
+}
+\proof{
+Let $\Sigma$ be the weak $(k,\omega)$-iteration strategy given by accepting every tree with a last model, which is legal as the Branch Existence Theorem \ref{theo.branchexistence} ensures that this last model is wellfounded, and given any tree of limit length, play a maximal wellfounded branch as given by the Branch Existence Theorem \ref{theo.branchexistence}.
+
+\qquad We need to show that the strategy doesn't break down. The only way this could happen was if composed branch through $\bigoplus_n\T_n$ was illfounded. But say $\P_i=\Q_i$ for all $i\geq N$ (this will happen for some $N$). Then we get an embedding $i:\P_N\to\colimm_n\P_n$, so since $\P_N$ is wellfounded, so is the direct limit.
+}
+
+\defin{
+Let $\T$ be a $k$-iteration tree on a premouse $\M$ of limit length $\lambda$. Then define
+\begin{itemize}
+\item $\delta(\T):=\sup\{\lh E_\alpha^{\T}\mid\alpha<\lambda\}$;
+\item $E(\T):=\bigcup_{\alpha<\lambda}\dot E^{\M_\alpha^{\T}}\restr\lh E_\alpha^{\T}$;
+\item $\M(\T):=J_{\delta(\T)}^{E(\T)}=\colimm_{\alpha<\lambda}\M_\alpha^{\T}|\lh E_\alpha^{\T}$.\dit
+\end{itemize}
+}
+
+We will now introduce the most important large cardinal notion in this thesis, the Woodin cardinal.
+
+\defi{
+Let $\kappa<\delta$ and $A\subset V_\delta$. Then $\kappa$ is \textbf{$A$-reflecting in $\delta$} if for every $\lambda<\delta$ there is a $V$-extender $E$ with $\crit E=\kappa$, $i_E(\kappa)>\lambda$ and $i_E(A)\cap V_\lambda=A\cap V_\lambda$.
+}
+
+\defi{
+A cardinal $\delta$ is a \textbf{Woodin cardinal} if for every $A\subset\delta$ there is a $\kappa<\delta$ which is $A$-reflecting in $\delta$.
+}
+
+Woodin has noted that the argument of \cite[Theorem 4.1]{MitchellWoodin} implies that the extenders witnessing that $\delta$ is Woodin can be taken to lie in $V_\delta$, so that Woodinness is a $\b\Pi_1^{V_{\delta+1}}$-property. This means that for a ppm $\M$ with $\delta^{+\M}\in\M$, $\M\models``\delta\text{ is Woodin}"$ implies that every initial segment $\N\init\M$ with $\delta^{+\M}\in\N$ also thinks that $\delta$ is Woodin.
+
+\theo[Branch uniqueness]{
+\label{theo.branchuniqueness}
+Let $b$ and $c$ be distinct cofinal branches of a $k$-iteration tree $\T$, $\delta:=\delta(\T)$ and let $A\subset\delta$ be such that $\delta,A\in\wfp(\M_b^{\T})\cap\wfp(\M_c^{\T})$. Then it holds that
+\eq{
+\M_b^{\T}\models\exists\kappa<\delta:\kappa\text{ is $A$-reflecting in $\delta$}.
+}
+}
+\proof{
+We first claim that the extenders used on $b$ and $c$ have an overlapping pattern, as pictured in Figure \ref{fig.overlap}. To see this, pick any successor ordinal $\alpha_0+1\in b-c$ and then recursively define
+\eq{
+\beta_n+1&:=\min\{\gamma\in c\mid\gamma>\alpha_n+1\}\\
+\alpha_{n+1}+1&:=\min\{\eta\in b\mid\eta>\beta_n+1\}.
+}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+\node at (0,0) {$\bullet$};
+
+\draw (0,0.8) -- (-0.2,0.8) -- (-0.2,1.8) -- (0,1.8);
+\draw (0,1.5) -- (0.2,1.5) -- (0.2,2.5) -- (0,2.5);
+\draw (0,2.3) -- (-0.2,2.3) -- (-0.2,3.5) -- (0,3.5);
+\draw (0,3.2) -- (0.2,3.2) -- (0.2,4.5) -- (0,4.5);
+\draw (0,3.8) -- (-0.2,3.8) -- (-0.2,5) -- (0,5);
+
+\draw[dashed] (0,0) [out=150, in=-90] to (-1,5.5);
+\draw[dashed] (0,0) [out=30, in=-90] to (1,5.5);
+
+\node at (-1.5,5) {$b$};
+\node at (1.5,5) {$c$};
+
+\draw[dotted] (-2,1.5) -- (2,1.5);
+\draw[dotted] (-2,2.3) -- (2,2.3);
+\draw[dotted] (-2,3.2) -- (2,3.2);
+\draw[dotted] (0,3.8) -- (2,3.8);
+
+\draw (2,1.5) -- (2.2,1.5) -- (2.2,2.3) -- (2,2.3);
+\draw (-2,2.3) -- (-2.2,2.3) -- (-2.2,3.2) -- (-2,3.2);
+\draw (2,3.2) -- (2.2,3.2) -- (2.2,3.8) -- (2,3.8);
+
+\node at (2.7,1.9) {$E_0$};
+\node at (-2.7,2.8) {$E_1$};
+\node at (2.7,3.5) {$E_2$};
+\node at (-2.3,1.5) {$\kappa$};
+\end{tikzpicture}
+\end{center}
+\caption{The overlapping pattern in the proof of Theorem \ref{theo.branchuniqueness}.}
+\label{fig.overlap}
+\end{figure}
+
+Now, given any $n<\omega$, the $T$-predecessor of $\beta_n+1$ is on $c$ and is $\leq\alpha_n+1$ by definition of $\beta_n+1$. As the predecessor doesn't lie on $b$, we get that it is $\leq\alpha_n$. The rules of the iteration game then implies that $\crit F_{\beta_n}<\nu_{F_{\alpha_n}}$. Completely analogous we also get that $\crit F_{\alpha_{n+1}}<\nu_{F_{\alpha_n}}$. Since generators aren't moved along branches of iteration trees by Proposition \ref{prop.genarenotmoved}, we get that
+\eq{
+\crit F_{\beta_n}&<\nu_{F_{\alpha_n}}\leq\crit F_{\alpha_{n+1}}\\
+&<\nu_{F_{\beta_n}}\leq\crit F_{\beta_{n+1}}\\
+&<\nu_{F_{\alpha_{n+1}}}\leq\crit F_{\alpha_{n+2}}\\
+&\vdots
+}
+
+which is exactly the overlapping pattern pictured above. We also have that the supremum of the $\alpha_n$'s and the supremum of the $\beta_n$'s agree and is equal to $\lh\T$, as branches of iteration trees are closed below their sups.
+
+\qquad Assume that $\alpha_0$ was picked large enough so that setting $\xi:=\pred_T(\beta_0+1)$ and $\eta:=\pred_T(\alpha_1+1)$, we have that $A=i_{\xi,c}(A^*)=i_{\eta,b}(A^{**})$ for some $A^*$ and $A^{**}$. Set
+\eq{
+\kappa:=\crit F_{\beta_0}=\crit i_{\xi,c},
+}
+
+where the equality is by definition of $T$-predecessors in the iteration game. We will show that $\kappa$ is $A$-reflecting in $\delta$ in the model $\M_b$. Define $E_0:=F_{\beta_0}\restr\crit F_{\alpha_1}$, so that the overlapping pattern implies that $E_0$ is a proper initial segment of $F_{\beta_0}$, so that the initial segment condition then entails that $E_0\in\M$. The agreement between models of an iteration tree then furthermore implies that $E_0\in\M_b$ as well.
+
+\qquad If $j:\M_b\to\ult(\M_b,E_0)$ is the ultrapower embedding, then since $A$ agrees with $A^*$ below $\kappa$, $j(A)$ agrees with $i_{\xi,c}(A^*)$ below $\lh E_0=\crit F_{\alpha_1}$ since $E_0$ is an initial segment of $F_{\alpha_1}$. As $i_{\xi,c}(A^*)=A$, $j(A)$ agrees with $A$ below $\lh E_0$, so that $E_0$ witnesses that $\kappa$ is $A$-reflecting up to $\lh E_0$ in $\M_b$.
+
+\qquad To take this all the way up to $\delta$, recursively define
+\eq{
+E_{2n}&:=F_{\beta_n}\restr\crit F_{\alpha_{n+1}}\\
+E_{2n+1}&:=F_{\alpha_{n+1}}\restr\crit F_{\beta_{n+1}},
+}
+
+which are also pictured on Figure \ref{fig.overlap}. Just as with $E_0$ we get that $E_n\in\M_b$ for every $n<\omega$. By ``composing" the ultrapower embeddings as follows
+\cd{
+\M_b\ar[r]^-{i_0} & \ult(\M_b,E_0)\ar[r]^-{i_1} & \ult(\ult(\M_b,E_0),i_0(E_1)) \ar[r]^-{i_2} & \cdots,
+}
+
+we get that the extender $E$ derived from composing the first $2n$ ultrapower embeddings lie in $\M_b$ as well since all the information lie in the $E_i$'s. But then by an analogous argument as above, $E\in\M_b$ and $E$ witnesses that $\kappa$ is $A$-reflecting up to $\lh E_n$ in the model $\M_b$. Since $\lh E_n\to\delta$ as $n\to\omega$, $\kappa$ is $A$-reflecting in $\delta$ inside the model $\M_b$.
+}
+
+We will be needing a fine structural version of the uniqueness result, in which we will be needing the following \textit{$\Q$-structures}.
+
+\defi{
+Let $\T$ be a $k$-iteration tree on $\M$ of limit length and let $b$ be a cofinal branch of $\T$. Let $\gamma\in\on$ be least such that either
+\begin{itemize}
+\item $\omega\gamma<\on^{\M_b}$ and $\M_b|\gamma+1\models\delta(\T)$ is not Woodin, or
+\item $\omega\gamma=\on^{\M_b}$ and $\rho_{n+1}(\M_b)<\delta(\T)$ for some $n<\omega$ such that $n+1\leq k$ if there are no drops along $b$.
+\end{itemize}
+
+Then set $\Q(b,T):=\M_b|\gamma$ if there is such a $\gamma$, and otherwise undefined.
+}
+
+\theo{
+\label{theo.Qinit}
+Let $\T$ be a $k$-iteration tree of limit length and let $b,c$ be distinct cofinal wellfounded branches of $\T$ such that $\Q(b,\T)$ and $\Q(c,\T)$ exists. Then neither is an initial segment of the other.
+}
+\proof{
+Assume that one of them is an initial segment of the other. Then as they're both minimal with respect to the same first-order property, they're equal. If $\Q(b,\T)\in\M_b$ then this forces $\Q(c,\T)\in\M_c$ as well, because otherwise $\M_c\in\M_b$, contradicting that $c$ is cofinal. Then $\Q(b,\T)\in\M_b\cap\M_c$ and then by the definition of $\Q$-structure there is an $A\subset\delta$, $A\in\M_b\cap\M_c$, satisfying that
+\eq{
+\M_b\models\lnot\exists\kappa<\delta(\T):\kappa\text{ is $A$-reflecting in $\delta$},
+}
+
+so that $b=c$ by the Uniqueness Theorem \ref{theo.branchuniqueness}, $\contr$. Thus $\Q(b,\T)=\M_b$. Analogously $\Q(c,\T)=\M_c$, so that $\M_b=\M_c$ as well. By definition of $\Q$-structure we then have that $\rho_{l+1}(\M_b)<\delta(\T)$ for some $l<\omega$ such that $l+1\leq k$ if $b$ has no drops. Let $n<\omega$ be least such that $\rho_{n+1}(\M_b)<\delta(\T)$. This means that $\deg b,\deg c=n$, so that there are cofinally many extenders used along $b$ and $c$ which have critical points $\geq\rho_{n+1}(\M_b)$.
+
+\qquad This means that letting $\eta\in b$ and $\xi\in c$ be the last drops along the branches, which exist as both branches are wellfounded, we have that $\M_\eta$ and $\M_\xi$ are $(n+1)$-sound and furthermore
+\eq{
+\M_\eta^*=\core_{n+1}(\M_\eta^*)=\core_{n+1}(\M_b)=\core_{n+1}(\M_c)=\core_{n+1}(\M_\xi^*)=\M_\xi^*
+}
+
+and that $i_{\eta,b}\circ i_\eta^*:\M_\eta^*\to\M_b$ and $i_{\xi,c}\circ i_\xi^*:\M_\xi^*\to\M_c$ exists and are $n$-embeddings by Theorem \ref{theo.itprops}, and our choice of $\eta$ and $\xi$ furthermore guarantees that their critical points are $\geq\rho_{n+1}(\M_\eta^*)$. But since Theorem \ref{theo.itprops} also gives us that $\rho_{n+1}(\M_\eta^*)=\rho_{n+1}(\M_b)=\rho_{n+1}(\M_\xi^*)$ and
+\eq{
+(i_{\eta,b}\circ i_\eta^*)(p_{n+1}(\M_\eta^*))=p_{n+1}(\M_b)=(i_{\xi,c}\circ i_\xi^*)(p_{n+1}(\M_\xi^*)),
+}
+
+we get that $i_{\eta,b}\circ i_\eta^*$ and $i_{\xi,c}\circ i_\xi^*$ are both equal to the core embedding
+\eq{
+\pi:\core_{n+1}(\M_b)\to\core_n(\M_b)
+}
+
+and are therefore equal. But then the extender applied to $\M_\eta^*$ in $b$ is compatible with the extender applied to $\M_\xi^*$ in $c$, so that $\eta=\xi$. This means that $\eta\in b\cap c$, so let $\alpha\in b\cap c$ be largest. As we picked $\eta$ and $\xi$ such that $\M_\eta$ and $\M_\xi$ were $(n+1)$-sound, the argument above ensures that $\M_{\succ_T(\eta)}=\M_{\succ_T(\xi)}$, so $\alpha>\eta$.
+
+\qquad Now, defining $\nu:=\sup\{\nu_{E_\beta}\mid\beta<_T\alpha\}$ we get that
+\eq{
+\M_\alpha=\{(i_{\eta,\alpha}\circ i_\eta^*)(f)(a)\mid f\in\b{r\Sigma}_n^{\M_\eta^*}\land a\in[\nu]^{<\omega}\}.\tag*{$(1)$}
+}
+
+Since $i_{\alpha,b}$ and $i_{\alpha,c}$ are the identity on $\nu$ (by the agreement between models in iterations trees and that $\nu<\sup\{\lh E_\beta\mid\beta<_T\alpha\}$), are $n$-embeddings and also agree on $\ran(i_{\eta,\alpha}\circ i_\eta^*)$ since
+\eq{
+i_{\alpha,b}(i_{\eta,\alpha}(i_\eta^*(x)))&=i_{\eta,b}(i_\eta^*(x))\\
+&=i_{\xi,c}(i_\xi^*(x))\\
+&=i_{\alpha,c}(i_{\xi,\alpha}(i_\xi^*(x)))\\
+&=i_{\alpha,c}(i_{\eta,\alpha}(i_\eta^*(x))),
+}
+
+we get that $i_{\alpha,b}=i_{\alpha,c}$ by $(1)$. But then the extender applied to $\M_\alpha$ in $b$ is compatible with the extender applied to $\M_\alpha$ in $c$, contradicting the maximality of $\alpha$.
+}
+
+\defi{
+Let $\M$ be a premouse. Then $\eta$ is a \textbf{cutpoint of $\M$} if it doesn't overlap any extenders on the $\M$-sequence. That is, there is no extender $E$ on the $\M$-sequence satisfying that $\eta\in[\crit E,\lh E]$.
+}
+
+%%% Maybe put in, if errors are fixed -- not really needed though %%%
+%
+%\coro{
+%\todo[color=green]{If there isn't time, then just comment out this corollary, as it isn't used anyway.}
+%\label{coro.uniqueQ}
+%Let $\T$ be a $k$-iteration tree. Then there is at most one cofinal wellfounded branch $b$ of $\T$ such that
+%\begin{enumerate}
+%\item $\Q(b,\T)$ exists;
+%\item $\delta(\T)$ is a cutpoint of $\Q(b,\T)$;
+%\item $\Q(b,\T)$ is $(\delta(\T)^++1)$-iterable.
+%\end{enumerate}
+%}
+%\proofretard
+%Assume that $b$ and $c$ were two distinct such branches. Let $\delta:=\delta(\T)$.
+%
+%\clai{
+%Both $\Q(b,\T)$ and $\Q(c,\T)$ have cardinality $\delta$.
+%}
+%
+%\cproof{
+%Let $\Q:=\Q(b,\T)$ and assume first that $\Q\in\M_b$, so that if $\Q=\M_b|\gamma$ then
+%\eq{
+%\M_b|\gamma+1\models\delta\text{ is not Woodin},
+%}
+%
+%meaning that there is some $A\subset\delta$ in $\M_b|\gamma+1$ which doesn't have an accompanying $\kappa<\delta$ reflecting it in $\delta$. As $\P(\delta)\subset\M_b|\delta^+$, such an $A$ lies in some $\M_b|\eta$ with $\eta<\delta^+$, so that $|\Q|=\delta$ by minimality of $\gamma$. If $\Q=\M_b$ then $\delta\notin\Q$\todo[color=red]{This is false!}, so $|\Q|=|\M_b|=\delta$ as well. The argument for $\Q(c,\T)$ is identical.
+%}
+%
+%Because of this claim, our Comparison Theorem \ref{theo.comparison} ensures that $\Q(b,\T)$ and $\Q(c,\T)$ can be compared, so we have the following coiteration, where we assume without loss of generality that $\Q(c,\T)$ iterates past $\Q(b,\T)$:
+%
+%\begin{center}
+%\begin{tikzcd}[column sep=0]
+%\P & \init & \R\\\\
+%\Q(b,\T)\arrow[uu,treeplain={}{\U}] && \Q(c,\T)\arrow[uu,treeplain={}{\V}]
+%\end{tikzcd}
+%\end{center}
+%
+%As $\delta$ is a cutpoint of both $\Q$-structures and they agree below $\delta$ by the agreement of models in iteration trees, all extenders used in the above coiteration have critical point $\geq\delta$.
+%
+%\clai{
+%Let $\Q\in\{\Q(b,\T),\Q(c,\T)\}$. Then $\Q$ is $\delta$-sound and projects across $\delta$. That is, there is some $n<\omega$ such that
+%\begin{enumerate}
+%\item $\Q=\hull_{n+1}^{\Q}(\delta\cup\{p_{n+1}(\Q)\})$ and
+%\item $\rho_{n+1}(\Q)\leq\delta$.
+%\end{enumerate}
+%}
+%
+%\cproof{
+%We start by showing (ii). If $\Q=\M_b$ then it's just by definition of $\Q$. If $\Q\pinit\M_b$, say $\on^{\Q}=\omega\gamma$, then
+%\eq{
+%\M_b|\gamma+1&\models\delta\text{ is not Woodin}\\
+%\M_b|\gamma&\models\delta\text{ is Woodin},
+%}
+%
+%so we get that there is $A\subset\delta$ in $\M_b|\gamma+1$ witnessing the non-Woodinness of $\delta$. As $A\in\M_b|\gamma+1$, $A$ is definable with parameters in $\M_b|\gamma=\Q$, and since $A\notin\Q$, $\rho_{n+1}(\Q)\leq\delta$.
+%
+%\qquad Now for (i), this is clear if $\Q\pinit\M_b$ as then $\Q$ is sound, so it follows from (ii). Assume thus $\Q=\M_b$ and without loss of generality that $\delta\in\Q$. Then $\rho_{n+1}(\M_b)<\delta$ for some $n<\omega$\todo[color=red]{Derive a contradiction from $\lnot$(i).}.
+%}
+%
+%Since the critical point of extenders in the coiteration are $\geq\delta$, $\delta$-soundness implies that a drop happens along the $\Q(b,\T)$-to-$\P$ branch if $\U$ is non-trivial\todo[color=yellow]{Check that this is correct.}. But the Comparison Theorem \ref{theo.comparison} implies that no drops can happen along that branch, so $\U$ is trivial and $\Q(b,\T)=\P$.
+%
+%\qquad If $\V$ is also trivial then $\Q(b,\T)\init\Q(c,\T)$, contradicting Theorem \ref{theo.Qinit}. We thus have that $\V$ is non-trivial and just as for $\U$ above, this requires that a drop happens along the $\Q(c,\T)$-to-$\R$ branch. But then $\Q(b,\T)\neq\R$ as $\R$ isn't $\delta$-sound, so that $\Q(b,\T)\pinit\R$. But then by $\delta$-soundness again, $\Q(b,\T)$ has cardinality $\delta$ in $\R$, implying that $\Q(b,\T)\init\Q(c,\T)$, contradicting Theorem \ref{theo.Qinit} again.
+%$\qed$\\
+
+\defi{
+A premouse $\M$ is \textbf{1-small} if there is no Woodin cardinal in $\M|\kappa$ whenever $\kappa$ is the critical point of an extender on the $\M$-sequence. If furthermore
+\eq{
+\M\models\text{there is no Woodin cardinal}+\text{there are finally many cardinals}
+}
+
+then $\M$ is \textbf{properly 1-small}.
+}
+
+\defi{
+A premouse $\N$ is \textbf{countably $(k,\alpha,\theta)$-iterable} if whenever $\M$ is a countable premouse and $\pi:\M\to\N$ is a near $k$-embedding then $\M$ is $(k,\alpha,\theta)$-iterable.
+}
+
+\theo{
+\label{theo.wkitimpliesit}
+If $\N$ is weakly $(k,\omega)$-iterable and properly 1-small then it's also countably $(k,\omega_1,\omega_1)$-iterable.
+}
+\proof{
+Let $\pi:\M\to\N$ be a near $k$-embedding with $\M$ countable. As a weak $(k,\omega)$-iteration strategy for $\N$ induces one for $\M$, let $\Sigma$ be the weak $(k,\omega)$-iteration strategy for $\M$. If we can show that every countable putative $k$-iteration tree $\T$ on $\M$ of limit length have at most one maximal wellfounded branch, then $\Sigma$ induces a $(k,\omega_1,\omega_1)$-iteration strategy $\Gamma$ on $\M$ by just picking the unique branch as given by $\Sigma$.
+
+\qquad Assume that it's not the case and let $\T$ be the shortest tree with two distinct maximal wellfounded branches $b$ and $c$. As we've picked unique branches at earlier stages, the branches have to be cofinal in $\T$.
+
+\clai{
+$\Q(b,\T)$ and $\Q(c,\T)$ exist.
+}
+
+\cproof{
+We show that $\Q:=\Q(b,\T)$ exists, as it's completely analogous for $c$. If $b$ drops then $\Q(b,\T)$ exists as then $\rho_{n+1}(\M_b)<\delta(\T)$ for some $n<\omega$, so the second clause of the definition of $\Q$-construction would always hold. Assume thus that $b$ doesn't drop, so that we get the $k$-embedding $i:\M\to\M_b$.
+
+\qquad Note that since $\M$ has finally many cardinals, $\M_b$ has as well, since this is a $\lnot Q$-property and every $k$-embedding preserves these. But then $\delta(\T)\in\M_b$, because if $\delta(\T)=\on^{\M_b}$ then this would exactly entail that there were cofinally many cardinals in $\M_b$ (recall that the lengths of the extenders are all cardinals in $\M_b$). As $\M_b$ has no Woodins, there has to be a largest initial segment of $\M_b$ thinking that $\delta(\T)$ is Woodin, which is precisely $\Q$.
+}
+
+\pagebreak
+\clai{
+$\delta(\T)$ is a cutpoint of both $\Q(b,\T)$ and $\Q(c,\T)$.
+}
+
+\cproof{
+We show that $\delta:=\delta(\T)$ is a cutpoint of $\Q:=\Q(b,\T)$, the argument being analogous for $\Q(c,\T)$. Assume $\delta$ overlaps the $(\kappa,\lambda)$-extender $E$ on the $\Q$-sequence. Form the ultrapower $\ult:=\ult(\Q,E)$ and note that $\delta$ is still Woodin in $\ult$, as $\P^{\M}(\delta)=\P^{\ult}(\delta)$ [``$\subset$" is by coherence. ``$\supset$" is seen using that $\lh E$ is a cardinal in the ultrapower, so acceptability implies that subsets of $\delta$ in $\ult$ lies below $\delta$ and thus in $\Q$ by coherence, using that $\delta<\lambda$]. This means that we have that $\ult|i_E(\kappa)\models\text{there is a Woodin}$, so that $\Q|\kappa\models\text{there is a Woodin}$ as well, meaning that $\Q|\kappa=\M_b|\kappa$ witnesses that $\M_b$ is not $1$-small. But $\M_b$ is $1$-small since $\M$ is, $\contr$.
+}
+
+Now, since both $\Q$-structures think that $\delta$ is Woodin, $\on^{\Q}$ has to be strictly below the critical points of the extenders lying above $\delta(\T)$ in $\M_b$ for both $\Q$-structures $\Q$, as otherwise we would contradict $1$-smallness. But since the $\Q$-structures agree below $\delta$ by the agreement of models in iteration trees, one of the $\Q$-structures is an initial segment of the other, contradicting Theorem \ref{theo.Qinit}. This shows the above-mentioned uniqueness property for $\Sigma$, so $\M$ is $(k,\omega_1,\omega_1)$-iterable.
+%
+%%% Fix error if it's included
+%
+%\qquad It remains to show that we can take the leap from $(k,\omega_1,\omega_1)$-iterability to $(k,\omega_1,\omega_1+1)$-iterability, so let $\T$ be a putative $k$-iteration tree on $\M$ of length $\omega_1$. Let $G$ be $\col(\omega,\omega_1)$-generic. Since weak $(k,\omega)$-iterability is $\Sigma^1_2$ for countable premice by Proposition \ref{prop.wkitdef}\todo[color=red]{This is wrong! Find some other way to use Shoenfield.}, Shoenfield's Absoluteness Lemma \cite{Shoenfield} implies that $V[G]$ also thinks that $\M$ is weakly $(k,\omega)$-iterable. But $\T$ is countable in $V[G]$, so we can find a unique cofinal wellfounded branch $b$ of $\T$ in there. By homogeneity of the collapse \cite{Jech}, $b\in V$, so $\M$ is in fact $(k,\omega_1,\omega_1+1)$-iterable.
+}
+
+\coro{
+\label{coro.kcisctblyit}
+Let $\bra{\N_\alpha\mid\alpha\leq\theta}$ be a robust $K^c$-construction with $\N_\theta$ properly 1-small. Then $\core_k(\N_\theta)$ is countably $(k,\omega_1,\omega_1)$-iterable.
+}
+\proof{
+This follows directly from Corollary \ref{coro.Kcwkit} and Theorem \ref{theo.wkitimpliesit}.
+}
+
+The following theorem summarises the previous results and involves the reflection argument to show the uncountable case of branch existence.
+
+\theo{
+\label{theo.fullyit}
+Assume there is no proper class model with a Woodin cardinal and let $\N$ be the output of a robust $K^c$-construction. Then $\M:=\core_k(\N)$ is fully $k$-iterable.
+}
+\proof{
+If $\M$ wasn't 1-small then we could linearly iterate $\M$ $\on$-many times using the least extender on $\M$ witnessing the non-1-smallness, so that we would wind up with a proper class premouse with a Woodin, $\contr$. So we can assume that $\M$ is 1-small.
+
+\qquad If $\M$ wasn't properly 1-small then we add ordinals of top of $\M$ until it thinks that are no Woodins, which happens as otherwise we would reach a proper class premouse with a Woodin, $\contr$. Making sure that the cardinals in the resulting model are final, we get a properly 1-small premouse. Note that this premouse also lies on a $K^c$ construction, and any iteration strategy for it will induce an iteration strategy for $\M$, so we can assume that $\M$ is properly 1-small.
+
+\qquad By adding ordinals on top of $\M(\T)$, we get a least premouse $\Q=\J_\gamma^{\E(\T)}$ such that either $\J_{\gamma+1}^{\E(\T)}\models\delta(\T)$ is not Woodin, or $\Q=\M(\T)$ and $\rho_{n+1}(\Q)<\delta(\T)$. We know that $\Q$ exists as otherwise there would be a proper class premouse with a Woodin, $\contr$.
+
+\qquad Now let $\H:=\chull^{V_\eta}(\{\M,\M(\T),\T,\Q\})$ for $\eta$ sufficiently large. Since $\H$ is countable and the uncollapse embedding $\pi\restr\bar\M:\bar\M\to\M$ is elementary, $\bar\M$ is $(k,\omega_1,\omega_1)$-iterable by Corollary \ref{coro.kcisctblyit}, so $\bar\T$ has a unique cofinal wellfounded branch $b$. To show that $\T$ also have such a branch, we have to show that $b\in\H$.
+
+\qquad Note that $\Q(b,\bar\T)$ exists by our proper 1-smallness assumption on $\M$, so that $\bar\Q\init\Q(b,\bar\T)$ by elementarity of $\pi$. Then $b$ is the \textit{unique} cofinal wellfounded branch of $\bar\T$ such that $\bar\Q\init\M_b^{\bar\T}$. Indeed, if $c$ was another such branch, $\Q(c,\bar\T)$ would then exist as well and $\bar\Q\init\Q(c,\bar\T)$. But since $\Q(b,\bar\T)$ and $\Q(c,\bar\T)$ cannot be compared by Theorem \ref{theo.Qinit}, we must have that $\bar\Q$ is a proper initial segment of both. But $\bar\Q$ codes up a failure of Woodinness of $\delta(\bar\T)$, contradicting the Uniqueness Theorem \ref{theo.branchuniqueness}.
+
+\qquad If we then let $G$ be $\col(\omega,|\bar\Q|)$-generic, we have that $\H[G]\models\varphi_b[\bar\T,\bar\Q]$, where $\varphi_b$ is the $\Sigma^1_1$-formula
+\eq{
+\exists x\in\omega^\omega:x\text{ codes }b\land\bar\Q\init\M_b^{\bar\T}.
+}
+
+To see this, first assume that we chose our $\H$ such that letting $\theta:=\on^{\H}$ we had $b,\bar\T,\bar\Q\in V_\theta[G]$ (which is possible as $\bar\Q$ is countable in the generic extension). Then $V_\theta[G]\models\varphi_b[\bar\T,\bar\Q]$, so by Shoenfield's Absoluteness Lemma\footnote{Shoenfield's Lemma says that $\Sigma^1_2$ formulas are absolute between transitive models with the same ordinals and sharing the same parameters used in the formula. See \cite{Shoenfield}.} we get that $\H[G]$ also satisfies this, as $\H[G]$ and $V_\theta[G]$ has the same ordinals and both contain $\bar\T$ and $\bar\Q$. This means that $b\in\H[G]$, so by homogeneity\footnote{This essentially means that if an element in the generic extension witnesses an existential formula with parameters in the ground model, the element also lies in the ground model. See \cite{Jech}.} of $\col(\omega,|\bar\Q|)$ we then get that $b\in\H$ and we're done.
+}
+
+We can now (finally!) prove that our structures in fact satisfy that their cores are sound, so that the $K^c$-construction doesn't halt at any point, resulting in a proper class model.
+
+\coro{
+Assume there is no proper class with a Woodin cardinal and let $\N$ be the output of a robust $K^c$-construction. Then $\core(\N)$ is sound.
+}
+\proof{
+This is by the argument mentioned in the discussion at the end of chapter 2, but we will recall it here. $\core_0(\N)=\N$ is trivially $0$-sound. Assuming $\core_k(\N)$ is $k$-sound, we get that it's $(k+1)$-solid by Theorem \ref{theo.solid} since it's $k$-iterable by Theorem \ref{theo.fullyit}, so that by Corollary \ref{coro.coresound} we get that it's $(k+1)$-sound. Thus $\core_k(\N)$ is $k$-sound for every $k<\omega$, so that $\core(\N)$ is sound.
+}

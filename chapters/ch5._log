@@ -1,0 +1,51 @@
+Input File::ch5.tex::0::0::Input File
+LaTeX Error::ch5.tex::1::0::Undefined control sequence. |\chapter {Condensation and solidity}
+LaTeX Error::ch5.tex::1::0::Missing \begin{document}. |\chapter{C ondensation and solidity} 
+LaTeX Error::ch5.tex::2::0::Undefined control sequence. |\thispagestyle{fancy}  | <argument> \undefinedpagestyle  
+hbox Warning::ch5.tex::1::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 1--4
+LaTeX Error::ch5.tex::5::0::Undefined control sequence. |\section {Phalanxes}
+LaTeX Error::ch5.tex::5::0::Missing \begin{document}. |\section{P halanxes} 
+hbox Warning::ch5.tex::5::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 5--6
+LaTeX Error::ch5.tex::7::0::Undefined control sequence. |\defi {
+LaTeX Error::ch5.tex::8::0::Missing \begin{document}. |P halanx definition. 
+hbox Warning::ch5.tex::8::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 8--10
+LaTeX Error::ch5.tex::11::0::Undefined control sequence. |\lipsum [1]
+LaTeX Error::ch5.tex::11::0::Missing \begin{document}. |\lipsum[ 1] 
+hbox Warning::ch5.tex::11::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 11--12
+LaTeX Error::ch5.tex::14::0::Undefined control sequence. |\section {Condensation}
+LaTeX Error::ch5.tex::14::0::Missing \begin{document}. |\section{C ondensation} 
+hbox Warning::ch5.tex::14::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 14--15
+LaTeX Error::ch5.tex::16::0::Undefined control sequence. |\theo {
+LaTeX Error::ch5.tex::18::0::Missing \begin{document}. |L et $\M$ be a sound $(\omega,\omega_1,\omega_1+1)$-mouse and let $\pi:\... 
+LaTeX Font Info::ch5.tex::18::0::   External font `cmex10' loaded for size <7>.
+LaTeX Font Info::ch5.tex::18::0::   External font `cmex10' loaded for size <5>.
+LaTeX Error::ch5.tex::18::0::Undefined control sequence. |Let $\M $ be a sound $(\omega,\omega_1,\omega_1+1)$-mouse and let $\pi:\...
+ LaTeX Warning::ch5.tex::18::0::Command \H invalid in math mode.
+ LaTeX Warning::ch5.tex::18::0::Command \H invalid in math mode.
+LaTeX Font Info::ch5.tex::18::0::   Try loading font information for +cmr.
+LaTeX Font Info::ch5.tex::18::0::   No file cmr.fd..
+LaTeX Font Warning::ch5.tex::18::0::Font shape `/cmr/m/n' undefined using `/cmr/m/n' instead.
+LaTeX Error::ch5.tex::18::0::Corrupted NFSS tables. |...ga_1,\omega_1+1)$-mouse and let $\pi:\H\to \M$ be | wrong@fontshape ...message {Corrupted NFSS tables} error@fontshape else let f...
+LaTeX Font Warning::ch5.tex::18::0::Font shape `/cmr/m/n' undefined using `OT1/cmr/m/n' instead.
+LaTeX Error::ch5.tex::18::0::Missing $ inserted.
+LaTeX Error::ch5.tex::18::0::Improper \spacefactor. |...ga_1,\omega_1+1)$-mouse and let $\pi:\H\to \M$ be
+LaTeX Error::ch5.tex::18::0::Extra }, or forgotten $. |...ga_1,\omega_1+1)$-mouse and let $\pi:\H\to \M$ be | \add@accent ... \accent@spacefactor \spacefactor } \accent #1 #2\egroup \spac...
+LaTeX Error::ch5.tex::18::0::Please use \mathaccent for accents in math mode. |...ga_1,\omega_1+1)$-mouse and let $\pi:\H\to \M$ be | \add@accent ...@spacefactor \spacefactor }\accent  #1 #2\egroup \spacefactor ...
+LaTeX Error::ch5.tex::18::0::Missing { inserted. |...ga_1,\omega_1+1)$-mouse and let $\pi:\H\to \M$ be
+LaTeX Error::ch5.tex::18::0::You can't use `\spacefactor' in math mode. |...ga_1,\omega_1+1)$-mouse and let $\pi:\H\to \M$ be | \add@accent ...}\accent #1 #2\egroup \spacefactor  \accent@spacefactor 
+LaTeX Error::ch5.tex::18::0::Extra }, or forgotten $. |...ga_1,\omega_1+1)$-mouse and let $\pi:\H\to \M$ be | \UseTextAccent ...se@text@encoding \@curr@enc #3}} 
+LaTeX Error::ch5.tex::18::0::Undefined control sequence. |..._1,\omega_1+1)$-mouse and let $\pi:\H\to\M $ be
+LaTeX Error::ch5.tex::20::0::Missing $ inserted.
+LaTeX Error::ch5.tex::20::0::Missing } inserted.
+LaTeX Error::ch5.tex::20::0::Missing } inserted.
+hbox Warning::ch5.tex::18::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 18--20
+hbox Warning::ch5.tex::18::0::Overfull \hbox (48.56017pt too wide) in paragraph at lines 18--20
+hbox Warning::ch5.tex::18::0::Overfull \hbox (8.88892pt too wide) in paragraph at lines 18--20
+hbox Warning::ch5.tex::18::0::Overfull \hbox (11.61455pt too wide) in paragraph at lines 18--20
+LaTeX Error::ch5.tex::22::0::Undefined control sequence. |\section {Solidity of the standard parameter}
+LaTeX Error::ch5.tex::22::0::Missing \begin{document}. |\section{S olidity of the standard parameter} 
+hbox Warning::ch5.tex::22::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 22--23
+LaTeX Error::ch5.tex::24::0::Undefined control sequence. |\lipsum [1]
+LaTeX Error::ch5.tex::24::0::Missing \begin{document}. |\lipsum[ 1] 
+LaTeX Error::...m/Dropbox/Master's thesis/chapters/ch5.tex"::0::0::Emergency stop. (job aborted, no legal \end found)
+LaTeX Error::ch5.tex::0::0:: ==> Fatal error occurred, no output PDF file produced! 

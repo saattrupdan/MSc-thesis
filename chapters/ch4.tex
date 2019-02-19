@@ -1,0 +1,733 @@
+\chapter{Iterability and mice}
+\thispagestyle{fancy}
+\label{ch4}
+
+A key property we want our structures to have is \textit{comparison}. That is, given two premice $\M$ and $\N$, we want to determine which one is ``largest". As the extenders on the two premice can be completely different this seems to be a daunting task -- the key here is to use iterations of ultrapowers. Historically this started with linear iterations, but problems arose when the extenders used in the iteration overlapped. This motivated the study of iteration \textit{trees}, where the branches correspond to the linear iterations, and whenever we have an overlap, we just make sure that the overlap doesn't happen on the same branch.
+
+
+\section{Iteration trees and mice}
+
+For technical reasons, we will not merely deal with iteration trees on premice, but sequences of premice, called \textit{phalanxes}.
+
+\defi{
+Two premice $\M$ and $\N$ \textbf{agree below $\gamma$} if $\M|\beta=\N|\beta$ for every $\beta<\gamma$.
+}
+
+\defi{
+Let $\vec\lambda=\bra{\lambda_\alpha\mid\alpha<\gamma}$ be a strictly increasing sequence of ordinals and $\vec\Q=\bra{\Q_\alpha\mid\alpha\leq\gamma}$ a sequence of premice. Then $(\vec\Q,\vec\lambda)$ is a \textbf{phalanx of length $\gamma+1$} if $\Q_\alpha$ agrees with $\Q_\beta$ below $\lambda_\alpha$ and $\lambda_\alpha$ is a $\Q_\beta$-cardinal, for every $\alpha<\beta\leq\gamma$.
+}
+
+\defin{
+A (rooted) \textbf{tree order} on $\alpha\in\on$ is a strict partial ordering $<_T$ of $\alpha$ with a function $\Root:\alpha\to\alpha$ satisfying that, for every $\beta,\gamma\in\alpha$,
+\begin{enumerate}
+\item $\Root\gamma\leq_T\gamma$;
+\item $\beta\leq_T\Root\gamma$ iff $\beta=\Root\gamma$;
+\item If $\beta<_T\gamma$ then $\beta<\gamma$ (i.e. that $<_T\subset{\in\restr\alpha}$);
+\item $[\Root\gamma,\gamma)_T$ is wellordered by $<_T$;\footnote{Here $[\gamma,\beta)_T:=\{\xi\in\alpha\mid\gamma\leq_T\xi<_T\beta\}$. The intervals $[\gamma,\beta]_T$, $(\gamma,\beta)_T$ and $(\gamma,\beta]_T$ are defined similarly.}
+\item $\gamma$ is a successor ordinal iff $\gamma$ is a $<_T$-successor;
+\item If $\gamma$ is a limit ordinal then $[\Root\gamma,\gamma)_T$ is $\in$-cofinal in $\gamma$.\dit
+\end{enumerate}
+}
+
+We will now describe the \textbf{iteration game} $\G_k(\Phi,\theta)$ for $k\leq\omega$, $\theta\in\on$ and a phalanx $\Phi=(\vec\Q,\vec\lambda)$ with $\xi+1:=\lh\Phi\leq\theta$. The game will have length $\theta$, and plays will result in certain trees $\T$. At turn $\alpha+1<\theta$ player I will play a sextuple
+\eq{
+\bra{\M_{\alpha+1}^{\T},E_\alpha^{\T},\lambda_\alpha^{\T},<_T\restr\alpha+2,D^{\T}\cap\alpha+2,\{i^{\T}_{\beta,\alpha+1}\}},
+}
+
+and at limit turns $\lambda<\theta$ player II will play a quadruple
+\eq{
+\bra{\M_\lambda^{\T},<_T\restr\lambda+1,D^{\T}\cap\lambda+1,\{i^{\T}_{\alpha,\lambda}\}},
+}
+
+where
+\begin{itemize}
+\item $\M_\alpha^{\T}$ is a premouse;
+\item $E_\alpha^{\T}$ is an extender from the $\M_\alpha^{\T}$ sequence;
+\item $\lambda_\alpha^{\T}$ is an ordinal;
+\item $<_T\restr\alpha$ is a tree order on $\alpha$ such that ${<_T\restr\gamma}\subset{<_T\restr\alpha}$ for $\gamma<\alpha$;
+\item $D^{\T}\cap\alpha\subset\alpha$ is a set of \textit{drops} such that $D\cap\gamma\subset D\cap\alpha$ for $\gamma<\alpha$;
+\item $i^{\T}_{\beta,\alpha}:\M_\beta\to\M_\alpha$ are $l$-embeddings for some $l\leq k$.\\
+\end{itemize}
+
+We will usually leave out the superscript $\T$ when it is understood. The rules of the game will ensure that
+\begin{itemize}
+\item[(G1)] If $\beta\leq\alpha$ then $\M_\beta$ agrees with $\M_\alpha$ below $\lambda_\beta$;
+\item[(G2)] If $\beta<\alpha$ then $\lambda_\beta$ is a cardinal of $\M_\alpha$.\\
+\end{itemize}
+
+The game is played as follows. On the first $\xi$ turns (recall that $\lh\Phi=\xi+1$) player I plays
+\eq{
+\M_\alpha^{\T}=\Q_\alpha\text{, }\quad\lambda_\alpha^{\T}=\lambda_\alpha\quad\text{and}\quad <_T\restr\alpha+1=D^{\T}\cap\alpha+1=\{i^{\T}_{\alpha,\lambda}\}=\emptyset.
+}
+
+On turn $\alpha+1\geq\xi+1$, player I has to pick an extender $E_\alpha$ from the $\M_\alpha$ sequence satisfying $\lambda_\gamma<\lh E_\alpha$ for every $\gamma<\alpha$. If he cannot do this, he loses the game. Set $\lambda_\alpha:=\lh E_\alpha$ and let $\eta\leq\alpha$ be least such that $\crit E_\alpha<\lambda_\eta$, and set $\M_{\alpha+1}^*:=\M_\eta|\gamma$, where $\gamma$ is largest such that $E_\alpha$ is a pre-extender over $\M_\eta|\gamma$.
+
+\qquad We claim that $\gamma$ exists and $\lambda_\eta\leq\gamma$. If $\eta=\alpha$ then it's trivial, so assume that $\eta<\alpha$. Writing $\kappa:=\crit E_\alpha$, (G1) and (G2) implies that
+\eq{
+\P(\kappa)\cap\M_\eta|\lambda_\eta=\P(\kappa)\cap\M_\alpha|\lambda_\eta=\P(\kappa)\cap\M_\alpha,
+}
+
+so $E_\alpha$ is a pre-extender over $\M_\eta|\lambda_\eta$. Thus $\gamma$ exists and $\gamma\geq\lambda_\eta$. Now define $T\restr\alpha+2:=T\restr\alpha+1\cup\{\bra{\eta,\alpha+1}\}$ and
+\eq{
+D\cap\alpha+2:=\left\{\begin{array}{ll}D\cap\alpha+1\cup\{\alpha+1\} & \text{if }\M^*_{\alpha+1}\pinit\M_\eta\\
+D\cap\alpha+1 & \text{otherwise.}\end{array}\right.
+}
+
+Let $n\leq\omega$ be largest satisfying both that $\crit E_\alpha<\rho_n(\M_{\alpha+1}^*)$ and $D\cap[\Root\alpha+1,\alpha+1]_T=\emptyset\Rightarrow n\leq k$. Then set
+\eq{
+\M_{\alpha+1}:=\ult_n(\M_{\alpha+1}^*,E_\alpha).
+}
+
+If this ultrapower is illfounded, player II loses the game.\footnote{In \cite{OIMT} there's an anomalous case where $\on^{\M_{\alpha+1}^*}=\crit E_\alpha$, so that the above ultrapower wouldn't make sense. In our setup however, this case is impossible as we're never doing any ``squashing" -- see \cite[Chapter 3]{FSIT}.}
+
+\prop{
+On turn $\alpha+1<\theta$, (G1) and (G2) are satisfied.
+}
+\proof{
+For $\alpha<\xi$ both (G1) and (G2) holds by definition of phalanx.\footnote{This was the sole reason for that part of the definition.} Assume thus $\alpha\geq\xi$. Set $\kappa:=\crit E_\alpha$ and let
+\eq{
+&i:\M_{\alpha+1}^*\to\M_{\alpha+1}=\ult_n(\M_{\alpha+1}^*,E_\alpha)\\
+&j:\M_{\alpha+1}^*\to\P:=\ult_0(\M_{\alpha+1}^*,E_\alpha)\\
+&h:\M_\alpha|\lambda_\alpha\to\Q:=\ult_0(\M_\alpha|\lambda_\alpha,E_\alpha)
+}
+
+be the ultrapower embeddings. Since $\kappa<\lambda_\eta$ we have that $\M_\alpha|\lambda_\alpha$ and $\M_{\alpha+1}^*$ agree below their common value of $\kappa^+$; denote this value by $\lambda$. This entails that $\delta:=h(\lambda)=j(\lambda)$, and we claim that we also have that $\delta=i(\lambda)$. Indeed, as every $r\Sigma_n^{\M_{\alpha+1}^*}$-definable function from $\kappa$ to $\kappa$ is in $\M_{\alpha+1}^*$ because $\kappa<\rho_n(\M_{\alpha+1}^*)$ holds by assumption, the $n$-ultrapower $\M_{\alpha+1}$ and the $0$-ultrapower $\P$ agree below $\delta$ and we thus have $\delta=i(\lambda)$.
+
+\qquad As $\M_\alpha|\lambda_\alpha$ agrees with $\M^*_{\alpha+1}$ below $\lambda$, $\Q$ and $\P$ agree below $\delta$. Also, by definition of a fine extender sequence, $\M_\alpha$ agrees with $\Q$ below $\lambda_\alpha$. We can summarise this in the following diagram, where we write $\xymatrix{\M\ar@{~}[r]^{<\xi} & \N}$ if $\M$ and $\N$ agree below $\xi$.
+\cd{
+& \M_\alpha|\lambda_\alpha\ar@{_{(}->}[dl]\ar[d]^h\ar@{~}[r]^{<\lambda} & \M_{\alpha+1}^*\ar[d]^j\ar[dr]^i\\
+\M_\alpha\ar@{~}[r]_-{<\lambda_\alpha} & \Q\ar@{~}[r]_-{<\delta} & \P\ar@{~}[r]_-{<\delta} & \M_{\alpha+1}
+}
+
+We can therefore conclude that $\xymatrix{\M_\alpha\ar@{~}[r]^{<\lambda_\alpha} & \M_{\alpha+1}}$ since $\lambda_\alpha<h(\lambda)=\delta$.
+}
+
+On a limit turn $\lambda<\theta$, player II picks a branch in $\T$ which is $\in$-cofinal in $\lambda$ such that
+\begin{enumerate}
+\item The drops in $b$ below $\lambda$, i.e. $D^{\T}\cap b\cap\lambda$, are bounded;
+\item $\colimm_{\alpha\in b-\sup(D\cap b)}\M_\alpha$ is wellfounded.\\
+\end{enumerate}
+
+We will say that $b$ is \textbf{wellfounded} if the above conditions (i)-(ii) apply. If player II cannot find such a branch, she loses the game. Otherwise set
+\begin{itemize}
+\item $\M_\lambda:=\colimm_{\alpha\in b-\sup(D\cap b)}\M_\alpha$;
+\item $D\cap\lambda+1:=\bigcup_{\alpha<\lambda}D\cap\alpha$;
+\item $<_T\restr\lambda+1=\bigcup_{\alpha<\lambda}<_T\restr\alpha\cup\{\bra{\alpha,\lambda}\mid\alpha\in b\}$;
+\item $i_{\alpha,\lambda}:\M_\alpha\to\M_\lambda$ is the direct limit embedding, for $\alpha\in b-\sup(D\cap b)$.\\
+\end{itemize}
+
+We again need to make sure that (G1) and (G2) are still satisfied at turn $\lambda$, but this is clear just by the definition of a direct limit of structures. This finishes the definition of the game. If no one has lost after $\theta$ many turns, player II wins. In this special case where $\Phi$ is just a single premouse $\M$, we denote the iteration game by $\G_k(\M,\theta)$.
+
+\defi{
+A \textbf{putative (normal) $k$-iteration tree on $\Phi$} is a partial play of $\G_k(\Phi,\theta)$, i.e. a tree $\T$ of pairs $\bra{\M_\alpha,E_\alpha}$ which are connected according to the tree order $<_T$, along with embeddings $i_{\alpha,\beta}:\M_\alpha\to\M_\beta$ following the rules above. A \textbf{(normal) $k$-iteration tree on $\Phi$} is a putative $k$-iteration tree on $\Phi$ in which neither player has lost.
+}
+
+Here \textbf{normality} is referring to the condition that $\lambda_\alpha<\lambda_\beta$ for every $\alpha<\beta$. See Figure \ref{fig.ittree} for an illustration of an iteration tree.
+
+\begin{figure}
+\cd{
+\M_{\alpha+1}\\
+& \M_\beta\ar[ul]_-{i_{\beta,\alpha+1}\ =\ i_{E_\alpha}} && \M_\alpha\ni E_\alpha\\
+&& \bullet\ar@{--}[ul]\ar@/^1pc/@{--}[ur]\\
+&& \M_0\ar@{-}[u]
+}
+\caption{An iteration tree.}
+\label{fig.ittree}
+\end{figure}
+
+\defi{
+Let $\T$ be an iteration tree with models $\M_\alpha$, extenders $E_\alpha$ and $\alpha+1<\lh\T$. Then the \textbf{degree of $\alpha+1$}, $\deg^{\T}(\alpha+1)$, is the $n\leq\omega$ such that $\M_{\alpha+1}=\ult_n(\M_{\alpha+1}^*,E_\alpha)$. We also write $i_{\alpha+1}^*$ for the ultrapower embedding from $\M_{\alpha+1}^*$ into this ultrapower.
+}
+
+The degree of $\alpha$ shows how much fine structure $\M_\alpha$ has. A $k$-iteration tree starts off with fine structure up to degree $k$, and the amount of fine structure preserved throughout the branches can drop.
+
+\qquad We can now prove the previously mentioned fact that we don't have overlapping extenders along branches of iteration trees.
+
+\prop{
+\label{prop.genarenotmoved}
+Let $\T$ be a $k$-iteration tree for some $k\leq\omega$, and let $b$ be a branch of $\T$. Then for every $\alpha,\beta\in b$ with $\alpha<_T\beta$, it holds that $\nu_E\leq\crit F$ with $E$ being the extender used at $\alpha$ and $F$ the extender used at $\beta$ in $\T$. We say that \textbf{generators aren't moved along branches of iteration trees}.
+}
+\proof{
+Without loss of generality we can assume that $\alpha=\pred_T\beta$. Say $E=E_\eta^{\T}$ and $F=E_\xi^{\T}$, so that $\beta$ is least such that $\crit E_\xi^{\T}<\lambda_\beta$. Since $\eta<\beta$ (actually $\beta=\eta+1$), minimality implies that $\lambda_\eta\leq\crit E_\xi^{\T}$ so in particular $\nu_E\leq\crit F$.
+}
+
+\defi{
+Let $E$ and $F$ be pre-extenders and set $\nu:=\min\{\nu_E,\nu_F\}$. Then $E$ and $F$ are \textbf{compatible} if $E\restr\nu=F\restr\nu$.
+}
+
+Note that if $E$ and $F$ are compatible they have the same critical point and measure the same subsets. Compatibility is weaker than equivalence, since if $\nu_E=\nu_F$ and $E$ is compatible with $F$, then they are also equivalent.
+
+\prop{
+\label{prop.extnotcomp}
+Let $E_\alpha$ and $E_\beta$ be extenders used in a $k$-iteration tree $\T$. Then $E_\alpha$ and $E_\beta$ are not compatible.
+}
+\proof{
+Assume not. Write $E:=E_\alpha$ and $F:=E_\beta$ and assume without loss of generality that $\nu_E<\nu_F$, so that $E=(F\restr\nu_E)^*$. Then the initial segment condition implies that either $E$ is on the $\M$-sequence, in which case $E\in\M$ by amenability, or on the $\ult(\M|\nu_E,E_\eta)$-sequence below $\on^{\M}$ in which case it's definable over $\M|\nu_E$, again implying that $E\in\M$. But then we also have a surjection from $\nu_E$ onto $\lh E$ inside $\M_\beta$, contradicting that $\lh E$ is a cardinal of $\M_\beta$ by (G2), $\contr$.
+}
+
+The definition of $\G_k(\Phi,\theta)$ yields the following very useful property.
+
+\prop{
+Let $\T$ be an iteration tree on a phalanx $\Phi$ and let $\alpha+1\in[\lh\Phi,\lh\T)$. Then $E_\alpha$ is close to $\M_{\alpha+1}^*$.
+}
+\proof{
+Induction on $\alpha$. Let $\eta:=\pred_T(\alpha+1)$. If $\alpha=\eta$ then $\M_{\alpha+1}^*=\M_\alpha|\gamma$ for some $\gamma\geq\lh E_\alpha$ and $E_\alpha$ is on the $\M_\alpha$ sequence. Since $\gamma\geq\lh E_\alpha$, $E_\alpha$ is also on the $\M_{\alpha+1}^*$ sequence. But then $E_\alpha$ is quite trivially close to $\M_{\alpha+1}^*$ as well.
+
+\qquad Assume thus that $\eta<\alpha$. Fix some $a\in[\lh E_\alpha]^{<\omega}$. We will start by showing the second condition of closeness. Set $\kappa:=\crit E_\alpha$. Since $\eta=\pred_T(\alpha+1)$ we have $\kappa<\lambda_\eta$ and since $\lambda_\eta$ is a cardinal of $\M_\alpha$, $\kappa^{+\M_\alpha}\leq\lambda_\eta$.
+
+\qquad Let $\mathcal A\in\M_{\alpha+1}^*$ and assume without loss of generality that $\mathcal A\subset\P([\kappa]^{|a|})$. We want to show that $(E_\alpha)_a\cap\mathcal A\in\M_{\alpha+1}^*$. Since $\P^{\M_\alpha}(\kappa)=\P^{\M_{\alpha+1}^*}(\kappa)$, $\mathcal A\in\M_\alpha$ as well, so $\mathcal A\cap (E_\alpha)_a\in\M_\alpha$ by amenability, and thus $\mathcal A\cap(E_\alpha)_a\in\M_{\alpha+1}^*$ as well. Note that we didn't need that $\M_{\alpha+1}^*\models|\mathcal A|\leq\kappa$.
+
+\qquad We then want to show the first condition of closeness, that $(E_\alpha)_a$ is $\b\Sigma_1^{\M_{\alpha+1}^*}$. Note that $\M_\eta|\lambda_\eta\init\M_{\alpha+1}^*$. We have the following claim.
+
+\clai{
+\label{clai.close1}
+If $A\in\P^{\M_\xi}(\lambda_\eta)$ for some $\xi>\eta$ then $A$ is $\b\Sigma_1$ over $\M_\eta|\lambda_\eta$.
+}
+
+\cproof{
+Since $A\subset\lambda_\eta$ and $\lambda_\eta$ is a cardinal in $\M_{\eta+1}$, we have that $A\in\M_{\eta+1}$ by acceptability. Write $A=[a,f]\in\ult_n(\M_{\eta+1}^*,E_\eta)$ for some $n\leq\omega$ and set $\mu:=\crit E_\eta$. Then since $A\subset\lambda_\eta$, we can assume that $f(u)<\mu$ for every $u\in[\mu]^{|a|}$ by shortness of $E_\eta$. Since $f$ is $\b{r\Sigma}_n^{\M_{\eta+1}^*}$ and $\mu<\rho_n(\M_{\eta+1}^*)$, we get that $f\in\M_{\eta+1}^*$.
+
+\qquad We also have that $\M_\eta$ agrees with $\M_{\eta+1}^*$ below $\lambda:=$ their common value of $\mu^+$ and $f\in\M_{\eta+1}^*|\lambda=\M_\eta|\lambda$, so that $A=[a,f]\in\ult_n(\M_\eta|\lambda,E_\eta)$. Then we have that, for $\beta\in\lambda$,
+\eq{
+\beta\in A\quad\text{iff}\quad \{u\in[\mu]^{a\cup\{\beta\}}\mid \pr^{\{\beta\},a\cup\{\beta\}}(u)\in f^{a,a\cup\{\beta\}}(u)\}\in(E_\eta)_{a\cup\{\beta\}}
+}
+
+and since $(E_\eta)_{a\cup\{\beta\}}\in\M_\alpha$ is $\b\Sigma_1^{\M_\eta|\lambda}$, $A$ is $\b\Sigma_1^{\M_\eta|\lambda}$ and thus $\b\Sigma_1^{\M_\eta|\lambda_\eta}$ as well.
+}
+
+Now, if $(E_\alpha)_a\in\M_\alpha$ then since $(E_\alpha)_a$ can be coded as a subset of $\lambda$, then Claim \ref{clai.close1} implies that $(E_\alpha)_a$ is $\b\Sigma_1^{\M_\eta|\lambda}$ and thus $\b\Sigma_1^{\M_{\eta+1}^*}$, as wanted. But we do indeed have that the amenable encoding of $(E_\alpha)_a$ is in $\M_\alpha$ by amenability, so since we can $\Sigma_1$-define $(E_\alpha)_a$ with the amenable code as parameter, we get the wanted.
+%
+%%% Not needed I think, because of the amenable trick above.
+%
+%Assume thus that $(E_\alpha)_a\notin\M_\alpha$, which requires that $E_\alpha$ is the active last extender of $\M_\alpha$. We now have the following claim.
+%
+%\clai{
+%\label{clai.close2}
+%Let $\xi\in[0,\alpha]_T$ be such that $\xi\geq\eta$ and $D\cap(\xi,\alpha]_T=\emptyset$. Then $\crit i_{\xi,\alpha}>\kappa$ and $(E_\alpha)_a$ is $\b\Sigma_1^{\M_\xi}$. If furthermore $\xi>\eta$ and $\xi$ is a successor, $\crit(i_{\xi,\alpha}\circ i_\xi^*)>\kappa$ and $(E_\alpha)_a$ is $\b\Sigma_1^{\M_\xi^*}$.
+%}
+%
+%\cproof{
+%Since $\kappa=\crit E_\alpha=\crit\dot F^{\M_\alpha}$, $\kappa\in\ran i_{\xi,\alpha}$, as it's the image of the critical point of some last extender. Furthermore, every extender used in $i_{\xi,\alpha}$ has length $\geq\lh E_\eta$ as $\xi\geq\eta$. This entails that $\crit i_{\xi,\alpha}>\kappa$, as every extender in $i_{\xi,\alpha}$ must have critical point $>\kappa$ by the rules of the game.
+%
+%\qquad $E_\zeta$ is close to $\M_{\zeta+1}^*$ for every $\zeta<\alpha$ by our induction hypothesis, and $\tau:=\kappa^{+\M_\alpha}\geq\rho_1(\M_\alpha)$ because we've assumed that $(E_\alpha)_a\notin\M_\alpha$ and $(E_\alpha)_a$ can be encoded as a $\Sigma_1^{\M_\alpha}$ subset of $\tau$. As $\tau\leq\crit i_{\xi,\alpha}$, $\deg\zeta=0$ for every $\zeta\in(\xi,\alpha]_T$. This means that only $\Sigma_0$-ultrapowers are used from $\M_\xi$ to $\M_\alpha$.
+%
+%\qquad We claim that every $\b\Sigma_1^{\M_\alpha}$ subset of $\crit i_{\xi,\alpha}$ is also $\b\Sigma_1^{\M_\xi}$, which then implies that $(E_\alpha)_a$ is $\b\Sigma_1^{\M_\xi}$, as desired.\todo[color=red]{Missing this part.}
+%
+%\qquad For the last statement, assume $\xi>\eta$ and that $\xi$ is a successor, say $\xi=\zeta+1$ for some $\zeta$. The extenders used in $i_{\xi,\alpha}\circ i_\xi^*$ is those used in $i_{\xi,\alpha}$ and $E_\zeta$. As $\zeta\geq\eta$, we get that $\crit(i_{\xi,\alpha}\circ i_\xi^*)>\kappa$ and that $(E_\alpha)_a$ is $\b\Sigma_1^{\M_\xi^*}$ by an analogous argument as above.
+%}
+%
+%Now let $\xi\in[0,\alpha]_T$ be least such that $\eta\leq\xi$. We treat two cases:
+%\begin{enumerate}
+%\item $D\cap(\xi,\alpha]_T\neq\emptyset$;
+%\item $D\cap(\xi,\alpha]_T=\emptyset$.\\
+%\end{enumerate}
+%
+%Assume first (i). Let $\beta$ be largest in $D\cap(\xi,\alpha]_T$ and let $\delta:=\pred_T(\beta)$. Since $\beta>\eta$ by definition of $\xi$, the above Claim \ref{clai.close2} implies that $(E_\alpha)_a$ is $\b\Sigma_1^{\M_\beta^*}$. Since $\beta\in D$, $\M_\beta^*\in\M_\delta$, so $(E_\alpha)_a\in\M_\delta$. Because $\delta\geq\eta$, Claim \ref{clai.close1} then implies that $(E_\alpha)_a$ is $\b\Sigma_1^{\M_{\alpha+1}^*}$, as desired.
+%
+%\qquad Assume now (ii). We claim that $\xi=\eta$. Because if $\xi>\eta$ then the minimality of $\xi$ implies that it isn't a limit, so write $\zeta:=\pred_T(\xi$. Then $\zeta<\eta$ by minimality of $\xi$. By Claim \ref{clai.close2}, $\crit E_{\xi'}>\kappa$ with $\xi'+1=\xi$. But $\crit E_{\xi'}<\nu_{E_\zeta}$ so the rules of the game require that $\eta=\pred_T(\alpha+1)\leq\zeta$, $\contr$. Thus $\xi=\eta$.
+%
+%\qquad By Claim \ref{clai.close2}, $\crit i_{\eta,\alpha}>\kappa$ and $(E_\alpha)_a$ is $\b\Sigma_1^{\M_\eta}$. Since $D\cap(\eta,\alpha]_T=\emptyset$, $\M_{\alpha+1}^*=\M_\eta$, so $(E_\alpha)_a$ is also $\b\Sigma_1^{\M_{\alpha+1}^*}$, as we wanted.
+}
+
+\defi{
+Let $\T$ be an iteration tree and $b$ a branch of $\T$. Then $b$ \textbf{drops in model} if $D\cap b\neq\emptyset$ and $b$ \textbf{drops in degree} if $\deg(b)<\deg(\Root b)$.
+}
+
+\todo{Insert intuition about drops.}
+
+\theo{
+\label{theo.itprops}
+Let $\T$ be a $k$-iteration tree on a $k$-sound premouse $\M_0$, with models $\M_\alpha$ and embeddings $i_{\alpha,\beta}$. Let $\alpha+1<_T\beta$ and $D\cap(\alpha+1,\beta]_T=\emptyset$. Then
+\begin{enumerate}
+\item $\deg(\alpha+1)\geq\deg(\xi+1)$ for every $\xi+1\in(\alpha+1,\beta]_T$;
+\item If $\deg(\alpha+1)=\deg(\xi+1)=n$ for every $\xi+1\in(\alpha+1,\beta]$ then
+\eq{
+i_{\alpha+1,\beta}\circ i^*_{\alpha+1}:\M_{\alpha+1}^*\to\M_\beta
+}
+
+is an $n$-embedding. Moreover, if $[0,\alpha]_T$ drops in model or degree then
+\begin{enumerate}
+\item $\rho_{n+1}(\M^*_{\alpha+1})=\rho_{n+1}(\M_\beta)\leq\crit(i_{\alpha+1,\beta}\circ i^*_{\alpha+1})$;
+\item $(i_{\alpha+1,\beta}\circ i^*_{\alpha+1})(p_{n+1}(\M_{\alpha+1}^*))=p_{n+1}(\M_\beta)$;
+\item $\core_{n+1}(\M_{\alpha+1}^*)=\core_{n+1}(\M_\beta)$.
+\item $(i_{\alpha+1,\beta}\circ i_{\alpha+1}^*)\restr\core_{n+1}(\M_{\alpha+1}^*)=\sigma$, where $\sigma:\core_{n+1}(\M_\beta)\to\core_n(\M_\beta)$ is the core embedding.
+\end{enumerate}
+\end{enumerate}
+}
+\proof{
+For (i), note that closeness ensures that
+\eq{
+\P^{\M_{\alpha+1}^*}(\crit E_\alpha)=\P^{\M_{\alpha+1}}(\crit E_\alpha),
+}
+
+so that if $\rho_n(\M_{\alpha+1}^*)\leq\crit E_\alpha$ then $\rho_n(\M_{\alpha+1})\leq\crit E_\alpha$ as well -- this shows that $\deg(\alpha+1)\geq\deg(\succ_T(\alpha+1))$. We can then use our assumption that $D\cap(\alpha+1,\beta]_T=\emptyset$, so that we can continue this argument ad infinitum.
+
+\qquad For $\lambda\in(\alpha+1,\beta]_T$ limit with $\lambda=\pred_T(\xi+1)$, our inductive assumption ensures that $\deg\lambda:=\inf_{\gamma<\lambda}(\deg\gamma)$ makes sense, so that $\deg(\alpha+1)\geq\deg\lambda$ as well. This entails that $\deg(\alpha+1)\geq\deg(\xi+1)$ by repeating the above argument.
+
+\qquad (ii): Now assume that $n:=\deg(\alpha+1)=\deg(\xi+1)$ for every $\xi+1\in(\alpha+1,\beta]$. That is, no drops occur on the $(\alpha+1,\beta]$ branch. Then
+\eq{
+\crit(i_{\alpha+1,\beta}\circ i_{\alpha+1}^*)<\rho_n(\M_{\alpha+1}^*),
+}
+
+so that Theorem \ref{theo.ppmiteration} gives us that $i_{\alpha+1,\beta}\circ i_{\alpha+1}^*$ is in fact an $n$-embedding. Assume now that $[0,\alpha]_T$ drops in model or degree -- we need to show (a)-(d). It suffices to show that $\M_{\alpha+1}^*$ is $(n+1)$-solid, since we also have that
+\eq{
+\rho_{n+1}(\M_\beta)\leq\crit(i_{\alpha+1,\beta}\circ i_{\alpha+1}^*)
+}
+
+by definition of $n$, so that Theorem \ref{theo.ppmiteration} gives us (a)-(d).
+
+\qquad To show that $\M_{\alpha+1}^*$ is $(n+1)$-solid note first that it's $k$-sound and there's a drop on the $\M$-to-$\M_{\alpha+1}^*$ branch. If there's a drop in degree then the previous models are $n+1\leq k$ sound, so that in particular $(n+1)$-solid. Then Theorem \ref{theo.ppmiteration} implies that $\M_{\alpha+1}^*$ is $(n+1)$-solid as well. If there's a drop in model, then at the drop we get a sound structure as we're working with premice. Thus in particular every future structure will be $(k+1)$-solid, so again by Theorem \ref{theo.ppmiteration} we get that $\M_{\alpha+1}^*$ is $(k+1)$-solid as well, so in particular $(n+1)$-solid.
+}
+
+\defi{
+A \textbf{$(k,\theta)$-iteration strategy} for a phalanx $\Phi$ is a winning strategy for player II in $\G_k(\Phi,\theta)$, and $\Phi$ is \textbf{$(k,\theta)$-iterable} if such a strategy exists.
+}
+
+\defi{
+A \textbf{$(k,\theta)$-mouse} is a premouse which is $(k,\theta)$-iterable.
+}
+
+\section{Comparison}
+
+As mentioned above, comparison of mice is the main use of iterability. 
+
+\theo[Comparison]{
+\label{theo.comparison}
+Let $\theta\in\on$ and $\Phi,\Psi$ be phalanxes of $k$-sound $(k,\theta^++1)$-mice of size $\leq\theta$. Fix $(k,\theta^++1)$-iteration strategies $\Sigma,\Gamma$ for $\Phi,\Psi$. Then there are iteration trees $\T,\U$ on $\Phi,\Psi$ by $\Sigma,\Gamma$ with last models $\P,\Q$ such that one of the two following holds:
+\begin{itemize}
+\item The $\Phi$-to-$\P$ branch in $\T$ does not drop in model or degree, and $\P\init\Q$;
+\item The $\Psi$-to-$\Q$ branch in $\U$ does not drop in model or degree, and $\Q\init\ \P$.
+\end{itemize}
+}
+\proof{
+We will build $\T$ and $\U$ by a recursive process called ``iterating away the least disagreement". The idea is exactly that. Namely, if we've gotten to some stage $\alpha+1<\theta^+$ with approximations $\T_\alpha,\U_\alpha$ of $\T,\U$ such that the last models of $\T_\alpha$ and $\U_\alpha$ disagree, then we ``push" this disagreement up the ladder of ordinals. That this actually works is the main part of the proof. But first, let's do the construction of $\T_\alpha$ and $\U_\alpha$.
+
+\qquad First, let $\T_0$ and $\U_0$ just be $\Phi$ and $\Psi$, respectively. Assume now that $\T_\alpha$ and $\U_\alpha$ have been constructed, with last models $\P$ and $\Q$. If $\P\init\Q$ or $\Q\init\ \P$ then stop the construction. Otherwise define $\lambda$ to be least such that $\P|\lambda\neq\Q|\lambda$, where $\P|\lambda\neq\Q|\lambda$ means that $\dot F^{\P|\lambda}\neq\dot F^{\Q|\lambda}$. If $\P|\lambda$ is active then set $\beta+1:=\lh\T_\alpha$ and $E_\beta^{\T_{\alpha+1}}:=\dot F^{\P|\lambda}$ and then the rules of the iteration game provides a unique one-model extension of $\T_\alpha$; call this extension $\T_{\alpha+1}$. If $\P|\lambda$ is passive then set $\T_{\alpha+1}:=\T_\alpha$. Define $\U_{\alpha+1}$ completely analogously.
+
+\qquad Note that by this construction, the last models of $\T_{\alpha+1}$ and $\U_{\alpha+1}$ will agree below $\lambda+1$, so the next extender will necessarily have length $>\lambda$, so that the iteration is normal. If $\delta$ is a limit ordinal then we define $\T_\delta:=\bigcup_{\alpha<\delta}\T_\alpha$ if the $\T_\alpha$'s become constant as $\alpha\to\delta$. Otherwise set $\T_\delta$ to be the one-model extension of $\bigcup_{\alpha<\delta}\T_\alpha$ determined by the cofinal wellfounded branch of $\bigcup_{\alpha<\delta}\T_\alpha$ given to us by $\Sigma$. Define $\U_\delta$ analogously.
+
+\qquad Now, we need to show that this construction stops at some stage $\alpha<\theta^+$. Assume not, so that we have trees $\T:=\T_{\theta^+}$ and $\U:=\U_{\theta^+}$. We claim that $\T$ and $\U$ have length $\theta^++1$. Assume first $\lh\T<\theta^+$, which means that there must be $\theta^+$ many distinct branches out of $\M$ for some $\M$ on $\Phi$, by regularity of $\theta^+$ (or that the construction stopped, but we're assuming that's not the case).
+
+\qquad But then the $\theta^+$ many extenders for these branches have to have strictly increasing lengths by normality, but $|\M|\leq\theta$, so this is impossible. But then since the $\T_\alpha$'s don't get constant as $\alpha\to\theta^+$ because $\lh\T_\alpha<\theta^+$ for $\alpha<\theta^+$, we get that $\lh\T_{\theta^+}=\theta^++1$. Analogously $\lh\U=\theta^++1$.
+
+\clai{
+\label{clai.incomp}
+For any $\alpha,\beta<\theta^+$, $E_\alpha^{\T}$ is incompatible with $E_\beta^{\U}$.
+}
+
+\cproof{
+Write $E:=E_\alpha^{\T}$ and $F:=E_\beta^{\U}$ and assume they're compatible; say without loss of generality that $\nu_E<\nu_F$, so that $E\restr\nu_E=F\restr\nu_E$. Let $\xi$ be such that $E$ is the extender used to go from $\T_\xi$ to $\T_{\xi+1}$, and $\gamma$ such that $F$ is the one used in the passage from $\U_\gamma$ to $\U_{\gamma+1}$, so that $\xi<\gamma$ since we're iterating away least disagreements and $\nu_E<\nu_F$.
+
+\qquad Let $\P$ and $\Q$ be the last models of $\T_\gamma$ and $\U_\gamma$, respectively. Since $\lambda_\alpha^{\T}$ is a cardinal of $\P$ by (G1) and that $\P$ agrees with $\Q$ below $\lambda_\beta^{\U}$, $\lambda_\alpha^{\T}$ is also a cardinal of $\Q|\lambda_\beta^{\U}$. But the initial segment condition implies that $E\in\Q|\lambda_\beta^{\U}$ (in both its cases), so that $\lambda_\alpha^{\T}$ is \textit{not} a cardinal of $\Q|\lambda_\beta^{\U}$, $\contr$.
+}
+
+The strategy now is then to find compatible extenders in $\T$ and $\U$ to reach our desired contradiction. Let $\pi:\chull^{V_\eta}(\theta\cup\{\theta,\T,\U\})\to V_\eta$ be the uncollapse for $\eta$ sufficiently large and set $\bar x:=\pi^{-1}(x)$ for every $x\in\ran\pi$. Setting $\alpha:=\crit\pi$, note that $\theta<\alpha$. Define furthermore $\Root\T:=\Root^{\T}\theta^+$ and $\Root\U:=\Root^{\U}\theta^+$.
+
+\clai{
+\label{clai.bartrees}
+$\bar\T=\T\restr\alpha+1$ and $\bar\U=\U\restr\alpha+1$.
+}
+
+\cproof{
+As all mice on $\Phi$ and $\Psi$ have size $\leq\theta<\alpha$, $\bar\T$ and $\bar\U$ are trees on $\Phi$ and $\Psi$, respectively. In the same manner, $\bar\T\restr\alpha=\T\restr\alpha$ and $\bar\U\restr\alpha=\U\restr\alpha$. Furthermore $[\Root\T,\alpha]_{\bar T}=[\Root\T,\theta^+]_T\cap\alpha$ and $[\Root\U,\alpha]_{\bar U}=[\Root\U,\theta^+]_U\cap\alpha$. This means that $[\Root\T,\alpha]_{\bar T}$ has limit order type, and any branch of an iteration tree must be closed below its supremum by definition of tree order, so $\alpha\in[\Root\T,\theta^+]_T$ and $\alpha\in[\Root\U,\theta^+]_U$, implying that $[\Root\T,\alpha]_{\bar T}=[\Root\T,\alpha]_T$ and $[\Root\U,\alpha]_{\bar U}=[\Root\U,\alpha]_U$. We can then conclude that $\bar\T=\T\restr\alpha+1$ and $\bar\U=\U\restr\alpha+1$ since $\theta^{+\H}=\alpha$ and the direct limit construction is absolute to $\H$.
+}
+
+Let $\gamma\in[\Root\T,\alpha]_T$ be such that $D^{\T}\cap[\Root\T,\alpha]_T\subset\gamma$. Then by the above Claim \ref{clai.bartrees} and by using $\pi$, $D^{\T}\cap[\Root\T,\theta^+]_T\subset\gamma$, so that $i_{\alpha,\theta^+}^{\T}$ is defined. But we can get even more information on $i_{\alpha,\theta^+}^{\T}$: if $x\in\M_\alpha^{\T}$ then letting $\gamma$ and $\bar x\in\M_\gamma^{\T}$ be such that $x=i_{\gamma,\alpha}^{\T}(\bar x)=i_{\gamma,\alpha}^{\bar\T}(\bar x)$, we get that
+\eq{
+\pi(x)=i_{\gamma,\theta^+}^{\T}(\bar x)=(i_{\alpha,\theta^+}^{\T}\circ i_{\gamma,\alpha}^{\T})(\bar x)=i_{\alpha,\theta^+}^{\T}(x),
+}
+
+so that $i_{\alpha,\theta^+}^{\T}=\pi\restr\M_\alpha^{\T}$ and analogously $i_{\alpha,\theta^+}^{\U}=\pi\restr\M_\alpha^{\U}$, meaning that $i_{\alpha,\theta^+}^{\T}$ and $i_{\alpha,\theta^+}^{\U}$ agree when both are defined. This leads to
+\eq{
+\P^{\M_\alpha^{\T}}(\alpha)=\P^{\M_{\theta^+}^{\T}}(\alpha)=\P^{\M_{\theta^+}^{\U}}(\alpha)=\P^{\M_\alpha^{\U}}(\alpha),
+}
+
+where the first and last equality is due to $\crit i_{\alpha,\theta^+}^{\T}=\crit i_{\alpha,\theta^+}^{\U}=\alpha$ and the middle is because $\M_{\theta^+}^{\T}$ and $\M_{\theta^+}^{\U}$ agree below $\theta^+$. This entails that $i_{\alpha,\theta^+}^{\T}$ and $i_{\alpha,\theta^+}^{\U}$ agree on the same subsets of $\alpha$. Let now $\xi+1\in[\Root\T,\theta^+]_T$, $\gamma+1\in[\Root\U,\theta^+]_U$ be the $T$- and $U$-successor of $\alpha$, respectively. Write $\nu:=\inf(\nu_{E_\xi^{\T}},\nu_{E_\gamma^{\U}})$. Then given any $a\in[\nu]^{<\omega}$ and $B\in\M_\alpha^{\T}\cap\M_\alpha^{\U}$ we get
+\eq{
+B\in(E_\xi^{\T})_a\quad&\text{iff}\quad a\in i_{\alpha,\xi+1}^{\T}(B)\\
+&\text{iff}\quad a\in i_{\alpha,\theta^+}^{\T}(B)\\
+&\text{iff}\quad a\in i_{\alpha,\theta^+}^{\U}(B)\\
+&\text{iff}\quad a\in i_{\alpha,\gamma+1}^{\U}(B)\\
+&\text{iff}\quad B\in (E_\gamma^{\U})_a,
+}
+
+so that $E_\xi^{\T}\restr\nu=E_\gamma^{\U}\restr\nu$, so that $E_\xi^{\T}$ and $E_\gamma^{\U}$ are compatible, contradicting Claim \ref{clai.incomp}. This shows that there is some $\alpha<\theta^+$ such that, letting $\P$ and $\Q$ be the last models of $\T_\alpha$ and $\U_\alpha$, respectively, either $\P\init\Q$ or $\Q\init\P$.
+
+\qquad It remains to show that no drops in model or degree occur on the $\M$-to-$\P$ branch if $\P\init\Q$ and vice versa with the $\M$-to-$\Q$ branch if $\Q\init\P$. If $\P\pinit\Q$ and the $\M$-to-$\P$ branch dropped in model or degree then Theorem \ref{theo.itprops} implies that $\P$ isn't sound, but this contradicts that $\Q$ is a premouse. We get the same conclusion if we assume $\Q\pinit\P$, so we can assume that $\P=\Q$.
+
+\qquad Assume that both the $\M$-to-$\P$ and $\M$-to-$\Q$ branch drops in model or degree. Say $\lh\T=\beta+1$ and $\lh\U=\gamma+1$. Then by Theorem \ref{theo.itprops}, $\deg^{\T}(\beta)=\deg^{\U}(\gamma)=n$, where $n$ is largest such that $\P=\Q$ is $n$-sound. But then pick $\xi+1$ and $\eta+1$ to be the last drop of $\T$ and $\U$, respectively. We'll then have that $\core_{n+1}(\M_{\xi+1}^*)=\M_{\xi+1}^*$ as it's a drop, so that Theorem \ref{theo.itprops} implies that the map $i_{\xi+1,\beta}^{\T}\circ i_{\xi+1}^{*\T}$ is the core embedding $\core_{n+1}(\P)\to\core_n(\P)$. This is completely analogous for $\eta+1$, so that
+\eq{
+i_{\xi+1,\beta}^{\T}\circ i_{\xi+1}^{*\T}&=\text{core embedding }\core_{n+1}(\P)\to\core_n(\P)\\
+&=\text{core embedding }\core_{n+1}(\Q)\to\core_n(\Q)\\
+&=i_{\eta+1,\gamma}^{\U}\circ i_{\eta+1}^{*\U}.
+}
+
+But then, analogously to what we did in Claim \ref{clai.incomp}, we see that the extender used in $i_{\xi+1}^{*\T}$ is compatible with the extender used in $i_{\gamma+1}^{*\U}$, contradicting the same Claim \ref{clai.incomp}. We conclude thus that no drops in model or degree occur in the two branches.
+}
+
+Comparison can also be used to define a pre-wellordering on all mice, the so-called \textit{mouse order}, defined in the obvious way. We will not be using this fact, however. An interesting consequence of comparison is that for sufficiently nice mice it implies an actual direct comparison of the mice.
+
+\coro{
+\label{coro.soundcompare}
+Let $\M$ and $\N$ be sound $(\omega,\omega_1+1)$-mice $\omega$-projecting to $\omega$. Then either $\M\init\N$ or $\N\init\M$.
+}
+\proofretard{
+As both mice are sound and project to $\omega$ they are both countable, so we have enough iterability to compare them by Comparison Theorem \ref{theo.comparison}. Assume thus without loss of generality that we have the comparison
+
+\begin{center}
+\begin{tikzcd}[column sep=0]
+\P & \init & \Q\\\\
+\M \arrow[uu,tree={}{}] && \N \arrow[uu,treeplain={}{}]
+\end{tikzcd}
+\end{center}
+
+and that the $\M$-to-$\P$ branch doesn't drop in model or degree. If the $\M$-to-$\P$ branch had length $>0$ then the first extender $E$ used along the branch would satisfy $\crit E<\rho(\M)=\omega$, $\contr$. Thus $\M=\P$.
+
+\qquad Assume without loss of generality that the $\N$-to-$\Q$ branch has length $>0$, because otherwise we're done. As $\rho(\N)=\omega$ the rules of the iteration game ensures that $\Q$ is not sound, meaning then that $\P\pinit\Q$. Since $\rho(\M)=\omega$, $\M$ is countable in $\Q$. This means that $\M\init\N$ since ultrapowers can't add any reals.$\qed$\\
+}
+
+
+\section{Copying construction}
+
+These remaining two sections will provide tools needed in comparison arguments. We start off with the \textit{copying construction}, making it possible to ``lift" embeddings between phalanxes to iteration trees on them. The construction of the ``copied tree" will consist of successive applications of the following \textit{shift lemma}.
+
+\lemm[Shift lemma]{
+\label{lemm.shift}
+Let $\bar\N,\bar\M,\N,\M$ be premice, $n\leq\omega$, $\psi:\bar\N\to\N$ a (near) $0$-embedding and $\pi:\bar\M\to\M$ a (near) $n$-embedding. Writing $\bar\kappa:=\crit\dot F^{\bar\N}$, assume that
+\begin{itemize}
+\item $\bar\M$ and $\bar\N$ agree below $\bar\kappa^{+\bar\M}$;
+\item $\bar\kappa^{+\bar\M}\leq\bar\kappa^{+\bar\N}$;
+\item $\pi\restr\bar\kappa^{+\bar\M}=\psi\restr\bar\kappa^{+\bar\M}$;
+\item $\bar\kappa<\rho_n(\bar\M)$ and $\ult_n(\M,\dot F^{\N})$ is wellfounded.\\
+\end{itemize}
+
+Then there is a unique (near) $n$-embedding $\sigma:\ult_n(\bar\M,\dot F^{\bar\N})\to\ult_n(\M,\dot F^{\N})$ satisfying that
+\begin{enumerate}
+\item $\ult_n(\bar\M,\dot F^{\bar\N})$ and $\bar\N$ agree below $\on^{\bar\N}$;
+\item $\sigma\restr\on^{\bar\N}=\psi\restr\on^{\bar\N}$;
+\item The following diagram commutes:
+\cd{
+\ult_n(\bar\M,\dot F^{\bar\N})\ar[r]^{\sigma} & \ult_n(\M,\dot F^{\N})\\
+\bar\M\ar[u]^i\ar[r]^{\pi} & \M\ar[u]_j
+}
+\end{enumerate}
+}
+\proof{
+We start by showing uniqueness. Let $\sigma$ satisfy all the above properties. By (ii), we get for every $a\in[\lh\dot F^{\bar\N}]^{<\omega}$ that
+\eq{
+\sigma[a,\id]=\sigma(a)=\psi(a)=[\psi(a),\id]=[\psi(a),\pi(\id)]. \tag*{$(1)$}
+}
+
+By (iii) we also get that $\sigma i=j\pi$, so that for any $\bar x\in\bar\M$ it holds that
+\eq{
+\sigma[\{\kappa\},c_{\bar x}]&=(\sigma i)(\bar x)=(j\pi)(\bar x)=[\{\kappa\},c_{\pi(\bar x)}]\\
+&=[\{\kappa\},\pi(c_{\bar x})]=[\psi(\{\kappa\}),\pi(c_{\bar x})]. \tag*{$(2)$}
+}
+
+Now let $[a,f]\in\ult_n(\bar\M,\dot F^{\bar\N})$ be arbitrary. Then $[a,f]$ is $\b{r\Sigma}_{n+1}$-definable with parameters from $a$ and $\ran i$, since if $<_{\bar\M}$ is the ($\Sigma_1$-definable) constructibility order on $\M$, $i"{<_{\bar\M}}$ is the corresponding ($\Sigma_1$-definable) order on the ultrapower. As $\sigma$ is $r\Sigma_{n+1}$ elementary by assumption, $\sigma[a,f]$ is also definable by the same definition, so $\sigma$ is uniquely characterized by what it does on $\lh\dot F^{\bar\N}$ and $\ran i$. Letting
+\eq{
+\sigma[a,f]:=[\psi(a),\pi(f)], \tag*{$(3)$}
+}
+
+it has both properties $(1)$ and $(2)$, so it is the unique embedding with these properties by the above argument.
+
+\qquad As for the existence, we have to check that $\sigma$ defined as in $(3)$ is actually an $n$-embedding satisfying (i)-(iii). To show that it's an $n$-embedding, let $\varphi$ be $r\Sigma_{n+1}$ and $[a_i,f_i]\in\ult_n(\bar\M,\dot F^{\bar\N})$ for $i=1,\hdots,l$. Then, setting $b:=\bigcup_i a_i$,
+\eq{
+\ult_n(\bar\M,\dot F^{\bar\N})\models\varphi[[a_i,f_i]]\quad&\text{iff}\quad\forall^{E_b}u:\bar\M\models\varphi[f_i^{a_i,b}(u)]\\
+&\text{iff}\quad\forall^{E_b}u:\M\models\varphi[\pi(f_i)^{a_i,b}(u)]\\
+&\text{iff}\quad\forall^{E_{\psi(b)}}u:\M\models\varphi[\pi(f_i)^{\psi(a_i),\psi(b)}(u)]\\
+&\text{iff}\quad\ult_n(\M,\dot F^{\N})\models\varphi[\sigma[a_i,f_i]],
+}
+
+so $\sigma$ is $r\Sigma_{n+1}$-elementary. Both ultrapowers are $n$-sound as $\pi$ is an $n$-embedding. As for the preservation of the standard parameter we have that, for $i\leq n$,
+\eq{
+\sigma(p_i(\ult_n(\bar\M,\dot F^{\bar\N})))&=(\sigma i)(p_i(\bar\M))=(j\pi)(p_i(\bar\M))=p_i(\ult_n(\M,\dot F^{\N})),
+}
+
+and for the projectum the $i<n$ case is analogous to standard parameter case. As for $\rho_n$ we split into the case where $\pi$ is a near $n$-embedding and an $n$-embedding. If we're in the near case then we have that
+\eq{
+\rho_n(\ult_n(\M,\dot F^{\N}))&\leq\sup(j\pi)"\rho_n(\bar\M)\\
+&=\sup(\sigma i)"\rho_n(\bar\M)\\
+&=\sup\sigma"\rho_n(\ult_n(\bar\M,\dot F^{\bar\N})),
+}
+
+making $\sigma$ a near $n$-embedding as well. If $\pi$ was an $n$-embedding then the above inequality would be an equality, making $\sigma$ an $n$-embedding as well. Now, (ii) and (iii) holds by construction of $\sigma$, so we only need to check (i). Setting $\lambda:=\bar\kappa^{+\bar\M}$, we have by assumption that $\M|\lambda=\bar\N|\lambda$, so that
+\eq{
+\ult_n(\bar\M|\lambda,\dot F^{\bar\N})=\ult_n(\bar\N|\lambda,\dot F^{\bar\N})
+}
+
+as well. This means that $\ult_n(\bar\M,\dot F^{\bar\N})$ and $\ult_n(\bar\N,\dot F^{\bar\N})$ agree below $i(\lambda)$, so they also agree below $\on^{\bar\N}$ as $\on^{\bar\N}=\lh\dot F^{\bar\N}$ and $\dot F^{\bar\N}$ is short. Since $\bar\N$ also agrees with $\ult_n(\bar\N,\dot F^{\bar\N})$ below $\lh\dot F^{\bar\N}=\on^{\bar\N}$ by coherence, we get (i).
+}
+
+In our formulation of the copying construction we will need the notions of (near) $k$-embeddings between phalanxes and also between iteration trees.
+
+\defin{
+Let $k\leq\omega$ and let $\Phi$ and $\Psi$ be phalanxes. Then a \textbf{(near) $k$-embedding between phalanxes} $\pi:\Phi\to\Psi$ is a sequence $\pi:=\bra{\pi_\alpha\mid\alpha<\lh\Phi}$ such that
+\begin{enumerate}
+\item $\pi_\alpha:\M_\alpha^{\Phi}\to\M_\alpha^{\Psi}$ is a (near) $k$-embedding;
+\item If $\alpha\leq\beta<\lh\Phi$ then $\pi_\alpha\restr\lambda_\alpha^{\Phi}=\pi_\beta\restr\lambda_\alpha^{\Phi}$.\dit
+\end{enumerate}
+}
+
+\defin{
+Let $k\leq\omega$ and $\T,\U$ be $k$-iteration trees on phalanxes $\Phi, \Psi$, respectively. Then a \textbf{(near) $k$-embedding between $k$-iteration trees} $\theta:\T\to\U$ is a pair $\theta=\bra{\vec\pi,\varphi}$, where $\vec\pi:=\bra{\pi_\alpha\mid\alpha<\lh\T}$ is a sequence and $\varphi:\lh\T\to\lh\U$ is injective and tree order preserving such that
+\begin{enumerate}
+\item $\bra{\pi_\alpha\mid\alpha<\lh\Phi}$ is a (near) $k$-embedding $\Phi\to\Psi$;
+\item $\varphi\restr\lh\Phi=\id$;
+\item $\pi_\alpha:\M_\alpha^{\T}\to\M_{\varphi(\alpha)}^{\U}$ is a (near) $\deg^{\T}(\alpha)$-embedding;
+\item If $\beta<\alpha$ and $E_\beta$ is the last extender of the initial segment $\P$ of $\M_\beta$ then $\pi_\beta\restr\on^{\P}=\pi_\alpha\restr\on^{\P}$;
+\item If $\beta<_T\alpha$ and $(\beta,\alpha]_T\cap D^{\T}=\emptyset$ then
+\cd{
+\M_\alpha^{\T}\ar[r]^-{\pi_\alpha} & \M_{\varphi(\alpha)}^{\U}\\
+\M_\beta^{\T}\ar[u]^{i_{\beta,\alpha}^{\T}}\ar[r]^-{\pi_\beta} & \M_{\varphi(\beta)}^{\U}\ar[u]_-{i_{\varphi(\beta),\varphi(\alpha)}^{\U}}
+}
+
+commutes.\dit
+\end{enumerate}
+}
+
+\lemm[Copying construction]{
+\label{lemm.copy}
+Let $k\leq\omega$, $\pi:\Phi\to\Psi$ a (near) $k$-embedding between phalanxes of the same length and $\T$ a $k$-iteration tree on $\Psi$. Then there is a $k$-iteration tree $\pi\T$ on $\Phi$ and a (near) $k$-embedding $\vec\pi:\T\to\pi\T$ between $k$-iteration trees.
+}
+\proof{
+Let $\M_\alpha$ be the models and $i_{\alpha,\beta}$ the embeddings of $\T$. We will define $\pi\T\restr\alpha$ and $\pi_\alpha$ recursively, where we write $\N_\alpha$ and $j_{\alpha,\beta}$ for the models and embeddings of $\pi\T$, and inductively verify (iii)-(v) in the definition of a (near) $k$-embedding between $k$-iteration trees, where we set $\varphi:=\id$.
+
+\qquad For every $\alpha<\lh\Phi$ set $\N_\alpha:=\M_\alpha^{\Psi}$ and $\pi_\alpha$ the $\alpha$'th component of $\pi$, so that (i) and (ii) holds. For $\lambda\in[\lh\Phi,\lh\T)$ limit, define
+\eq{
+\N_\lambda:=\colimm_{\alpha\in b-\sup(b\cap D^{\T})}\N_\alpha
+}
+
+where $b:=[\Root\lambda,\lambda)_T$, and let $\pi_\lambda:\M_\lambda\to\N_\lambda$ be $\pi_\lambda(j_{\alpha,\lambda}(x)):=i_{\alpha,\lambda}(\pi_\alpha(x))$. Then (v) holds by definition of $\pi_\lambda$ and both (iii) and (iv) hold by just using the definition of direct limit.
+
+\qquad Assume now that $\alpha=\beta+1$ and that $\pi\T\restr\alpha$ and $\pi_\gamma$ are defined for $\gamma<\alpha$. We then want to apply the Shift Lemma \ref{lemm.shift}, so with the notation as in that lemma, set:
+\begin{itemize}
+\item $\bar\N$ is the initial segment of $\M_\beta$ whose last extender is $E_\beta$;
+\item $\N$ is $\pi_\beta(\bar\N)$ if $\bar\N\pinit\M_\beta$ and $\N_\beta$ otherwise;
+\item $\psi:=\pi_\beta\restr\bar\N:\bar\N\to\N$;
+\item $F_\beta:=\dot F^{\N}$;
+\item $\bar\M:=\M_\alpha^*=\M_\eta|\gamma$ with $\eta:=\pred_T(\alpha)$;
+\item $\M$ is $\N_\eta|\pi_{\eta(\gamma)}$ if $\gamma\in\M_\eta$ and $\N_\eta$ otherwise;
+\item $\pi:=\pi_\eta\restr\bar\M:\bar\M\to\M$.\\
+\end{itemize}
+
+We have to verify the assumptions in the Shift Lemma. Firstly, $\bar\M$ and $\bar\N$ should agree below $\bar\kappa^{+\bar\M}$, where $\bar\kappa:=\crit\dot F^{\bar\N}$, but this amounts to showing that $\M_\alpha^*$ agrees with $\M_\beta$ below $\crit E_\beta^{+\bar\N}$, but that's true by definition of $\M_\alpha^*$.
+
+\qquad Secondly, we have to show that $\bar\kappa^{+\bar\M}\leq\bar\kappa^{+\bar\N}$, which amounts to showing that $\crit E_\beta^{+\M_\alpha^*}\leq\crit E_\beta^{+\M_\beta}$, which again holds by definition of $\M_\alpha^*$. Thirdly we're to show that $\pi$ and $\psi$ agree below $\bar\kappa^{+\bar\M}$, i.e. that $\pi_\beta$ and $\pi_\eta$ agree below $\crit E_\beta^{+\M_\alpha^*}$. But $\crit E_\beta^{+\M_\alpha^*}<\lh E_\eta$ and $\pi_\beta$ agrees with $\pi_\eta$ below $\lh E_\eta$ by (iv). Penultimately we're to show that $\crit E_\beta<\rho_{\deg^{\T}(\alpha)}(\M_\alpha^*)$, but this holds by definition of $\M_\alpha^*$. Lastly, $\pi_\alpha$ should be a (near) $\deg^{\T}(\alpha)$-embedding, but $\pi_\eta$ is a (near) $\deg^{\T}(\eta)$-embedding and $\deg^{\T}(\eta)\geq\deg^{\T}(\alpha)$ by Theorem \ref{theo.itprops}. Thus, the Shift Lemma \ref{lemm.shift} grants us with a (near) $\deg^{\T}(\alpha)$-embedding
+\eq{
+\sigma:\M_\alpha=\ult_{\deg^{\T}(\alpha)}(\M_\alpha^*,E_\beta)\to\ult_{\deg^{\T}(\alpha)}(\N_\alpha^*,F_\beta)
+}
+
+Let $n:=\deg^{\T}(\alpha)$ and $m:=\deg^{\pi\T}(\alpha)$, where $m$'s value is given by the rules of the game. We claim that $n\leq m$. Indeed, if $m<n$ then $\crit E_\beta<\rho_n(\M_\alpha^*)$, so by $n$-soundness of $\M_\alpha^*$ it holds that $\rho_n(\M_\alpha^*)$ is an $\M_\alpha^*$-cardinal, so that $\crit E_\beta<\zeta$ for some $\zeta<\rho_n(\M_\alpha^*)$. Then
+\eq{
+\crit F_\beta=\pi_\eta(\crit E_\beta)<\pi_\eta(\zeta)\leq\sup\pi"\rho_n(\M_\alpha^*)\leq\rho_n(\N_\alpha^*),
+}
+
+contradicting maximality of $m$. If $\ult_m(\N,F_\alpha)$ is illfounded set $\pi\T:=\pi\T\restr\alpha+1$. Otherwise let $\pi_\alpha$ be the composition
+\cd{
+\M_\alpha\ar[r]^-\sigma & \ult_n(\N_\alpha^*,F_\beta)\ar[r]^-\tau & \ult_m(\N_\alpha^*,F_\beta)=\N_\alpha,
+}
+
+with $\tau$ being the natural map and $\sigma$ the shift map. It remains to show that $\pi\T\restr\alpha+2$ and $\pi_{\alpha+1}$ satisfy (iii)-(v). But we checked (iii) above and (iv)-(v) are directly by the Shift Lemma \ref{lemm.shift}.
+}
+
+\section{Dodd-Jensen Lemma}
+
+The second tool we will need is the Dodd-Jensen Lemma. Intuitively it says that iteration maps are ``minimal" in some sense. Before we state the Dodd-Jensen Lemma, we need to introduce some notions. The first one is a generalisation of the iteration game, in which there are several \textit{rounds}.
+
+\qquad Let $k<\omega$, $\theta,\alpha\in\on$ and $\M$ a $k$-sound premouse. Then the \textbf{iteration game with rounds}, written $\G_k(\M,\alpha,\theta)$, is played almost in the same way as the iteration game, the difference being that instead of the two players playing iteration trees, they play sequences $\vec T=\bra{\T_\gamma\mid\gamma<\alpha}$ of iteration trees, which we will call \textbf{stacks}. We will also denote the $\T_\gamma$'s in a given stack as the \textbf{rounds} in the game.
+
+\qquad The first round is just a playing $\G_k(\M,\theta)$. In the $(\beta+1)$'st round, let first $\Q$ be the last model of $\T_\beta$ and $q\leq\omega$ the degree of $\Q$ in $\T_\beta$. Then player I picks an initial segment $\P\init\Q$ and $i\leq\omega$ such that $i\leq q$ if $\P=\Q$. Then the $(\beta+1)$'st round is a play of $\G_i(\P,\theta)$, but where player I is allowed to skip to the next round if he's suddenly in trouble.
+
+\qquad If $\lambda>0$ is a limit, then in the $\lambda$'th round let $\Q$ be the direct limit along the unique cofinal branch in $\oplus_{\gamma<\lambda}\T_\gamma$. If this direct limit is illfounded, however, player I wins. Then $q\leq\omega$ is defined as the eventual values of the degrees from the previous rounds, and again player I picks $\P$ and $i$ and the $\lambda$'th round is then a play of $\G_i(\P,\theta)$ once again, where we again allow player I to skip to the next round.
+
+\defi{
+Let $k\leq\omega$ and $\alpha,\theta\in\on$. Then a \textbf{$(k,\alpha,\theta)$-iteration strategy} for $\M$ is a winning strategy for player II in $\G_k(\M,\alpha,\theta)$. $\M$ is called \textbf{$(k,\alpha,\theta)$-iterable} and a \textbf{$(k,\alpha,\theta)$-mouse}, if there exists a $(k,\alpha,\theta)$-iteration strategy for $\M$. Furthermore we say $\M$ is \textbf{fully $k$-iterable} if it's $(k,\on,\on)$-iterable, \textbf{fully iterable} if it's $(\omega,\on,\on)$-iterable and $\M$ is a \textbf{mouse} if it's a fully iterable premouse.
+}
+
+\defi{
+Let $\pi:\M\to\N$ be a near $k$-embedding and $\Sigma$ a $(k,\alpha,\theta)$-iteration strategy for $\N$. Then the \textbf{pullback strategy of $\Sigma$ under $\pi$} is the strategy $\Sigma^\pi$ on $\M$ such that for any stack $\vec\T$, $\vec\T$ follows $\Sigma^\pi$ iff $\pi\T$ follows $\Sigma$.
+}
+
+\theo{
+Let $\N$ be a $(k,\alpha,\theta)$-mouse and let $\pi:\M\to\N$ be a near $k$-embedding. Then the pullback strategy along $\pi$ is a $(k,\alpha,\theta)$-iteration strategy on $\M$, so that $\M$ in particular is a $(k,\alpha,\theta)$-mouse as well.
+}
+\proof{
+Let $\Sigma$ be the iteration strategy for $\N$ and $\Sigma^\pi$ the pullback strategy for $\M$. Assume $\Sigma^\pi$ is not winning for player II, so that we have an iteration tree $\T$ on $\M$ following $\Sigma^\pi$ of limit length, where $\Sigma^\pi(\T)$ is an illfounded cofinal branch of $\T$. But then $\pi\T$ follows $\Sigma$, making $\Sigma(\pi\T)$ illfounded as well, $\contr$.
+}
+
+
+\defi{
+A stack $\vec\T$ is \textbf{$(k,\lambda,\theta)$-unambiguous} if whenever $\Sigma$ is a $(k,\lambda,\theta)$-iteration strategy and $\alpha$ is any limit ordinal, $\Sigma(\vec\T\restr\alpha)$ is the unique cofinal branch $b$ of $\vec\T\restr\alpha$ such that $\M_b^{\vec\T}$ is $(\deg b,\lambda,\theta)$-iterable.
+}
+
+Recall that an ordinal $\lambda$ is \textbf{additively closed} if $\gamma+\beta<\lambda$ for every $\gamma,\beta<\lambda$. Examples of additively closed ordinals include all cardinals and also ordinals of the form $\delta^\varepsilon$ with $\delta$ a limit ordinal and $\varepsilon>1$.
+
+\theo[Dodd-Jensen]{
+\label{theo.DJ}
+Let $\lambda$ be additively closed, $\M$ a $(k,\lambda,\theta)$-mouse and $\vec\T$ a $(k,\lambda,\theta)$-unambiguous stack of length $\alpha+1$ \todo{Don't we only need $\lh\vec\T<\lambda$ and $\deg^{\vec\T}=k$?} with last model $\P$. Assume $\deg^{\vec\T}(\alpha)=k$ and let $\pi:\M\to\N$ be a near $k$-embedding with $\N\init\ \P$. Then
+\begin{enumerate}
+\item $\N=\P$;
+\item the $\M$-to-$\P$ branch of $\vec\T$ does not drop in model or degree;
+\item $i^{\vec\T}_{0,\alpha}(x)\leq_{\P}\pi(x)$ for every $x\in\M$.
+\end{enumerate}
+}
+\proof{
+Let $\Sigma$ be a $(k,\lambda,\theta)$-iteration strategy for $\M$. For (i), assume for a contradiction that $\N\pinit\ \P$. We will construct a play of $\G_k(\M,\lambda,\theta)$ which is according to $\Sigma$ but still losing for player II, given us our desired contradiction. First, we recursively define stacks $\vec\T_n$, premice $\M_n$ and embeddings $\pi_n:\M_n\to\M_{n+1}$ for $n<\omega$.
+
+\qquad Set $\vec\T_0:=\vec\T$, $\M_0:=\M$, $\M_1:=\N$ and $\pi_0:=\pi$. For successors $n+1$, firstly let $\vec\T_{n+1}:=\pi_n\vec\T_n$ and let $\P$ and $\Q$ be the last models of $\vec\T_n$ and $\vec\T_{n+1}$, respectively. Then the copying construction \ref{lemm.copy} gives us an embedding \linebreak $\sigma:\P\to\Q$. Assuming inductively that $\M_{n+1}\pinit\ \P$, we get that $\M_{n+1}\in\P$, so we can then set $\M_{n+2}:=\sigma(\M_{n+1})$ and $\pi_{n+1}:=\sigma\restr\M_{n+1}$.
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+% First tree
+\draw (1.5,0) -- (1.1,1) -- (1.9,1) -- (1.5,0);
+\node at (0.8,0.5) {$\vec\T$};
+\node at (1.45,-0.3) {$\M$};
+
+% Second tree
+\draw (4.5,0) -- (4.1,1) -- (4.9,1) -- (4.5,0);
+\draw (4.5,1) -- (4.1,2) -- (4.9,2) -- (4.5,1);
+\node at (3.8,0.5) {$\vec\T$};
+\node at (3.7,1.5) {$\pi_0\vec\T$};
+\node at (4.45,-0.3) {$\M$};
+
+% Third tree
+\draw (7.5,0) -- (7.1,1) -- (7.9,1) -- (7.5,0);
+\draw (7.5,1) -- (7.1,2) -- (7.9,2) -- (7.5,1);
+\draw (7.5,2) -- (7.1,3) -- (7.9,3) -- (7.5,2);
+\node at (6.8,0.5) {$\vec\T$};
+\node at (6.7,1.5) {$\pi_0\vec\T$};
+\node at (6.6,2.5) {$\pi_1\pi_0\vec\T$};
+\node at (7.45,-0.3) {$\M$};
+
+% Arrows
+\draw [->] (1.6,0) -- (4,1);
+\node at (2.8,0.8) {$\pi_0$};
+\draw [->] (4.6,0) -- (7,1);
+\node at (5.8,0.8) {$\pi_0$};
+\draw [->] (4.6,1) -- (7,2);
+\node at (5.8,1.8) {$\pi_1$};
+
+% Dots
+\node at (8.8,1.5) {$\cdots$};
+\end{tikzpicture}
+\end{center}
+\caption{The construction of $\vec\T_\omega$}
+\label{fig.Tomega}
+\end{figure}
+
+\qquad Now set $\vec\T_\omega:=\bigoplus_{n<\omega}\vec\T_n$, see Figure \ref{fig.Tomega}. Since $\lh\vec\T_n=\lh\vec\T=\alpha+1<\lambda$ and $\lambda$ is additively closed, $\bigoplus_{i=0}^n\vec\T_i$ has length $<\lambda$ for every $n<\omega$, so that $\lh\vec\T_\omega\leq\lambda$, making $\vec\T_\omega$ indeed a play of $\G_k(\M,\lambda,\theta)$. But now $\vec\T_\omega$ has cofinally many drops (one at the beginning of each $\vec\T_n$), so $\vec\T_\omega$ is a losing play for player II. All that remains to show is that $\vec\T_\omega$ is still played according to $\Sigma$.
+
+\qquad To show this, we inductively show that $\bigoplus_{i=0}^n\vec\T_i$ is played according to $\Sigma$ for every $n<\omega$. The $n=0$ case is trivial. To show that $\bigoplus_{i=0}^{n+1}\vec\T_i$ is according to $\Sigma$ it's enough to show that given any branch in $\bigoplus_{i=0}^n\vec\T_i$ according to $\Sigma$, $\vec\T_{n+1}$ should be played according to the induced strategy $\Sigma_b$. But this is the case if and only if $\vec\T$ is played according to $(\Sigma_b)^{\pi_n\circ\cdots\circ\pi_0}$ since $\vec\T_{n+1}=(\pi_n\circ\cdots\circ\pi_0)\vec\T$, and because $\vec\T$ is $(k,\lambda,\theta)$-unambiguous and $(\Sigma_b)^{\pi_n\circ\cdots\circ\pi_0}$ is a $(k,\lambda,\theta)$-iteration strategy, this is indeed the case. Thus $\vec\T_\omega$ is according to $\Sigma$ as well, $\contr$.
+
+\qquad To show (ii), we construct $\M_n$, $\T_n$ and $\pi_n$ as above, except (i) now implies that $\M_{n+1}$ is the last model of $\T_n$. The $\M$-to-$\N$ branch does not drop in degree because $\deg^{\vec\T}(\alpha)=k=\deg^{\vec\T}(0)$ by assumption, so assume that it drops in model. Then the $\M_n$-to-$\M_{n+1}$ branch in $\vec\T_\omega$ drops for every $n<\omega$, making $\vec\T_\omega$ a losing play for player II again, giving the same contradiction as above, showing (ii).
+
+\qquad Lastly, assume that (iii) fails, so that we have some $x_0\in\M_0$ satisfying that $\pi_0(x_0)<_{\P}i_0(x_0)$. Recursively define $x_{n+1}\in\M_{n+1}$ as $x_{n+1}:=\pi_n(x_n)$. We claim that $x_{n+1}<_{\P}i_n(x_n)$ for every $n<\omega$. It holds for $n=0$ by assumption. Assuming $x_{n+1}<_{\P}i_n(x_n)$, we have that
+\eq{
+x_{n+2}=\pi_{n+1}(x_{n+1})<_{\P}(\pi_{n+1}\circ i_n)(x_n)=(i_{n+1}\circ\pi_n)(x_n)=i_{n+1}(x_{n+1}),
+}
+
+where we used that $\pi_{n+1}\circ i_n=i_{n+1}\circ\pi_n$ by the commutativity of the copy maps from the copy construction \ref{lemm.copy}, so the claim is shown. This entails once again that $\vec\T_\omega$ is a losing play for player II, $\contr$.
+}
+
+The assumption that $\vec\T$ is unambiguous is too strong for some applications, so we will need a weaker version of the Dodd-Jensen Lemma. Towards this, we will need the following notion.
+
+\defi{
+Let $\M$ and $\P$ be premice. Then $\P$ is \textbf{$(\M,k)$-large} if there is an initial segment $\Q\init\ \P$ and a near $k$-embedding $j:\M\to\Q$.
+}
+
+We can think of $\P$ being $(\M,k)$-large if it wins the comparison with $\M$, thus making it ``larger" than $\M$. Of course, the comparison need not exist, as we only require $\M$ and $\P$ to be premice.
+
+\qquad The idea of the iteration embedding being minimal in the Dodd-Jensen Lemma also applies to the weaker version of the lemma. Minimality will be the following notion.
+
+\defi{
+Let $\M$ be a countable premouse, $\P$ any premouse and $\vec e$ some enumeration of $\M$ in order-type $\omega$. Define an ordering $<_{\vec e}$ on $\M$ as $e_i<_{\vec e}e_j$ iff $i<j$. Then $j:\M\to\P$ is an \textbf{$\vec e$-minimal near $k$-embedding} if it's a near $k$-embedding which is $<_{\vec e}$-minimal. That is, whenever $\Q\init\ \P$ and $\pi:\M\to\Q$ is a near $k$-embedding, then $\Q=\P$ and letting $<_{\vec e}^*$ be the lexicographical wellordering on $\M^\omega$ induced by $<_{\vec e}$, $\bra{j(e_i)\mid i<\omega}<_{\vec e}^*\bra{\pi(e_i)\mid i<\omega}$.
+}
+
+Note that if $\P$ is $(\M,k)$-large and no $\Q\pinit\ \P$ is $(\M,k)$-large, there is an $\vec e$-minimal near $k$-embedding $j:\M\to\P$.
+
+\theo[Weak Dodd-Jensen]{
+\label{theo.wkDJ}
+Let $\M$ be a countable $(k,\omega_1,\theta)$-mouse with an enumeration $\vec e$ in order-type $\omega$. Then there is a $(k,\omega_1,\theta)$-iteration strategy $\Sigma$ for $\M$ such that whenever $\vec\T$ is a stack on $\M$ according to $\Sigma$ and $\P$ is an $(\M,k)$-large $\Sigma$-iterate of $\M$, the iteration embedding $i:\M\to\P$ exists and is an $\vec e$-minimal near $k$-embedding.
+}
+\proof{
+Let $\Gamma$ be any $(k,\omega_1,\theta)$-iteration strategy for $\M$. We will construct a stack $\vec\T$ according to $\Gamma$ with last model $\P$ and an $\vec e$-minimal near $k$-embedding $\pi:\M\to\P$ satisfying the following property called \textbf{strong $\vec e$-minimality}:
+
+\begin{quote}
+Let $u$ be the $\M$-to-$\Q$ branch of $\vec\T$. Then for any $(\M,k)$-large $\Gamma_u$-iterate $\R$, it holds that there's no drop in the $\Q$-to-$\R$ branch and $i\circ\pi$ is $\vec e$-minimal with $i:\Q\to\R$ the iteration map.
+\end{quote}
+
+Then we will show that $\Sigma:=(\Gamma_u)^\pi$ has the wanted property. Say that a stack $\vec\T$ is \textbf{suitable} if the last iteration tree in $\vec\T$ has a single model $\R$ which is $(\M,k)$-large but where every proper initial segment of $\R$ is not $(\M,k)$-large. To obtain our $\vec\T$ and $\pi$, we will recursively construct suitable stacks $\vec\T^n$ for every $n<\omega$.
+
+\qquad Set $\vec\T^0$ to be a single iteration tree with $\M$ as the only model. Assume now that $\vec\T^n$ is constructed and that $\vec\T^{k+1}$ extends $\vec\T^k$ for every $k<n$. Let $\P_k$ be the last model of $\vec\T^k$ for every $k\leq n$.
+
+\begin{quote}
+\textbf{Case 1.} There is a suitable $\vec\U$ extending $\vec\T^n$ with last model $\P$ such that the $\P_n$-to-$\P$ branch has a drop.
+\end{quote}
+
+In this case set $\vec\T^{n+1}:=\vec\U$. If this is not the case, let $\tau:\M\to\P_n$ be an $\vec e$-minimal near $k$-embedding.
+
+\begin{quote}
+\textbf{Case 2.} $\tau$ is not strongly $\vec e$-minimal, i.e. that there is a suitable $\vec\U$ with last model $\Q$ extending $\vec\T^n$ such that $i\circ\tau:\M\to\P$ is not $\vec e$-minimal, where $i:\P_n\to\Q$ is the iteration map.
+\end{quote}
+
+In this case let $m<\omega$ be least such that for some suitable $\vec\U$ with last model $\Q$ and iteration map $j:\P_n\to\Q$, $\sigma(e_m)\neq (j\circ\tau)(e_m)$ with $\sigma:\M\to\Q$ being $\vec e$-minimal. Let $\vec\T^{n+1}:=\vec\U$.
+
+\begin{quote}
+\textbf{Case 3.} Otherwise.
+\end{quote}
+
+In this case $\tau$ is strongly $\vec e$-minimal, and we take $\vec\T:=\vec\T^n$, $\pi:=\tau$ and stop the construction. This finishes the construction of the $\vec\T^n$'s. We claim that the construction stops after finitely many steps. Suppose it doesn't. Note that the first case can only happen finitely many times as otherwise we would have an iteration tree with infinitely many drops.
+
+\qquad Assume thus that we're only in the second case after some $n_0<\omega$. This means that for every $n,m\geq n_0$ satisfying that $n\leq m$, we have a $k$-embedding $i_{n,m}:\P_n\to\P_m$. For $n\geq n_0$ set $\pi_n:\M\to\P_n$ to be $\vec e$-minimal, so that $\pi_n\leq_{\vec e}^* i_{m,n}\circ\pi_m$ for every $m,n\geq n_0$ such that $m<n$.
+
+\qquad Define $\P:=\colimm_n\P_n$. We claim that for any $j<\omega$, $(i_{n,m}\circ\pi_n)(e_j)=\pi_m(e_j)$ for sufficiently large $n$ and $m$. Indeed, if it wasn't the case then we would have that $(i_{m,\infty}\circ\pi_m)(e_j)<_{\vec e}^* (i_{n,\infty}\circ\pi_n)(e_j)$ for every $m,n\geq n_0$ such that $n<m$. But then $<_{\vec e}^*$ is illfounded, $\contr$.
+
+\qquad Let $\vec\T$ be the union of all the $\vec\T^n$'s, and with a single last iteration tree with $\P$ as the only model. We claim that $\vec\T$ is suitable. Define $\pi:\M\to\P$ as $\pi(e_j)$ being the eventual value of $(i_{n,\infty}\circ\pi_n)(e_j)$ as $n\to\infty$. Then $\pi$ is clearly a near $k$-embedding, so $\P$ is $(\M,k)$-large. Say now that there was an $(\M,k)$-large proper initial segment $\R\pinit\P$. Then the union of all the $\vec\T^n$'s with a single last iteration tree with $\R$ being the only model, could be used as a witness for the first case at any stage $n>n_0$, $\contr$.
+
+\qquad It remains to show that $\pi$ is strongly $\vec e$-minimal. To show $\vec e$-minimality, say it's not the case and let $\sigma:\M\to\P$ be an $\vec e$-minimal near $k$-embedding such that $\sigma<_{\vec e}^*\pi$ and let $m_0<\omega$ be least such that $\sigma(e_{m_0})\neq\pi(e_{m_0})$ and let $l<\omega$ be large enough such that $l>n_0$ and $\pi(e_j)=(i_{l,\infty}\circ\pi_l)(e_j)$ for every $j\leq m_0$, so that $m_0<m$, where $m$ is as in the second case at stage $l$ -- this is because $\pi_{l+1}(e_j)=(i_{l,l+1}\circ\pi_l)(e_j)$ for every $j\leq m_0$ and $\pi_{l+1}$ is $\vec e$-minimal. But we also have that $\P$ and $\sigma$ can serve as the witnesses for the second case at stage $l$, so that $m\leq m_0$, $\contr$. Thus $\pi$ is $\vec e$-minimal.
+
+\qquad Now to show that $\pi$ is in fact strongly $\vec e$-minimal. Let $\R$ be an $(\M,k)$-large $\Gamma_u$-iterate with $u$ the $\M$-to-$\P$ branch. Then there is a stack $\vec\U$ extending $\vec\T$ such that the last tree in $\vec\U$ has the single model $\R$. If there was a drop on the $\P$-to-$\R$ branch then we could, just as above, show that this gives a witness to the first case above $n_0$, $\contr$. If $i:\P\to\R$ is the iteration map such that $i\circ\pi$ is \textit{not} $\vec e$-minimal, then this entails the same ``second case" contradiction as above. Thus $\pi$ is strongly $\vec e$-minimal.
+
+\qquad We now want to show that $\Sigma:=(\Gamma_u)^\pi$ has the property in the theorem. Let thus $\vec\U$ be a stack on $\M$ played according to $\Sigma$. Then $\pi\vec\U$ is a stack on $\P$ played according to $\Gamma_u$. Let $\R$ be an $(\M,k)$-large $\Sigma$-iterate of $\M$ and let $\pi\R$ be the copied version of $\R$ on $\pi\vec\U$. Then $\pi\R$ is an $(\M,k)$-large $\Gamma_u$-iterate, so by strongness there's no drop in the $\P$-to-$\pi\R$ branch, implying that $i:\P\to\pi\R$ exists and $i\circ\pi$ is $\vec e$-minimal. But then the iteration map $j:\M\to\R$ exists as well as $\vec\U$ and $\pi\vec\U$ have the same drop structure, and is $\vec e$-minimal, as we wanted to show.
+}
+
+We call the property $\Sigma$ has in the conclusion of Theorem \ref{theo.wkDJ} the \textbf{$\vec{\b e}$-weak Dodd-Jensen property}. Note that the main difference between weak and strong Dodd-Jensen is that the weak version only implies the \textit{existence} of a well-behaved strategy, where the strong version says that \textit{every} strategy is well-behaved. Another thing to note is that the minimality in the weak version is only lexicographically, where it's pointwise in the strong version.
+
+\qquad One thing to note is that the existence of the well-behaved strategy is accompanied by a uniqueness result. We won't be needing this fact however, but we include it here for independent interest.
+
+\theo{
+\label{theo.uniquewkDJ}
+Let $\vec e$ be an enumeration of a countable $k$-sound premouse $\M$ in order-type $\omega$. Then there exists at most one $(k,\omega_1+1)$-iteration strategy for $\M$ with the $\vec e$-weak Dodd-Jensen property.
+}
+\proofretard{
+Assume that $\Sigma$ and $\Gamma$ are distinct such strategies. Let $\T$ be an iteration tree played according to both $\Sigma$ and $\Gamma$ of limit length $\lambda$, such that $\Sigma(\T)\neq\Gamma(\T)$. Set $\U^*$ and $\V^*$ to be iteration trees extending $\T$ with $\Sigma(\T)$ and $\Gamma(\T)$, respectively. Let $\P^*$ and $\Q^*$ be the last models of $\U^*$ and $\V^*$, respectively. Now assume without loss of generality that $\Q^*$ iterates past $\P^*$ in their coiteration, see Figure \ref{fig.uniquewkDJ}.
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzcd}[column sep=0]
+    \P & \init & \Q\\\\
+    \P^* \arrow[uu,tree={i^*}{\hat\U}] & \neq & \Q^* \arrow[uu,tree={j^*}{\hat\V}]\\\\
+    \M \arrow[uu,treeplain={}{\U^*}]\arrow[uuuu, bend left=60, "i"] & = & \M \arrow[uu,treeplain={}{\V^*}] \arrow[uuuu, bend right=60, "j"']
+    \end{tikzcd}
+  \end{center}
+\caption{The situation in the proof of Theorem \ref{theo.uniquewkDJ}.}
+\label{fig.uniquewkDJ}
+\end{figure}
+
+\qquad Set $\U:=\U^*\oplus\ \hat\U$ and $\V:=\V^*\oplus\ \hat\V$. The Comparison Theorem \ref{theo.comparison} implies that the $\M$-to-$\P$ branch doesn't drop, so we get iteration maps $i^*:\P^*\to_k\P$ and $i:\M\to_k\P$. This also means that $\Q$ is $(\M,k)$-large, so since $\Gamma$ has the $\vec e$-weak Dodd-Jensen property, we also get iteration maps $j^*:\Q^*\to_k\Q$ and $j:\M\to\Q$, the latter of which is $\vec e$-minimal.
+
+\qquad But then no proper initial segment of $\Q$ is $(\M,k)$-large, so that $\P=\Q$. As $\Sigma$ also has the $\vec e$-weak Dodd-Jensen property, $i$ is also $\vec e$-minimal, so that $i=j$. Let now $\gamma$ be the largest ordinal such that $\gamma\in[0,\alpha]_U\cap[0,\beta]_V$, which exists because branches in iteration trees are closed below their sups. Note that $\gamma\leq\lambda$ (recall that $\lambda=\lh\T$), because $\P^*\neq\Q^*$, so we can define $\nu:=\sup\{\nu_{E_\xi^{\T}}\mid\xi<_T\gamma\}$.
+
+\qquad Since every member of $\R:=\M_\gamma^{\T}$ is of the form $\tau^{\R}[a]$ for a Skolem term $\tau$ of some $r\Sigma_n$-formula and $a\in[\nu]^{<\omega}$, and since $\crit i^*,\crit j^*\geq\nu$ because generators aren't moved along branches of iteration trees, we get that
+\eq{
+i^*(\tau^{\R}[a])&=i(\tau^{\M})[i^*(a)]\\
+&=i(\tau^{\M})[a]\\
+&=j(\tau^{\M})[a]\\
+&=j(\tau^{\M})[j^*(a)]\\
+&=j^*(\tau^{\R}[a]),
+}
+
+so that $i^*=j^*$. Define now $\xi+1\in(\gamma,\alpha]_U$ and $\sigma+1\in(\gamma,\beta]_V$ to be the immediate successors of $\gamma$ in $\U$ and $\V$. Since $i^*=j^*$, the extenders $E_\xi^{\U}$ and $E_\sigma^{\V}$ are compatible. If $\xi<\lambda$ or $\sigma<\lambda$ then this is a contradiction as no two extenders in the same iteration tree can be compatible by Proposition \ref{prop.extnotcomp}. Otherwise, if $\xi,\sigma\geq\lambda$, we have a contradiction as well, since no two extenders used in a coiteration can be compatible by Claim \ref{clai.incomp}. Thus $\Sigma$ and $\Gamma$ cannot be distinct.
+$\qed$}

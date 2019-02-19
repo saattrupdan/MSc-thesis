@@ -1,0 +1,728 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Cooper%
+\ \BBA {} Truss%
+}{%
+Cooper%
+\ \BBA {} Truss%
+}{%
+{\protect \APACyear {1997}}%
+}]{%
+Colloquium97}
+\APACinsertmetastar {%
+Colloquium97}%
+\begin{APACrefauthors}%
+Cooper, S.%
+\BCBT {}\ \BBA {} Truss, J.%
+\end{APACrefauthors}%
+\ (\BEDS).
+\unskip\
+\newblock
+\APACrefYear{1997}.
+\newblock
+\APACrefbtitle {Sets and proofs: invited papers from Logic Colloquium '97,
+  European Meeting of the Association for Symbolic Logic} {Sets and proofs:
+  invited papers from logic colloquium '97, european meeting of the association
+  for symbolic logic}.
+\newblock
+\APACaddressPublisher{}{Cambridge University Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Devlin%
+}{%
+Devlin%
+}{%
+{\protect \APACyear {1984}}%
+}]{%
+Devlin}
+\APACinsertmetastar {%
+Devlin}%
+\begin{APACrefauthors}%
+Devlin, K\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1984}.
+\newblock
+\APACrefbtitle {Constructibility} {Constructibility}.
+\newblock
+\APACaddressPublisher{}{Springer-Verlag}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Dodd%
+\ \BBA {} R.B.%
+}{%
+Dodd%
+\ \BBA {} R.B.%
+}{%
+{\protect \APACyear {1981}}%
+}]{%
+DJ1}
+\APACinsertmetastar {%
+DJ1}%
+\begin{APACrefauthors}%
+Dodd, A.%
+\BCBT {}\ \BBA {} R.B., J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1981}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The core model} {The core model}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Ann. Math. Logic}{20}{}{43--75}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Dodd%
+\ \BBA {} R.B.%
+}{%
+Dodd%
+\ \BBA {} R.B.%
+}{%
+{\protect \APACyear {1982}}%
+{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+DJ2}
+\APACinsertmetastar {%
+DJ2}%
+\begin{APACrefauthors}%
+Dodd, A.%
+\BCBT {}\ \BBA {} R.B., J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1982{\protect \BCnt {1}}}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The covering lemma for K} {The covering lemma for
+  k}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Ann. Math. Logic}{22}{}{1--30}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Dodd%
+\ \BBA {} R.B.%
+}{%
+Dodd%
+\ \BBA {} R.B.%
+}{%
+{\protect \APACyear {1982}}%
+{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
+DJ3}
+\APACinsertmetastar {%
+DJ3}%
+\begin{APACrefauthors}%
+Dodd, A.%
+\BCBT {}\ \BBA {} R.B., J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1982{\protect \BCnt {2}}}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The covering lemma for L[U]} {The covering lemma for
+  l[u]}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Ann. Math. Logic}{22}{}{127--135}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Foreman%
+\ \BBA {} Kanamori%
+}{%
+Foreman%
+\ \BBA {} Kanamori%
+}{%
+{\protect \APACyear {2010}}%
+}]{%
+Handbook}
+\APACinsertmetastar {%
+Handbook}%
+\begin{APACrefauthors}%
+Foreman, M.%
+\BCBT {}\ \BBA {} Kanamori, A.%
+\end{APACrefauthors}%
+\ (\BEDS).
+\unskip\
+\newblock
+\APACrefYear{2010}.
+\newblock
+\APACrefbtitle {Handbook of Set Theory} {Handbook of set theory}.
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jech%
+}{%
+Jech%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+Jech}
+\APACinsertmetastar {%
+Jech}%
+\begin{APACrefauthors}%
+Jech, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2013}.
+\newblock
+\APACrefbtitle {Set Theory} {Set theory}\ (\PrintOrdinal{Third Millenium
+  edition}\ \BEd).
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jensen%
+}{%
+Jensen%
+}{%
+{\protect \APACyear {1972}}%
+}]{%
+Jensen}
+\APACinsertmetastar {%
+Jensen}%
+\begin{APACrefauthors}%
+Jensen, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1972}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The fine structure of the constructible hierarchy} {The
+  fine structure of the constructible hierarchy}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Annals of mathematical logic}{4}{}{229--308}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jensen%
+}{%
+Jensen%
+}{%
+{\protect \APACyear {2003}}%
+}]{%
+RobustExtenders}
+\APACinsertmetastar {%
+RobustExtenders}%
+\begin{APACrefauthors}%
+Jensen, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{}{}.
+\newblock
+\APACrefbtitle {Robust extenders, handwritten notes.} {Robust extenders,
+  handwritten notes.}
+\newblock
+\APACrefnote{www.mathematik.hu-berlin.de/~raesch/org/jensen.html}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jensen%
+, Schimmerling%
+, Schindler%
+\BCBL {}\ \BBA {} Steel%
+}{%
+Jensen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2009}}%
+}]{%
+StackingMice}
+\APACinsertmetastar {%
+StackingMice}%
+\begin{APACrefauthors}%
+Jensen, R.%
+, Schimmerling, E.%
+, Schindler, R.%
+\BCBL {}\ \BBA {} Steel, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Stacking mice} {Stacking mice}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Symbolic Logic}{74}{}{315--335}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jensen%
+\ \BBA {} Steel%
+}{%
+Jensen%
+\ \BBA {} Steel%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+Kwithoutmeasurable}
+\APACinsertmetastar {%
+Kwithoutmeasurable}%
+\begin{APACrefauthors}%
+Jensen, R.%
+\BCBT {}\ \BBA {} Steel, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {K without the measurable} {K without the
+  measurable}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Symbolic Logic}{78}{}{708--734}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kanamori%
+}{%
+Kanamori%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+Kanamori}
+\APACinsertmetastar {%
+Kanamori}%
+\begin{APACrefauthors}%
+Kanamori, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2009}.
+\newblock
+\APACrefbtitle {The Higher Infinite} {The higher infinite}\
+  (\PrintOrdinal{Second}\ \BEd).
+\newblock
+\APACaddressPublisher{}{Springer-Verlag}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kennedy%
+\ \BBA {} Kossak%
+}{%
+Kennedy%
+\ \BBA {} Kossak%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+Foundations}
+\APACinsertmetastar {%
+Foundations}%
+\begin{APACrefauthors}%
+Kennedy, J.%
+\BCBT {}\ \BBA {} Kossak, R.%
+\end{APACrefauthors}%
+\ (\BEDS).
+\unskip\
+\newblock
+\APACrefYear{2011}.
+\newblock
+\APACrefbtitle {Set Theory, Arithmetic, and Foundations of Mathematics} {Set
+  theory, arithmetic, and foundations of mathematics}.
+\newblock
+\APACaddressPublisher{}{Cambridge University Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Löwe%
+\ \BBA {} Steel%
+}{%
+Löwe%
+\ \BBA {} Steel%
+}{%
+{\protect \APACyear {1997}}%
+}]{%
+Lowe}
+\APACinsertmetastar {%
+Lowe}%
+\begin{APACrefauthors}%
+Löwe, B.%
+\BCBT {}\ \BBA {} Steel, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1997}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Sets and proofs: invited papers from Logic Colloquium
+  '97, European Meeting of the Association for Symbolic Logic} {Sets and
+  proofs: invited papers from logic colloquium '97, european meeting of the
+  association for symbolic logic}.{\BBCQ}
+\newblock
+\BIn{} S.~Cooper\ \BBA {} J.~Truss\ (\BEDS), (\BCHAP\ An introduction to core
+  model theory).
+\newblock
+\APACaddressPublisher{}{Cambridge University Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mitchell%
+}{%
+Mitchell%
+}{%
+{\protect \APACyear {1974}}%
+}]{%
+MitchellWoodin}
+\APACinsertmetastar {%
+MitchellWoodin}%
+\begin{APACrefauthors}%
+Mitchell, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1974}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Sets constructible from sequences of ultrafilters} {Sets
+  constructible from sequences of ultrafilters}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Symbolic Logic}{39}{}{57--66}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mitchell%
+}{%
+Mitchell%
+}{%
+{\protect \APACyear {1982}}%
+}]{%
+Mitchell2}
+\APACinsertmetastar {%
+Mitchell2}%
+\begin{APACrefauthors}%
+Mitchell, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1982}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The core model for sequences of measures II} {The core
+  model for sequences of measures ii}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Unpublished preliminary draft}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mitchell%
+}{%
+Mitchell%
+}{%
+{\protect \APACyear {1984}}%
+}]{%
+Mitchell1}
+\APACinsertmetastar {%
+Mitchell1}%
+\begin{APACrefauthors}%
+Mitchell, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1984}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The core model for sequences of measures I} {The core
+  model for sequences of measures i}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Math. Proc. of the Cambridge Phil.
+  Soc.}{74}{}{229--260}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mitchell%
+, Schimmerling%
+\BCBL {}\ \BBA {} Steel%
+}{%
+Mitchell%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1997}}%
+}]{%
+WkCov}
+\APACinsertmetastar {%
+WkCov}%
+\begin{APACrefauthors}%
+Mitchell, W.%
+, Schimmerling, E.%
+\BCBL {}\ \BBA {} Steel, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1997}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The covering lemma up to a Woodin cardinal} {The
+  covering lemma up to a woodin cardinal}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Annals of pure and applied logic}{84}{}{219--255}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sacks%
+}{%
+Sacks%
+}{%
+{\protect \APACyear {2003}}%
+}]{%
+20th}
+\APACinsertmetastar {%
+20th}%
+\begin{APACrefauthors}%
+Sacks, G\BPBI E.%
+\end{APACrefauthors}%
+\ (\BED).
+\unskip\
+\newblock
+\APACrefYear{2003}.
+\newblock
+\APACrefbtitle {Mathematical Logic in the 20th Century} {Mathematical logic in
+  the 20th century}.
+\newblock
+\APACaddressPublisher{}{Singapore University Press and World Scientific
+  Publishing Co. Pte. Ltd.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sargsyan%
+}{%
+Sargsyan%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+Sargsyanthesis}
+\APACinsertmetastar {%
+Sargsyanthesis}%
+\begin{APACrefauthors}%
+Sargsyan, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Hod Mice and the Mouse Set Conjecture} {Hod mice and the
+  mouse set conjecture}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Memoirs of the American Mathematical Society}{236}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Schimmerling%
+}{%
+Schimmerling%
+}{%
+{\protect \APACyear {2001}}%
+}]{%
+Schimmerling}
+\APACinsertmetastar {%
+Schimmerling}%
+\begin{APACrefauthors}%
+Schimmerling, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2001}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The ABC's of Mice} {The abc's of mice}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Bulletin of Symbolic Logic}{7}{}{485--503}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+R.~Schindler%
+\ \BBA {} Zeman%
+}{%
+R.~Schindler%
+\ \BBA {} Zeman%
+}{%
+{\protect \APACyear {2010}}%
+}]{%
+FS}
+\APACinsertmetastar {%
+FS}%
+\begin{APACrefauthors}%
+Schindler, R.%
+\BCBT {}\ \BBA {} Zeman, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Handbook of Set Theory} {Handbook of set theory}.{\BBCQ}
+\newblock
+\BIn{} M.~Foreman\ \BBA {} A.~Kanamori\ (\BEDS), (\BCHAP\ Fine Structure).
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+R\BHBI D.~Schindler%
+, Steel%
+\BCBL {}\ \BBA {} Zeman%
+}{%
+R\BHBI D.~Schindler%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2002}}%
+}]{%
+Deconstructing}
+\APACinsertmetastar {%
+Deconstructing}%
+\begin{APACrefauthors}%
+Schindler, R\BHBI D.%
+, Steel, J.%
+\BCBL {}\ \BBA {} Zeman, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2002}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Deconstructing Inner Model Theory} {Deconstructing inner
+  model theory}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Symbolic Logic}{67}{}{721--736}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Shoenfield%
+}{%
+Shoenfield%
+}{%
+{\protect \APACyear {2003}}%
+}]{%
+Shoenfield}
+\APACinsertmetastar {%
+Shoenfield}%
+\begin{APACrefauthors}%
+Shoenfield, J\BPBI R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Mathematical Logic in the 20th Century} {Mathematical
+  logic in the 20th century}.{\BBCQ}
+\newblock
+\BIn{} G\BPBI E.~Sacks\ (\BED), (\BCHAP\ The Problem of Predicativity).
+\newblock
+\APACaddressPublisher{}{Singapore University Press and World Scientific
+  Publishing Co. Pte. Ltd.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Steel%
+}{%
+Steel%
+}{%
+{\protect \APACyear {1996}}%
+}]{%
+CMIP}
+\APACinsertmetastar {%
+CMIP}%
+\begin{APACrefauthors}%
+Steel, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1996}.
+\newblock
+\APACrefbtitle {The Core Model Iterability Problem} {The core model iterability
+  problem}.
+\newblock
+\APACaddressPublisher{}{Springer-Verlag}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Steel%
+}{%
+Steel%
+}{%
+{\protect \APACyear {2010}}%
+}]{%
+OIMT}
+\APACinsertmetastar {%
+OIMT}%
+\begin{APACrefauthors}%
+Steel, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Handbook of Set Theory} {Handbook of set theory}.{\BBCQ}
+\newblock
+\BIn{} M.~Foreman\ \BBA {} A.~Kanamori\ (\BEDS), (\BCHAP\ An Outline of Inner
+  Model Theory).
+\newblock
+\APACaddressPublisher{}{Springer}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Steel%
+}{%
+Steel%
+}{%
+{\protect \APACyear {2012}}%
+}]{%
+Godelsprogram}
+\APACinsertmetastar {%
+Godelsprogram}%
+\begin{APACrefauthors}%
+Steel, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+\APACrefbtitle {Godels Program.} {Godels program.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Steel%
+\ \BBA {} Mitchell%
+}{%
+Steel%
+\ \BBA {} Mitchell%
+}{%
+{\protect \APACyear {1994}}%
+}]{%
+FSIT}
+\APACinsertmetastar {%
+FSIT}%
+\begin{APACrefauthors}%
+Steel, J.%
+\BCBT {}\ \BBA {} Mitchell, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1994}.
+\newblock
+\APACrefbtitle {Fine Structure and Iteration Trees} {Fine structure and
+  iteration trees}.
+\newblock
+\APACaddressPublisher{}{Springer-Verlag}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Woodin%
+}{%
+Woodin%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+Woodinexpository}
+\APACinsertmetastar {%
+Woodinexpository}%
+\begin{APACrefauthors}%
+Woodin, W\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Set Theory, Arithmetic, and Foundations of Mathematics}
+  {Set theory, arithmetic, and foundations of mathematics}.{\BBCQ}
+\newblock
+\BIn{} J.~Kennedy\ \BBA {} R.~Kossak\ (\BEDS), (\BCHAPS\ The Continuum
+  Hypothesis, the generic-multiverse of sets, and the Omega Conjecture).
+\newblock
+\APACaddressPublisher{}{Cambridge University Press}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

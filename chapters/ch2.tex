@@ -1,0 +1,331 @@
+\chapter{Fine structure and premice}
+\thispagestyle{fancy}
+\label{ch2}
+
+We will need to provide a detailed analysis of the structure of our ppms, analogous to the fine structural analysis of $L$ in \cite{Jensen}. We cannot simply work with the usual Levy hierarchy $\Sigma_n$ though, as it's possible to encode arbitrary information as $\Sigma_2$ predicates\footnote{This example is due to Mitchell, and uses terminology which is to be defined in the upcoming chapters. Let $\bra{\kappa_i\mid i<\omega}$ be an increasing sequence of measurable cardinals of $\N$ with $\rho_1(\N)\leq\kappa_0$ and suppose that $\N$ is 1-sound and iterable. Let $a\subset\omega$ be \textit{any} subset (this is the arbitrary information), and let $\M$ be the result from iterating $\N$ by hitting normal measures with critical point $\kappa_i$ iff $i\in a$. Then $a$ is $\Sigma_2^{\M}$ since $i\in a$ iff $\kappa_i$ isn't $\Sigma_1^{\M}(\kappa_i\cup p_i(\M))$.}, which conflicts with our goal of trying to construct \textit{canonical} models. Therefore, we will zoom in on the gap between $\Sigma_1$ and $\Sigma_2$ formulas.
+
+
+\section{Restricted formulas and hulls}
+
+\defin{
+Let $\varphi$ be an $\mathcal L$-formula. Then
+\begin{itemize}
+\item $\varphi$ is $r\Sigma_i$ if $\varphi$ is $\Sigma_i$ for $i=0,1$;
+\item $\varphi$ is $r\Sigma_{n+1}$ for $n\geq 1$ if there is a $\Sigma_1$ formula $\psi(\eta,q,y,\vec v)$ of the language $\mathcal L-\{\dot T_n\mid 1\leq n<\omega\}$ such that
+\eq{
+\varphi\equiv\exists\eta\exists q\exists y(\dot T_n(\eta,q,y)\land\psi(\eta,q,y,\vec v)).\deq
+}
+\end{itemize}
+}
+
+The ``$r$" stands for ``restricted", as an $r\Sigma_n$ formula has a lot less expressive power than proper $\Sigma_n$ formulae for $n\geq 2$.
+
+\defi{
+A formula $\varphi$ is \textbf{$\Sigma_n$ over $r\Sigma_k$} if there is an $r\Sigma_k$ formula $\psi$ such that
+\eq{
+\varphi\equiv\exists x_1\forall x_2\cdots Q x_n\psi,
+}
+
+where $Q$ is either $\exists$ or $\forall$. The definition of $\Pi_n$ over $r\Sigma_k$ is analogous.\footnote{Note here that $\Sigma_1$ over $r\Sigma_k$ is just $r\Sigma_k$, by definition of $r\Sigma_k$ formulas.}
+}
+
+Note that $r\Sigma_k$ definability is $r\Sigma_k$ definable, the proof being analogous to $\Sigma_k$ definability being $\Sigma_k$ definable \cite{Devlin}. Furthermore also note that for a ppm $\M$ and $k\geq 1$, there exist $r\Sigma_k$ Skolem functions over $\M$, by just picking the $<_{\M}$-least witness -- note here that $<_{\M}$ is $\Sigma_1$-definable, just as for $L$.
+
+\defi{
+Let $\M$ be any $\mathcal L$-structure and let $x\subset\M$. Then the \textbf{n-theory} is
+\eq{
+\Th_n^{\M}(x):=\{\bra{k,p}\in\omega\times x^{<\omega}\mid\M\models\varphi_k[p]\},
+}
+
+where $\bra{\varphi_k\mid k<\omega}$ is a recursive enumeration of all $r\Sigma_n$-formulas.
+}
+
+We can now define the interpretation of the $\dot T_n$'s in our ppms.
+
+\defi{
+For a ppm $\M$, $\dot T_n^{\M}(\eta,q,y)$ holds iff $\Th_n^{\M}(\eta\cup\{q\})=y$.
+}
+
+It perhaps looks like we've encountered a vicious circle, as it seems like the $\dot T_n$'s are using the definition of $r\Sigma_n$ formulae which again require the use of the $\dot T_n$'s. But keep in mind that in our definition of $r\Sigma_n$ formulae we're only using the \textit{syntactical} symbol $\dot T_n$, where we only use the $r\Sigma_n$ formulae in our definition of the interpretation $\dot T_n^{\M}$ in a ppm $\M$.
+
+\defi{
+Let $\M$ be any $\mathcal L$-structure, $X\subset\M$ and $n\leq\omega$. Then the \textbf{$n$'th hull of $X$}, $\hull_n^{\M}(X)$, is the substructure of $\M$ whose universe consists of all $x\in\M$ such that $\{x\}$ is $r\Sigma^{\M}_n$ definable from parameters in $X$. The \textbf{$n$'th collapsed hull of $X$}, $\chull_n^{\M}(X)$, is then the transitive collapse of $\hull_n^{\M}(X)$. If $n=\omega$ we will omit the subscript.
+}
+
+Hulls will play an important role in the upcoming chapters. In numerous occations we might want to shift focus to another model by ``going up" or ``going down", analogous to shifting attention to a subset or a superset. Hulls provide the means for going down, and in the next chapter we will define ultrapowers which is a way of ``going up". We need to make sure that we preserve ppmness when going up and down however, and the key notion here is the following.
+
+\defi{
+A \textbf{$Q$-formula} $\psi(\vec v)$ is an $\mathcal L$-formula of the form
+\eq{
+\forall x\forall\theta<\dot\kappa^+\exists y\supset x\exists\nu\in[\theta,\dot\kappa^+)(\varphi(y,\nu,\vec v)\land\forall a\in x\exists b\in y\chi(a,b,\vec v))
+}
+
+where $\varphi$ is $\Sigma_1$ and does not have $x$ or $\theta$ free, and $\chi$ is $\Sigma_0$ and does not have $x$ or $y$ free.\footnote{This definition deviates slightly both from the notion of $Q$-formula in \cite{FS} and the notion of $rQ$- and $P$-formula in \cite{FSIT}, but all of these should be special cases of this notion.}
+}
+
+It's easy to see that $Q$-formulae are preserved downwards by $\Sigma_1$-embeddings and upwards by cofinal $\Sigma_0$-embeddings, where $\pi:\M\to\N$ is \textbf{cofinal} if
+\begin{itemize}
+\item For every $y\in\N$ there exists $x\in\M$ with $y\in\pi(x)$;
+\item $\pi"\dot\kappa^{+\M}$ is a cofinal subset of $\pi(\dot\kappa^{+\M})$.\\
+\end{itemize}
+
+Since the hull embeddings $\chull_n^{\M}(X)\to\M$ are always $\Sigma_1$-preserving as long as $n\geq 1$, we see that if we can define ppmness in a $Q$-fashion then the hulls would also be ppms. This is indeed the case.
+
+\prop{
+\label{prop.ppmdef}
+There are $Q$-sentences $\sigma_1$, $\sigma_2$, $\sigma_3$ and $\sigma_4$ such that if $\M$ is a transitive $\mathcal L$-structure, then
+\begin{itemize}
+\item $\M\models\sigma_1$ iff $\M$ is a passive ppm;
+\item $\M\models\sigma_2$ iff $\M$ is of type I;
+\item $\M\models\sigma_3$ iff $\M$ is of type II;
+\item If $\M$ is a type III ppm then $\M\models\sigma_4$;
+\item If $\M\models\sigma_4$ and $(\on^{\M})^{+\ult(\M,\dot F^{\M})}+1\subset\wfp(\ult(\M,\dot F^{\M}))$ then either $\M$ is a type III ppm or $\M\models\dot\kappa$ is a Shelah limit of Shelah cardinals.\footnote{A Shelah cardinal is a certain large cardinal which is of stronger consistency strength than a Woodin cardinal.}
+\end{itemize}
+}
+\proof{
+See Lemmata 2.5 and 3.3 in \cite{FSIT}. This is where we need $\dot\gamma^{\M}$, as it makes us able to describe the initial segment condition for the ``last" initial segment of the models last extender.
+}
+
+The reason why the type III case has the extra complications is because determining whether or not $\M$ is type III requires taking an ultrapower to check whether or not $\on^{\M}$ is the natural length of the last extender of $\M$.
+
+\qquad We can be in the frustrating case that taking such an ultrapower doesn't help, in that $i(\dot\kappa^{\M})=\nu(\dot F^{\M})^{+\ult(\M,\dot F^{\M})}$ where $i:\M\to\ult(\M,\dot F^{\M})$ is the ultrapower map (recall that $\lh\dot F^{\M}=\nu(\dot F^{\M})$ in this type III case). This property will however entail that $\M$ has a Shelah limit of Shelah cardinals, and since such cardinals are stronger than Woodins, it doesn't affect the inner model theory below a Woodin. We will thus from now on assume that
+\begin{center}
+\framebox{\textbf{There is no proper class inner model with a Shelah limit of Shelahs.}}
+\end{center}
+
+\coro{
+\label{coro.ppmdef}
+Let $\M$ be a ppm.
+\begin{enumerate}
+\item If $\pi:\H\to_{\Sigma_1}\M$ then $\H$ is a ppm of the same type as $\M$;
+\item If $\pi:\M\to_Q\P$ then $\P$ is a ppm of the same type as $\M$.
+\end{enumerate}
+}
+\proofretard{
+This is clear by Proposition \ref{prop.ppmdef} and the definition of pre-extender, noting that $\lh\dot F^{\M}=\on^{\M}$.
+$\qed$
+
+\qcoro{
+\label{coro.hullup}
+If $\M$ is a ppm and $X\subset\M$ then $\chull_n^{\M}(X)$ is a ppm of the same type.
+}
+
+\section{Projecta, parameters and cores}
+
+We will now begin the fine structure of the $r\Sigma_n$ hierarchy, and in that regard we will define the \textit{$n$'th projectum} $\rho_n(\M)$, the \textit{$n$'th standard parameter} $p_n(\M)$ and the \textit{$n$'th core} $\core_n(\M)$ of a ppm $\M$. These will be tools making it possible to examine the fine behaviour of our ppms. The idea behind the projectum and the standard parameter is the same as in \cite{Jensen}.
+
+\qquad As all these definitions will depend upon eachother, we could have chosen to define them in the formally correct way by defining them all at once. We choose to be slightly less formal and define them one by one, with the caveat that the definitions will refer to each other. No vicious circle will occur however, as the definitions at the $(n+1)$'st level will only refer to the definitions at the $n$'th level. We start with the projectum.
+
+\defi{
+For a ppm $\M$ and $n<\omega$, set $\rho_0^{\M}:=\on^{\M}$ and $\rho_{n+1}^{\M}:=$ the least $\rho\leq\on^{\M}$ such that $\P(\rho)\cap\b{r\Sigma}_{n+1}^{\M}\nsubset\M$. Then the \textbf{$n$'th projectum} of $\M$ is $\rho_n(\M):=\rho_n^{\core_{n-1}(\M)}$, and the \textbf{projectum} is then $\rho(\M):=\lim_n\rho_n(\M)$.\footnote{This is the notation used in \cite{Sargsyanthesis}, which deviates from the notation in \cite{FS}, where their $\rho(\M)$ is our $\rho_1(\M)$ for any ppm $\M$. Our notation corresponds to the notation of \cite{FSIT} and \cite{OIMT}, with the slight difference that our $\rho(\M)$ being their $\rho_\omega(\M)$.}
+}
+
+If $\M\models\zf^-$ then $\rho(\M)=\on^{\M}$ by using Replacement.
+
+\defi{
+Let $\M$ be a ppm, $k\leq\omega$ and $\kappa$ some $\M$-cardinal. Then we say that $\M$ \textbf{$k$-projects to $\kappa$} if $\rho_k(\M)=\kappa$ and \textbf{$k$-projects across $\kappa$} if $\rho_k(\M)\leq\kappa$. We also define \textbf{projects to $\kappa$} and \textbf{projects across $\kappa$} if it holds for some $k\leq\omega$.
+}
+
+Note that the ``new set" witnessed by the projectum is \textit{boldface} definable, so it's with a parameter $x\in\M$. To provide a better analysis of this parameter, we note that we have a $\Sigma_1$-definable surjection from all finite sequences of ordinals in $\M$ to $\M$ itself\footnote{For a proof of this, see \cite[Lemma 1.17]{FS}.}, so we can assume our parameters are of that form.
+
+\defi{
+A \textbf{parameter} is a finite strictly decreasing ordinal sequence.
+}
+
+We could then define the standard parameter as the least parameter, but it turns out that we need some more structure than that. We shall need the following technical definition.
+
+\defi{
+Let $\M$ be a ppm and $p=\bra{\alpha_1,\hdots,\alpha_k}$ a parameter in $\M$. Then $p$ is \textbf{$n$-solid in $\M$} if $\P(\alpha_i)\cap r\Sigma_n^{\M}(p\restr i)\subset\M$ for every $i\leq k$.
+}
+
+Note that $p=\bra{\alpha_1,\hdots,\alpha_k}$ is $n$-solid iff $\Th_n^{\M}(\alpha_i\cup p\restr i)\in\M$ for every $i\leq k$, so we define the \textbf{$n$-solidity witness for $p=\bra{\alpha_1,\hdots,\alpha_k}$ in $\M$} as
+\eq{
+w_n(p,\M):=\{\Th_n^{\M}(\alpha_i\cup p\restr i)\mid i\leq k\},
+}
+
+so that $p$ is $n$-solid in $\M$ iff $w_n(p,\M)\in\M$.
+
+\defi{
+Let $k<\omega$. Then the \textbf{$k$'th standard parameter} $p_k(\M)$ of a ppm $\M$ is a sequence $\vec q:=\bra{(u_1,p_1),\hdots,(u_k,p_k)}$, where $p_{i+1}$ is the lexicographically least parameter of $\core_i(\M)$ such that
+\eq{
+\P(\rho_{i+1}(\M))\cap r\Sigma_{i+1}^{\core_i(\M)}(\{q_{i+1}\})\nsubset\core_i(\M)
+}
+
+and $u_i:=w_i(p_i,\core_i(\M))$ if $p_i$ is $i$-solid and otherwise $u_i:=\emptyset$. Set $p_0(\M):=\emptyset$. If $u_i\neq\emptyset$ for every $i$ then we say $p_k(\M)$ is \textbf{solid}.
+}
+
+\defi{
+Let $\M$ be a ppm and $n<\omega$. Then the \textbf{$n$'th core} of $\M$ is defined recursively as $\core_0(\M):=\M$ and
+\eq{
+\core_{n+1}(\M):=\chull_{n+1}^{\core_n(\M)}(\rho_{n+1}(\M)\cup p_{n+1}(\M)).
+}
+
+For convenience we also set $\core_{-1}(\M):=\M$. The \textbf{core} of $\M$ is then defined as $\core(\M):=\lim_n\core_n(\M)$.
+}
+
+\coro{
+If $\M$ is a ppm then so is $\core_n(\M)$ for any $n\leq\omega$, of the same type.
+}
+\proof{
+Directly from Corollary \ref{coro.hullup}.
+}
+
+This finishes the ``circular" definitions of projectum, standard parameter and core. 
+
+
+\section{Premice}
+
+Another property that our standard parameter can have is the following.
+
+\defin{
+Let $\M$ be a ppm. Then $p_{k+1}(\M)$ is \textbf{universal} if
+\eq{
+\P^{\core_k(\M)}(\rho_{k+1}(\M))\subset\core_{k+1}(\M).\deq
+}
+}
+
+\defin{
+A ppm $\M$ is
+\begin{itemize}
+\item \textbf{$n$-solid} if $p_n(\M)$ is solid and universal;
+\item \textbf{solid} if it's $n$-solid for every $n<\omega$;
+\item \textbf{$n$-sound} if it's $n$-solid and $\core_n(\M)=\M$;
+\item \textbf{sound} if it's $n$-sound for every $n<\omega$.
+\dit
+\end{itemize}
+}
+
+We can now use this soundness definition to show what solidity and universality is used for. The reason why solidity is useful is that it provides a lower bound for being a standard parameter, making it easier to show that the standard parameter is preserved under certain embeddings.
+
+\prop{
+\label{prop.solidity}
+Let $\M$ be a $k$-sound ppm, $p=\bra{\alpha_0,\hdots,\alpha_k}$ the last parameter of $p_{k+1}(\M)$ and $q=\bra{\beta_0,\hdots,\beta_n}$ a $k$-solid parameter of $\M$. Then $q\leq_{\text{lex}}p$.
+}
+\proof{
+Assume that $p<_{\text{lex}}q$ and let $A\subset\rho_k(\M)$ be $r\Sigma_k^{\M}(\{p\})$-definable such that $A\notin\M$ -- this exists since $\M=\core_k(\M)$ by $k$-soundness. Let $t\leq\min\{k,n\}$ be least such that $\alpha_t\neq\beta_t$, so that $\alpha_t<\beta_t$. Solidity implies that
+\eq{
+\P(\beta_t)\cap r\Sigma_k^{\M}(\{q\restr t\})\subset\M.
+}
+
+But consider $B:=A\cup\{\alpha_t,\hdots,\alpha_k\}$. Since $B$ is both $r\Sigma_k^{\M}(\{q\restr t\})$ and a subset of $\beta_t$, we have that $B\in\M$. But then $A\in\M$ as well, $\contr$.
+}
+
+The usefulness of universality is the following lemma and corollary.
+
+\lemm{
+\label{lemm.universality}
+Let $k<\omega$, $\M$ a $k$-sound ppm, $p\in\H$ and $\pi:\H\to\M$ an $r\Sigma_{k+1}$-elementary embedding. Assume that $\rho_{k+1}(\M)\subset\on^{\H}$, $\pi\restr\rho_{k+1}(\M)=\id$, $\pi(p)=p_{k+1}(\M)$ and $p_{k+1}(\M)$ is universal. Then it holds that
+\begin{enumerate}
+\item $\rho_{k+1}(\H)=\rho_{k+1}(\M)$;
+\item $p=p_{k+1}(\H)$;
+\item $p_{k+1}(\H)$ is universal.
+\end{enumerate}
+}
+\proof{
+(i): To show $\rho_{k+1}(\H)\geq\rho_{k+1}(\M)$, let $\alpha<\rho_{k+1}(\M)$ and let $A\subset\alpha$ be $\b{r\Sigma}_{k+1}^{\H}$. Then $A=\pi"A$ is $\b{r\Sigma}_{k+1}^{\M}$ by $r\Sigma_{k+1}$-elementarity, so $A\in\M$ by definition of $\rho_{k+1}(\M)$. By acceptability we thus get that $A\in\M|\rho_{k+1}(\M)=\H|\rho_{k+1}(\M)$, which shows that $\rho_{k+1}(\M)\leq\rho_{k+1}(\H)$. As for $\rho_{k+1}(\H)\leq\rho_{k+1}(\M)$, let $A\subset\rho_{k+1}(\M)$ be $r\Sigma_{k+1}^{\H}(p)$-definable and assume that $A\in\H$. Then $A=\pi(A)\cap\rho_{k+1}(\M)$ is $r\Sigma_{k+1}^{\M}(p_{k+1}(\M))$-definable and $A\in\M$. Contraposing we get that letting $A\subset\rho_{k+1}(\M)$ be $r\Sigma_{k+1}^{\M}(p_{k+1}(\M))$-definable such that $A\notin\M$, $A$ is $r\Sigma^{\H}(p)$-definable and $A\notin\H$. Thus $\rho_{k+1}(\H)=\rho_{k+1}(\M)$.
+
+\qquad (ii): By the argument above, we have an $r\Sigma^{\H}_{k+1}(p)$-definable $A\subset\rho_{k+1}(\H)$ such that $A\notin\H$, so that $p_{k+1}(\H)\leq_{\text{lex}}p$. Assume that $p_{k+1}(\H)<_{\text{lex}}p$, so that $\pi(p_{k+1}(\H))<_{\text{lex}}\pi(p)=p_{k+1}(\M)$. Let $B\subset\rho_{k+1}(\M)$ be $r\Sigma_{k+1}^{\M}(\pi(p_{k+1}(\H)))$, so that minimality of $p_{k+1}(\M)$ implies that $B\in\M$, so that $B\in\H$ by universality of $p_{k+1}(\H)$. But then $B$ is an $r\Sigma_{k+1}^{\H}(p_{k+1}(\H))$-definable subset of $\rho_{k+1}(\H)$ in $\H$, so that since $B$ was arbitrary, $p_{k+1}(\H)$ is not the $k+1$'th standard parameter of $\H$, $\contr$.
+
+\qquad (iii): Let $A\subset\rho_{k+1}(\H)$ with $A\in\H$. Then $A=\pi(A)\cap\rho_{k+1}(M)\in\M$, so $A$ is $r\Sigma_{k+1}^{\M}(\rho_{k+1}(\M)\cup p_{k+1}(\M))$-definable since $\rho_{k+1}(\M)=\rho_{k+1}(\H)$ and universality of $p_{k+1}(\M)$, and thus also $r\Sigma_{k+1}^{\H}(\rho_{k+1}(\H)\cup p_{k+1}(\H))$ by pulling the definition back via $\pi$, using (i) and (ii). Thus $p_{k+1}(\H)$ is universal.
+}
+
+\coro{
+\label{coro.coresound}
+Let $k<\omega$, $\M$ a $k$-sound ppm and assume that $p_{k+1}(\M)$ is universal. Then $\rho_{k+1}(\core_{k+1}(\M))=\rho_{k+1}(\M)$, $p_{k+1}(\core_{k+1}(\M))=p_{k+1}(\M)$ and $p_{k+1}(\core_{k+1}(\M))$ is universal. Furthermore, if $\M$ is $(k+1)$-solid then $\core_{k+1}(\M)$ is $(k+1)$-sound.
+}
+\proof{
+The first statement is directly from Lemma \ref{lemm.universality}. As for the last part we clearly have that $\core_{k+1}(\core_{k+1}(\M))=\core_{k+1}(\M)$, and solidity holds as we've put the solidity witnesses into $p_{k+1}(\M)$.
+}
+
+We're interested in embeddings preserving all the fine structure up to a given level $n$ -- these will be called \textit{n-embeddings}.
+
+\defi{
+Let $j:\M\to\N$ be a map between ppms and let $n<\omega$. Then $j$ is a \textbf{near $n$-embedding} if
+\begin{enumerate}
+\item $\M$ and $\N$ are $n$-sound;
+\item $j$ is $r\Sigma_{n+1}$ elementary;
+\item $j(p_i(\M))=p_i(\N)$ for all $i\leq n$;
+\item $j(\rho_i(\M))=\rho_i(\N)$ for all $i<n$, and $\sup j"\rho_n(\M)\leq\rho_n(\N)$.
+\end{enumerate}
+
+If the $\leq$ in (iv) is an equality then $j$ is an \textbf{$n$-embedding}.
+}
+
+We then see by Corollary \ref{coro.coresound} that if $\core_k(\M)$ is $k$-sound then the \textbf{core embedding} $\core_{k+1}(\M)\to\core_k(\M)$, i.e. the uncollapse, is a $k$-embedding. As for whether or not the $k$'th core is in fact $k$-sound, see the discussion at the end of this chapter.
+
+\qquad We would prefer to be able to work with only sound ppms, but these turn out to not be preserved by ultrapowers, as we will see in the next chapter. The property that all \textit{initial segments} of ppms are sound \textit{is} preserved though, which is the next best thing. We have to be a bit careful in defining initial segments though, as we have to ensure that initial segments are in fact ppms as well, which isn't trivial if the initial segment is of type III.
+
+\defi{
+If $\M$ is a ppm and $\xi<\on^{\M}$, then define the $\mathcal L$-structure
+\eq{
+\M|\xi:=
+\left\{
+  \begin{array}{ll}
+  \bra{J^{\dot E^{\M}}_\xi,\dot E^{\M}\restr\xi,(\dot E^{\M}_\xi)^c} & \text{, if this is of type I or II}\\
+  \bra{J^{\dot E^{\M}}_\nu,\dot E^{\M}\restr\nu,(\dot E^{\M}_\xi\restr\nu)^c} & \text{, otherwise, where $\nu:=\nu(\dot E_\xi^{\M})$}.
+  \end{array}
+\right.
+}
+
+where the constant symbols $\dot\kappa$, $\dot\nu$ and $\dot\gamma$ are interpreted as usual. If $\xi=\on^{\M}$ we also set $\M|\xi:=\M$.
+}
+
+\defi{
+If $\M$ is a ppm then an \textbf{initial segment} of $\M$ is a ppm $\N$ of the form $\M|\xi$ for some $\xi\leq\on^{\M}$ and we write $\N\init\M$. If $\xi<\on^{\M}$ then $\N$ is a \textbf{proper initial segment} of $\M$ and we write $\N\pinit\M$ in this case.\footnote{This is where we diverge a bit from \cite{FSIT} due to our ``type III" clause in the definition of $\M|\xi$. They only have the naive version of initial segment, but on the other hand they have to ``squash" their type III ppms whenever they take ultrapowers of them (where all our mice are ``squashed" from the beginning). It is to note that using our method, we avoid certain anomalous cases for type III mice described in \cite{OIMT}. A downside is possibly that player I has fewer options when picking extenders in the iteration game defined in chapter 4, so iteration strategies might then be slightly weaker.}
+}
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}
+
+    %% Mice
+    \draw (1.5,0) -- (1.5,3);
+    \draw (0,0) -- (0,2.3);
+    
+    \draw (3.5,0) -- (3.5,1.5);
+    \draw (5,0) -- (5,3);
+   
+    \draw (7,0) -- (7,1.4);
+    \draw (8.5,0) -- (8.5,3);
+
+    %% Extenders
+    \draw (0.1,1.7) -- (-0.2,1.7) -- (-0.2,0.7) -- (0.1,0.7);
+
+    \draw (1.6,3) -- (1.3,3) -- (1.3,2) -- (1.6,2);
+    \draw (1.6,1.7) -- (1.3,1.7) -- (1.3,0.7) -- (1.6,0.7);
+    
+    \draw (3.6,1.5) -- (3.3,1.5) -- (3.3,0.7) -- (3.6,0.7);
+
+    \draw (5.1,2.5) -- (4.8,2.5) -- (4.8,1.7) -- (5.1,1.7);
+    \draw (5.1,1.5) -- (4.8,1.5) -- (4.8,0.7) -- (5.1,0.7);
+
+    \draw (7.1,1.4) -- (6.8,1.4) -- (6.8,0.7) -- (7.1,0.7);
+
+    \draw (8.6,3) -- (8.3,3) -- (8.3,2) -- (8.6,2);
+    \draw (8.6,1.7) -- (8.3,1.7) -- (8.3,0.7) -- (8.6,0.7);
+
+    %% Initial segment symbols
+    \node at (0.7,2) {$\init$};
+    \node at (4.2,2) {$\init$};
+    \node at (7.7,2) {$\init$};
+
+    %% Extras
+    \draw[dashed] (0,1.7) -- (1.5,1.7);
+    \draw[dashed] (7.1,1.4) -- (8.5,1.4);
+    \draw[dashed] (3.5,1.5) -- (5.1,1.5);
+    \node at (8.7,1.4) {$\nu$};
+
+    \end{tikzpicture}
+  \end{center}
+  \caption{A passive, type I/II and type III initial segment.}
+  \label{fig.init}
+\end{figure}
+
+\defi{
+A \textbf{premouse} is a ppm all of whose proper initial segments are sound.
+}
+
+When building mice, we thus want to ensure that every initial segment is sound. To ensure this, we will build our mice bottom up, taking cores along the way, so we would like that $\core(\M)$ is sound. If $\M$ is 1-solid then the above Corollary \ref{coro.coresound} implies that $\core_1(\M)$ is 1-sound. If we could then show that $\core_1(\M)$ is 2-solid (equivalently, that $\M$ is 2-solid), then $\core_2(\M)$ would be 2-sound, and so on.
+
+\qquad We thus seem to require that $\M$ has this special property that $\core_k(\M)$ is $(k+1)$-solid for every $k<\omega$. In chapter 6 we will produce certain ppms $\M$ such that $\core_k(\M)$ is \textit{fully $k$-iterable} for every $k<\omega$ (iterability will be introduced in chapter 4) and in chapter 5 we show that this implies that $\core_k(\M)$ is in fact $(k+1)$-solid. Inductively we then get that $\core(\M)$ is sound.
+

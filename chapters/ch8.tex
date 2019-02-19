@@ -1,0 +1,422 @@
+\chapter{$K$ below a Woodin}
+\thispagestyle{fancy}
+\label{ch8}
+
+Having defined pseudo-$K$ we want to find a way to stitch together various choices of pseudo-$K$ to form a proper class premouse $K$, satisfying various canonicity properties as well as being ``close to $V$". More specifically, we will have the following theorem.
+
+\theo{
+\label{theo.K}
+There are $\Sigma_2$ formulae $\psi_K(v)$ and $\psi_\Sigma(v)$ such that
+\begin{enumerate}
+\item $K=\{v\mid\psi_K[v]\}$ is a transitive proper class premouse satisfying $\zfc$;
+\item $\{v\mid\psi_\Sigma[v]\}$ is the unique iteration strategy for $K$ acting on set-sized iteration trees;
+\item (Generic absoluteness) $\psi_K^V=\psi_K^{V[G]}$ and $\psi_\Sigma^V=\psi_\Sigma^{V[G]}\cap V$ for any $V$-generic $G$ over a set-sized poset;
+\item (Inductive definition) $K|\omega_1^V$ is $\Sigma_1$-definable over $J_{\omega_1}(\mathbb R)$;
+\item (Weak covering) For any $\lambda\geq\omega_2^V$ which is a successor cardinal of $K$, $\cof\lambda\geq|\lambda|$. Thus $\alpha^{+K}=\alpha^+$ whenever $\alpha$ is a singular cardinal of $V$.
+\end{enumerate}
+}
+
+
+\section{The hull property}
+
+In our definition of $K$ we will need a certain property called \textit{the hull property}. We first show that thick hulls of weasels can be lifted to their stacks, in the same manner as iterations could be lifted to their stacks as well.
+
+\lemm[Stacked hulls]{
+\label{lemm.hullstack}
+Let $\W$ be a weasel, $\Gamma$ be $\W$-thick, $\H:=\chull^{S(\W)}(\Gamma)$ and $\pi:\H\to S(\W)$ the uncollapse. Then
+\begin{enumerate}
+\item $\hull^{S(\W)}(\Gamma)$ is cofinal in $\Omega$;
+\item $\H=S(\H|\Omega)$;
+\item $\{\alpha<\on^{\H}\mid\pi\text{ is continuous at }\alpha\}$ is $\H|\Omega$-thick;
+\item $\H|\Omega$ is universal.
+\end{enumerate}
+}
+\proof{
+(i): This is clear if $\W$ is collapsing, so assume it's a mini-universe. Assuming $\hull^{S(\W)}(\Gamma)$ is bounded in $\Omega$, $\H|\Omega$ is a collapsing weasel as otherwise there would be $S(\W)$-cardinals above $\Omega$, $\contr$.. But $\W$ is a universal mini-universe by Theorem \ref{theo.unicof}, contradicting Proposition \ref{prop.weaselfacts}.
+
+\qquad (ii): We first show that $\H\init S(\H|\Omega)$. Let $\N\pinit\H$ be such that $\H|\Omega\init\N$. To show that $\H\init S(\H|\Omega)$ it suffices to show that $\N$ is sound and projects to $\Omega$. It is sound simply because $\H$ is a premouse, so assume that $\N$ is least such that it doesn't project to $\Omega$. This makes $\N$ definable, so that $\N\in\H$. Then $\pi(\N)\pinit S(\W)$, making $\pi(\N)$ a sound premouse projecting to $\Omega$. Since $\pi(\Omega)=\Omega$ as $\hull^{S(\W)}(\Gamma)$ is cofinal in $\Omega$, we get by elementarity that $\N$ projects to $\Omega$, $\contr$. Thus $\H\init S(\H|\Omega)$.
+
+\qquad For the converse, assume that $\H\pinit S(\H|\Omega)$ and let $\P$ be the least mouse stacked onto $\H|\Omega$ satisfying that $\P$ is not an initial segment of $\H$. Say $\P$ is $k$-projecting to $\Omega$ and set
+\eq{
+\Q:=\ult_k(\P,E_\pi\restr\Omega)
+}
+
+and note that we have $\rho_k(\Q)=\Omega$ since $\pi(\Omega)=\Omega$, and $S(\W)\pinit\Q$ because $\Gamma$ is cofinal in $\on^{S(\W)}$ (as then any $\alpha>\on^{\H}$ in $\P$ has to be sent to something $>\on^{S(\W)}$ by monotonicity). But now $\chull_k^{\P}(\alpha\cup p_k(\P))\init\H|\Omega$ holds for club many $\alpha<\Omega$ by Proposition \ref{prop.clubstack}, so intersecting this club with the fixpoints of $\pi$ we get club many $\alpha<\Omega$ satisfying that $\chull_k^{\Q}(\alpha\cup p_k(\Q))\init\W$, so $\Q\init S(\W)$ by Proposition \ref{prop.clubstack}, $\contr$.
+
+\qquad (iii) is clear and (iv) is by (iii) and Theorem \ref{theo.unicof}.
+}
+
+\defi{
+Let $S(\W)$ be $\W$-thick and let $\alpha<\Omega$. Then $\W$ has the \textbf{hull property at $\alpha$} if for every $\W$-thick $\Gamma$ it holds that $\P^{\W}(\alpha)\subset\chull^{S(\W)}(\Gamma\cup\alpha)$.
+}
+
+Note that the hull property is trivial if $\W$ is collapsing, since $\chull^{S(\W)}(\Gamma\cup\alpha)=\W$ as $|\Gamma|=\Omega=\on^{\W}$ in this case.
+
+\pagebreak
+\lemm{
+If $S(\W)$ is $\W$-thick then $\W$ has the hull property at club many $\alpha<\Omega$.
+}
+\proofretard
+This is trivial if $\W$ is collapsing, so assume that it's a mini-universe. Since $\Omega$ isn't Woodin in $L[S(\W)]$ by our global assumption, we can pick $A\in S(\W)$ least such that no $\kappa<\Omega$ is $A$-reflecting in $\Omega$ inside $L[S(\W)]$.
+
+\qquad This means that given any $\kappa<\Omega$ there is some least $\lambda_\kappa<\Omega$ such that for any $L[S(\W)]$-extender $E$ with $\crit E=\kappa$ and $i_E(\kappa)>\lambda_\kappa$ it holds that $i_E(A)\cap\lambda_\kappa\neq A\cap\lambda_\kappa$. Since extenders on the $\W$-sequence are in particular $L[S(\W)]$-extenders, we will restrict ourselves to these. We claim that
+\eq{
+\Lambda:=\{\alpha<\Omega\mid&\forall\kappa<\alpha:\text{ if $E$ is on the $\W$-sequence with}\crit E=\kappa \text{ and }\\
+&\alpha<i_E(\kappa) \text{ then } i_E(A)\cap\alpha\neq A\cap\alpha\}
+}
+
+is unbounded in $\Omega$. To see this, let $\eta_0<\Omega$ be arbitrary and for $n+1<\omega$ set $\eta_{n+1}:=\sup_{\kappa<\eta_n}\lambda_\kappa$, which is below $\Omega$ by regularity. Then $\sup_{n<\omega}\eta_n\in\Lambda$, so $\Lambda$ is unbounded. Intersecting $\Lambda$ with its limit points we wind up with a club, and intersecting this club with all $\W$-cardinals we get a club $C\subset\Lambda$, using that $\W$ is a mini-universe.
+
+\qquad We claim that $\W$ has the hull property at every $\alpha\in C$. Let thus $\Gamma$ be $\W$-thick -- we want to show that $\P^{\W}(\alpha)\subset\chull^{S(\W)}(\Gamma\cup\alpha)$. Let $\H$ be such that $\chull^{S(\W)}(\Gamma\cup\alpha)=S(\H)$, which exists by Lemma \ref{lemm.hullstack}. Note that $A$ is definable over $S(\W)$, so that $A\in\ran\pi$ where $\pi:S(\H)\to S(\W)$ is the uncollapse.
+
+\qquad If $\alpha\in\hull^{S(\W)}(\Gamma\cup\alpha)$ then $\alpha$ is an $\H$-cardinal by elementarity, and otherwise it's still an $\H$-cardinal, being the critical point of $\pi$. As we furthermore have that $\W$ agrees with $\H$ below $\alpha$, $\Phi:=(\bra{\W,\H},\bra{\alpha})$ is a phalanx. Comparing $\Phi$ with $\W$ we get iteration trees $\T,\U$ with last models $\P,\Q$.
+
+\qquad We now want to do the Dodd-Jensen trick \ref{lemm.DJtrick}, but this requires $\W$ to be countable. But under our global assumption we get that $\W$ has a unique iteration strategy, so that any tree according to the strategy would be unambiguous. This means that we can execute the Dodd-Jensen trick \ref{lemm.DJtrick} using the ``strong" Dodd-Jensen \ref{theo.DJ} and get that $\P$ lies above $\H$ in $\T$, the $\H$-to-$\P$ branch doesn't drop giving an iteration map $i:\H\to\P$ with $\crit i\geq\alpha$, and lastly that $\P\leq\Q$. The coiteration thus looks like the following:
+
+\begin{center}
+\begin{tikzcd}[column sep=0]
+\P & \init & \Q\\\\
+\H\arrow[uu,tree={i}{\T}] && \W\arrow[uu,treeplain={}{\U}]
+\end{tikzcd}
+\end{center}
+
+But as $\H$ is universal by Lemma \ref{lemm.hullstack} we get that $\P=\Q$, so that the $\W$-to-$\Q$ branch doesn't drop either and we get an iteration map $j:\W\to\Q$. Extend now $i$ and $j$ to $i^*:S(\H)\to S(\P)$ and $j^*:S(\W)\to S(\P)$ by using Theorem \ref{theo.itstack}.
+
+\qquad If $\crit j^*<\alpha$ then the first extender $E$ used by $j^*$ witnesses that $\crit j^*$ is $A$-reflecting up to $\alpha$ in $\W$ since $\lh E\geq\alpha$ and that $E$ is short, $\contr$. So $\crit j^*\geq\alpha$, but then $\P^{\W}(\alpha)=\P^{\P}(\alpha)=\P^{\H}(\alpha)\subset S(\H)$, as wanted.
+$\qed$\\
+
+It should be noted that in the above proof we made essential use of our global assumption that there's no proper class inner model with a Woodin cardinal.
+
+\section{The thick trick}
+
+In the following sections we will need an analogue of the Dodd-Jensen trick \ref{lemm.DJtrick} in comparison arguments, when we don't necessarily have an embedding between our premice in question available. This will result in ``the thick trick", involving universality and thickness arguments, which is taken from \cite{CMIP}. A key property of pseudo-$K$ that we'll need to execute this trick is the following.
+
+\lemm{
+\label{lemm.pKistall}
+$\tilde K(\tau,\Omega)$ has ordinal height $\geq\tau$.
+}
+\proof{
+Note that by Proposition \ref{prop.weaselfacts}, either every $\W$ used in $\tilde K(\tau,\Omega)$ is collapsing or else every $\W$ used in $\tilde K(\tau,\Omega)$ is a mini-universe, since they're always universal by Theorem \ref{theo.unicof}. Assume first that we're in the collapsing case and let $\W$ be such that $S(\W)$ is $\W$-thick.
+
+\qquad For every $\xi<\gamma^{\W}$ let $\Gamma_\xi$ be strongly $\W$-thick such that $\xi\notin\hull^{\W}(\Gamma_\xi)$ if such a $\Gamma_\xi$ exists, and otherwise let $\Gamma_\xi:=\Omega$. Set $\Gamma:=\bigcap_{\xi<\gamma^{\W}}\Gamma_\xi$, so that $\Gamma$ is strongly $\W$-thick and that our construction of the $\Gamma_\xi$ ensures that
+\eq{
+\hull^{\W}(\Gamma)\cap\gamma^{\W}=\Def^{\W}\cap\gamma^{\W}.\tag*{$(1)$}
+}
+
+We then claim that $\hull^{\W}(\Gamma)=\Def^{\W}$. To show this we need to show that $\hull^{\W}(\Gamma)\subset\hull^{\W}(\Lambda)$ for every strongly $\W$-thick $\Lambda\subset\Gamma$. Let thus $\xi\in\hull^{\W}(\Gamma)$. We can then find a function $f\in\hull^{\W}(\Lambda)$ with $\dom f=\gamma^{\W}$ such that $\xi\in\ran f$ (as otherwise $\W$ would have a cardinal $>\gamma^{\W}$), so that $\xi=f(\mu)$ with $\mu\in\hull^{\W}(\Gamma)\cap\gamma^{\W}=\Def^{\W}\cap\gamma^{\W}$ using $(1)$, implying that $\mu\in\hull^{\W}(\Lambda)$ and then $\xi\in\hull^{\W}(\Lambda)$ as well, showing $\hull^{\W}(\Gamma)=\Def^{\W}$. This means that $\Omega\subset\tilde K(\tau,\Omega)$, which is more than we claimed.
+
+\qquad Assume now that we're in the mini-universe case. In particular $\W:=K^c_\tau$ is a mini-universe as well by Theorem \ref{theo.minithick}. Assume towards a contradiction that
+\eq{
+\Def^{\W}\cap\ \Omega\text{ has order-type }\beta<\tau.\tag*{$(2)$}
+}
+
+As before, we can construct a strongly $\W$-thick set $\Gamma_0$ such that $\hull^{S(\W)}(\Gamma_0)\cap\beta=\Def^{\W}\cap\beta$. Let $b_0$ be the least element of the set $(\hull^{S(\W)}(\Gamma_0)\cap\Omega)-\Def^{\W}$. Now pick a decreasing sequence $\bra{\Gamma_\xi\mid\xi<\Omega}$ of strongly $\W$-thick sets such that letting $b_\xi$ be the least ordinal in $\hull^{S(\W)}(\Gamma_\xi)-\Def^{\W}$ for every $\xi<\Omega$, we have that $\xi<\gamma\Rightarrow b_\xi<b_\gamma$ for every $\xi,\gamma<\Omega$. Such a sequence can be constructed by setting $\Gamma_{\xi+1}:=\Gamma_\xi-\{b_\xi\}$. Indeed, if $b_\xi\geq\tau$ then $\Gamma_{\xi+1}$ is still strongly $\W$-thick as then $b_\xi$ has to be a successor since it otherwise wouldn't be least, and if $b_\xi<\tau$ then it's okay to remove it, even if it's a limit (as we're only working with $\tau$-clubs).
+
+\clai[Mitchell]{
+There's no $\xi<\Omega$ such that $b_\gamma<\xi$ for every $\gamma<\xi$ and $\xi\in\hull^{S(\W)}(\xi\cup\Gamma_{\xi+1})$.
+}
+
+\cproof{
+Assume $\xi$ is an ordinal with these properties. Then pick $c\in\xi$, $d\in\Gamma^{<\omega}_{\xi+1}$ and a Skolem term $\sigma$ such that $\xi=\sigma^{\W}[c,d]$. Since $\xi$ is closed under the $b_\gamma$'s by assumption, we can find some $\gamma<\xi$ such that $b_\gamma<\xi$ and $c<b_\gamma$, so that
+\eq{
+\hull^{S(\W)}(\Gamma_\gamma)\models\exists c<b_\gamma:\sigma[c,d]\in(b_\gamma,b_{\xi+1}),\tag*{$(3)$}
+}
+
+noting that $\Gamma_{\xi+1}\subset\Gamma_\gamma$, so that $b_\gamma,b_{\xi+1}\in\hull^{S(\W)}(\Gamma_\gamma)$. But the witness $e$ to the existential quantifier in (3) is then in $\hull^{S(\W)}(\Gamma_\gamma)\cap b_\gamma$ and thus in $\Def^{\W}$ by definition of $b_\gamma$. This means in particular that $\sigma^{\W}[e,d]\in\hull^{S(\W)}(\Gamma_{\xi+1})$. (3) also implies that $\sigma^{\W}[e,d]>b_\gamma$ and $\sigma^{\W}[e,d]\in\hull^{S(\W)}(\Gamma_\gamma)$, which means by definition of $b_\gamma$ that $\sigma^{\W}[e,d]\notin\Def^{\W}$. But then $\sigma^{\W}[e,d]$ contradicts the minimality of $b_{\xi+1}$.
+}
+
+Define now the following sets:
+\eq{
+C_1&:=\{\nu<\Omega\mid\W\text{ has the hull property at }\nu\};\\
+C_2&:=\{\nu<\Omega\mid\cof\nu=\tau^+\};\\
+C_3&:=\{\nu<\Omega\mid\forall\xi<\nu:b_\xi<\nu\land\nu\notin\hull^{S(\W)}(\nu\cup\Gamma_{\nu+1}\}.
+}
+
+It's clear that $C_1$ is club and $C_2$ is $\tau^+$-club. To show that $C_3$ is club, the above claim implies that we only need to show that $\forall\xi<\nu:b_\xi<\nu$ holds for club many $\nu<\Omega$. But given any $\eta<\Omega$ pick some $\nu_0:=b_\gamma>\eta$. Then recursively set $\nu_{n+1}:=b_{\nu_n}$, so that $\nu:=\sup_n\nu_n$ has the property that $b_\nu=\nu$, so that $\nu\in C_3$. As it's clear that $C_3$ is closed, it's club.
+
+\qquad Define then the $\tau^+$-club $C:=C_1\cap C_2\cap C_3$. For $\nu\in C$, let
+\eq{
+\sigma_\nu:\N_\nu:=\chull^{S(\W)}(\nu\cup\Gamma_{\nu+1})\to\W
+}
+
+be the uncollapse and let $E_\nu$ be the $(\nu,\sigma_\nu(\nu))$-extender derived from $\sigma_\nu$, where $\nu=\crit\sigma_\nu$ as $\nu\notin\hull^{S(\W)}(\nu\cup\Gamma_{\nu+1})$. Note that since $\W$ has the hull property at $\nu$, $E_\nu$ measures all subsets of $\nu$ in $\W$.\todo{Here $E_\nu$ is on the $\W$-sequence \textit{if} it's robust because $\W=K^c_\tau$ is maximal, the next extender is unique (why is it unique? Couldn't the bicephalus argument fail if $E_\nu$ and $\dot E_\nu^{\W}$ are of type I/III and II?) and $\cof^V\nu=\tau^+\neq\tau$, so it's legal, and $E_\nu$ coheres with $\W$.}
+
+\clai{
+For every $\nu\in C$ there is a $\beta\leq\sigma_\nu(\nu)$ such that $E_\nu\restr\beta$ is not of type $Z$ and isn't robust.
+}
+
+\cproof{
+$E_\nu$ cannot be on the $\W$-sequence because then there's a Shelah limit of Shelahs in $\W$ as $\lh E_\nu=\sigma_\nu(\nu)$. The only way this can happen is if $E_\nu$ isn't robust, so there is a least $\beta\leq\lh E_\nu$ such that $E_\nu\restr\beta$ isn't type Z and isn't robust with respect to $\W|\beta$.
+}
+
+Let $\beta_\nu$ be the least such $\beta$ witnessing the claim for $\nu$. For every $\nu\in C$, pick a witness $\U_\nu$ to the non-robustness of $F_\nu\restr\beta_\nu$ with respect to $\W|\beta_\nu$. This means exactly that $\U_\nu$ is a countable subset of $\W|\beta_\nu$ and there exists no $\pi:\U_\nu\to\W|\nu$ such that, setting $\beta:=\sup(\U_\nu\cap\beta_\nu)$ and $\bar\beta:=\sup\pi"\beta$, we have that
+\begin{enumerate}
+  \item $\pi\restr\U_\nu\cap\nu=\id$;
+  \item $\sat(\U_\nu)=\sat(\U_\nu,\pi)$;
+  \item For every $a\in[\U_\nu\cap\beta_\nu]^{<\omega}$ and $x\subset[\nu]^{|a|}$ with $x\in\U_\nu$, it holds that $a\in\sigma_\nu(x)$ iff $\pi(a)\in x$.\\
+\end{enumerate}
+
+Since $\forall\alpha<\Omega:\alpha^\omega<\Omega$, we can simultaneously fix $\omega$ many regressive $f:\Omega\to\Omega$ on a $\tau^+$-stationary set\todo{Why does this hold?}. For every $\nu\in C$ fix an enumeration
+\eq{
+\nu\cap\U_\nu=\bra{\xi_\nu(n)\mid n<\omega}.
+}
+
+Define then the functions $f_n:C\to\Omega$ given as $f_n(\nu):=\xi_\nu(n)$ and note that every $f_n$ is regressive, so we then get a $\tau^+$-stationary set $S_0\subset C$ such that for some $y_n$, $n<\omega$, it holds that $\nu\cap\U_\nu=\{y_n\mid n<\omega\}$ for every $\nu\in S_0$. Pick now enumerations
+\eq{
+\U_\nu&=\bra{z_n^\nu\mid n<\omega}\\
+[\U_\nu\cap\beta_\nu]^{<\omega}&=\bra{a_n^\nu\mid n<\omega}\\
+\bigcup_{n<\omega}\P^{\U_\nu}([\nu]^n)&=\bra{x_n^\nu\mid n<\omega}
+}
+
+and set $\gamma_\nu:=\sup(\U_\nu\cap\beta_\nu)$. Expand $\mathcal L_0$ to
+\eq{
+\mathcal L_1:=\mathcal L_0\cup\{\dot z_n,\dot a_n,\dot x_n,\dot y_n\mid n<\omega\}\cup\{\dot f\mid f\in\omega^\omega\},
+}
+
+and let $\U_\nu^*$ be the expansion of $C_{\beta_\nu,\Omega}$ to an $\mathcal L_1$-structure with the $\dot f$'s interpreted as $\dot f^{\U_\nu^*}(n):=z_{f(n)}^\nu$ and the constant symbols having the obvious interpretations. Thin out $S_0$ to a $\tau^+$-stationary $S_1\subset S_0$ such that the first-order theory of $\U_\nu^*$ is constant on $S_1$, which can be done as $\omega^\omega<\Omega$.
+
+\qquad Now let $\xi,\nu\in S_1$ be such that $\beta_\xi<\nu$ (this will ensure that $\U_\xi\subset\W|\nu$). We have a bijection $\pi:\U_\nu\to\U_\xi$ given by $\pi(z_n^\nu):=z_n^\xi$. We want to show that this violates the non-robustness of $\U_\nu$. Since $\U_\nu^*$ is elementarily equivalent to $\U_\xi^*$ by definition of $S_1$, we get that $\sat(\U_\nu)=\sat(\U_\nu,\pi)$. Also, since $\pi(y_n)=y_n$ for every $n<\omega$ by definition of $S_0$, $\pi\restr\U_\nu\cap\nu=\id$. Thus (i) and (ii) of the second property of $\U_\nu$ is satisfied by $\pi$.
+
+\qquad To show (iii), we will thin out $S_1$ some more to be able to find $\nu$ and $\xi$ satisfying (iii). Note that we showed that \textit{any} choice of $\nu,\xi\in S_1$ satisfies (i) and (ii). For $\nu\in S_1$ and $n<\omega$, write
+\eq{
+\sigma_\nu(x_n^\nu)=\tau_n^\nu[\alpha_n^\nu,d_n^\nu],
+}
+
+where $\tau_n^\nu$ is a Skolem term, $\alpha_n^\nu<\nu$ and $d_n^\nu\in\Gamma^{<\omega}_{\nu+1}$. Then we can thin out $S_1$ to a $\tau^+$-stationary $S_2\subset S_1$ such that for one of the Skolem terms $\tau$ and for some of the $\alpha$'s, $\tau_n=\tau_n^\nu$ and $\alpha_n^\nu=\alpha_n$ for every $\nu\in S_2$. Now, for $\nu\in S_2$, let
+\eq{
+g(\nu):=\{\bra{n,k}\mid a_n^\nu\in\sigma_\nu(x_k^\nu)\}
+}
+
+and thin out $S_2$ to a $\tau^+$-stationary $S_3$ such that $g$ is constant on $S_3$. For $\nu\in S_3$ put
+\eq{
+R^\nu:=\{\bra{n,\theta,\mu}\mid\theta\in\tau_n^{\W}[\mu,d_n^\nu]\land\theta,\mu\in\Def^{\W}\}.
+}
+
+Here recall that we assumed $\tilde K(\tau,\Omega)$ has ordinal height $<\tau$ in $(2)$, meaning that $R^\nu$ can be encoded as an ordinal below $2^{<\tau}$. As $2^{<\tau}<\Omega$, we can thin out $S_3$ to a $\tau^+$-stationary $S_4\subset S_3$ on which $R^\nu$ is constant.
+
+\qquad This completes the thinning. Now let $\xi,\nu\in S_4$ be such that $\sigma_\xi(\xi)<\nu$. For this choice of $\xi$ and $\nu$, let $\pi:\U_\nu\to\U_\xi$ be as before: $\pi(z_n^\nu):=z_n^\xi$. We will show that $\pi$ satisfies (iii); that is, for every $n,k$ it holds that
+\eq{
+a_n^\nu\in\sigma_\nu(x_k^\nu)\quad\text{iff}\quad a_n^\xi\in x_k^\nu.
+}
+
+As we're in $S_3$ we get that $a_n^\nu\in\sigma_\nu(x_k^\nu)$ holds iff $a_n^\xi\in\sigma_\xi(x_k^\xi)$ holds, so it's enough to show that $\sigma_\xi(x_k^\xi)=x_k^\nu\cap[\sigma_\xi(\xi)]^{<\omega}$ for every $k<\omega$. Suppose it fails for $k$. Note that $\sigma_\xi(\xi)\leq b_{\xi+1}$ since $\xi\leq b_{\xi+1}$ and $\sigma_\xi(b_{\xi+1})=b_{\xi+1}$ as $b_{\xi+1}\in\hull^{S(\W)}(\Gamma_{\xi+1})$. As we've assumed that $\sigma_\xi(\xi)<\nu$ we get that $[\sigma_\xi(\xi)]^{<\omega}$, meaning that
+\eq{
+\sigma_\nu(x_k^\nu)\cap[\sigma_\xi(\xi)]^{<\omega}=x_k^\nu\cap[\sigma_\xi(\xi)]^{<\omega}\tag*{$(1)$}
+}
+
+and as $\sigma_\nu(x_k^\nu)=\tau_k[\alpha_k,d_k^\nu]$, the assumption that $x_k^\nu\cap[\sigma_\xi(\xi)]^{<\omega}\neq\sigma_\xi(x_k^\xi)$ along with (1) means that there is some $\theta$ such that $\theta\in\tau_k[\alpha_k,d_k^\xi]$ iff $\theta\notin\tau_k[\alpha_k,d_k^\nu]$. We thus have that
+\eq{
+\W\models\exists\theta,\mu<b_{\xi+1}:\theta\in\tau_k[\mu,d_k^\xi]\leftrightarrow\theta\notin\tau_k[\mu,d_k^\nu],
+}
+
+and as the above formula is a formula about elements of $\hull^{S(\W)}(\Gamma_{\xi+1})$, we can find witnesses $\theta,\mu$ to it inside $\hull^{S(\W)}(\Gamma_{\xi+1})$ as well, by elementarity. As $\theta,\mu<b_{\xi+1}$ we get that $\theta,\mu\in\Def^{\W}$ by definition of $\Gamma_{\xi+1}$. But this then implies that $R^\xi\neq R^\nu$, $\contr$. Thus $\nu$ and $\xi$ satisfy (a), (b) and (c), a contradiction to the choice of $\U_\nu$. This finishes the proof.
+}
+
+Note that using this lemma, we can then always pick a weasel $\W$ such that $S(\W)$ is $\W$-thick and $\tau\subset\Def^{\W}$. We'll now describe the construction of such a weasel. Let $\R$ be any weasel such that $S(\R)$ is $\R$-thick and let $\pi:\tilde K(\tau,\Omega)\to\R$ be the uncollapse. Set $\theta:=\sup\pi"\tau$ and note that $\theta<\Omega$ by regularity of $\Omega$. For every $\alpha\in\theta-\ran\pi$ pick some $\R$-thick $\Gamma_\alpha$ such that $\alpha\notin\hull^{\R}(\Gamma_\alpha)$. Then set
+\eq{
+\Gamma:=\bigcap\{\Gamma_\alpha\mid\alpha\in\theta-\ran\pi\}
+}
+
+and note that $\Gamma$ is $\R$-thick since $\theta<\Omega$. Then $\Def^{\R}\subset\hull^{\R}(\Gamma)$ and $\Def^{\R}\cap\theta=\hull^{\R}(\Gamma)\cap\theta$ by construction. Set now $\W:=\chull^{\R}(\Gamma$, which is then a weasel with $S(\W)$ being $\W$-thick and $\tau\subset\W$. This fact will be needed to be able to apply the following.
+
+\lemm[The thick trick]{
+\label{lemm.thicktrick}
+Let $\W$ be a weasel such that $S(\W)$ is $\W$-thick and assume $\Phi:=(\bra{\W,\M},\bra{\kappa})$ is a stable iterable phalanx, where $\kappa$ is a $\W$-cardinal\todo{Maybe we require $\kappa$ to be a limit cardinal -- but then the trick can't be used in the inductive definition of $K$?}. Assume furthermore that $\kappa\subset\Def^{\W}$. Let $\T,\U$ be the iteration trees in the coiteration of $\W,\Phi$ with last models $\P,\Q$. Then $\M$ is below $\Q$ in $\U$, $\W$ wins the comparison and $\crit j\geq\kappa$.
+}
+\proofretard
+Note that $\kappa\subset\Def^{\W}$ implies that $\W$ has the hull property at every $\alpha<\kappa$, using acceptability and that $\kappa$ is a $\W$-cardinal. Assume towards a contradiction that $\W$ is below $\Q$, so that universality of $\W$ implies that $\P=\Q$ and that both iteration maps $i:\W\to\P$ and $j:\W\to\Q$ exist. Using Theorem \ref{theo.itstack} on stacked iterations we then have a coiteration:
+
+\begin{center}
+\begin{tikzcd}[column sep=0]
+S(\P) & = & S(\Q)\\\\
+S(\W)\arrow[uu,tree={i^*}{\T^*}] && S(\W)\arrow[uu,tree={j^*}{\U^*}]
+\end{tikzcd}
+\end{center}
+
+By definition of $\U$ we get that $\mu:=\crit j^*=\crit j<\kappa$.
+
+\clai{
+$\Q$ does not have the hull property at $\mu^{+\W}=\mu^{+\Q}$.
+}
+
+\cproof{
+Let $E$ be the first extender used along the $\W$-to-$\Q$ branch of $\U$, so that $\crit E=\mu$ and as $\M$ agrees with $\W$ below $\kappa$ by assumption, $\lh E\geq\kappa$. Define $\N:=\ult(\W,E)$, which satisfies that $S(\N)$ is $\N$-thick by Theorem \ref{theo.itstack}, and also set $\Gamma:=\ran i_E^*$ with $i_E^*:S(\W)\to S(\N)$ the induced map, which is $\N$-thick by Theorem \ref{theo.itstack} again. Let $\xi$ be the first generator of $E$ strictly above $\mu$ \todo{Why does this exist? It does if we required $\kappa$ to be a limit cardinal.} and factor $i_E$ as
+\cd{
+S(\W)\ar[r]^{i_E^*}\ar[dr]_-{j_E^*} & S(\N)\\
+& S(\ult(\W,E\restr\xi)\ar[u]_{k_E^*})
+}
+
+Here $k_E[a,f]:=i_E(f)(a)$. Then $\crit k_E^*=\crit k_E=\xi$ as $\xi$ is a generator, and $\ran k_E^*=\hull^{S(\N)}(\xi\cup\Gamma)$. By coherence and the initial segment condition we also have that $\dot E_\xi^{\N}=\dot E_\xi^{\W}=E\restr\xi$, so that $E\restr\xi\in\N$. Since $E\restr\xi$ can be coded as a subset of $\mu^{+\N}$ and $E\restr\xi\notin\ult(\W,E\restr\xi)$, $E\restr\xi$ witnesses that $\P^{\N}(\xi)\nsubset\hull^{S(\N)}(\xi\cup\Gamma)$ for every $\N$-thick $\Gamma$. Since $\xi$ is strictly below all other critical points of extenders on the $\W$-to-$\Q$ branch because generators aren't moved along branches of iteration trees by Proposition \ref{prop.genarenotmoved}, we get that $\Q$ doesn't have the hull property at $\mu^{+\W}$ either.
+}
+
+Thus $\Q$ doesn't have the hull property at $\mu^{+\W}=\mu^{+\M}$ but $\W$ and hence $\Q$ has the hull property at every $\alpha<\mu^{+\W}$ since $\mu^{+\W}\leq\kappa$ and $\P^{\W}(\mu)=\P^{\Q}(\mu)$. If $\crit i\geq\mu^{+\W}$ then $\P=\Q$ has the hull property at $\mu^{+\W}$ as $\P^{\P}(\crit i)=\P^{\W}(\crit i)$, $\contr$. Thus $\crit i\leq\mu$, so that $\crit i=\mu$.
+
+\qquad Now let $A\in\P^{\W}(\mu)$ and $\Lambda:=\{\alpha\in \on^{S(\W)}\mid i^*(\alpha)=j^*(\alpha)=\alpha\}$, which can be seen to be $\W$-thick. Since $\W$ has the hull property at $\mu$, we can find a Skolem term $\tau$ such that $A=\tau^{\W}[s,t]\cap\mu$, where $s\in\mu^{<\omega}$ and $c\in\Lambda^{<\omega}$. We then get that
+\eq{
+j(A)=\tau^{\Q}[s,t]\cap j(\mu),
+}
+
+using that $s$ lies below the critical point of $j$, and every element of $\Lambda$ is fixed by $j$ by definition of $\Lambda$. But then $A=j(A)\cap\mu=\tau^{\Q}[s,t]\cap\mu=\tau^{\P}[s,t]\cap\mu$, so that
+\eq{
+i(A)=\tau^{\P}[s,t]\cap i(\mu).
+}
+
+It then follows that the first extenders used along the $\W$-to-$\P$ and $\W$-to-$\Q$ branches are compatible, contradicting Claim \ref{clai.incomp}. Thus $\M$ lies below $\Q$ in $\U$, and by universality of $\W$ and stability of $\Phi$ we get that $\W$ wins the comparison. Finally, $\crit j\geq\kappa$ holds by the rules of the iteration game.
+$\qed$\\
+
+
+\section{Weak covering}
+
+The following weak covering property will make sure that the construction of pseudo-$K$ will be independent of $\tau$ and $\Omega$, in some sense. This will then make the construction of a \textit{canonical} premouse $K$ possible.
+
+\theo[Weak covering]{
+\label{theo.wkcov}
+Let $\kappa$ be a singular strong limit cardinal. Then there is a mouse $\M$ such that $\kappa^{+\M}=\kappa^+$.
+}
+
+The entire section will be devoted to proving this theorem. To get an overview of the proof, we supply here the essential steps:
+\begin{enumerate}
+\item Fix a weasel $\W_0$ such that $S(\W_0)$ is $\W_0$-thick and $\kappa^+\subset\Def^{\W_0}$ and assume towards a contradiction that $\lambda:=\kappa^{+\W_0}<\kappa^+$;
+\item Replace $\W_0$ by another weasel $\W$ with $\kappa^{+\W}=\lambda$, fixing a technicality;
+\item Use that $\lambda<\kappa^+$ to come up with a new premouse $\S$ with $\kappa^{+\S}=\lambda$;
+\item Show that the phalanx $(\bra{\W,\S},\bra{\kappa})$ is iterable;
+\item Derive a contradiction after comparing $(\bra{\W,\S},\bra{\kappa})$ with $\W$, using that the phalanx-side doesn't move.\\
+\end{enumerate}
+
+Parts of the proof will be omitted with a reference to the source. We're only going to omit proofs which don't depend crucially upon our results from the previous sections, so the ideas hopefully still shine through. In step (iii), to get an idea of how $\S$ is constructed we expand this step into the following substeps:
+\begin{enumerate}
+\item[(a)] Collapse everything in sight with the Mostowski collapse $\pi$ and use that $\lambda<\kappa^+$ to ensure that $\pi$ is cofinal in $\lambda$;
+\item[(b)] Iterate $\bar\W$ to some $\P$ such that $\bar\W$ agrees with $\P$ below $\bar\lambda$;
+\item[(c)] Set $\R$ to be the $E_\pi\restr\kappa$-ultrapower of $\P$, so that $\W$ agrees with $\R$ below $\lambda$ since $\pi$ was cofinal in $\lambda$, so that $\kappa^{+\R}=\lambda$;
+\item[(d)] $\R$ is not necessarily a premouse, so ``approximate" $\R$ by a premouse $\S$, still such that $\kappa^{+\S}=\lambda$.\\
+\end{enumerate}
+
+We now commence with the proof. Let thus $\kappa$ be a singular strong limit cardinal and fix $\Omega$ sufficiently large such that $\tilde K(\kappa^+,\Omega)$ has ordinal height $\geq\kappa^+$. Fix $\W_0$ such that $S(\W_0)$ is $\W_0$-thick and $\kappa^+\subset\Def^{\W_0}$. Assume that $\lambda:=\kappa^{+\W_0}<\kappa^+$.
+
+\qquad If $\W_0$ is either a mini-universe or is collapsing with $\nu:=\cof^V\gamma^{\W_0}\geq\kappa$ then set $\W:=\W_0$. But if $\W_0$ is collapsing with $\nu<\kappa$ we call $\W_0$ \textit{phalanx-unstable}, as this sort of $\W_0$ will make it possible for some of our phalanxes that we'll introduce later to become unstable. To fix this, we need to get rid of all measurable cardinals inside $\W_0$ below $\kappa^+$ with $V$-cofinality $\nu$.
+
+\qquad To remove these measurables, we linearly iterate $\W_0$ by normal measures: letting $\W_\alpha$ be the $\alpha$'th model of the iteration, set $\W_{\alpha+1}:=\ult(\W_\alpha,U)$, where $U$ is the order zero measure on the least measurable cardinal in $\W_\alpha$ below $\kappa^+$ and with $V$-cofinality $\nu$. The iteration stops if there is no such measurable, and the iteration will thus stop after $\leq\kappa^+$ steps. Since the critical points in the iteration are increasing, it is normal. Let $\W$ be the final model of the iteration.
+
+%In this phalanx-unstable case, we have that
+%\begin{enumerate}
+%\item $\W$ is a stable collapsing weasel and $\cof^V\gamma^{\W}=\nu$;
+%\item $\W$ has the hull property at every $\mu<\kappa^+$;
+%\item For $\mu<\kappa^+$, $\W$ has the definability property \todo[color=green]{Define this somewhere. Maybe at the claim in the last section.} at $\mu$ iff $\mu$ wasn't the critical point in the iteration. In particular, $\W$ has the definability property at every $\mu$ with $\cof^V\mu\neq\nu$;
+%\item If $\mu<\kappa^+$ and $\cof^V\mu=\nu$ then $\mu$ isn't measurable in $\W$.\todo[color=red]{Argue that these are true. These are maybe not needed though.}\\
+%\end{enumerate}
+
+\qquad We now move towards our goal of defining $\S$. First let $\pi:\H\to V_{\Omega+\omega}$ be the collapse with $\H$ transitive, $|\H|<\kappa$, $\ran\pi$ cofinal in $\lambda$ (which can be done as $\lambda<\kappa^+$), everything of interest being inside $\ran\pi$ and $\H$ being closed under $\omega$-sequences. If $\W_0$ is collapsing such that $\nu<\kappa$ then we also require that $\H$ is closed under $\nu$-sequences. Let
+\eq{
+\kappa_\alpha:=\alpha\text{'th infinite cardinal of $\bar\W$}=\aleph_\alpha^{\bar\W}.
+}
+
+Fix $\theta$ such that $\pi(\kappa_\theta)=\kappa^+$. Note now that $\kappa_{\bar\kappa}=\bar\kappa$, $\kappa_{\bar\kappa+1}=\bar\lambda$ and $\kappa_{\bar\kappa+2}\leq\theta$.
+
+\lemm{
+\label{lemm.wkcovittree}
+There is a normal iteration tree on $\W$ with last model $\N$ such that $\bar\W$ agrees with $\N$ below $\bar\lambda+1$.
+}
+\proof{
+See section 5 in \cite{Kwithoutmeasurable}. To get an idea of how it's shown, see the comment in the proof of Lemma \ref{lemm.Phiisit}.
+}
+
+Let $\T$ be an iteration tree of minimal length witnessing the above Lemma \ref{lemm.wkcovittree}, with last model $\N$. Define $\eta<\lh\T-1$ to be least such that $\nu_{E_\eta^{\T}}>\bar\kappa$ if it exists and otherwise $\lh\T-1$, and let $\gamma$ be least such that $\rho(\M_{\eta}^{\T}|\gamma)<\bar\lambda$ if it exists and otherwise $\on^{\M_\eta^{\T}}$. This leads us to
+\eq{
+\P:=\M_\eta^{\T}|\gamma.
+}
+
+Note that $\P$ agrees with $\bar\W$ below $\bar\lambda$. Indeed, since $\N$ satisfies this property we only have to show that $\bar\lambda\leq\lh E_\eta$. But $\bar\kappa<\nu(E_\eta)$, $\bar\lambda=\bar\kappa^{+\bar\W}$ and since $\N$ agrees with $\bar\W$ below $\bar\lambda+1$, $\bar\lambda=\bar\kappa^{+\N}$ as well. As $\lh E_\eta$ is a cardinal of $\N$, we get that $\bar\lambda\leq\lh E_\eta$. If $\M_\eta=\N$ then it's direct since $\N$ agrees with $\bar\W$ below $\bar\lambda+1$.
+
+\qquad Now, let $m\leq\omega$ be the largest such that $\bar\lambda<\rho_m(\P)$; then set
+\eq{
+\R:=\ult_m(\P,E_\pi\restr\kappa),
+}
+
+and note that $\R$ agrees with $\W$ below $\lambda$ since $\P$ agrees with $\bar\W$ below $\bar\lambda$, $\pi(\bar\lambda)=\lambda$ and that $\sup\pi"\bar\lambda=\pi(\bar\lambda)=\lambda$ since $\pi$ is cofinal in $\lambda$. We might have that the active extender of $\R$ isn't total so that it isn't a premouse\footnote{This breed of mice is called \textit{protomice} in \cite{WkCov}.}. This is solved in \cite[p. 234]{WkCov} by introducing a premouse $\S$ such that $\S$ agrees with $\R$, and thus also $\W$, below $\lambda$. At the same time another premouse $\Q$ is introduced, replacing $\P$ in the same way, and such that $\S=\ult(\Q,E_\pi\restr\kappa)$.
+
+\lemm{
+\label{lemm.Phiisit}
+$\Phi:=(\bra{\W,\S},\bra{\kappa})$ is a stable iterable phalanx.
+}
+\proof{
+See section 5 in \cite{Kwithoutmeasurable}. The proof is shown in a helix-like fashion, building approximations $\P_\alpha$, $\R_\alpha$ and $\S_\alpha$ to $\P$, $\R$ and $\S$, and inductively showing Lemma \ref{lemm.wkcovittree} as well as iterability of everything in sight at that stage, which is then used to prove Lemma \ref{lemm.wkcovittree} for the next stage, and so on.
+}
+
+We now compare $\Phi$ with $\W$, giving us iteration trees $\T,\U$ on $\Phi,\M$ with last models $\H,\N$, respectively. As $\kappa\subset\Def^{\W}$, $\Phi$ is stable and $\W$ is stable and universal, the thick trick \ref{lemm.thicktrick} implies we get that $\H$ lies above $\S$ in $\T$, $\W$ wins the comparison and letting $i:\S\to\H$ be the iteration map, $\crit i\geq\kappa$. The situation thus looks as follows:
+
+\begin{center}
+\begin{tikzcd}[column sep=0]
+\H & \init & \N\\\\
+\S\arrow[uu,tree={i}{\T}] && \W\arrow[uu,treeplain={}{\U}]
+\end{tikzcd}
+\end{center}
+
+Since $\S$ agrees with $\W$ below $\lambda$, we get that $\P^{\S}(\kappa)=\P^{\W}(\kappa)=\P^{\H}(\kappa)$. We then have two cases, whether or not $\S$ is a weasel. We will only treat the case where $\S$ is not a weasel in some detail. In the case where it's a weasel one argues that $S(\S)$ is $\S$-thick and the $\W$-to-$\N$ branch of $\U$ doesn't drop so that $\H=\N$, and then proceeds to a technical argument involving the hull- and definability property to conclude that $\P^{\W}(\kappa)$ has cardinality $\kappa$ in $\W$, the desired contradiction. 
+
+\qquad If $\S$ isn't a weasel then it is $\kappa$-sound and projects across $\kappa$ \cite[Claim 5.19]{Kwithoutmeasurable}. But since $\crit i\geq\kappa$, we can't have that $\T$ is non-trivial as then there would be a drop along the $\S$-to-$\H$ branch. Thus $\S=\H$ and $i=\id$. But then since $\on^{\S}<\on^{\W}=\kappa^+$, we get that $\S\pinit\W$ and thus $\S\in\W$. But because of $\kappa$-soundness, $\S$ can be coded as a subset of $\kappa$, so this contradicts that $\P^{\W}(\kappa)\subset\S$.
+
+\qquad This finishes the (sketch of the) proof of the weak covering theorem.
+$\qed$\\
+
+\section{Definition of $K$}
+
+We'll now prove that $\tilde K(\cof\kappa,\kappa^+)|\cof\kappa$ satisfies a certain inductive definition for $\kappa$ a singular strong limit cardinal, which will be independent on the specific choice of $\kappa$.
+
+\defi{
+A premouse $\M$ is \textbf{$0$-strong} if it's stable, \todo{Maybe also satisfies $\zf^-$? Maybe not.} and given any weasel $\W$ such that $S(\W)$ is $\W$-thick and $\Sigma$ an iteration strategy for $\W$, there is an iteration tree $\T$ on $\W$ by $\Sigma$ with last model $\P$ such that there is a fully elementary embedding $\pi:\M\to\Q$ with $\Q\init\ \P$.
+}
+
+The last condition in the definition of $0$-strong is that we can ``synthetically" compare $\M$ to every weasel $\W$ satisfying that $S(\W)$ is $\W$-thick, even though $\M$ might not be iterable.
+
+\defi{
+Let $\M$ be a premouse and $\kappa$ an $\M$-cardinal. Then $\M$ is \textbf{$\kappa^{+\M}$-strong} if whenever $\Phi:=(\bra{\N,\M},\bra{\kappa})$ is a phalanx with $\N$ being $\mu$-strong for every $\M$-cardinal $\mu<\kappa^{+\M}$, then $\Phi$ is $(\Omega+1)$-iterable.
+}
+
+\defi{
+A premouse $\M$ \textbf{satisfies the local inductive definition of $K$} if for every $\M$-cardinal $\kappa$ of $\M$,
+\eq{
+\kappa^{+\M}&:=\sup\{\kappa^{+\N}\mid\N\text{ is $\kappa$-strong and properly $1$-small}\}
+}
+
+and for every $\alpha<\kappa^{+\M}$, $\P=\M|\alpha$ iff $\P=\N|\alpha$ for some $\kappa$-strong properly $1$-small $\N$.
+}
+
+\lemm{
+\label{lemm.pKinddef}
+Let $\kappa$ be a singular strong limit cardinal, $\tau:=\cof\kappa$ and $\Omega:=\kappa^+$. Then $\tilde K(\cof\kappa,\kappa^+)|\cof\kappa$ satisfies the local inductive definition of $K$.
+}
+\proof{
+By Weak Covering \ref{theo.wkcov} we get that $\kappa^{+\M}=\kappa^+=\Omega$ for some mouse $\M$. But $\W_0:=\M|\Omega$ is then a collapsing weasel with $\kappa$ as largest cardinal. If $\W_0$ is stable then set $\W_1:=\W_0$ and otherwise set $\W_1:=\ult(\W_0,U)|\Omega$, where $U$ is the order zero measure on $\eta^{\W_0}=\cof^{\W_0}\kappa\geq\tau$, which is then a stable collapsing weasel still having $\kappa$ as its largest cardinal by Proposition \ref{prop.weaselfacts}. This implies that $\Omega$ is $\W_1$-thick, so that there is some stable collapsing weasel $\W$ with
+\eq{
+(\Def^{\W_1},\in)\cong(\Def^{\W},\in)
+}
+
+and such that $\tau\subset\Def^{\W}$ by the construction given before the Thick Trick \ref{lemm.thicktrick}, so that $\W|\tau=\tilde K(\tau,\Omega)|\tau$. Note that $\W$ still have $\kappa$ as its largest cardinal. Indeed, since $\W$ and $\R$ are both collapsing, letting $\sigma:\R\to\W$ be the collapse we have that $\sigma(\kappa)=\sigma(\gamma^{\R})=\gamma^{\W}$, so that $\gamma^{\W}\leq\kappa$. But since $\kappa$ is a $V$-cardinal it's also a $\W$-cardinal and we thus have that $\gamma^{\W}=\kappa$.
+
+\qquad We thus have to show that $\W|\tau$ satisfies the local inductive definition of $K$. The argument in the proof of \cite[Theorem 6.11]{CMIP} can be used directly here, if we just show the following claim.
+
+\clai{
+Let $\mu\leq\tau$ be a cardinal of $\W$ and assume $\Phi:=(\bra{\W,\M},\bra{\mu})$ is an iterable phalanx with $|\M|<\Omega$. Then there's an iteration tree $\U$ on $\W$ with last model $\Q$ and in which all extenders have length $\geq\mu$, an initial segment $\P\init\Q$ and a fully elementary \todo{Should this be a $k$-embedding for $\M$ being $k$-sound?} $\pi:\M\to\P$ such that $\pi\restr\mu=\id$.
+}
+
+\cproof{
+We first show that both $\Phi$ and $\W$ are stable. $\W$ is stable by construction, and since $|\M|<\Omega$ it's stable as well, so we just need to show that if $(\eta^{\W})^{+\W}\leq\mu$ then $\eta^{\W}$ isn't a measurable cardinal of neither $\W$ nor $\M$. But since $\eta^{\W}\geq\tau$, using that $\kappa$ is the largest cardinal in $\W$, this is vacously true.
+
+\qquad Now compare $\Phi$ with $\W$, giving us iteration trees $\T,\U$ on $\Phi,\W$ with last models $\P,\Q$, respectively. As $\mu\subset\Def^{\W}$, $\Phi$ is stable and $\W$ is stable and universal, the thick trick \ref{lemm.thicktrick} implies that $\P$ lies above $\M$ in $\T$, $\W$ wins the comparison and letting $i:\M\to\P$ be the iteration map, $\crit i\geq\mu$. Thus taking $\pi:=i$ works.
+}
+
+This thus finishes the proof of the local inductive definition.
+}
+
+\coro{
+For singular strong limit cardinals $\mu$ and $\nu$ with $\cof\mu\leq\cof\nu$, it holds that $\tilde K(\cof\mu,\mu^+)|\cof\mu=\tilde K(\cof\nu,\nu^+)|\cof\mu$.
+}
+\proof{
+This is directly by Lemma \ref{lemm.pKinddef}, since the local inductive definition of $K$ is independent of $\mu$.
+}
+
+\defi{
+\textbf{The core model $K$} is the unique proper class premouse such that given any singular strong limit cardinal $\mu$, $K|\cof\mu=\tilde K(\cof\mu,\mu^+)|\cof\mu$.
+}
+
+To see that $K$ does in fact satisfy all the properties mentioned in Theorem \ref{theo.K}, we refer to chapters 5 and 6 of \cite{CMIP}. Even though a measurable cardinal is assumed throughout, the proofs of these will still go through in our framework.

@@ -1,0 +1,69 @@
+Input File::introduction.tex::0::0::Input File
+LaTeX Error::introduction.tex::1::0::Undefined control sequence. |\chapter {Introduction}
+LaTeX Error::introduction.tex::1::0::Missing \begin{document}. |\chapter{I ntroduction} 
+LaTeX Error::introduction.tex::2::0::Undefined control sequence. |\thispagestyle{fancy}  | <argument> \undefinedpagestyle  
+hbox Warning::introduction.tex::1::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 1--3
+LaTeX Error::introduction.tex::5::0::Environment onehalfspacing undefined. |\begin{onehalfspacing}  
+LaTeX Error::introduction.tex::7::0::Missing \begin{document}. |I n Gödel's 1947 paper ``What is Cantor's continuum problem'' he propose... 
+hbox Warning::introduction.tex::7::0::Overfull \hbox (18.0pt too wide) in paragraph at lines 7--8
+hbox Warning::introduction.tex::7::0::Overfull \hbox (17.9167pt too wide) in paragraph at lines 7--8
+hbox Warning::introduction.tex::7::0::Overfull \hbox (17.9167pt too wide) in paragraph at lines 7--8
+LaTeX Error::introduction.tex::9::0::Missing \begin{document}. |\quad Today, we have found a great many extensions of \textsf{ZFC} in th... 
+LaTeX Font Info::introduction.tex::9::0::   External font `cmex10' loaded for size <7>.
+LaTeX Font Info::introduction.tex::9::0::   External font `cmex10' loaded for size <5>.
+hbox Warning::introduction.tex::9::0::Overfull \hbox (18.0pt too wide) in paragraph at lines 9--10
+hbox Warning::introduction.tex::9::0::Overfull \hbox (17.9167pt too wide) in paragraph at lines 9--10
+hbox Warning::introduction.tex::9::0::Overfull \hbox (7.23265pt too wide) in paragraph at lines 9--10
+hbox Warning::introduction.tex::9::0::Overfull \hbox (7.91803pt too wide) in paragraph at lines 9--10
+hbox Warning::introduction.tex::9::0::Overfull \hbox (7.23265pt too wide) in paragraph at lines 9--10
+hbox Warning::introduction.tex::9::0::Overfull \hbox (7.91803pt too wide) in paragraph at lines 9--10
+hbox Warning::introduction.tex::9::0::Overfull \hbox (13.01115pt too wide) in paragraph at lines 9--10
+hbox Warning::introduction.tex::9::0::Overfull \hbox (7.23265pt too wide) in paragraph at lines 9--10
+hbox Warning::introduction.tex::9::0::Overfull \hbox (7.91803pt too wide) in paragraph at lines 9--10
+hbox Warning::introduction.tex::9::0::Overfull \hbox (16.86658pt too wide) in paragraph at lines 9--10
+LaTeX Error::introduction.tex::11::0::Missing \begin{document}. |\quad So what makes these extensions well-justified? This is where inne... 
+hbox Warning::introduction.tex::11::0::Overfull \hbox (18.0pt too wide) in paragraph at lines 11--12
+hbox Warning::introduction.tex::11::0::Overfull \hbox (13.28879pt too wide) in paragraph at lines 11--12
+hbox Warning::introduction.tex::11::0::Overfull \hbox (16.35545pt too wide) in paragraph at lines 11--12
+LaTeX Error::introduction.tex::13::0::Missing \begin{document}. |\quad In my thesis I will provide a modern introduction to inner model ... 
+hbox Warning::introduction.tex::13::0::Overfull \hbox (18.0pt too wide) in paragraph at lines 13--14
+hbox Warning::introduction.tex::13::0::Overfull \hbox (6.80557pt too wide) in paragraph at lines 13--14
+LaTeX Error::introduction.tex::15::0::Missing \begin{document}. |\quad The goal of the thesis is to construct the newest version of the ... 
+LaTeX Error::introduction.tex::15::0::Undefined control sequence. |...It will include the details in \cite{FSIT} and \cite{CMIP}, with the... | <write> ...: Citation `\@citeb ' on page \thepage  \space undefined\on@line .
+Citation LaTeX Warning::introduction.tex::15::0::Citation `FSIT' on page  undefined.
+LaTeX Error::introduction.tex::15::0::Undefined control sequence. |...the details in \cite{FSIT} and \cite{CMIP} , with the modern approach... | <write> ...: Citation `\@citeb ' on page \thepage  \space undefined\on@line .
+Citation LaTeX Warning::introduction.tex::15::0::Citation `CMIP' on page  undefined.
+LaTeX Error::introduction.tex::15::0::Undefined control sequence. |...}, with the modern approach in \cite{OIMT} , with the corrections and... | <write> ...: Citation `\@citeb ' on page \thepage  \space undefined\on@line .
+Citation LaTeX Warning::introduction.tex::15::0::Citation `OIMT' on page  undefined.
+LaTeX Error::introduction.tex::15::0::Undefined control sequence. |...dditions provided by \cite{Deconstructing} and \cite{Kwithoutmeasura... | <write> ...: Citation `\@citeb ' on page \thepage  \space undefined\on@line .
+Citation LaTeX Warning::introduction.tex::15::0::Citation `Deconstructing' on page  undefined.
+LaTeX Error::introduction.tex::15::0::Undefined control sequence. |...onstructing} and \cite{Kwithoutmeasurable} . A number of illustration... | <write> ...: Citation `\@citeb ' on page \thepage  \space undefined\on@line .
+Citation LaTeX Warning::introduction.tex::15::0::Citation `Kwithoutmeasurable' on page  undefined.
+LaTeX Error::introduction.tex::15::0::Undefined control sequence. |... provided as well, inspired by \cite{OIMT} , \cite{Lowe} and \cite{Go... | <write> ...: Citation `\@citeb ' on page \thepage  \space undefined\on@line .
+Citation LaTeX Warning::introduction.tex::15::0::Citation `OIMT' on page  undefined.
+LaTeX Error::introduction.tex::15::0::Undefined control sequence. |...well, inspired by \cite{OIMT}, \cite{Lowe} and \cite{Godelsprogram}. | <write> ...: Citation `\@citeb ' on page \thepage  \space undefined\on@line .
+Citation LaTeX Warning::introduction.tex::15::0::Citation `Lowe' on page  undefined.
+LaTeX Error::introduction.tex::15::0::Undefined control sequence. |...IMT}, \cite{Lowe} and \cite{Godelsprogram} . | <write> ...: Citation `\@citeb ' on page \thepage  \space undefined\on@line .
+Citation LaTeX Warning::introduction.tex::15::0::Citation `Godelsprogram' on page  undefined.
+hbox Warning::introduction.tex::15::0::Overfull \hbox (18.0pt too wide) in paragraph at lines 15--16
+hbox Warning::introduction.tex::15::0::Overfull \hbox (5.43053pt too wide) in paragraph at lines 15--16
+hbox Warning::introduction.tex::15::0::Overfull \hbox (5.43053pt too wide) in paragraph at lines 15--16
+hbox Warning::introduction.tex::15::0::Overfull \hbox (5.43053pt too wide) in paragraph at lines 15--16
+hbox Warning::introduction.tex::15::0::Overfull \hbox (5.43053pt too wide) in paragraph at lines 15--16
+hbox Warning::introduction.tex::15::0::Overfull \hbox (5.43053pt too wide) in paragraph at lines 15--16
+hbox Warning::introduction.tex::15::0::Overfull \hbox (5.43053pt too wide) in paragraph at lines 15--16
+hbox Warning::introduction.tex::15::0::Overfull \hbox (5.43053pt too wide) in paragraph at lines 15--16
+hbox Warning::introduction.tex::15::0::Overfull \hbox (5.43053pt too wide) in paragraph at lines 15--16
+LaTeX Error::introduction.tex::17::0::Missing \begin{document}. |\quad The construction of these inner models began in the 70's, startin... 
+LaTeX Error::introduction.tex::17::0::Undefined control sequence. |... done in 2013 by \cite{Kwithoutmeasurable} . | <write> ...: Citation `\@citeb ' on page \thepage  \space undefined\on@line .
+Citation LaTeX Warning::introduction.tex::17::0::Citation `Kwithoutmeasurable' on page  undefined.
+hbox Warning::introduction.tex::17::0::Overfull \hbox (18.0pt too wide) in paragraph at lines 17--18
+hbox Warning::introduction.tex::17::0::Overfull \hbox (5.43053pt too wide) in paragraph at lines 17--18
+LaTeX Error::introduction.tex::19::0::Missing \begin{document}. |\quad Woodin has shown that if it's possible to build an inner model wi... 
+LaTeX Error::introduction.tex::19::0::Undefined control sequence. |...in Sargsyan's thesis \cite{Sargsyanthesis} . | <write> ...: Citation `\@citeb ' on page \thepage  \space undefined\on@line .
+Citation LaTeX Warning::introduction.tex::19::0::Citation `Sargsyanthesis' on page  undefined.
+hbox Warning::introduction.tex::19::0::Overfull \hbox (18.0pt too wide) in paragraph at lines 19--20
+hbox Warning::introduction.tex::19::0::Overfull \hbox (5.43053pt too wide) in paragraph at lines 19--20
+LaTeX Error::introduction.tex::21::0::\begin{document} ended by \end{onehalfspacing}. |\end{onehalfspacing}  
+LaTeX Error::...'s thesis/frontbackmatter/introduction.tex"::0::0::Emergency stop. (job aborted, no legal \end found)
+LaTeX Error::0::0::0:: ==> Fatal error occurred, no output PDF file produced! 

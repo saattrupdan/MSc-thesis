@@ -1,0 +1,499 @@
+\chapter{Pseudo-$K$}
+\thispagestyle{fancy}
+\label{ch7}
+
+From this point onwards we strengthen our global assumption from chapter 2, that there is no proper class inner model with a Shelah limit of Shelahs, to the following.
+
+\begin{center}
+\framebox{\textbf{There is no proper class inner model with a Woodin cardinal.}}
+\end{center}
+
+Note that under this global assumption, any premouse is countably $(k,\omega_1,\omega_1)$-iterable iff it's fully $k$-iterable by the argument in Theorem \ref{theo.fullyit}. Also, this global assumption ensures that the $K^c$-constructions from the previous chapter actually produce mice.
+
+\qquad We now want to use these mice to define the \textit{core model} $K$, which is in some sense the unique canonical inner model that is close to $V$. To be able to define $K$ we will need an intermediate model called \textit{pseudo-K} approximating $K$, and towards this fix the following.
+\begin{itemize}
+\item $\tau$ is a regular cardinal $\geq\omega_3$;
+\item $\Omega$ is a regular cardinal such that $2^{<\tau}<\Omega$, $\tau^{++}<\Omega$ and $\forall\alpha<\Omega:\alpha^\omega<\Omega$.\\
+\end{itemize}
+
+Pseudo-$K$ will then be a structure $\tilde K(\tau,\Omega)$ depending solely on $\tau$ and $\Omega$. In the next chapter we will show that this model will have ordinal height $\geq\tau$ and we will show that specific choices of $\tau$ and $\Omega$ will make sure that these pseudo-$K$'s converge into a unique model, which will be our $K$.\\
+
+
+\section{Weasels and stability}
+
+\defi{
+A \textbf{preweasel} is a premouse of ordinal height $\Omega$. A \textbf{weasel} is a fully iterable preweasel.
+}
+
+\defin{
+Let $\M$ be a (pre)mouse. Then
+\begin{itemize}
+\item $\M$ is a \textbf{mini-universe} if it's a (pre)weasel and $\M\models$ there are cofinally many cardinals;
+\item $\M$ is \textbf{collapsing} if it's a (pre)weasel and $\M\models$ there is a largest cardinal. In this case let $\gamma^{\M}$ be that largest cardinal of $\M$ and $\eta^{\M}:=\cof^{\M}\gamma$;
+\item $\M$ is \textbf{stable} if it's a mini-universe, or that it's collapsing and $\eta^{\M}$ is not the critical point of a total extender on the $\M$-sequence, or $\on^{\M}<\Omega$;
+\item $\M$ is \textbf{universal} if it's fully iterable and it wins the coiteration with any stable mouse.\dit
+\end{itemize}
+}
+
+We will by default be working with mice and weasels, and will specifically point out when premice and preweasels are meant. We will call mice \textbf{stably universal} if they're both stable and universal.
+
+\prop{\ 
+\label{prop.weaselfacts}
+\begin{enumerate}
+\item If $\W$ is unstable collapsing then $\ult(\W,U)|\Omega$ is stable collapsing, where $U$ is the order zero measure\footnote{This is by the Mitchell order, defined as $U\triangleleft U'$ iff $U\in\ult(\W,U')$. It can be shown that this is in fact a wellfounded preorder, see \cite{Kanamori}.} of $\W$ on $\eta^{\W}$;
+\item Any stable collapsing weasel is stably universal;
+\item If there exists a collapsing weasel then there's no universal mini-universe;
+\item If $\W$ and $\R$ are collapsing then $\cof^V\gamma^{\W}=\cof^V\gamma^{\R}$.
+\end{enumerate}
+}
+\proofretard
+(i): Since $U$ is the order zero measure on $\eta^{\W}$, $\eta^{\W}$ isn't measurable in $\ult(\W,U)$. As $\gamma^{\W}$ is still the largest cardinal below $\Omega$ of the ultrapower\todo{Why's that?}, we get that $\eta^{\W}=\eta^{\ult(\W,U)|\Omega}$, so that the $\ult(\W,U)|\Omega$ is stable.
+
+\qquad (ii): Let $\W$ be stable collapsing, and $\M$ any stable mouse. Assume towards a contradiction that $\M$ iterates strictly past $\W$, so that we have that
+\begin{center}
+\begin{tikzcd}[column sep=0]
+\P & \pinit & \Q\\\\
+\W\arrow[uu,tree={i}{\T}] && \M\arrow[uu,treeplain={}{\U}]
+\end{tikzcd}
+\end{center}
+
+where there are no drops on the $\W$-to-$\P$ branch. But now the lengths of all the extenders used along the $\M$-to-$\Q$ branch leaves cofinally many $\Q$-cardinals below $\Omega$, so that $\P$ is a mini-universe, $\contr$.
+
+\qquad (iii): Assume $\W$ is collapsing and $\R$ is a universal mini-universe. By (i) we can assume that $\W$ is stable, so that it's universal by (ii). Then in the comparison of $\W$ and $\R$, they both iterate to the same $\P$ with the iteration maps existing on both sides, so that by elementarity $\W$ is a mini-universe, $\contr$.
+
+\qquad (iv): Assume not and without loss of generality that $\W$ and $\R$ are both stable and $\cof\gamma^{\W}\leq\cof\gamma^{\R}$. Then they're both universal by (ii) and thus iterate to some $\P$ via iteration maps $i:\W\to\P$ and $j:\R\to\P$. By elementarity $\P$ has a largest cardinal $\gamma^{\P}$ such that $i(\gamma^{\W})=\gamma^{\P}=j(\gamma^{\R})$, so that $\cof\gamma^{\P}\leq\cof\gamma^{\W}\leq\cof\gamma^{\R}$. But no new sequences appear along iteration trees\todo{Why's that?}, so that we also get that $\cof\gamma^{\R}\leq\cof\gamma^{\P}$ and thus the wanted equality as well.
+$\qed$
+
+\defin{
+A phalanx $\Phi$ is \textbf{stable} if
+\begin{enumerate}
+\item every $\M_\xi^{\Phi}$ is stable;
+\item whenever $\xi+1<\lh\Phi$ and $\M_\xi^{\Phi}$ is collapsing such that $(\eta^{\M_\xi^{\Phi}})^{+\M_\xi^{\Phi}}\leq\lambda_\xi^{\Phi}$, it holds that $\M_\beta^{\Phi}\models\eta^{\M_\xi^{\Phi}}$ is not measurable, for every $\beta\geq\xi$.\dit
+\end{enumerate}
+}
+
+\defi{
+Let $\T$ be an iteration tree on some phalanx $\Psi$. Then the \textbf{induced phalanx by $\T$} is the phalanx $\Phi$ defined as $\M_\alpha^{\Phi}:=\M_\alpha^{\T}$ and $\lambda_\alpha^{\Phi}$ being $\lambda_\alpha^{\Psi}$ if $\alpha<\lh\Psi$ and $\lh E_\alpha$ otherwise. We denote this induced phalanx by $\Phi(\T)$.
+}
+
+The primary use of stability of phalanxes is the following result that it's preserved under iterations.
+
+\lemm{
+\label{lemm.stableiteration}
+Let $\Phi$ be a stable phalanx and $\T$ be an iteration tree on $\Phi$ with a last model and $\lh\T<\Omega$. Then $\Phi(\T)$ is stable. In particular, every model of $\T$ have ordinal height $\leq\Omega$.
+}
+\proof{
+Write $\Phi(\T)=(\bra{\M_\xi\mid\xi\leq\gamma},\bra{\lambda_\xi\mid\xi<\gamma})$. We show it by induction on $\gamma<\Omega$. The base case is if $\Phi(\T)=\Phi$, in which case it's true by assumption. Assume thus that $\Phi(\T\restr\gamma)$ is stable; we'll show that $\Phi(\T)$ is then stable as well.
+
+\qquad We first show the second stability clause. It's trivial if $\gamma$ is a limit ordinal, so assume that $\gamma=\xi+1$, $\M_\xi$ is collapsing, $(\eta^{\M_\xi})^{+\M_\xi}\leq\lambda_\xi$ and for a contradiction that $\eta^{\M_\xi}$ is measurable in $\M_\gamma$, witnessed by a measure $U\in\M_\gamma$. But then since $(\eta^{+\M_\xi})^{+\M_\xi}\leq\lambda_\xi$ we have that
+\eq{
+U\in\M_\gamma|(\eta^{\M_\xi})^{+\M_\xi}=\M_\xi|(\eta^{\M_\xi})^{+\M_\xi}\subset\M_\xi,
+}
+
+contradicting the stability of $\M_\xi$ by the induction assumption.
+
+\qquad For the first stability clause we have to show that $\M_\gamma$ is stable. If $\M_\gamma$ is a mini-universe or satisfies that $\on^{\M_\gamma}<\Omega$ it's trivial, so assume that it's collapsing. Assume furthermore that $\eta^{\M_\gamma}$ is the critical point of an extender $E$ on the $\M_\gamma$-sequence which is total on $\M_\gamma$, and assume that $\gamma$ is a successor ordinal as the limit case is clear by elementarity. Set $\xi:=\pred_T\gamma$. If $\gamma\notin D^{\T}$ then it's clear by elementarity again, and if $\gamma\in D^{\T}$ then $\on^{\M_\gamma}<\Omega$ as we have that $\on^{\M_\gamma^*}<\Omega$, $\contr$. The last case is if $\on^{\M_\gamma}>\Omega$, and we'll show that this is impossible.
+
+\qquad Assume $\on^{\M_\gamma}>\Omega$, and furthermore assume that $\gamma$ is a limit ordinal. Then by definition of direct limits we have that $\Omega=i_{\eta,\gamma}^{\T}(\mu)$ for some $\eta<\gamma$. By our induction hypothesis, $i_{\eta,\nu}(\mu)<\Omega$ for every $\nu<_T\gamma$. Define for these $\nu$ the sets
+\eq{
+X_\nu:=i_{\nu,\gamma}"i_{\eta,\nu}(\mu),
+}
+
+so that $\Omega=\bigcup\{X_\nu\mid\nu\in(\eta,\gamma)_T\}$. But then $\Omega$ is a union of $\gamma<\Omega$ sets of size $<\Omega$, contradicting the regularity of $\Omega$.
+
+\qquad Assume now that $\gamma=\beta+1$, and let $\xi:=\pred_T\gamma$ and $\M_\gamma=\ult_k(Q,E)$, where $Q\init\M_\xi$ and $E=E_\beta^{\T}$. Then $\on^{\M_\gamma}>\Omega$ forces $\M_\xi$ to be a collapsing weasel and $\eta^{\M_\xi}=\crit E$\todo{Why?}. Because $\M_\beta$ is stable we have that $\xi<\beta$. Since $\beta+1\notin D^{\T}$\todo{Why?} we get that $(\eta^{\M_\xi})^{+\M_\xi}\leq\lambda_\xi$, but $\eta^{\M_\xi}$ is measurable in $\M_\beta$, contradicting the fact that $\Phi(\T\restr\gamma)$ satisfies the second stability clause.
+}
+
+We also have the following useful properties regarding coiterations of stable mice, which will be used in the next section.
+
+\prop{
+\label{prop.stablecoiterations}
+Let $\M$ and $\N$ be stable mice, and assume that $\N$ iterates past $\M$. Then the iteration map $i:\M\to\P$ satisfies that $i"\Omega\subset\Omega$. Furthermore, the coiteration ends in $\leq\Omega+1$ steps.
+}
+\proof{
+In the coiteration we get that $i_\alpha^{\T}"\Omega\subset\Omega$ for every $\alpha<\Omega$ by Lemma \ref{lemm.stableiteration}. At the $\Omega$'th stage we have a direct limit, and if $\kappa$ is sent to $\Omega$ in this direct limit then by stability there's a cardinal $\mu>\kappa$ which then has to be sent to something strictly above $\Omega$. But then there had to be a point along the way to the $\Omega$'th stage where some element was sent to something $\geq\Omega$, $\contr$.
+
+\qquad By the above, there are no extenders above $\Omega$ and since the models agree below $\Omega$, they agree with each other. Note that $\Omega$ can't be the length of an extender since then it wouldn't be a $V$-cardinal.\todo{Pretty messy proof.}
+}
+
+\lemm[Stacking lemma]{
+\label{lemm.stackinglemma}
+Let $\W$ be a mini-universe and let $\M$ be a $k$-sound mouse such that $k<\omega$, $\W\init\M$ and $\rho_k(\M)=\Omega$. Then
+\begin{enumerate}
+\item $\rho(\M)=\Omega$;
+\item given any other $l$-sound mouse $\N$ satisfying that $\rho_l(N)=\Omega$, then either $\M\init\N$ or $\N\init\M$.\footnote{Note the similarity between this lemma and Corollary \ref{coro.soundcompare}.}
+\end{enumerate}
+}
+\proof{
+(i): Suppose $\rho(\M)<\Omega$ and let $A\subset\rho(\M)$ be definable such that $A\notin\M$. Fix some sufficiently large $\theta$ such that $\M,\Omega\in V_\theta$ and $\rho(\M)\subset V_\theta$ and let
+\eq{
+\pi:\chull^{V_\theta}(\rho(\M)\cup\{p_k(\M),\M,\Omega\})\to V_\theta
+}
+
+be the uncollapse map. Then the Condensation Theorem \ref{theo.cond} implies that either $\bar\M\pinit\M$ or $\bar\M\pinit\ult_0(\M,E)$ with $\lh E=\rho(\M)$. Since $\rho(\M)$ is an $\M$-cardinal and $\lh E$ isn't, we have that $\bar\M\pinit\M$.
+
+\qquad We claim now that $\bar\M\pinit\W$. To see this it suffices to show that $\on^{\bar\M}<\on^{\W}$. But since $\rho_k(\M)=\Omega$ we have that any $r\Sigma_k^{\bar\M}(p_k(\bar\M))$-definable $B\subset\rho_k(\bar\M)$ lies in $\M$ by soundness, so it lies in $\M|\rho_k(\bar\M)^{+\M}=\M|\rho_k(\bar\M)^{+\W}$ by acceptability. By definition of $\rho_k(\bar\M)$ we then have that $\on^{\bar\M}\leq\rho_k(\bar\M)^{+\W}<\Omega$, using that $\W$ is a mini-universe. Thus $\bar\M\pinit\W$. But now $A$ is definable over $\bar\M$ by elementarity, so $A\in\W|\on^{\bar\M}+1$, $\contr$.
+
+\qquad (ii): Assume not and let $\M$ and $\N$ witness this fact. Then just as in (i) we get initial segments $\bar\M,\bar\N\pinit\W$ which cannot be compared, $\contr$.
+}
+
+\defi{
+Let $\W$ be a mini-universe. Then the \textbf{mouse stack over $\W$} is the unique premouse $S(\W)$ such that $\N\init S(\W)$ iff $\N\init\M$ for some sound mouse $\M$ extending $\W$ and projecting to $\Omega$. If $\W$ is collapsing then $S(\W):=\W$.
+}
+
+One can show that $S(\W)$ is in fact a mouse, has no last mouse and has $\Omega$ as largest cardinal \cite[Lemma 3.3]{StackingMice}. The following fact will be useful.
+
+\prop{
+\label{prop.clubstack}
+Let $\W$ be a mini-universe and $\M$ a $k$-sound premouse extending $\W$ and $k$-projecting to $\Omega$. Then the following are equivalent.
+\begin{enumerate}
+\item $\M\init S(\W)$;
+\item $\chull_k^{\M}(\alpha\cup p_k(\M))\init\W$ for club many $\alpha<\Omega$;
+\item $\chull_k^{\M}(\alpha\cup p_k(\M))\init\W$ for cofinally many $\alpha<\Omega$.
+\end{enumerate}
+}
+\proof{
+For $(i)\Rightarrow(ii)$, let $\alpha<\Omega$ be a cardinal of $\W$. Write
+\eq{
+\H:=\chull^{\M}(\alpha\cup p_k(\M))
+}
+
+and note that $\hull^{\H}(\alpha\cup\bar p)=\H$, where $\bar p$ corresponds to $p_k(\M)$ via the collapse. This means that $\rho_k(\H)\leq\alpha$. As for the other inclusion, if $\beta<\alpha$ and $A\subset\beta$ is $\b{r\Sigma}_k^{\H}$-definable then it's also $\b{r\Sigma}_k^{\M}$-definable and since $\beta<\Omega=\rho_k(\M)$, $A\in\M$. Acceptability then implies that $A\in\M|\beta^{+\M}=\M|\beta^{+\W}\subset\M|\alpha$, since $\alpha$ is a $\W$-cardinal. Then $A\in\H$ as well. Thus $\alpha=\rho_k(\H)$.
+
+\qquad Let $\pi:\H\to\M$ be the uncollapse and note that $\crit\pi=\alpha=\rho(\H)$. Thus Condensation \ref{theo.cond} implies that $\H\pinit\M$, as the ultrapower clause of condensation isn't possible as $\rho_k(\H)=\alpha$ is an $\M$-cardinal. Since $\alpha<\Omega$ we get that $\H\init\W$. Since $\W$ is a mini-universe we then get $(ii)$.
+
+\qquad $(ii)\Rightarrow(iii)$ is obvious. For $(iii)\Rightarrow(i)$, we just have to show that $\M$ is countably iterable, by definition of $S(\W)$. But given any near $k$-embedding $\pi:\H\to\M$ with $\H$ being countable, $\ran\pi\subset\chull_k^{\M}(\alpha\cup p_k(\M))$ holds for some $\alpha<\Omega$ because $\ran\pi$ is countable and $\hull_k^{\M}(\Omega\cup p_k(\M))=\M$ by $k$-soundness. As cofinally many of these are initial segments of $\W$ by $(iii)$, $\H$ is iterable since $\W$ is iterable and thus also countably iterable.
+}
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}
+
+    % H
+    \node at (0,0) {$\H$};
+    \draw (0,0.4) -- (0,2.5);
+
+    % W
+    \node at (1.5,0) {$\W$};
+    \draw (1.5,0.4) -- (1.5,3);
+
+    % S(W)
+    \node at (3,0) {$S(\W)$};
+    \draw (3,0.4) -- (3,3.5);
+
+    % M
+    \node at (4.5,0) {$\M$};
+    \draw (4.5,0.4) -- (4.5,4.3);
+
+    % initial segments
+    \node at (0.75,0) {$\pinit$};
+    \node at (2.17,0) {$\init$};
+    \node at (3.93,0) {$\init^*$};
+
+    % rho(M)
+    \node at (-0.8,0.8) {\small$\rho(\M)$};
+    \draw (-0.15,0.8) -- (0.15,0.8);
+    \draw (1.35,0.8) -- (1.65,0.8);
+    \draw (2.85,0.8) -- (3.15,0.8);
+    \draw (4.35,0.8) -- (4.65,0.8);
+    \draw [dotted] (-0.15,0.8) -- (4.65,0.8);
+    
+    % Omega bar 
+    \node at (-0.6,1.5) {\small$\bar\Omega$};
+    \draw (-0.15,1.5) -- (0.15,1.5);
+    \draw (1.35,1.5) -- (1.65,1.5);
+    \draw (2.85,1.5) -- (3.15,1.5);
+    \draw (4.35,1.5) -- (4.65,1.5);
+    \draw [dotted] (-0.15,1.5) -- (4.65,1.5);
+
+    % theta bar 
+    \node at (-0.6,2.2) {\small$\bar\theta$};
+    \draw (-0.15,2.2) -- (0.15,2.2);
+    \draw (1.35,2.2) -- (1.65,2.2);
+    \draw (2.85,2.2) -- (3.15,2.2);
+    \draw (4.35,2.2) -- (4.65,2.2);
+    \draw [dotted] (-0.15,2.2) -- (4.65,2.2);
+
+    % Omega
+    \node at (1,3) {\small$\Omega$};
+    \draw (1.35,3) -- (1.65,3);
+    \draw (2.85,3) -- (3.15,3);
+    \draw (4.35,3) -- (4.65,3);
+    \draw [dotted] (1.35,3) -- (4.65,3);
+
+    % theta
+    \node at (2.5,3.5) {\small$\theta$};
+    \draw (2.85,3.5) -- (3.15,3.5);
+    \draw (4.35,3.5) -- (4.65,3.5);
+    \draw [dotted] (2.85,3.5) -- (4.65,3.5);
+  
+  \end{tikzpicture}
+  \end{center}
+\caption{The situation in the proof of Lemma \ref{lemm.stabunirho}}
+\label{fig.lemmrhoOnSW}
+\end{figure}
+
+\lemm{
+\label{lemm.stabunirho}
+Let $\W$ be stably universal and $\M$ a sound mouse satisfying that $S(\W)\init^*\M$, i.e. that $S(\W)\init\M$ and $\on^{S(\W)}$ is a cutpoint of $\M$. Then $\rho(\M)\geq\on^{S(\W)}$.
+}
+\proofretard
+If $\W$ is stable collapsing and $\rho(\M)<\on^{S(\W)}=\Omega$ then $\Omega$ wouldn't be a cardinal in $V$ by soundness of $\M$, $\contr$. Assume thus that $\W$ is a mini-universe. Let $\M$ be a minimal counter-example to the lemma. Since $\Omega$ is the largest cardinal of $S(\W)$, $\rho(\M)\leq\Omega$. If $\rho(\M)=\Omega$ then $\M$ is one of the mice stacked in $S(\W)$, meaning that $S(\W)=\M$ -- but the stack never has a last mouse, $\contr$.
+
+\qquad Thus $\rho(\M)<\Omega$. Fix a cardinal $\bar\Omega$ of $\W$ such that $\rho(\M)<\bar\Omega<\Omega$, which exists as $\W$ is a mini-universe. Let now $\pi:\H\cong X\prec\M$ be the uncollapsing map with $X\cap\Omega=\bar\Omega$ (see Figure \ref{fig.lemmrhoOnSW}). Then $\H$ agrees with $\W$ up to $\bar\Omega$. Let now $\N\in\M$ be a mouse in the stack $S(\W)$, and assume that $\N\in X$. Let $\bar\N\in\H$ be the image of $\N$ inside the hull. Then Condensation \ref{theo.cond} implies that $\bar\N\pinit\M$, so that $\bar\N\init\W$. As these stacking mice have heights cofinal in $\theta:=\on^{S(\W)}$, the corresponding images have heights cofinal in $\bar\theta:=\pi^{-1}(\theta)$, so that $\H$ and $\W$ agree below $\bar\theta$.
+
+\qquad As both $\H$ and $\W$ are iterable and $\H$ is stable, $\W$ will win the comparison with $\M$ as $\W$ is universal; we therefore have the following coiteration.
+
+\begin{center}
+\begin{tikzcd}[column sep=0]
+\P & \init & \Q\\\\
+\H\arrow[uu,tree={}{\T}] && \W\arrow[uu,treeplain={}{\U}]
+\end{tikzcd}
+\end{center}
+
+Since $\H$ agrees with $\W$ below $\bar\theta$, the least agreement between the two mice is then $\geq\bar\theta$. Since $\theta$ is a cutpoint in $\M$ by assumption, $\bar\theta$ is a cutpoint in $\H$ by elementarity. Therefore any extender used on $\T$ will have critical point $>\bar\theta$. But $\rho(\H)\leq\rho(\M)<\bar\theta$, so if $\T$ is non-trivial it will have to drop. Thus, $\T$ is trivial and $\H\init\Q$. But then $\H\pinit\W$ as $\on^{\H}<\Omega$, so the new subset of $\rho(\M)$ is then definable over $\H$ by elementarity, making it an element of $\M$, $\contr$.
+$\qed$\\
+
+
+\coro{
+Let $\W$ be stably universal. Then $L[S(\W)]\models\on^{S(\W)}$ is a cardinal.
+}
+\proof{
+Write $\theta:=\on^{S(\W)}$. Assume the statement is false, so that we have a surjection $f:\kappa\to\theta$ lying inside $L[S(\W)]$. Let $\alpha+1$ be least such that $f\in J_{\alpha+1}[S(\W)]$. Then $\alpha+1\in(\theta,\theta^{+L[S(\W)]})$, so that $\rho(J_{\alpha+1}[S(\W)])\leq\theta$. But since $J_{\alpha+1}[S(\W)]$ is a sound mouse with $S(\W)$ as a cutpoint initial segment, $\rho(J_{\alpha+1}[S(\W)])\geq\theta$ by Lemma \ref{lemm.stabunirho}, so equality holds. But then $\theta$ is a $J_{\alpha+1}[S(\W)]$-cardinal, so an $L[S(\W)]$-cardinal as well, $\contr$.
+}
+
+
+\section{Thickness}
+
+Pseudo-$K$ will eventually be a certain collapsed hull of our $K^c$-constructions. These will be defined using \textit{thick sets}, a notion introduced by Mitchell. Recall that a \textbf{$\mu$-club} $C\subset X$ is an unbounded set of $X$ which is closed under suprema of chains of order type $\mu$.
+
+\defi{
+Let $\W$ be a weasel and let $C\subset\on^{S(\W)}$. Then $C$ is \textbf{strongly $\W$-thick} if
+\begin{enumerate}
+\item $\cof(\on^{S(\W)})\geq\Omega$;
+\item C is $\tau$-club in $\on^{S(\W)}$;
+\item $\cof^{S(\W)}\eta$ is not the critical point of a total extender over $\W$ from the $\W$-sequence, for any $\eta\in C$.
+\end{enumerate}
+
+We also say that a set $\Gamma\subset S(\W)$ is \textbf{$\W$-thick} if $\Gamma$ has a strongly $\W$-thick subset.
+}
+
+\prop{
+\label{prop.thickness}
+Let $\W$ be a weasel.
+\begin{enumerate}
+\item The intersection of $<\Omega$-many strongly $\W$-thick sets is again strongly $\W$-thick;
+\item If $S(\W)$ is $\W$-thick then the set of all $\W$-thick sets is an $\Omega$-complete filter.
+\end{enumerate}
+}
+\proof{
+This is straightforward.
+}
+
+The reason why the cofinality clause (i) was included in the thickness definition is that it turns out to be equivalent to universality of $\W$. To be able to prove this fact we first need to show that iterations on stable phalanxes can be ``lifted" to iterations on the corresponding stacks, which is also of independent interest.
+
+\qquad We will here be using \textit{long} extenders $E$, i.e. extenders that allows $i_E(\crit E)<\lh E$. Note that all results from chapter 1 still goes through for these long extenders \textit{except} Proposition \ref{prop.short}, where we used shortness to show that $E_a$ measures $[\crit E]^{|a|}$. But if we just allow these long extenders to have a \textit{sequence} of critical points $\bra{\kappa_a\mid a\in[\lh E]^{<\omega}}$ with $\kappa_a$ least such that $i_{E_a}(\kappa_a)>\lh E$ and $E_a$ a measure on $\kappa_a$, this goes through without changing the validity of the rest of the ``long versions" of the results in chapter 1.
+
+
+%%% Start of iterations %%%
+
+\lemm{
+\label{lemm.ultstack}
+Let $\W$ be a weasel in a stable phalanx $\Phi$ and $i:\W\to\R$ an iteration map from an iteration tree $\U$ of length $\leq\Omega+1$ on $\Phi$, such that $i"\Omega\subset\Omega$. Let $E$ be the \textit{long} extender over $\W$ of length $\Omega$ from $i$. Then
+\eq{
+\ult(S(\W),E)=S(\R).
+}
+}
+\proof{
+If $\W$ is collapsing then we have to show that $\ult(\W,E)=\R$, since $\R$ is then collapsing as well. As $i$ is cofinal in $\Omega$ we get $\on^{\ult(\W,E)}=\Omega$, so since $\lh E=\Omega$ the factor map $k:\ult(\W,E)\to\R$ is the identity, so if $\on^{\R}=\Omega$ we have $\ult(\W,E)=\R$. But if $\on^{\R}>\Omega$ then $\gamma^{\R}\geq\Omega$ as $\Omega$ is a $V$-cardinal, so that $i(\gamma^{\W})=\gamma^{\R}$, but $i"\Omega\subset\Omega$, $\contr$.
+
+\qquad Assume thus that $\W$ is a mini-universe for which the lemma fails. Let $\theta$ be sufficiently large and let $\pi:\H\to V_\theta$ be the uncollapse, where
+\eq{
+\H:=\chull^{V_\theta}(\kappa\cup\{\Omega,\U,S(\W),\N,E\}).
+}
+
+where $\kappa<\Omega$ is some $\W$-cardinal and $\N\init S(\R)$ is the first mouse stacked on $\R$ above $\ult(S(\W),E)$. Since $\N$ is sound, $\crit\pi=\kappa=\bar\Omega=\rho(\bar\N)$ and $\bar\Omega=\kappa$ is a $\W$-cardinal, Condensation \ref{theo.cond} implies that $\bar\N\pinit\N$, so $\bar\N\init\R$ as $\on^{\bar\N}\leq\on^{\R}$.  Then $\bar\N\init\M_{\bar\Omega}^{\U}$ as $\R|\bar\Omega^{+\R}=\M_{\bar\Omega}^{\U}|\bar\Omega^{+\M_{\bar\Omega}^{\U}}$ by the argument in the proof of the Comparison Theorem \ref{theo.comparison} since $\bar\Omega$ is the critical point of the iteration $\M_{\bar\Omega}^{\U}\to\R$ (which is just $\pi$ by that same argument), so that $\N=\pi(\bar\N)\init\M_\Omega^{\U}=\R$ by elementarity, $\contr$.
+%
+%%% Not needed, i think.
+%
+%\qquad Also, $\ult(\overline{S(\W)},\bar E)\pinit\bar\N$ by elementarity. This implies that there is a first initial segment $\W|\gamma\init\W$ such that $\W|\gamma$ is sound, $\rho(\W|\gamma)=\bar\Omega$ and $\overline{S(\W)}\pinit\W|\gamma$\todo[color=yellow]{Why's that?}. But then $\bar\N=\ult(\W|\gamma,\bar E)$, so $\W|\gamma\in\H$ as $\W|\gamma=c\hull_n^{\bar\N}(i"\bar\Omega\cup p_n(\bar\N))$ \todo[color=yellow]{Why?}, $\bar E$ determines $i\restr\bar\Omega$ and $\bar E,\bar\N\in\H$. Then $\rho(\W|\gamma)=\bar\Omega$ since $\bar\Omega$ is a $\W$-cardinal, so $\W|\gamma$ witnesses that $\overline{S(\W)}$ has a last mouse, $\contr$.
+}
+
+\theo[Stacked iterations]{
+\label{theo.itstack}
+Let $\W$ be a model of a stable phalanx $\Phi$ such that $S(\W)$ is $\W$-thick and $i:\W\to\R$ an iteration map from an iteration tree of length $\leq\Omega+1$ on $\Phi$, satisfying that $i"\Omega\subset\Omega$. Let $E$ be the \textit{long} extender over $\W$ of length $\Omega$ from $i$. Let $i^*:S(\W)\to\ult(S(\W),E)$ be the ultrapower embedding. Then
+\begin{enumerate}
+\item $\ult(S(\W),E)=S(\R)$;
+\item $\{\alpha\mid i^*\text{ is continuous at }\alpha\}$ is $\W$-thick;
+\item $\ran i^*$ is $\R$-thick.
+\end{enumerate}
+}
+\proof{
+(i) is directly by Lemma \ref{lemm.ultstack}. Let $C\subset S(\W)$ be strongly $\W$-thick, existing by assumption, and write $\theta:=\on^{S(\W)}$. To show (ii), let $D\subset\theta$ be the set of continuity points of $i^*$ and set $\bar D:=C\cap D$. It's clear that $\bar D$ satisfies every clause in the definition of strong $\W$-thickness, except maybe being $\tau$-club. But note that $\alpha\in D$ if $\cof\alpha<\crit i^*$, so $D$ is cofinal in $\theta$. By intersecting $\bar D$ with the set of limit points in $D$ we then get a $\tau$-club.
+
+\qquad To show (iii), define $\bar C:=i^*"\bar D$, which we will show is strongly $\W$-thick. Again we only need to worry about $\tau$-clubness, where $\tau$-closedness is directly by definition of $C$ and $D$ and it's cofinal in $\on^{S(\R)}$ by (i) and as $i^*$ is cofinal.
+}
+
+\theo{
+\label{theo.unicof}
+For a mini-universe $\W$, $\W$ is universal iff $\cof \on^{S(\W)}\geq\Omega$.
+}
+\proofretard
+Assume first that $\W$ is \textit{not} universal and let $\M$ be a stable mouse witnessing this, so that we have the coiteration:
+
+\begin{center}
+\begin{tikzcd}[column sep=0]
+\P & \pinit & \Q\\\\
+\W\arrow[uu,tree={i}{\T}] && \M\arrow[uu,treeplain={}{\U}]
+\end{tikzcd}
+\end{center}
+
+Let $i^*:S(\W)\to S(\P)$ be the extension of $i$ as in Theorem \ref{theo.itstack}.
+
+\clai{
+$S(\P)\init\Q$.
+}
+
+\cproof{
+Assume it's not the case, so that we get some sound $\N$ such that $\P\init\N$ and $\rho(\N)=\Omega$, which isn't an initial segment of $\Q$. Let $\pi:\H\to V_\theta$ be the uncollapse with $\H:=\chull^{V_\theta}(\kappa\cup\{\Omega,\T,\U,\N\})$ for some $\N$-cardinal $\kappa<\Omega$ and some sufficiently large $\theta$. Assume for notational simplicity that $\T$ has been padded, so that $\lh\T=\lh\U=\Omega+1$. Here $\lh\U=\Omega+1$ since otherwise we wouldn't have that $\on^{\Q}>\Omega$, by stability of $\M$ -- of course, here we use that $\lh\U\leq\Omega+1$ as it's a coiteration of stable mice, see Proposition \ref{prop.stablecoiterations}. Then as in the proof of the Comparison Theorem \ref{theo.comparison} we get that 
+\eq{
+\M^{\U}_{\bar\Omega}|\bar\Omega^{+\M_{\bar\Omega}^{\U}}=\M_{\bar\Omega}^{\T}|\bar\Omega^{+\M_{\bar\Omega}^{\T}}=\P|\bar\Omega^{+\P}.
+}
+
+But then $\bar\N\pinit\N$ by Condensation \ref{theo.cond}, using that $\N$ is sound and $\rho(\bar\N)=\kappa$ is an $\N$-cardinal, and thus also that $\bar\N\init\P$. As $\on^{\bar\N}<\bar\Omega^{+\P}$, the previous equalities entail that $\bar\N\init\M_{\bar\Omega}^{\U}$. But then $\N=\pi(\bar\N)\init\pi(\M_{\bar\Omega}^{\U})=\M_\Omega^{\U}=\Q$, contradicting the choice of $\N$.
+}
+
+We now also claim that $S(\P)=\Q|\Omega^{+\Q}$. Indeed, if it weren't the case then $S(\P)\pinit\Q|\Omega^{+\Q}$ and since $\Q|\Omega^{+\Q}$ projects to $\Omega$ and is sound\todo{Why? This is probably false..}, it would contradict the maximality of the stack $S(\P)$.
+
+\qquad Now let $\alpha<\Omega$ be large enough so that $i_\alpha^{\U}$ is defined and let $\mu\in\on^{\M_\alpha^{\U}}$ be such that $i_\alpha^{\U}(\mu)=\Omega$, which exists as the critical points converge to $\Omega$ and we're in the direct limit $\Q$. Then $i_\alpha^{\U}$ maps $\mu^{+\M_\alpha^{\U}}$ cofinally into $\Omega^{+\Q}=\on^{S(\P)}$, so that $\cof\on^{S(\P)}<\Omega$. But $i^*$ maps $\on^{S(\W)}$ cofinally into $\on^{S(\P)}$, so
+\eq{
+\cof\on^{S(\W)}\leq\cof\on^{S(\P)}<\Omega.
+}
+
+Assume conversely that $\W$ is a universal mini-universe. By the $\Leftarrow$ direction we just proved, along with Theorem \ref{theo.minithick} we get that $K^c_\tau$ is universal. Furthermore, by Theorem \ref{theo.itstack} and the Stacking Lemma \ref{lemm.stackinglemma}, the coiteration between $\W$ and $K^c_\tau$ is really also a coiteration between $S(\W)$ and $S(K^c_\tau)$, so by universality we get the following comparison:
+
+\begin{center}
+\begin{tikzcd}[column sep=0]
+S(\Q) & = & S(\Q)\\\\
+S(\W)\arrow[uu,tree={i^*}{\T}] && S(K^c_\tau)\arrow[uu,tree={j^*}{\U}]
+\end{tikzcd}
+\end{center}
+
+By continuity of $i^*$ and $j^*$ at $\on^{S(\W)}$ and $\on^{S(K^c_\tau)}$ we then get that
+\eq{
+\Omega\leq\cof\on^{S(K^c_\tau)}=\cof\on^{S(\Q)}=\cof\on^{S(\W)},
+}
+
+where $\cof\on^{S(\Q)}\leq\cof\on^{S(K_\tau^c)}$ and $\cof\on^{S(\Q)}\leq\cof\on^{S(\W)}$ holds because if $f:\zeta\to\on^{S(\W)}$ is cofinal then $i^*"f:i^*"\zeta\to\on^{S(\Q)}$ is cofinal, so $\cof\on^{S(\Q)}\leq\zeta$ as witnessed by both $f$ and $i^*"f$, and analogously for $K^c_\tau$.\todo{Not entirely satisfied with this explanation.}
+$\qed$\\
+
+%%% End of iterations %%%
+
+\defi{
+A robust $K^c$-construction is \textbf{maximal} if it's defined by clause (iia) in Definition \ref{defi.Kc} whenever possible. That is, we put robust extenders on top of our construction whenever we can.
+}
+
+\defi{
+Let $X$ be any set. Then a robust $K^c$-construction \textbf{forbids critical points of cofinality in $X$} if $\cof^V(\dot\kappa^{\N_\gamma})\notin X$ for every $\N_\gamma$ in the construction.
+}
+
+We write $K^c(X)$ for the last model of a maximal $K^c$-construction forbidding critical points of cofinality in $X$, of longest length possible. Also, for readibility we set $K^c:=K^c(\emptyset)$ and $K^c_{x_1,\hdots,x_n}:=K^c(\{x_1,\hdots,x_n\})$.
+
+\qquad We now want to use these $K^c$-constructions to ensure that there exists a weasel $\W$ such that $S(\W)$ is $\W$-thick. We have two cases, whether or not $K^c_\tau$ is a mini-universe or collapsing. Starting with the mini-universe case, we'll need the following definition.
+
+\defin{
+Let $\M$ be an active premouse. Then $\M$ is \textbf{hull-certified by $\pi$} if
+\begin{enumerate}
+\item $\pi:\H\to H_\xi$ is fully elementary, $\H$ is transitive, $\H$ and $H_\xi$ are both closed under $\omega$-sequences and $\M|\kappa^{+\M}\in\H$;
+\item $(\dot F^{\M}\restr\dot\nu^{\M})^*=E_\pi\cap\M$.\dit
+\end{enumerate}
+}
+
+\pagebreak
+\lemm{
+Any hull-certified $\M$ is robust.
+}
+\textsc{``Proof".}
+See Lemma 2.6 in \cite{StackingMice}.
+$\qed$\\
+
+%%% Keeping just in case, but will probably remain a reference. %%%
+
+%\proof{
+%Let $\pi:\H\to H_\xi$ witness that $\M$ is hull-certified. Writing $\kappa:=\dot\kappa^{\M}$ and $\lambda:=\lh\dot F^{\M}$, let $U\subset[\lambda]^{<\omega}$ and $W\subset\P^{\M}([\kappa]^{<\omega})$ be countable. We have to find a function $g:U\to[\kappa]^{<\omega}$ witnessing that $\M$ is robust; that is,
+%\begin{enumerate}
+%\item $g(a)\in x$ iff $x\in E_a$, for every $x\in W$;
+%\item For $v_1,\hdots,v_n\subset U$, $\tau:=\sup\bigcup U$, $\bar\tau:=\sup\bigcup g"U$, and a $\Sigma_1$-formula $\varphi$,
+%\eq{
+%C_{\bar\tau,\kappa}^{\vec E}\models\varphi[g"v_1,\hdots,g"v_n]\quad\text{iff}\quad C_{\tau,\infty}^{\vec E}\models\varphi[v_1,\hdots,v_n].
+%}
+%\end{enumerate}
+%
+%Let $h:\omega\to U$ be bijective, let $\vec a:=\bra{a_\xi\mid\xi<2^{\aleph_0}}$ be an enumeration of $\P(\omega)$, let
+%\eq{
+%T:=\{\bra{k,\xi}\in\omega\times 2^{\aleph_0}\mid C_{\sup(h"a_\xi),\infty}^{\vec E}\models\varphi_k[h"a_\xi]\}
+%}
+%
+%with $\bra{\varphi_k\mid k<\omega}$ being a recursive enumeration of the $\Sigma_1$-formulas; here $h"a_\xi$ represents a generic choice of the $v_1,\hdots,v_n$ in (ii). Let $\V\prec_{\Sigma_3} H_\xi$ be countable such that $U\cup W\cup\{U,W,h,\vec b,T\}\subset\V$, $\sigma:\V\cong\bar\V$ the transitive collapse of $\V$ and $\bra{(a_n,x_n)\mid n<\omega}$ an enumeration of $E_\pi\cap(U\times W)$.
+%
+%\qquad Now set $\bar a_n:=\sigma(a_n)=\sigma"a_n$ and note that $\bra{(\bar a_n,x_n)\mid n<\omega}\in\H$ since $\M|\kappa^{+\M}\subset\H$ and $\H^{\omega}=\H$, as $\M$ is hull-certified. Now $\sigma$ witnesses that in $H_\xi$ there is some $\varphi:\bar\V\to_{\Sigma_3} H_{\pi(\kappa)}$ such that $\varphi"\bar a_n\in\pi(x_n)$ for every $n<\omega$\todo[color=yellow]{How come?}. But then there's a $\bar\varphi:\bar\V\to_{\Sigma_3}H_\kappa$ in $\H$ such that $\bar\varphi"\bar a_n\in x_n$ for every $n<\omega$. Set $g:=\bar\varphi\circ\sigma$, so that
+%\eq{
+%g:\V\to_{\Sigma_3} H_\kappa
+%}
+%
+%and $g(a_n)\in x_n$ for every $n<\omega$, so $g\restr U$ witnesses (i).
+%
+%\qquad \todo[color=red]{Missing (ii), from Lemma 2.6 in Stacking Mice.}
+%}
+
+\theo{
+\label{theo.minithick}
+If $K^c_\tau$ is a mini-universe then $S(K^c_\tau)$ is $K^c_\tau$-thick.
+}
+\textsc{Proof sketch.} Let $\theta:=\on^{S(K^c_\tau)}$ and define $C:=\{\alpha<\theta\mid\cof\alpha=\tau\}$; we claim that $C$ is strongly $K^c_\tau$-thick. As the $K^c$-construction forbids critical points of cofinality $\tau$, clause (iii) of strong $K^c_\tau$-thickness is satisfied. As $C$ clearly is $\tau$-club, it remains to show that $\cof\theta\geq\Omega$. This is proven as in Theorem 3.4 of \cite{StackingMice}, replacing their ``certified by a collapse'' with our ``hull-certified'' everywhere. This is where we use the assumption that $\tau^{++}<\Omega$, so that we have two regular cardinals that \textit{are} allowed as cofinalities of critical points in the $K^c$-construction.
+$\qed$\\
+
+We now prove the collapsing case.
+
+\theo{
+\label{theo.collthick}
+Assume there exists a collapsing weasel $\W$ and set $\eta:=\cof^V\gamma^{\W}$. Then $K^c_{\tau,\eta}$ is stable collapsing and $\Omega$ is $K^c_{\tau,\eta}$-thick.
+}
+\proof{
+We can without loss of generality assume that $\W$ is stable. Indeed, if it weren't then $\eta^{\W}$ is measurable in $\W$, so letting $\W^*:=\ult(\W,\mu)|\Omega$ with $\mu$ the order zero measure on $\eta^{\W}$, $\W^*$ is a stable collapsing weasel such that $\cof^V\gamma^{\W^*}=\cof^V\gamma^{\W}$ by Proposition \ref{prop.weaselfacts}, so we can take $\W$ to be $\W^*$ in this case.
+
+\qquad If $K^c_{\tau,\eta}$ is a mini-universe then it has to be universal by Theorems \ref{theo.minithick} and \ref{theo.unicof}, contradicting Proposition \ref{prop.weaselfacts}. Thus $K^c_{\tau,\eta}$ is collapsing and it's also stable since $\cof^V\gamma^{K^c_{\tau,\eta}}=\eta$ by Proposition \ref{prop.weaselfacts} and critical points of $V$-cofinality $\eta$ isn't allowed in the construction of $K^c_{\tau,\eta}$. Let now
+\eq{
+C:=\{\alpha<\on^{S(K^c_{\tau,\eta})}\mid\cof\alpha=\tau\},
+}
+
+which is clearly strongly $K^c_{\tau,\eta}$-thick, using that $S(K^c_{\tau,\eta})=K^c_{\tau,\eta}$ and $\Omega$ is regular.
+}
+
+\coro{
+There is a stably universal weasel $\W$ such that $S(\W)$ is $\W$-thick.
+}
+\proof{
+Directly by Theorems \ref{theo.minithick} and \ref{theo.collthick}.
+}
+
+\section{Definition of Pseudo-$K$}
+
+\defin{
+Assume $S(\W)$ is $\W$-thick. Then define
+\eq{
+\Def^{\W}:=\bigcap\{\hull^{S(\W)}(\Gamma)\mid\Gamma\text{ is $\W$-thick}\}.\deq
+}
+}
+
+\lemm{
+If $S(\W)$ is $\W$-thick and $S(\R)$ is $\R$-thick, $(\Def^{\W},\in)\cong(\Def^{\R},\in)$.
+}
+\proof{
+Compare $\W$ with $\R$, granting iteration trees on $\W,\R$ with last models $\P,\Q$. As both $\W$ and $\R$ are universal, $\P=\Q$ and neither branch drops, giving us iteration maps $i:\W\to\P$ and $j:\R\to\P$ and thus also the canonical extensions $i^*:S(\W)\to S(\P)$ and $j^*:S(\R)\to S(\P)$ by Theorem \ref{theo.itstack}. Now, given any $\P$-thick $\Gamma$, $\Gamma\cap\ran i^*\cap\ran j^*$ is $\P$-thick as well by Theorem \ref{theo.itstack} again, so we get that $i^*"\Def^{\W}=\Def^{\Q}=j^*"\Def^{\R}$
+}
+
+\defi{
+\textbf{Pseudo-$K$}, $\tilde K(\tau,\Omega)$, is the common transitive collapse of all $\Def^{\W}$, for $\W$ such that $S(\W)$ is $\W$-thick.
+}
+

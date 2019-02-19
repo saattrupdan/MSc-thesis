@@ -1,0 +1,24 @@
+\chapter{Introduction}
+\thispagestyle{fancy}
+
+\setlength{\parindent}{18pt}
+\begin{onehalfspacing}
+
+In Gödel's 1947 paper ``What is Cantor's continuum problem'' he proposed a program, the goal of which was to ``decide interesting mathematical propositions independent of \textsf{ZFC} in well-justified extensions of \textsf{ZFC}.''
+
+\quad Today, we have found a great many extensions of \textsf{ZFC} in the hierarchy of large cardinals, pre-wellordered by consistency strength. A notable phenomenon is that for ``natural'' theories $T$ and $U$, if $T$ has smaller consistency strength than $U$ then the $\Sigma^0_\omega$ consequences of $T$ are also $\Sigma^0_\omega$ consequences of $U$ -- so climbing this hierarchy we in fact uncover more truths about the natural numbers. Moving on the the reals, these \textit{also} attain this monotone behaviour, as long as one has moved sufficiently far up the hierarchy, namely past the existence of infinitely many so-called Woodin cardinals. This phenomenon also occurs for sets of reals.
+
+\quad So what makes these $\zfc$ extensions well-justified? This is where inner model theory comes into the mix, as it provides canonical models exhibiting these large cardinals. The large amount of structure present in such a canonical inner model makes it possible to analyse these large cardinals thoroughly, and thereby also providing empirical evidence of the consistency of the existence of the given large cardinal (by Gödel's Second Incompleteness Theorem, we cannot hope to prove the \textit{actual} consistency of the existence of any large cardinal, so solid empirical evidence is the next best thing).
+
+\qquad Some of these canonical inner models have the special status of being a \textit{core model}, which is the unique proper class inner model $K$ which, among other things, is absolutely definable and ``close to $V$". Below $0^\sharp$, the core model is simply Gödel's constructible universe $L$. In this case, $L$ being close to $V$ manifests itself in the \textit{strong covering property}, saying that every set of ordinals lies inside a constructible set of ordinals of the same cardinality. When we move higher up the ladder of large cardinals, we cannot have this strong covering property for $K$ anymore, so we have to resort to the \textit{weak covering property}, which is to say that $\kappa^{+V}=\kappa^{+K}$ holds for every singular cardinal $\kappa$. 
+
+\quad The construction of these core models started in \cite{DJ1}, \cite{DJ2} and \cite{DJ3}, constructing $K$ below $0^\dagger$. In this case $0^\sharp\in K$, so that $K$ properly extends $L$. Shortly thereafter Mitchell improved this result by constructing $K$ below a sharp for a proper class model of $\zfc$ with a measurable cardinal $\kappa$ of order $\kappa^{++}$ in \cite{Mitchell1} and \cite{Mitchell2}. Steel then further improved this to up below a Woodin cardinal in \cite{CMIP}, but he required the extra hypothesis that there existed a measurable in $V$. A proof that Steel's $K$ has the weak covering property was then proven in \cite{WkCov}. This weak covering result was then used in \cite{Kwithoutmeasurable} to construct Steel's $K$ without the assumption of the measurable, using the \textit{robustness} concept introduced in \cite{RobustExtenders}.
+
+\qquad All these core models are based on extensions of $L$, witnessing the existence of certain elementary embeddings. At the measurable level, this is simply models of the form $L[U]$ with $U$ a $\kappa$-complete non-principal ultrafilter (also known as a measure) on some measurable cardinal $\kappa$. This was extended to \textit{coherent sequences} of measures to accomodate the existence of multiple measurables, then to \textit{extenders} to witness a strong cardinal and finally to \textit{fine extender sequences}.
+
+\qquad In this thesis we will develop the theory of fine extender sequences, provide the construction of mice with these sequences on them and then use these mice to construct Steel's $K$ below a Woodin, without the assumption of the measurable cardinal in $V$. This will include the details in \cite{FSIT} and \cite{CMIP}, with the modern approach in \cite{OIMT} and with the corrections and additions provided by \cite{Deconstructing} and \cite{Kwithoutmeasurable}. A number of illustrations and motivation will be provided as well, inspired by \cite{OIMT}, \cite{Lowe}, \cite{Godelsprogram} and \cite{Schimmerling}.
+
+\quad Woodin has shown that if it's possible to build an inner model with a so-called supercompact cardinal then this would enable the construction of an inner model for all other known large cardinals as well, so the main focus right now is to reach the supercompact. This is the current goal of \textit{descriptive inner model theory}, where methods of descriptive set theory become intertwined with inner model theory. 
+
+\end{onehalfspacing}
+\setlength{\parindent}{0pt}

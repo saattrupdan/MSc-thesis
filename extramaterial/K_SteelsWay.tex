@@ -1,0 +1,149 @@
+\chapter{$K$ below a Woodin -- Steel's way}
+\thispagestyle{fancy}
+\label{ch1}
+
+[INTRO]
+
+\section{$K^c$-constructions}
+
+\defi{
+$\Delta_0^{\P}$ is the smallest class of formulae containing the atomic formulas and closed under all connectives and the quantifiers $\forall x\in a$, $\exists x\in a$, $\forall x\subset a$ and $\exists x\subset a$.
+}
+
+\defi{
+\textsf{KP}($\P$) is the theory in the language of set theory consisting of the axioms Extensionality, Pairing, Union, Infinity, Powerset, $\Delta_0^{\P}$-Comprehension, $\Delta_0^{\P}$-Collection and Set Induction, the latter being the axiom
+\eq{
+\forall x[(\forall y\in x\varphi(y))\to\varphi x]\to\forall x\varphi(x).
+}
+
+A transitive model of \textsf{KP}($\P$) is called a \textbf{power admissible set}.
+}
+
+\defin{
+Let $\M$ be an active premouse and $\A\subset\bigcup_{n<\omega}\P^{\M}([\dot\kappa^{\M}]^n)$. Then an \textbf{$\A$-certificate for $\M$} is a pair $(\N,E)$ satisfying that
+\begin{enumerate}
+\item $\N$ is power admissible, $V_{\dot\kappa^{\M}}\cap\A\subset\N$ and $^\omega\N\subset\N$;
+\item $E$ is an extender over $\N$;
+\item $\dot F^{\M}\cap([\dot\nu^{\M}]^{<\omega}\times\A)=E\cap([\dot\nu^{\M}]^{<\omega}\times\A)$;
+\item $V_{\dot\nu^{\M}+1}\subset\ult(\N,E)$;
+\item $\N$ agrees with $\ult(\N,E)$ below $\on^{\N}$.\dit
+\end{enumerate}
+}
+
+[\textsf{KP}($\P$) is probably too strong, but it works. In most cases we will have $|\N|<\lh E$, so we don't plan on iterating. Just provides a bunch of measurable subsets.]
+
+\defi{
+An active premouse $\M$ is \textbf{countably certified} if there is an $\A$-certificate for $\M$ for any countable $\A\subset\bigcup_{n<\omega}\P^{\M}([\dot\kappa^{\M}]^n)$.
+}
+
+\defi{
+A \textbf{$K^c$-construction}\footnote{Here the $c$ stands for ``certified".} is a sequence $\bra{\N_\alpha\mid\alpha<\theta}$ of premice such that
+\begin{enumerate}
+\item $\N_0=(V_\omega,\in,\emptyset,\emptyset)$;
+\item If $\alpha+1<\theta$ then $\N_\alpha$ is solid and either
+  \begin{enumerate}
+  \item $\core(\N_\alpha)$ is passive and $\N_{\alpha+1}$ is an countably certified active premouse with the same universe as $\core(\N_\alpha)$ and $\dot E^{\N_{\alpha+1}}=\dot E^{\core(\N_\alpha)}$;
+  \item $\core(\N_\alpha)$ is active, $\E:=\dot E^{\core(\N_\alpha)}\oplus\dot F^{\core(\N_\alpha)}$, and letting $\omega\gamma=\on^{\core(\N_\alpha)}$ it holds that $\N_{\alpha+1}=(J_{\gamma+1}^{\E},\in,\E,\emptyset)$;
+  \end{enumerate}
+\item If $\lambda<\theta$ is a limit ordinal then $\N_\lambda$ is the unique premouse satisfying that $\J_\alpha^{\N_\lambda}=$ eventual value of $\J_\alpha^{\N_\alpha}$ as $\alpha\to\lambda$, whenever defined.
+\end{enumerate}
+}
+
+[Note that taking cores we don't prima facie have an increasing sequence of models, but the agreement between models and their cores \textit{does} grant us with a convergence result nevertheless.]
+
+\theo{
+Let $\kappa$ be an uncountable regular cardinal or $\kappa=\on$, and let $\bra{\N_\alpha\mid\alpha<\kappa}$ be a $K^c$ construction. Then there exists a unique premouse $\N_\kappa$ of ordinal height $\kappa$ such that $\bra{\N_\alpha\mid\alpha\leq\kappa}$ is a $K^c$-construction.
+}
+\proof{
+\todo{Missing proof.}
+}
+
+\section{Iterability of $K^c$-constructions}
+
+\theo[Branch existence]{
+Let $\M$ a countable premouse, $\bra{\N_\alpha\mid\alpha<\theta}$ a $K^c$-construction, $\pi:\M\to\core_k(\N_\alpha)$ a weak $k$-embedding and $\T$ a countable putative $k$-iteration tree on $\M$. Then either there is a maximal branch of $\T$ with limit model $\P$ or $\T$ has a last model $\P$, such that, letting $n$ be the degree of $\P$,
+\begin{enumerate}
+\item There are no drops along the $\M$-to-$\P$ branch, $n=k$ and there is a weak $n$-embedding $\sigma:\P\to\core_n(\N_\alpha)$ such that, letting $i:\M\to\P$ be the iteration embedding, $\sigma\circ i_{0,b}^{\T}=\pi$, or
+\item There is a drop along the $\M$-to-$\P$ branch or $n<k$, and there is a weak $n$-embedding $\sigma:\M_b^{\T}\to\core_n(\N_\beta)$ for some $\beta\leq\alpha$ where $\beta<\alpha$ if a drop occured along the $\M$-to-$\P$ branch.
+\end{enumerate}
+}
+\proof{
+\todo{Missing proof.}
+}
+
+\defi{
+Let $\T$ be a $k$-iteration tree on a premouse $\M$ of limit length. Then define $\delta(\T):=\sup\{\lh E_\alpha^{\T}\mid\alpha<\lh\T\}$.
+}
+
+\defi{
+Let $\kappa<\delta$ and $A\subset V_\delta$. Then $\kappa$ is \textbf{$A$-reflecting in $\delta$} if for every $\lambda<\delta$ there is a $V$-extender $E$ with $\crit E=\kappa$, $i_E(\kappa)>\lambda$ and $i_E(A)\cap V_\lambda=A\cap V_\lambda$.
+}
+
+\defi{
+A cardinal $\delta$ is a \textbf{Woodin cardinal} if for every $A\subset\delta$ there is a $\kappa<\delta$ which is $A$-reflecting in $\delta$.
+}
+
+\theo[Branch uniqueness]{
+Let $b$ and $c$ be distinct cofinal branches of a $k$-iteration tree $\T$, let $\delta:=\delta(\T)$ and suppose that $A\subset\delta$ is such that $A,\delta\in\wfp(\M_b^{\T})\cap\wfp(\M_c^{\T})$. Then
+\eq{
+M_b^{\T}\models\exists\kappa<\delta:\kappa\text{ is $A$-reflecting in $\delta$}.
+}
+}
+\proof{
+\todo{Missing proof.}
+}
+
+\defi{
+Let $\T$ be a $k$-iteration tree on $\M$ of limit length and let $b$ be a cofinal branch of $\T$. Let $\gamma\in\on$ be least such that either
+\begin{itemize}
+\item $\omega\gamma<\on^{\M_b}$ and $\J_{\gamma+1}^{\M_b}\models\delta(\T)$ is not Woodin, or
+\item $\omega\gamma=\on^{\M_b}$ and $\rho_{n+1}(\J_\gamma^{\M_b})<\delta(\T)$ for some $n<\omega$ such that $n+1\leq k$ if there are no drops along $b$.
+\end{itemize}
+
+Then set $\Q(b,T):=\J_\gamma^{\M_b}$ if there is such a $\gamma$, and let it be undefined otherwise.
+}
+
+\theo{
+Let $\T$ be a $k$-iteration tree and let $b,c$ be distinct cofinal wellfounded branches of $\T$ such that $\Q(b,\T)$ and $\Q(c,\T)$ exists. Then neither is an initial segment of the other.
+}
+\proof{
+\todo{Missing proof.}
+}
+
+\defi{
+Let $\M$ be a premouse. Then $\eta$ is a \textbf{cutpoint of $\M$} if it doesn't overlap any extenders on the $\M$-sequence. That is, for any extender $E$ on the $\M$-sequence, if $\crit E<\eta$ then $\lh E<\eta$.\footnote{Note that $\crit E$ can be a cutpoint of $\M$.}
+}
+
+\coro{
+Let $\T$ be a $k$-iteration tree. Then there is at most one cofinal wellfounded branch $b$ of $\T$ such that
+\begin{enumerate}
+\item $\Q(b,\T)$ exists;
+\item $\delta(\T)$ is a cutpoint of $\Q(b,\T)$;
+\item $\Q(b,\T)$ is $\delta(\T)^++1$-iterable.
+\end{enumerate}
+}
+\proof{
+\todo{Missing proof.}
+}
+
+\defin{
+A premouse $\M$ is \textbf{tame} if no extenders on the $\M$ sequence overlaps local Woodin cardinals. That is, if $E$ is an extender on the $\M$-sequence and $\lambda:=\lh E$ then
+\eq{
+\J_\lambda^{\M}\models\forall\delta\geq\crit E:\delta\text{ is not Woodin}.\deq
+}
+}
+
+\defi{
+A premouse $\N$ is \textbf{countably $(k,\alpha,\theta)$-iterable} if whenever $\M$ is a countable premouse and $\pi:\M\to\N$ is a weak $k$-embedding then $\M$ is $(k,\alpha,\theta)$-iterable.
+}
+
+\theo{
+Let $\N$ be a tame premouse occuring on a $K^c$-construction. Then $\core_k(\N)$ is countably $(k,\omega_1,\omega_1+1)$-iterable.
+}
+\proof{
+\todo{Missing proof.}
+}
+
+\section{Construction of $K$}
+[K without the measurable]
+

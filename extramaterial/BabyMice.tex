@@ -1,0 +1,241 @@
+\chapter{Measures and baby mice}
+\thispagestyle{fancy}
+\label{ch1}
+
+[INTRO] "We're trying to construct canonical models witnessing the existence of a sufficiently strong elementary embedding"
+
+\section{Measures}
+\defi{
+A \textbf{filter} on a set $X$ is a subset $U\subset\mathcal P(X)$ satisfying that
+\begin{enumerate}
+\item $X\in U$;
+\item If $x\in U$ and $x\subset y$ then $y\in U$;
+\item If $x,y\in U$ then $x\cap y\in U$.
+\end{enumerate}
+
+If furthermore $U\neq\mathcal P(X)$ then $U$ is called \textbf{proper}.
+}
+
+One should think of elements of a filter on $X$ as being the ``large subsets of $X$", which gives the above axioms some more intuitive meaning. Note that $U$ is proper iff $\emptyset\notin U$. A maximal proper filter\footnote{Maximal with respect to inclusion.} is called an \textbf{ultrafilter}.
+
+\prop{
+A filter $U$ on $X$ is an ultrafilter iff it's proper and satisfies the \textit{ultra property:} for every $x\in\mathcal P(X)$, either $x\in U$ or $\lnot x\in U$.
+}
+\proof{
+Let $U$ be an ultrafilter and assume that $x,\lnot x\in\mathcal P(X)-U$. Define now $U':=U\cup\{x\}$. Note that $y\cap z\neq\emptyset$ for every $y,z\in U'$ as $\lnot x\notin U$, so by closing off under intersections and supersets, we get a proper filter $\overline U'\supset U'$. But then $\overline U'$ contradicts maximality of $U$.
+
+\qquad Conversely let $U$ be a proper filter with the ultra property and assume that $U$ is not maximal, so that we can find a proper filter $U'\psupset U$. Let $x\in U'-U$, so that $\lnot x\in U$. But then $\lnot x\notin U'$ by properness, so $U\nsubset U'$, $\contr$.
+}
+
+\prop{
+Any proper filter $U$ on $X$ can be extended to an ultrafilter on $X$.
+}
+\proof{
+This is a standard Zorn's lemma argument. Let $\mathcal D$ be the set of all proper filters containing $U$. Then $U\in\mathcal D$ and given any chain $U_0\subset U_1\subset\cdots$ of proper filters $U_i\in\mathcal D$, it's easy to check that $\bigcup_i U_i\in\mathcal D$ as well, so Zorn's lemma implies that $\mathcal D$ has a maximal element with respect to inclusion.
+}
+
+\prop{
+\label{UltrafilterCorrespondence}
+There is a bijective correspondence between ultrafilters on $X$ and $2$-valued finitely additive probability measures on $\mathcal P(X)$.
+}
+\proof{
+If $U$ is an ultrafilter on $X$, define $\mu:\mathcal P(X)\to 2$ as $\mu(x)=1$ iff $x\in U$. Then properness implies $\mu(\emptyset)=0$, so to show additivity let $x_0,\hdots,x_n\in\mathcal P(X)$ be pairwise disjoint. To show that $\mu(\bigsqcup_i x_i)=\sum_i\mu(x_i)$, it clearly suffices to show that if $\bigsqcup_i x_i\in U$ then there exists exactly one $i_0$ such that $x_{i_0}\in U$.
+
+\qquad To see this, assume none of the $x_i$'s are in $U$. Then $\lnot x_i\in U$ for all $i$, so $\lnot\bigsqcup_i x_i=\bigcap_i\lnot x_i\in U$ and then the ultra property implies that $\bigsqcup_i x_i\notin U$, $\contr$. Properness of $U$ implies that at most one of the $x_i$'s lie in $U$.
+
+\qquad Conversely, if $\mu$ is a measure as stated then define $U\subset\mathcal P(X)$ as the set of all $\mu$-measure 1 sets. Then $\mu(X)=1$ as it's a probability measure, and $x\subset y\Rightarrow\mu(x)\leq\mu(y)$ implies that $U$ is closed under supersets. For the ultra property, if $x\in U$ then $\mu(x)=1$, so $\mu(\lnot x)=0$ by additivity.
+
+\qquad Lastly, for $x\cap y\notin U$ we have $\lnot x\cup\lnot y\in U$ by the ultra property, so assuming without loss of generality that $\lnot x\cap\lnot y=\emptyset$ we have that $\mu(\lnot x)+\mu(\lnot y)=\mu(\lnot x\cup\lnot y)=1$, so either $x\notin U$ or $y\notin U$ by the ultra property again. This shows that $U$ is an ultrafilter. The two defined maps are clearly inverses of each other.
+}
+
+With this result in mind, we will call ultrafilters \textbf{measures}. If furthermore $U$ is \textbf{$\kappa$-complete} for a cardinal $\kappa$, which is to say that it's closed under $<\kappa$ many intersections, then an analogous argument as in the proof of \ref{UltrafilterCorrespondence} shows that such ultrafilters corresponds to actual 2-valued probability measures on $X$.
+
+\defi{
+For any language\footnote{For us, languages always contain relation symbols for equality $=$ and membership $\in$.} $\mathcal L$ and class $\mathcal L$-structure $\mathcal M$, an \textbf{$\mathcal M$-measure} on $X\in\mathcal M$ is a set $U\subset\mathcal P(X)$ such that $\mathcal M\models\text{$U$ is a measure on $X$}$.
+}
+
+\defi{
+A filter $U$ on $X$ is
+\begin{itemize}
+\item \textbf{principal} if there exists $x\in\mathcal P(X)$ such that $U=\{y\in\mathcal P(X)\mid x\subset y\}$;
+\item \textbf{$\kappa$-complete} for a cardinal $\kappa$ if it is closed under $<\kappa$ many intersections;
+\item \textbf{normal} if given any function $f$ which is regressive on $U$-many $x$, it is constant on $U$-many $x$.
+\end{itemize}\todo{Move this definition.}
+}
+
+\defi{
+Let $\mathcal L$ be a language, $\mathcal M=(M,\in,\hdots)$ an $\mathcal L$-structure and $U$ an $\mathcal M$-measure on some non-empty $X\in M$. Then the \textbf{ultrapower} $\ult:=\ult(\mathcal M,U)$ is defined as follows.
+\begin{itemize}
+\item The underlying set is $(M\cap M^X)/\sim_U$, where $f\sim_U g$ iff $f(x)=g(x)$ for $U$-many $x\in X$;
+\item For any $n$-ary relation symbol $R\in\mathcal L$, we have $R^{\ult}([f_1],\hdots,[f_n])$ iff $R^{\mathcal M}(f_1(x),\hdots,f_n(x))$ for $U$-many $x\in X$;
+\item For any $n$-ary function symbol $F\in\mathcal L$, we define $F^{\ult}([f_1],\hdots,[f_n])$ as $[x\mapsto F^{\mathcal M}(f_1(x),\hdots,f_n(x))]$.
+\end{itemize}
+}
+
+Note that in the above definition, $M$ is assumed to be a \textit{set}. We can relax this assumption and make sense of a \textbf{class ultrapower} by replacing the potentially proper classes $[f]$ with the sets $\{g\in[f]\mid\forall h\in[f]: \rank g\leq\rank h\}$. This is known as \textit{Scott's trick}.
+
+\theo[\los]{
+Let $\mathcal M=(M,\in,\hdots)$ be a class $\mathcal L$-structure in some language $\mathcal L$ such that $\mathcal M\models\zf^-$, $X\in M$ nonempty and $U$ an $\mathcal M$-measure on $X$. Write $\ult:=\ult(\mathcal M,U)$. Then for every $\Sigma_0$ $\mathcal L$-formula $\varphi(v_1,\hdots,v_n)$,
+\eq{
+\ult\models\varphi[[f_1],\hdots,[f_n]]\Leftrightarrow\forall^Ux\in X:\mathcal M\models\varphi[f_1(x),\hdots,f_n(x)].
+}
+
+Furthermore, if $\mathcal M\models\ac$ then it holds for all $\mathcal L$-formulas.
+}
+\proof{
+Induction on $\varphi$. If $\varphi$ is atomic then it holds by definition. The conjunction step uses that $U$ is closed under finite intersections, and the negation step uses the ultra property of $U$.
+
+\qquad Assume that $\varphi(w,\vec v)\equiv(\exists x\in w)\psi(x,\vec v)$. If $\ult\models\varphi[[g],[f_1]\hdots,[f_n]]$ then there exists some $[h]\in[g]$ such that $\ult\models\psi[[h],[f_1],\hdots,[f_n]]$, so that $\mathcal M\models\psi[h(x),f_1(x),\hdots,f_n(x)]$ for $\mathcal U$-many $x$. But then these $h(x)$'s witness that $\mathcal M\models\varphi[g(x),f_1(x),\hdots,f_n(x)]$ for $U$-many $x$ as well.
+
+\qquad If $\mathcal M\models\varphi[g(x),f_1(x),\hdots,f_n(x)]$ holds for $U$-many $x$ then the witnesses all lie in $\bigcup\ran g$, which is in $M$ as $\mathcal M$ satisfies replacement. Now define the function $h:X\to\bigcup\ran g$, lying in $\mathcal M$ \todo{Why?}, as
+\eq{
+h(x):=\text{a witness $y\in\bigcup\ran g$ such that $\mathcal M\models\psi[y,f_1(x),\hdots,f_n(x)]$}.
+}
+
+Then $\ult\models\psi[[h],[f_1],\hdots,[f_n]]$. \todo{Am I using AC here? Maybe only outside of $\mathcal M$.} This finishes the proof of the first statement.
+
+\qquad Assume now that $\mathcal M\models\zfc^-$ and that $\varphi(\vec v_i)\equiv\exists v\psi(v,\vec v_i)$. If $\ult$ satisfies $\varphi[[f_1],\hdots,[f_n]]$ then fix $[g]$ such that $\psi[[g],[f_1],\hdots,[f_n]]$ holds in $\ult$, so by assumption $\psi[g(x),f_1(x),\hdots,f_n(x)]$ holds in $\mathcal M$ for $U$-many $x\in X$. But then these $g(x)$'s witness that $\varphi[f_1(x),\hdots,f_n(x)]$ holds in $\mathcal M$ for $U$-many $x\in X$ as well.
+
+\qquad Conversely, assume that $\mathcal M\models\varphi[f_1(x),\hdots,f_n(x)]$ for $U$-many $x\in X$; say $S\in U$ witnesses this fact. Use the axiom of choice in $\mathcal M$ to find a choice function $g:S\to M$ in $M$ satisfying $\mathcal M\models\psi[g(x),f_1(x),\hdots,f_n(x)]$ for all $x\in S$. Extend $g$ arbitrarily to $\tilde g:X\to M$. Then $\ult\models\psi[[\tilde g],[f_1],\hdots,[f_n]]$.
+}
+
+Defining the \textbf{ultrapower map} $i_U:\mathcal M\to\ult(\mathcal M,U)$ as $i_U(x):=[c_x]$ with $c_x$ being the constant function on $x$, \los' theorem implies that $i_U$ is a $\Sigma_0$-elementary embedding if $\mathcal M\models\zf^-$ and a fully elementary embedding if $\mathcal M$ also satisfies $\ac$.
+
+\qquad Setting $\in_U$ to be $\in^{\ult(\mathcal M,U)}$, we'd like that $\in_U$ is actually the real $\in$-relation, which we can achieve by applying the transitive collapse. This requires that the ultrapower is extensional, set-like and well-founded. Extensionality is satisfied by elementarity, and the following result shows that the ultrapower is always set-like:
+
+\prop{
+Let $\mathcal M$ be any class $\mathcal L$-structure satisfying $\zf^-$, in some language $\mathcal L$. Then $\in_U$ is set-like for any $\mathcal M$-measure $U$ on a nonempty $X\in M$
+}
+\proof{
+Let $[g]\in_U [f]$ in the ultrapower and define $\hat g:X\to M$ as agreeing with $g$ when $g(x)\in f(x)$ and $\hat g(x)=\emptyset$ otherwise. Then $\hat g\in[g]$ and $\rank\hat g\leq\rank f$, so since every function in $[g]$ has the same rank, $\rank [g]\leq\rank f+1$ and thus $\{[g]\mid[g]\in[f]\}\in V_{\rank f+3}$, making it a set.
+}
+
+The catch though is that the ultrapower is not always well-founded. We have an equivalent condition on $U$ to ensure this:
+
+\prop{
+\label{prop.wfultrapower}
+Let $\mathcal M$ be a class $\mathcal L$-structure satisfying $\zf^-$, in some language $\mathcal L$. Let $U$ be an $\mathcal M$-measure on a non-empty $X\in M$. Then the ultrapower $\ult(\mathcal M,U)$ is well-founded iff $U$ is $\omega_1$-complete.
+}
+\proof{
+$\Leftarrow$: Let $\cdots\in_U[f_1]\in_U[f_0]$ witness ill-foundedness of the ultrapower. If $U$ is $\omega_1$-complete we would have that $x:=\bigcap_{n<\omega}\{z\mid f_{n+1}(z)\in f_n(z)\}\neq\emptyset$, but any element of $x$ would witness ill-foundedness of $V$, $\contr$.
+
+\qquad $\Rightarrow$: Assume $U$ isn't $\omega_1$-complete and let $\{x_n\mid n<\omega\}\subset U$ witness this, so that $\bigcap_{i\leq k}x_i-\bigcap_{i<\omega}x_i\in U$. Define for $i<\omega$ functions $g_i:X\to M$ as $g_i(x)=n-i$, where $n\geq i$ and $x\in\bigcap_{j\leq n}x_j-x_n$, and $g_i(x)=\emptyset$ otherwise. Then it's easily seen that $\cdots\in_U[g_1]\in_U[g_0]$ witness ill-foundedness of the ultrapower.
+}
+
+For $\omega_1$-complete $U$ we're then allowed to take the transitive collapse of the ultrapower, and we will identify $\ult(\mathcal M,U)$ with this collapse.\\
+
+[Definition of iterated ultrapowers, restrictions, normal measures]
+
+\section{Baby premice}
+[Something about why $L[U]$ isn't good enough, so we need to refine it somehow.]
+
+\defi{
+A structure $\mathcal M$ is a \textbf{baby premouse} \todo{Make it fine structural?} if there exist cardinals $\kappa<\lambda$ and $U$ such that
+\begin{enumerate}
+\item $\mathcal M=(J_\lambda,\in,U)$;
+\item $(J_\lambda,\in)\models\zf^-$;
+\item $\mathcal M\models\text{$\kappa$ is the largest cardinal}$;
+\item $\mathcal M\models\text{$U$ is a non-principal normal $\kappa$-complete measure over $\kappa$}$;
+\item $\mathcal M$ is amenable;
+\item $\lambda=\kappa^{+\ult(J_\lambda,U)}$.
+\end{enumerate}
+
+We say that $\mathcal M$ is \textbf{active} if $U\neq\emptyset$ and \textbf{passive} otherwise.
+}
+
+Now, say we have an elementary embedding $j:L\to L$ with critical point $\kappa$. Then we can define \textbf{the measure derived from $j$} as
+\eq{
+U_j:=\{x\subset\kappa\mid\kappa\in j(x)\}.
+}
+
+\lemm{
+\label{lemm.derivedmeasure}
+Let $j:L\to L$ be an elementary embedding with $\crit j=\kappa$. Then
+\eq{
+L\models\text{$U_j$ is a non-principal normal $\kappa$-complete measure over $\kappa$}.
+}
+}
+\proof{
+It's an easy consequence of elementarity that $L\models\text{$U_j$ is a $\kappa$-complete measure}$. If $U_j$ were principal we would have $\kappa\in j(\{\xi\})=\{j(\xi)\}=\{\xi\}$ so that $\kappa=\xi$, $\contr$. Lastly let $f:\kappa\to\kappa$ be a regressive function such that $f\in L$. Then $(jf)(\kappa)<\kappa$, so set $\xi_0:=(jf)(\kappa)$. Then $(jf)(\xi)=\xi_0$ for $U_j$-many $\xi$.
+}
+
+\prop{
+\label{prop.jimpliesmouse}
+Let $j:L\to L$ be an elementary embedding with $\crit j=\kappa$ and define $\lambda:=\kappa^{+L}$. Then $(J_\lambda,\in,U_j)$ is an active baby premouse.
+}
+\proof{
+(i), (iii) and (vi) are trivial. (ii) is because $J_\lambda=H_\lambda^L$, since $\lambda$ is an $L$-cardinal. \todo{Elaborate.} (iv) is by Lemma \ref{lemm.derivedmeasure}. As for (v), since $\lambda$ is a limit, it suffices to show that $U\cap L_\alpha\in L_\lambda$ for every $\alpha<\lambda$. If $\alpha<\lambda$ then $|L_\alpha|^L\leq\kappa$ so let $\bra{x_\eta\mid\eta<\kappa}$ be an enumeration in $L$ of $\mathcal P(\kappa)\cap L_\alpha$. Now since
+\eq{
+\bra{j(x_\eta)\mid\eta<\kappa}=j(\bra{x_\eta\mid\eta<\kappa})\restr\kappa\in L,
+}
+
+we have that $U_j\cap L_\alpha=\{j(x_\eta)\cap\kappa\mid\eta<\kappa\land\kappa\in j(x_\eta)\}\in L_\lambda$.
+}
+
+
+\section{Baby mice}
+Given an active baby premouse $\mathcal M_0=(J_{\lambda_0},\in,U_0)$, we can form the ultrapower $\ult(J_{\lambda_0},U_0)$. If this ultrapower is well-founded it's isomorphic to some $J_{\lambda_1}$ by elementarity, since $J_{\lambda_0}\models\zfc^-$, $J_{\lambda_0}\models V=L$ and both $J_{\lambda_0}$ and the ultrapower are transitive. Let $i_{0,1}:J_{\lambda_0}\to J_{\lambda_1}$ be the ultrapower map and set $\kappa_0:=\crit(i_{0,1})$.
+
+\qquad Define now $\kappa_1:=i_{0,1}(\kappa_0)$, $U_1:=\bigcup_{\alpha<\lambda_0}i_{0,1}(U_0\cap J_\alpha)$ and the structure $\mathcal M_1:=(J_{\lambda_1},\in,U_1)$; note that the definition of $U_1$ uses the amenability of $\mathcal M_0$. It's not too hard to see that $\mathcal M_1$ is also an active baby premouse, using the $\Sigma_1$ elementarity of $i_{0,1}$.\todo{Show that $i_{0,1}$ is $\Sigma_1$ elementary and that $\mathcal M_1$ is an active baby premouse.}
+
+\qquad Now in the same vein define $\mathcal M_{\alpha+1}:=(L_{\lambda_{\alpha+1}},\in,U_{\alpha+1})$ and $i_{\alpha,\alpha+1}:\mathcal M_\alpha\to\mathcal M_{\alpha+1}$, and if $\delta$ is a limit then let $\mathcal M_\delta$ be the direct limit of the $\mathcal M_\alpha$'s for $\alpha<\delta$.
+
+\defi{
+An active baby premouse $\mathcal M$ is \textbf{$\alpha$-iterable} for $\alpha\in\on$ if $\mathcal M_\gamma$ in the above iteration procedure with $\mathcal M_0:=\mathcal M$ is well-founded for all $\gamma<\alpha$. If $\mathcal M$ is $\alpha$-iterable for all ordinals $\alpha$, we just say that $\mathcal M$ is \textbf{iterable}.
+}
+
+\defi{
+$\mathcal M$ is an \textbf{active baby mouse} if it is an iterable active baby premouse.
+}
+
+\theo{
+There exists an elementary embedding $j:L\to L$ iff there exists an active baby mouse.
+}
+\proof{
+$\Rightarrow$: Let $j:L\to L$ be elementary and let $\mathcal M=(J_\lambda,\in,U_j)$ be the active baby premouse derived from $j$, as in Proposition \ref{prop.jimpliesmouse}. We'll show something stronger than iterability of $\mathcal M$; we'll show that $\mathcal M_0:=(L,\in,U_j)$ is iterable. Assume $\mathcal M_0$ is $\beta$-iterable for every $\beta<\gamma$. We have to show that if $\gamma=\alpha+2$ then $\ult(L,U_\alpha)$ is wellfounded and if $\gamma$ is a limit then $\colimm_{\alpha<\beta}\mathcal M_\alpha$ is wellfounded for every limit $\beta<\gamma$.
+
+\qquad As $\ult(L,U_\alpha)=L$ by elementarity and uniqueness of a proper class model of $V=L$, the ultrapowers are all wellfounded. Assume thus that $\gamma$ and $\beta<\gamma$ are limit ordinals. We will show that $\colimm_{\alpha<\beta}\mathcal M_\alpha$ is wellfounded by exhibiting a $\Sigma_0$-elementary map from the colimit into $L$, so it suffices to find $\Sigma_0$-elementary embeddings $\pi_\alpha:\mathcal M_\alpha\to L$ such that $\pi_{\alpha+1}\circ i_{\alpha,\alpha+1}=\pi_\alpha$.
+
+\qquad Define sets $X_\alpha$ for $\alpha<\beta$ as follows:
+\eq{
+X_0&:=\{x\in L\mid i_{\alpha,\alpha'}(x)=x\text{ for every $\alpha<\alpha'<\beta$}\}\\
+X_{\alpha+1}&:=\{f(\kappa_\alpha)\mid f\in X_\alpha\}\\
+X_\delta&:=\bigcup_{\alpha<\delta}X_\alpha\qquad\text{for $\delta$ limit.}
+}
+
+\clai{
+$X_\alpha$ is a $\Sigma_0$-elementary proper subclass of $L$, for every $\alpha<\beta$.
+}
+
+\cproof{
+Firstly, that $X_0\elsub_{\Sigma_0} L$ is because \todo{Missing proof.}
+}
+
+The $X_\alpha$'s are thus subject to the Mostowski collapse, so we get the inverse collapsing map $\pi_\alpha:\mathcal M_\alpha\to X_\alpha$. Furthermore since $X_\alpha\subset X_\beta$ for all $\alpha\leq\beta$, we have inclusion maps $j_\alpha:X_\alpha\to X_{\alpha+1}$. We claim that the following diagram commutes:
+\cd{
+X_0\ar[r]^{j_0} & X_1\ar[r]^{j_1} & X_2\ar[r]^{j_2} & \cdots\\
+\mathcal M_0\ar[u]^{\pi_0}\ar[r]_{i_{0,1}} & \mathcal M_1\ar[u]^{\pi_1}\ar[r]_{i_{1,2}} & \mathcal M_2\ar[u]^{\pi_2}\ar[r]_{i_{2,3}} & \cdots
+}
+
+Indeed, we have that $(j_0\circ\pi_0)(x)=$\todo{Missing proof.}\\
+
+$\Leftarrow$: Assume now $\mathcal M_0=(J_\lambda,\in,U)$ is an active baby mouse and set $\kappa:=\crit(U)$. Since $\mathcal M$ is iterable, let $\bra{\mathcal M_\alpha\mid \alpha<\on}$ be the iteration with iteration maps $i_{\alpha,\beta}:\mathcal M_\alpha\to\mathcal M_\beta$ for $\alpha<\beta$. Define recursively $\kappa_0:=\kappa$, $\kappa_{\alpha+1}:=i_{\alpha,\alpha+1}(\kappa_\alpha)$ and $\kappa_\delta:=\sup_{\alpha<\delta}\kappa_\alpha$ for $\delta$ limit.
+
+\clai{
+The sequence $\bra{\kappa_\alpha\mid\alpha<\on}$ is a club class such that for every formula $\varphi(v_0,\hdots,v_n)$ and ordinals $\alpha_0<\hdots<\alpha_n$ then
+\eq{
+L\models\varphi[\kappa_{\alpha_0},\hdots,\kappa_{\alpha_n}]\Leftrightarrow L\models\varphi[\kappa_0,\hdots,\kappa_n].
+}
+}
+
+\cproof{
+\todo{Missing proof.}
+}
+
+Now define $X$ as all elements of $L$ definable with parameters among the $\kappa_\alpha$'s. Note that $\kappa_0\notin X$, by the above claim. Letting $\pi:L\to X$ be the inverse Mostowski collapse and $i:X\to L$ the inclusion, we claim that $i\circ\pi:L\to L$ is a non-trivial elementary embedding. \todo{Missing proof.}
+}
+
+[Something about active baby mice having strength, but we also need canonicity.]
+
+
+

@@ -1,0 +1,10 @@
+Input File::abstract.tex::0::0::Input File
+LaTeX Error::abstract.tex::1::0::Undefined control sequence. |\thispagestyle{fancy}  | <argument> \undefinedpagestyle  
+LaTeX Error::abstract.tex::4::0::Environment onehalfspacing undefined. |\begin{onehalfspacing}  
+LaTeX Error::abstract.tex::8::0::Undefined control sequence. |\section *{\huge Abstract}
+LaTeX Error::abstract.tex::8::0::Missing \begin{document}. |\section* {\huge Abstract} 
+LaTeX Error::abstract.tex::8::0::Undefined control sequence. |\section*{\huge Abstract}
+hbox Warning::abstract.tex::8::0::Overfull \hbox (18.0pt too wide) in paragraph at lines 8--10
+LaTeX Error::abstract.tex::11::0::\begin{document} ended by \end{onehalfspacing}. |\end{onehalfspacing}  
+LaTeX Error::...ster's thesis/frontbackmatter/abstract.tex"::0::0::Emergency stop. (job aborted, no legal \end found)
+LaTeX Error::0::0::0:: ==> Fatal error occurred, no output PDF file produced! 

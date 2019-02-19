@@ -1,0 +1,524 @@
+Input File::ch3.tex::0::0::Input File
+LaTeX Error::ch3.tex::1::0::Undefined control sequence. |\chapter {Ultrapowers}
+LaTeX Error::ch3.tex::1::0::Missing \begin{document}. |\chapter{U ltrapowers} 
+LaTeX Error::ch3.tex::2::0::Undefined control sequence. |\thispagestyle{fancy}  | <argument> \undefinedpagestyle  
+hbox Warning::ch3.tex::1::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 1--4
+LaTeX Error::ch3.tex::5::0::Undefined control sequence. |\defin {
+LaTeX Error::ch3.tex::6::0::Missing \begin{document}. |L et $\M$ and $\N$ be ppms and $n<\omega$. Then $\pi:\M\to\N$ is an \text... 
+LaTeX Font Info::ch3.tex::6::0::   External font `cmex10' loaded for size <7>.
+LaTeX Font Info::ch3.tex::6::0::   External font `cmex10' loaded for size <5>.
+LaTeX Error::ch3.tex::6::0::Undefined control sequence. |Let $\M $ and $\N$ be ppms and $n<\omega$. Then $\pi:\M\to\N$ is an \text...
+LaTeX Error::ch3.tex::6::0::Undefined control sequence. |Let $\M$ and $\N $ be ppms and $n<\omega$. Then $\pi:\M\to\N$ is an \text...
+LaTeX Error::ch3.tex::6::0::Undefined control sequence. |...d $\N$ be ppms and $n<\omega$. Then $\pi:\M \to\N$ is an \textbf{$n$-e...
+LaTeX Error::ch3.tex::6::0::Undefined control sequence. |...$ be ppms and $n<\omega$. Then $\pi:\M\to\N $ is an \textbf{$n$-embedd...
+hbox Warning::ch3.tex::6::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 6--7
+hbox Warning::ch3.tex::6::0::Overfull \hbox (16.55786pt too wide) in paragraph at lines 6--7
+hbox Warning::ch3.tex::6::0::Overfull \hbox (6.58331pt too wide) in paragraph at lines 6--7
+hbox Warning::ch3.tex::6::0::Overfull \hbox (21.61456pt too wide) in paragraph at lines 6--7
+hbox Warning::ch3.tex::6::0::Overfull \hbox (9.83566pt too wide) in paragraph at lines 6--7
+hbox Warning::ch3.tex::6::0::Overfull \hbox (54.78445pt too wide) in paragraph at lines 6--7
+LaTeX Error::ch3.tex::8::0::Undefined control sequence. |\item $\M $ and $\N$ are $n$-sound;
+LaTeX Error::ch3.tex::8::0::Undefined control sequence. |\item $\M$ and $\N $ are $n$-sound;
+hbox Warning::ch3.tex::8::0::Overfull \hbox (6.00235pt too wide) in paragraph at lines 8--9
+hbox Warning::ch3.tex::9::0::Overfull \hbox (6.05905pt too wide) in paragraph at lines 9--10
+hbox Warning::ch3.tex::9::0::Overfull \hbox (27.57997pt too wide) in paragraph at lines 9--10
+LaTeX Error::ch3.tex::10::0::Undefined control sequence. |\item $\pi(p_i(\M ))=p_i(\N)$ for every $i\leq n$;
+LaTeX Error::ch3.tex::10::0::Undefined control sequence. |\item $\pi(p_i(\M))=p_i(\N )$ for every $i\leq n$;
+hbox Warning::ch3.tex::10::0::Overfull \hbox (40.5307pt too wide) in paragraph at lines 10--11
+hbox Warning::ch3.tex::10::0::Overfull \hbox (16.13834pt too wide) in paragraph at lines 10--11
+hbox Warning::ch3.tex::10::0::Overfull \hbox (14.00064pt too wide) in paragraph at lines 10--11
+hbox Warning::ch3.tex::10::0::Overfull \hbox (6.00235pt too wide) in paragraph at lines 10--11
+LaTeX Error::ch3.tex::11::0::Undefined control sequence. |\item $\pi(\rho_i(\M ))=\rho_i(\N)$ for every $i<n$ and $\sup\pi"\rho_n(...
+LaTeX Error::ch3.tex::11::0::Undefined control sequence. |\item $\pi(\rho_i(\M))=\rho_i(\N )$ for every $i<n$ and $\sup\pi"\rho_n(...
+LaTeX Error::ch3.tex::11::0::Undefined control sequence. |...N)$ for every $i<n$ and $\sup\pi"\rho_n(\M )=\rho_n(\N)$.\dit
+LaTeX Error::ch3.tex::11::0::Undefined control sequence. |...ry $i<n$ and $\sup\pi"\rho_n(\M)=\rho_n(\N )$.\dit
+LaTeX Error::ch3.tex::11::0::Undefined control sequence. |...$ and $\sup\pi"\rho_n(\M)=\rho_n(\N)$.\dit 
+hbox Warning::ch3.tex::11::0::Overfull \hbox (40.6696pt too wide) in paragraph at lines 11--12
+hbox Warning::ch3.tex::11::0::Overfull \hbox (16.27724pt too wide) in paragraph at lines 11--12
+hbox Warning::ch3.tex::11::0::Overfull \hbox (14.00064pt too wide) in paragraph at lines 11--12
+hbox Warning::ch3.tex::11::0::Overfull \hbox (6.00235pt too wide) in paragraph at lines 11--12
+hbox Warning::ch3.tex::11::0::Overfull \hbox (56.72807pt too wide) in paragraph at lines 11--12
+hbox Warning::ch3.tex::11::0::Overfull \hbox (18.39128pt too wide) in paragraph at lines 11--12
+LaTeX Error::ch3.tex::15::0::Undefined control sequence. |\defi {
+LaTeX Error::ch3.tex::16::0::Missing \begin{document}. |L et $\M$ be a ppm, $n<\omega$ and let $E$ be a $(\kappa,\lambda)$ pre-e... 
+LaTeX Error::ch3.tex::16::0::Undefined control sequence. |Let $\M $ be a ppm, $n<\omega$ and let $E$ be a $(\kappa,\lambda)$ pre-e...
+LaTeX Error::ch3.tex::16::0::Undefined control sequence. |...a $(\kappa,\lambda)$ pre-extender over $\M $ such that $\kappa<\rho_n...
+LaTeX Error::ch3.tex::16::0::Undefined control sequence. |...nder over $\M$ such that $\kappa<\rho_n(\M )$. Then the \textbf{$\Sig...
+LaTeX Error::ch3.tex::16::0::Undefined control sequence. |...$\Sigma_n$ ultrapower} is defined as $\ult _0(\M,E):=\ult(\M,E)$ and ...
+LaTeX Error::ch3.tex::16::0::Undefined control sequence. |...ma_n$ ultrapower} is defined as $\ult_0(\M ,E):=\ult(\M,E)$ and for $...
+LaTeX Error::ch3.tex::16::0::Undefined control sequence. |...rapower} is defined as $\ult_0(\M,E):=\ult (\M,E)$ and for $n>0$ it is
+LaTeX Error::ch3.tex::16::0::Undefined control sequence. |...ower} is defined as $\ult_0(\M,E):=\ult(\M ,E)$ and for $n>0$ it is
+LaTeX Error::ch3.tex::17::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::18::0::Undefined control sequence. |\ult _n(\M,E):=\{(a,f)\mid a\in[\lambda]^{<\omega}\land f:[\kappa]^{|a|}...
+LaTeX Error::ch3.tex::18::0::Missing $ inserted.
+LaTeX Error::ch3.tex::18::0::Undefined control sequence. |\ult_n(\M ,E):=\{(a,f)\mid a\in[\lambda]^{<\omega}\land f:[\kappa]^{|a|}...
+LaTeX Error::ch3.tex::18::0::Undefined control sequence. |...mbda]^{<\omega}\land f:[\kappa]^{|a|}\to\M \land f\in\b{r\Sigma}_n^{\...
+ LaTeX Warning::ch3.tex::18::0::Command \b invalid in math mode.
+ LaTeX Warning::ch3.tex::18::0::Command \b invalid in math mode.
+LaTeX Font Info::ch3.tex::18::0::   Try loading font information for +cmr.
+LaTeX Font Info::ch3.tex::18::0::   No file cmr.fd..
+LaTeX Font Warning::ch3.tex::18::0::Font shape `/cmr/m/n' undefined using `/cmr/m/n' instead.
+LaTeX Error::ch3.tex::18::0::Corrupted NFSS tables. |...f:[\kappa]^{|a|}\to\M\land f\in\b{r\Sigma} _n^{\M}\}/\sim_E | wrong@fontshape ...message {Corrupted NFSS tables} error@fontshape else let f...
+LaTeX Font Warning::ch3.tex::18::0::Font shape `/cmr/m/n' undefined using `OT1/cmr/m/n' instead.
+LaTeX Error::ch3.tex::18::0::Missing $ inserted.
+LaTeX Error::ch3.tex::18::0::Missing $ inserted.
+LaTeX Error::ch3.tex::18::0::Undefined control sequence. |...ppa]^{|a|}\to\M\land f\in\b{r\Sigma}_n^{\M }\}/\sim_E
+LaTeX Error::ch3.tex::19::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::20::0::Missing $ inserted.
+hbox Warning::ch3.tex::16::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (16.55786pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (6.58331pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (7.95831pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (23.81715pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (16.3171pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (18.39128pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (12.66556pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (13.4166pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (18.63184pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (30.1318pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (37.99995pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (20.18053pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (16.55786pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (5.00002pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (38.95715pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (34.03587pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (14.73029pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (30.09456pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (11.52776pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (33.68253pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (22.08334pt too wide) in paragraph at lines 16--20
+hbox Warning::ch3.tex::16::0::Overfull \hbox (43.89334pt too wide) in paragraph at lines 16--20
+LaTeX Error::ch3.tex::21::0::Missing \begin{document}. |w ith $\sim_E$ and $\in_E$ defined as usual. For $\N:=\ult_n(\M,E)$ we f... 
+LaTeX Error::ch3.tex::21::0::Undefined control sequence. |...m_E$ and $\in_E$ defined as usual. For $\N :=\ult_n(\M,E)$ we further...
+LaTeX Error::ch3.tex::21::0::Undefined control sequence. |...nd $\in_E$ defined as usual. For $\N:=\ult _n(\M,E)$ we furthermore d...
+LaTeX Error::ch3.tex::21::0::Undefined control sequence. |...in_E$ defined as usual. For $\N:=\ult_n(\M ,E)$ we furthermore define
+LaTeX Error::ch3.tex::22::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::23::0::Misplaced alignment tab character &. |& [a,f]\in\dot E^{\N}\quad\Leftrightarrow\quad\forall^{E_a} u:f(u)\in\do...
+LaTeX Error::ch3.tex::23::0::Missing $ inserted.
+LaTeX Error::ch3.tex::23::0::Undefined control sequence. |&[a,f]\in\dot E^{\N }\quad\Leftrightarrow\quad\forall^{E_a} u:f(u)\in\do...
+LaTeX Error::ch3.tex::23::0::Undefined control sequence. |...rrow\quad\forall^{E_a} u:f(u)\in\dot E^{\M }\\
+LaTeX Error::ch3.tex::24::0::Misplaced alignment tab character &. |& [a,f]\in\dot F^{\N}\quad\Leftrightarrow\quad\forall^{E_a} u:f(u)\in\do...
+LaTeX Error::ch3.tex::24::0::Undefined control sequence. |&[a,f]\in\dot F^{\N }\quad\Leftrightarrow\quad\forall^{E_a} u:f(u)\in\do...
+LaTeX Error::ch3.tex::24::0::Undefined control sequence. |...rrow\quad\forall^{E_a} u:f(u)\in\dot F^{\M },
+LaTeX Error::ch3.tex::25::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::26::0::Missing $ inserted.
+hbox Warning::ch3.tex::21::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (14.53337pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (13.42226pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (15.99892pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (20.18053pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (6.66669pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (21.23604pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (27.57864pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (28.91904pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (8.45831pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (30.70253pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (21.09718pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (27.57864pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (28.91904pt too wide) in paragraph at lines 21--26
+hbox Warning::ch3.tex::21::0::Overfull \hbox (11.09724pt too wide) in paragraph at lines 21--26
+LaTeX Error::ch3.tex::27::0::Missing \begin{document}. |a nd $\dot\kappa^{N}$, $\dot\nu^{\N}$, $\dot\gamma^{\N}$, $\dot T_n^{\N}... 
+LaTeX Error::ch3.tex::27::0::Undefined control sequence. |and $\dot\kappa^{N}$, $\dot\nu^{\N }$, $\dot\gamma^{\N}$, $\dot T_n^{\N}...
+LaTeX Error::ch3.tex::27::0::Undefined control sequence. |...appa^{N}$, $\dot\nu^{\N}$, $\dot\gamma^{\N }$, $\dot T_n^{\N}$ are de...
+LaTeX Error::ch3.tex::27::0::Undefined control sequence. |...nu^{\N}$, $\dot\gamma^{\N}$, $\dot T_n^{\N }$ are defined as usual.
+hbox Warning::ch3.tex::27::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 27--29
+hbox Warning::ch3.tex::27::0::Overfull \hbox (13.34631pt too wide) in paragraph at lines 27--29
+hbox Warning::ch3.tex::27::0::Overfull \hbox (6.07639pt too wide) in paragraph at lines 27--29
+hbox Warning::ch3.tex::27::0::Overfull \hbox (6.23285pt too wide) in paragraph at lines 27--29
+hbox Warning::ch3.tex::27::0::Overfull \hbox (11.28708pt too wide) in paragraph at lines 27--29
+LaTeX Error::ch3.tex::30::0::Missing \begin{document}. |[ Argue that the definition makes sense, comment on the $\kappa<\rho_n(\... 
+LaTeX Error::ch3.tex::30::0::Undefined control sequence. |...es sense, comment on the $\kappa<\rho_n(\M )$ part.]
+hbox Warning::ch3.tex::30::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 30--31
+hbox Warning::ch3.tex::30::0::Overfull \hbox (16.3171pt too wide) in paragraph at lines 30--31
+hbox Warning::ch3.tex::30::0::Overfull \hbox (18.39128pt too wide) in paragraph at lines 30--31
+LaTeX Error::ch3.tex::32::0::Undefined control sequence. |\theo [\los]{
+LaTeX Error::ch3.tex::32::0::Missing \begin{document}. |\theo[ \los]{ 
+LaTeX Error::ch3.tex::32::0::Undefined control sequence. |\theo[\los ]{
+LaTeX Error::ch3.tex::34::0::Undefined control sequence. |Let $\M $ be a ppm, $n<\omega$ and $E$ a $(\kappa,\lambda)$-pre-extender...
+LaTeX Error::ch3.tex::34::0::Undefined control sequence. |...a $(\kappa,\lambda)$-pre-extender over $\M $ where $\kappa<\rho_n(\M)...
+LaTeX Error::ch3.tex::34::0::Undefined control sequence. |...extender over $\M$ where $\kappa<\rho_n(\M )$. Write $\ult:=\ult_n(\M...
+LaTeX Error::ch3.tex::34::0::Undefined control sequence. |...\M$ where $\kappa<\rho_n(\M)$. Write $\ult :=\ult_n(\M,E)$. Then give...
+LaTeX Error::ch3.tex::34::0::Undefined control sequence. |...ere $\kappa<\rho_n(\M)$. Write $\ult:=\ult _n(\M,E)$. Then given $[a_...
+LaTeX Error::ch3.tex::34::0::Undefined control sequence. |...\kappa<\rho_n(\M)$. Write $\ult:=\ult_n(\M ,E)$. Then given $[a_i,f_i...
+LaTeX Error::ch3.tex::34::0::Undefined control sequence. |...ult_n(\M,E)$. Then given $[a_i,f_i]\in\ult $ for $i\leq k$ it holds t...
+LaTeX Error::ch3.tex::35::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::36::0::Undefined control sequence. |\ult \models\varphi[[a_0,f_0],\hdots,[a_k,f_k]]\quad\Leftrightarrow\quad...
+LaTeX Error::ch3.tex::36::0::Missing $ inserted.
+LaTeX Error::ch3.tex::36::0::Undefined control sequence. |\ult\models\varphi[[a_0,f_0],\hdots ,[a_k,f_k]]\quad\Leftrightarrow\quad...
+LaTeX Error::ch3.tex::36::0::Undefined control sequence. |...\quad\Leftrightarrow\quad\forall^{E_b}u:\M \models\varphi[f_0^{a_0,b}...
+LaTeX Error::ch3.tex::36::0::Undefined control sequence. |...b}u:\M\models\varphi[f_0^{a_0,b}(u),\hdots ,f_k^{a_k,b}(u)]
+LaTeX Error::ch3.tex::37::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::38::0::Missing $ inserted.
+hbox Warning::ch3.tex::32::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (16.55786pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (6.58331pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (7.95831pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (23.81715pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (16.3171pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (18.39128pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (15.99892pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (20.18053pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (36.2847pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (14.00064pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (5.52084pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (17.62495pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (32.61462pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (92.93985pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (35.76213pt too wide) in paragraph at lines 32--38
+hbox Warning::ch3.tex::32::0::Overfull \hbox (89.66837pt too wide) in paragraph at lines 32--38
+LaTeX Error::ch3.tex::39::0::Missing \begin{document}. |f or any $r\Sigma_n$ formula $\varphi$. 
+LaTeX Error::ch3.tex::41::0::Undefined control sequence. |\proof {
+LaTeX Error::ch3.tex::42::0::Undefined control sequence. |Since $\M $ is transitive, rud closed and amenable, we get the result fo...
+LaTeX Error::ch3.tex::42::0::Undefined control sequence. |...nable, we get the result for $n=0$ by \los '\ Theorem \ref{theo.los1}...
+LaTeX Error::ch3.tex::42::0::Undefined control sequence. |...or $n=0$ by \los'\ Theorem \ref{theo.los1} . Assume thus that $n>0$. ... | <write> ...Reference `theo.los1' on page \thepage  \space undefined\on@line .
+Reference LaTeX Warning::ch3.tex::42::0::Reference `theo.los1' on page  undefined.
+hbox Warning::ch3.tex::39::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 39--43
+hbox Warning::ch3.tex::39::0::Overfull \hbox (17.45493pt too wide) in paragraph at lines 39--43
+hbox Warning::ch3.tex::39::0::Overfull \hbox (6.54167pt too wide) in paragraph at lines 39--43
+hbox Warning::ch3.tex::39::0::Overfull \hbox (16.55786pt too wide) in paragraph at lines 39--43
+hbox Warning::ch3.tex::39::0::Overfull \hbox (5.00002pt too wide) in paragraph at lines 39--43
+hbox Warning::ch3.tex::39::0::Overfull \hbox (10.86105pt too wide) in paragraph at lines 39--43
+hbox Warning::ch3.tex::39::0::Overfull \hbox (16.55786pt too wide) in paragraph at lines 39--43
+hbox Warning::ch3.tex::39::0::Overfull \hbox (5.00002pt too wide) in paragraph at lines 39--43
+hbox Warning::ch3.tex::39::0::Overfull \hbox (15.34088pt too wide) in paragraph at lines 39--43
+hbox Warning::ch3.tex::39::0::Overfull \hbox (14.00064pt too wide) in paragraph at lines 39--43
+hbox Warning::ch3.tex::39::0::Overfull \hbox (6.00235pt too wide) in paragraph at lines 39--43
+LaTeX Error::ch3.tex::44::0::Missing \begin{document}. |\qquad If $i=0$ the usual argument for $\Sigma_0$ formulas goes through... 
+LaTeX Error::ch3.tex::44::0::Undefined control sequence. |...rmulas goes through, see the proof of \los '\ Theorem \ref{theo.los1}...
+LaTeX Error::ch3.tex::44::0::Undefined control sequence. |...he proof of \los'\ Theorem \ref{theo.los1} . Assume $i=1$ and $\varph... | <write> ...Reference `theo.los1' on page \thepage  \space undefined\on@line .
+Reference LaTeX Warning::ch3.tex::44::0::Reference `theo.los1' on page  undefined.
+LaTeX Error::ch3.tex::44::0::Undefined control sequence. |...$ for $\psi\in\Sigma_0$. Assume that $\ult \models\psi[[a,f],[a_0,f_0...
+LaTeX Error::ch3.tex::44::0::Undefined control sequence. |...at $\ult\models\psi[[a,f],[a_0,f_0],\hdots ,[a_k,f_k]]$ for some $[a,...
+LaTeX Error::ch3.tex::44::0::Undefined control sequence. |...,\hdots,[a_k,f_k]]$ for some $[a,f]\in\ult $. Then by the $i=0$ case ...
+LaTeX Error::ch3.tex::44::0::Undefined control sequence. |...the $i=0$ case there is some $[a,f]\in\ult $ such that
+LaTeX Error::ch3.tex::45::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::46::0::Undefined control sequence. |\M \models\psi[f^{a,a\cup b}(u),f_0^{a_0,a\cup b}(u),\hdots,f_k^{a_k,a\c...
+LaTeX Error::ch3.tex::46::0::Missing $ inserted.
+LaTeX Error::ch3.tex::46::0::Undefined control sequence. |...{a,a\cup b}(u),f_0^{a_0,a\cup b}(u),\hdots ,f_k^{a_k,a\cup b}(u)]
+LaTeX Error::ch3.tex::47::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::48::0::Missing $ inserted.
+hbox Warning::ch3.tex::44::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (14.00064pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (11.70836pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (10.86105pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (14.00064pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (6.54167pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (11.70836pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (17.09718pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (18.14354pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (16.3171pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (11.70836pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (106.1957pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (30.70253pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (14.00064pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (30.70253pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 44--48
+hbox Warning::ch3.tex::44::0::Overfull \hbox (153.8274pt too wide) in paragraph at lines 44--48
+LaTeX Error::ch3.tex::49::0::Missing \begin{document}. |f or $E_{a\cup b}$-many $u$. Say $\theta\in\b{r\Sigma}_n$ defines $f$ in... 
+ LaTeX Warning::ch3.tex::49::0::Command \b invalid in math mode.
+ LaTeX Warning::ch3.tex::49::0::Command \b invalid in math mode.
+LaTeX Error::ch3.tex::49::0::Missing $ inserted.
+LaTeX Error::ch3.tex::49::0::Missing $ inserted.
+LaTeX Error::ch3.tex::49::0::Undefined control sequence. |...\theta\in\b{r\Sigma}_n$ defines $f$ in $\M $. Then
+LaTeX Error::ch3.tex::50::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::51::0::Undefined control sequence. |\M \models\exists x(\theta[u,x]\land\psi[x,f_0^{a_0,a\cup b}(u),\hdots,f...
+LaTeX Error::ch3.tex::51::0::Missing $ inserted.
+LaTeX Error::ch3.tex::51::0::Undefined control sequence. |...,x]\land\psi[x,f_0^{a_0,a\cup b}(u),\hdots ,f_k^{a_k,a\cup b}(u)])
+LaTeX Error::ch3.tex::52::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::53::0::Missing $ inserted.
+hbox Warning::ch3.tex::49::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 49--53
+hbox Warning::ch3.tex::49::0::Overfull \hbox (21.12515pt too wide) in paragraph at lines 49--53
+hbox Warning::ch3.tex::49::0::Overfull \hbox (5.72458pt too wide) in paragraph at lines 49--53
+hbox Warning::ch3.tex::49::0::Overfull \hbox (14.41663pt too wide) in paragraph at lines 49--53
+hbox Warning::ch3.tex::49::0::Overfull \hbox (16.58223pt too wide) in paragraph at lines 49--53
+hbox Warning::ch3.tex::49::0::Overfull \hbox (5.97226pt too wide) in paragraph at lines 49--53
+hbox Warning::ch3.tex::49::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 49--53
+hbox Warning::ch3.tex::49::0::Overfull \hbox (48.2385pt too wide) in paragraph at lines 49--53
+hbox Warning::ch3.tex::49::0::Overfull \hbox (123.50107pt too wide) in paragraph at lines 49--53
+LaTeX Error::ch3.tex::54::0::Missing \begin{document}. |f or $E_{a\cup b}$-many $u$, and thus also for $E_b$-many $u$ by coheren... 
+LaTeX Error::ch3.tex::54::0::Undefined control sequence. |...y coherence. In particular we get that $\M \models\varphi[f_0^{a_0,b}...
+LaTeX Error::ch3.tex::54::0::Undefined control sequence. |...at $\M\models\varphi[f_0^{a_0,b}(u),\hdots ,f_k^{a_k,b}(u)]$ for $E_b...
+hbox Warning::ch3.tex::54::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 54--55
+hbox Warning::ch3.tex::54::0::Overfull \hbox (21.12515pt too wide) in paragraph at lines 54--55
+hbox Warning::ch3.tex::54::0::Overfull \hbox (5.72458pt too wide) in paragraph at lines 54--55
+hbox Warning::ch3.tex::54::0::Overfull \hbox (11.3986pt too wide) in paragraph at lines 54--55
+hbox Warning::ch3.tex::54::0::Overfull \hbox (5.72458pt too wide) in paragraph at lines 54--55
+hbox Warning::ch3.tex::54::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 54--55
+hbox Warning::ch3.tex::54::0::Overfull \hbox (89.66837pt too wide) in paragraph at lines 54--55
+hbox Warning::ch3.tex::54::0::Overfull \hbox (11.3986pt too wide) in paragraph at lines 54--55
+hbox Warning::ch3.tex::54::0::Overfull \hbox (5.72458pt too wide) in paragraph at lines 54--55
+LaTeX Error::ch3.tex::56::0::Missing \begin{document}. |\qquad Assume now this latter fact. Let $\tau$ be a $\Sigma_1$ Skolem f... 
+LaTeX Error::ch3.tex::56::0::Undefined control sequence. |...igma_1$ Skolem function for $\varphi$\todo {The existence of these ne...
+LaTeX Error::ch3.tex::57::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::58::0::Undefined control sequence. |\M \models\psi[\tau(f_0^{a_0,b}(u),\hdots,f_k^{a_k,b}(u)),f_0^{a_0,b}(u)...
+LaTeX Error::ch3.tex::58::0::Missing $ inserted.
+LaTeX Error::ch3.tex::58::0::Undefined control sequence. |\M\models\psi[\tau(f_0^{a_0,b}(u),\hdots ,f_k^{a_k,b}(u)),f_0^{a_0,b}(u)...
+LaTeX Error::ch3.tex::58::0::Undefined control sequence. |...dots,f_k^{a_k,b}(u)),f_0^{a_0,b}(u),\hdots ,f_k^{a_k,b}(u)]
+LaTeX Error::ch3.tex::59::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::60::0::Missing $ inserted.
+hbox Warning::ch3.tex::56::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 56--60
+hbox Warning::ch3.tex::56::0::Overfull \hbox (5.50348pt too wide) in paragraph at lines 56--60
+hbox Warning::ch3.tex::56::0::Overfull \hbox (11.70836pt too wide) in paragraph at lines 56--60
+hbox Warning::ch3.tex::56::0::Overfull \hbox (6.54167pt too wide) in paragraph at lines 56--60
+hbox Warning::ch3.tex::56::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 56--60
+hbox Warning::ch3.tex::56::0::Overfull \hbox (185.2962pt too wide) in paragraph at lines 56--60
+LaTeX Error::ch3.tex::60::0::The font size command \normalsize is not defined: | there is probably something wrong with the class file. 
+LaTeX Error::ch3.tex::60::0::Undefined control sequence. | <write> \newlabel{ch1}{{}{\thepage  }}
+LaTeX Error::ch3.tex::60::0::Undefined control sequence. | <write> \newlabel{theo.los2}{{}{\thepage  }}
+LaTeX Error::ch3.tex::61::0::Missing \begin{document}. |f or $E_b$-many $u$. Note that $h:=\tau\circ(f_0^{a_0,b},\hdots,f_k^{a_k... 
+LaTeX Error::ch3.tex::61::0::Undefined control sequence. |...Note that $h:=\tau\circ(f_0^{a_0,b},\hdots ,f_k^{a_k,b})$ is $\b{r\Si...
+ LaTeX Warning::ch3.tex::61::0::Command \b invalid in math mode.
+ LaTeX Warning::ch3.tex::61::0::Command \b invalid in math mode.
+LaTeX Error::ch3.tex::61::0::Missing $ inserted.
+LaTeX Error::ch3.tex::61::0::Missing $ inserted.
+LaTeX Error::ch3.tex::61::0::Undefined control sequence. |...b})$ is $\b{r\Sigma}_n$ definable over $\M $, representing an element...
+LaTeX Error::ch3.tex::61::0::Undefined control sequence. |...\M$, representing an element $[b,h]\in\ult $, so that
+LaTeX Error::ch3.tex::62::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::63::0::Undefined control sequence. |\ult \models\psi[[b,h],[a_0,f_0],\hdots,[a_k,f_k]]
+LaTeX Error::ch3.tex::63::0::Missing $ inserted.
+LaTeX Error::ch3.tex::63::0::Undefined control sequence. |\ult\models\psi[[b,h],[a_0,f_0],\hdots ,[a_k,f_k]]
+LaTeX Error::ch3.tex::64::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::65::0::Missing $ inserted.
+hbox Warning::ch3.tex::61::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 61--65
+hbox Warning::ch3.tex::61::0::Overfull \hbox (11.3986pt too wide) in paragraph at lines 61--65
+hbox Warning::ch3.tex::61::0::Overfull \hbox (5.72458pt too wide) in paragraph at lines 61--65
+hbox Warning::ch3.tex::61::0::Overfull \hbox (19.09488pt too wide) in paragraph at lines 61--65
+hbox Warning::ch3.tex::61::0::Overfull \hbox (10.5035pt too wide) in paragraph at lines 61--65
+hbox Warning::ch3.tex::61::0::Overfull \hbox (58.34416pt too wide) in paragraph at lines 61--65
+hbox Warning::ch3.tex::61::0::Overfull \hbox (16.58223pt too wide) in paragraph at lines 61--65
+hbox Warning::ch3.tex::61::0::Overfull \hbox (29.49762pt too wide) in paragraph at lines 61--65
+hbox Warning::ch3.tex::61::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 61--65
+hbox Warning::ch3.tex::61::0::Overfull \hbox (104.99078pt too wide) in paragraph at lines 61--65
+LaTeX Error::ch3.tex::66::0::Missing \begin{document}. |a nd thus also $\ult\models\varphi[[a_0,f_0],\hdots,[a_k,f_k]]$, which i... 
+LaTeX Error::ch3.tex::66::0::Undefined control sequence. |and thus also $\ult \models\varphi[[a_0,f_0],\hdots,[a_k,f_k]]$, which i...
+LaTeX Error::ch3.tex::66::0::Undefined control sequence. |... also $\ult\models\varphi[[a_0,f_0],\hdots ,[a_k,f_k]]$, which is wha...
+hbox Warning::ch3.tex::66::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 66--67
+hbox Warning::ch3.tex::66::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 66--67
+hbox Warning::ch3.tex::66::0::Overfull \hbox (80.16212pt too wide) in paragraph at lines 66--67
+LaTeX Error::ch3.tex::68::0::Missing \begin{document}. |\qquad Assume now that $i>1$ and let $\varphi\in r\Sigma_i$; write $\va... 
+LaTeX Error::ch3.tex::69::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::70::0::Missing $ inserted.
+LaTeX Error::ch3.tex::70::0::Undefined control sequence. |...-1}(\eta,q,y)\land\psi(\eta,q,y,v_0,\hdots ,v_k))
+LaTeX Error::ch3.tex::71::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::72::0::Missing $ inserted.
+hbox Warning::ch3.tex::68::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 68--72
+hbox Warning::ch3.tex::68::0::Overfull \hbox (14.00064pt too wide) in paragraph at lines 68--72
+hbox Warning::ch3.tex::68::0::Overfull \hbox (5.00002pt too wide) in paragraph at lines 68--72
+hbox Warning::ch3.tex::68::0::Overfull \hbox (15.98607pt too wide) in paragraph at lines 68--72
+hbox Warning::ch3.tex::68::0::Overfull \hbox (15.34088pt too wide) in paragraph at lines 68--72
+hbox Warning::ch3.tex::68::0::Overfull \hbox (6.54167pt too wide) in paragraph at lines 68--72
+hbox Warning::ch3.tex::68::0::Overfull \hbox (94.11528pt too wide) in paragraph at lines 68--72
+hbox Warning::ch3.tex::68::0::Overfull \hbox (75.2708pt too wide) in paragraph at lines 68--72
+LaTeX Error::ch3.tex::73::0::Missing \begin{document}. |w ith $\psi$ being $\Sigma_1$. Assume first that 
+LaTeX Error::ch3.tex::74::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::75::0::Undefined control sequence. |\ult \models\varphi[[a_0,f_0],\hdots,[a_k,f_k]]
+LaTeX Error::ch3.tex::75::0::Missing $ inserted.
+LaTeX Error::ch3.tex::75::0::Undefined control sequence. |\ult\models\varphi[[a_0,f_0],\hdots ,[a_k,f_k]]
+LaTeX Error::ch3.tex::76::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::77::0::Missing $ inserted.
+hbox Warning::ch3.tex::73::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 73--77
+hbox Warning::ch3.tex::73::0::Overfull \hbox (6.8727pt too wide) in paragraph at lines 73--77
+hbox Warning::ch3.tex::73::0::Overfull \hbox (11.70836pt too wide) in paragraph at lines 73--77
+hbox Warning::ch3.tex::73::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 73--77
+hbox Warning::ch3.tex::73::0::Overfull \hbox (80.16212pt too wide) in paragraph at lines 73--77
+LaTeX Error::ch3.tex::78::0::Missing \begin{document}. |a nd write $r\Sigma_{i-1}^{\ult}(\eta\cup\{q\})=[a,f],\eta=[c_1,g_1],q=[... 
+LaTeX Error::ch3.tex::78::0::Undefined control sequence. |and write $r\Sigma_{i-1}^{\ult }(\eta\cup\{q\})=[a,f],\eta=[c_1,g_1],q=[...
+LaTeX Error::ch3.tex::78::0::Undefined control sequence. |...})=[a,f],\eta=[c_1,g_1],q=[c_2,g_2]\in\ult $. Then
+LaTeX Error::ch3.tex::79::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::80::0::Undefined control sequence. |\ult \models\psi[[c_1,g_1],[c_2,g_2],[a,f],[a_0,f_0],\hdots,[a_k,f_k]]
+LaTeX Error::ch3.tex::80::0::Missing $ inserted.
+LaTeX Error::ch3.tex::80::0::Undefined control sequence. |...[c_1,g_1],[c_2,g_2],[a,f],[a_0,f_0],\hdots ,[a_k,f_k]]
+LaTeX Error::ch3.tex::81::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::82::0::Missing $ inserted.
+hbox Warning::ch3.tex::78::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 78--82
+hbox Warning::ch3.tex::78::0::Overfull \hbox (41.4567pt too wide) in paragraph at lines 78--82
+hbox Warning::ch3.tex::78::0::Overfull \hbox (29.26735pt too wide) in paragraph at lines 78--82
+hbox Warning::ch3.tex::78::0::Overfull \hbox (41.58214pt too wide) in paragraph at lines 78--82
+hbox Warning::ch3.tex::78::0::Overfull \hbox (47.89232pt too wide) in paragraph at lines 78--82
+hbox Warning::ch3.tex::78::0::Overfull \hbox (37.51389pt too wide) in paragraph at lines 78--82
+hbox Warning::ch3.tex::78::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 78--82
+hbox Warning::ch3.tex::78::0::Overfull \hbox (171.2235pt too wide) in paragraph at lines 78--82
+LaTeX Error::ch3.tex::83::0::Missing \begin{document}. |a nd thus $\M\models\psi[g_1^{a_1,d}(u),g_2^{a_2,d}(u),f^{a,d}(u),f_0^{a... 
+LaTeX Error::ch3.tex::83::0::Undefined control sequence. |and thus $\M \models\psi[g_1^{a_1,d}(u),g_2^{a_2,d}(u),f^{a,d}(u),f_0^{a...
+LaTeX Error::ch3.tex::83::0::Undefined control sequence. |...a_2,d}(u),f^{a,d}(u),f_0^{a_0,d}(u),\hdots ,f_k^{a_k,d}(u)]$ for $E_d...
+hbox Warning::ch3.tex::83::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 83--84
+hbox Warning::ch3.tex::83::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 83--84
+hbox Warning::ch3.tex::83::0::Overfull \hbox (203.2936pt too wide) in paragraph at lines 83--84
+hbox Warning::ch3.tex::83::0::Overfull \hbox (12.04482pt too wide) in paragraph at lines 83--84
+hbox Warning::ch3.tex::83::0::Overfull \hbox (5.72458pt too wide) in paragraph at lines 83--84
+hbox Warning::ch3.tex::83::0::Overfull \hbox (18.53816pt too wide) in paragraph at lines 83--84
+hbox Warning::ch3.tex::83::0::Overfull \hbox (16.4387pt too wide) in paragraph at lines 83--84
+hbox Warning::ch3.tex::83::0::Overfull \hbox (16.4387pt too wide) in paragraph at lines 83--84
+hbox Warning::ch3.tex::83::0::Overfull \hbox (11.95258pt too wide) in paragraph at lines 83--84
+hbox Warning::ch3.tex::83::0::Overfull \hbox (4.29166pt too wide) in paragraph at lines 83--84
+LaTeX Error::ch3.tex::85::0::Undefined control sequence. |\clai {
+LaTeX Error::ch3.tex::86::0::Missing \begin{document}. |$ a=r\Sigma_j^{\N}(b)$ is uniformly $\Pi_1$ over $r\Sigma_j$ definable.\... 
+LaTeX Error::ch3.tex::86::0::Undefined control sequence. |$a=r\Sigma_j^{\N }(b)$ is uniformly $\Pi_1$ over $r\Sigma_j$ definable.\...
+LaTeX Error::ch3.tex::86::0::Undefined control sequence. |...y $\Pi_1$ over $r\Sigma_j$ definable.\todo {Define this somewhere.}
+hbox Warning::ch3.tex::86::0::Overfull \hbox (35.8414pt too wide) in paragraph at lines 86--88
+hbox Warning::ch3.tex::86::0::Overfull \hbox (28.29462pt too wide) in paragraph at lines 86--88
+hbox Warning::ch3.tex::86::0::Overfull \hbox (11.98615pt too wide) in paragraph at lines 86--88
+hbox Warning::ch3.tex::86::0::Overfull \hbox (16.22516pt too wide) in paragraph at lines 86--88
+LaTeX Error::ch3.tex::89::0::Undefined control sequence. |\cproof {
+LaTeX Error::ch3.tex::90::0::Missing \begin{document}. |W e can write 
+LaTeX Error::ch3.tex::91::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::92::0::Missing $ inserted.
+LaTeX Error::ch3.tex::92::0::Undefined control sequence. |r\Sigma_j^{\N }=\{\bra{i,s}\mid i<\omega\land s\in[b]^{<\omega}\land\N\m...
+LaTeX Error::ch3.tex::92::0::Undefined control sequence. |r\Sigma_j^{\N}=\{\bra {i,s}\mid i<\omega\land s\in[b]^{<\omega}\land\N\m...
+LaTeX Error::ch3.tex::92::0::Undefined control sequence. |...mid i<\omega\land s\in[b]^{<\omega}\land\N \models\varphi_i[s]\}
+LaTeX Error::ch3.tex::93::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::94::0::Missing $ inserted.
+hbox Warning::ch3.tex::90::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 90--94
+hbox Warning::ch3.tex::90::0::Overfull \hbox (21.9913pt too wide) in paragraph at lines 90--94
+hbox Warning::ch3.tex::90::0::Overfull \hbox (23.13255pt too wide) in paragraph at lines 90--94
+hbox Warning::ch3.tex::90::0::Overfull \hbox (14.00064pt too wide) in paragraph at lines 90--94
+hbox Warning::ch3.tex::90::0::Overfull \hbox (13.25pt too wide) in paragraph at lines 90--94
+hbox Warning::ch3.tex::90::0::Overfull \hbox (14.1319pt too wide) in paragraph at lines 90--94
+hbox Warning::ch3.tex::90::0::Overfull \hbox (40.21953pt too wide) in paragraph at lines 90--94
+hbox Warning::ch3.tex::90::0::Overfull \hbox (25.11404pt too wide) in paragraph at lines 90--94
+LaTeX Error::ch3.tex::95::0::Missing \begin{document}. |w here $\bra{\varphi_i\mid i<\omega}$ is a recursive enumeration of all ... 
+LaTeX Error::ch3.tex::95::0::Undefined control sequence. |where $\bra {\varphi_i\mid i<\omega}$ is a recursive enumeration of all ...
+LaTeX Error::ch3.tex::95::0::Undefined control sequence. |...r\Sigma_j$ formulae. Then $a=r\Sigma_j^{\N }$ iff
+LaTeX Error::ch3.tex::96::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::97::0::Misplaced alignment tab character &. |& \forall x\in a[\textsf{fst}(x)\in\omega\land\textsf{snd}(x)\in[b]^{<\o...
+LaTeX Error::ch3.tex::97::0::Missing $ inserted.
+LaTeX Error::ch3.tex::97::0::Undefined control sequence. |...land\textsf{snd}(x)\in[b]^{<\omega}\land\N \models\varphi_i[\textsf{s...
+LaTeX Error::ch3.tex::98::0::Misplaced alignment tab character &. |& \quad\forall x((\textsf{fst}(x)\in\omega\land\textsf{snd}(x)\in[b]^{<...
+LaTeX Error::ch3.tex::98::0::Undefined control sequence. |...land\textsf{snd}(x)\in[b]^{<\omega}\land\N \models\varphi_i[\textsf{s...
+LaTeX Error::ch3.tex::99::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::100::0::Missing $ inserted.
+hbox Warning::ch3.tex::95::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (41.56583pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (16.22516pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (15.8414pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (16.22516pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (20.71524pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (41.50116pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (13.25pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (37.10414pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (40.21953pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (52.53075pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (52.48613pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (13.25pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (37.10414pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (40.21953pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (59.7529pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (15.15967pt too wide) in paragraph at lines 95--100
+hbox Warning::ch3.tex::95::0::Overfull \hbox (11.95258pt too wide) in paragraph at lines 95--100
+LaTeX Error::ch3.tex::101::0::Missing \begin{document}. |s o since $r\Sigma_j$ satisfaction is $r\Sigma_j$ definable\todo{Proof ... 
+LaTeX Error::ch3.tex::101::0::Undefined control sequence. |...atisfaction is $r\Sigma_j$ definable\todo {Proof this?}, $a=r\Sigma_...
+LaTeX Error::ch3.tex::101::0::Undefined control sequence. |...nable\todo{Proof this?}, $a=r\Sigma_j^{\N }$ is uniformly $\Pi_1$ ov...
+hbox Warning::ch3.tex::101::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 101--103
+hbox Warning::ch3.tex::101::0::Overfull \hbox (16.22516pt too wide) in paragraph at lines 101--103
+hbox Warning::ch3.tex::101::0::Overfull \hbox (16.22516pt too wide) in paragraph at lines 101--103
+hbox Warning::ch3.tex::101::0::Overfull \hbox (15.8414pt too wide) in paragraph at lines 101--103
+hbox Warning::ch3.tex::101::0::Overfull \hbox (16.22516pt too wide) in paragraph at lines 101--103
+hbox Warning::ch3.tex::101::0::Overfull \hbox (11.98615pt too wide) in paragraph at lines 101--103
+hbox Warning::ch3.tex::101::0::Overfull \hbox (16.22516pt too wide) in paragraph at lines 101--103
+LaTeX Error::ch3.tex::104::0::Missing \begin{document}. |T he claim then implies that 
+LaTeX Error::ch3.tex::105::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::106::0::Misplaced alignment tab character &. |& \ult\models[a,f]=r\Sigma_{i-1}([c_1,g_1]\cup\{[c_2,g_2]\})\\
+LaTeX Error::ch3.tex::106::0::Undefined control sequence. |&\ult \models[a,f]=r\Sigma_{i-1}([c_1,g_1]\cup\{[c_2,g_2]\})\\
+LaTeX Error::ch3.tex::106::0::Missing $ inserted.
+LaTeX Error::ch3.tex::107::0::Misplaced alignment tab character &. |& \quad\text{iff}\quad\forall^{E_e}u:\M\models f^{a,e}(u)=r\Sigma_{i-1}...
+LaTeX Error::ch3.tex::107::0::Undefined control sequence. |&\quad\text {iff}\quad\forall^{E_e}u:\M\models f^{a,e}(u)=r\Sigma_{i-1}...
+LaTeX Error::ch3.tex::107::0::Undefined control sequence. |&\quad\text{iff}\quad\forall^{E_e}u:\M \models f^{a,e}(u)=r\Sigma_{i-1}...
+LaTeX Error::ch3.tex::108::0::Misplaced alignment tab character &. |& \quad\text{iff}\quad\forall^{E_d}u:\M\models f^{a,d}(u)=r\Sigma_{i-1}...
+LaTeX Error::ch3.tex::108::0::Undefined control sequence. |&\quad\text {iff}\quad\forall^{E_d}u:\M\models f^{a,d}(u)=r\Sigma_{i-1}...
+LaTeX Error::ch3.tex::108::0::Undefined control sequence. |&\quad\text{iff}\quad\forall^{E_d}u:\M \models f^{a,d}(u)=r\Sigma_{i-1}...
+LaTeX Error::ch3.tex::108::0::Undefined control sequence. |...g_1^{c_1,d}(u)\cup\{g_2^{c_2,d}(u)\})\tag *{$(1)$}
+LaTeX Error::ch3.tex::108::0::Missing } inserted. |...^{c_1,d}(u)\cup\{g_2^{c_2,d}(u)\})\tag*{$ (1)$}
+LaTeX Error::ch3.tex::108::0::Extra }, or forgotten $. |...,d}(u)\cup\{g_2^{c_2,d}(u)\})\tag*{$(1)$} 
+LaTeX Error::ch3.tex::109::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::110::0::Missing $ inserted.
+hbox Warning::ch3.tex::104::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (31.81364pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (64.2021pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (41.95842pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (51.3702pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (41.03691pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (68.90915pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (46.66547pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (51.68362pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (41.40567pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (69.27791pt too wide) in paragraph at lines 104--110
+hbox Warning::ch3.tex::104::0::Overfull \hbox (52.03424pt too wide) in paragraph at lines 104--110
+LaTeX Error::ch3.tex::111::0::Missing \begin{document}. |w here $e:=a\cup c_1\cup c_2$. Here the last equivalence is due to cohe... 
+hbox Warning::ch3.tex::111::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 111--112
+hbox Warning::ch3.tex::111::0::Overfull \hbox (17.98956pt too wide) in paragraph at lines 111--112
+hbox Warning::ch3.tex::111::0::Overfull \hbox (11.95258pt too wide) in paragraph at lines 111--112
+hbox Warning::ch3.tex::111::0::Overfull \hbox (15.48038pt too wide) in paragraph at lines 111--112
+hbox Warning::ch3.tex::111::0::Overfull \hbox (8.81369pt too wide) in paragraph at lines 111--112
+LaTeX Error::ch3.tex::113::0::Undefined control sequence. |\clai {
+LaTeX Error::ch3.tex::114::0::Missing \begin{document}. |$ \rho_{i-1}(\ult)=j(\rho_{i-1}(\M))$ with $j:\M\to\ult$ being the ultr... 
+LaTeX Error::ch3.tex::114::0::Undefined control sequence. |$\rho_{i-1}(\ult )=j(\rho_{i-1}(\M))$ with $j:\M\to\ult$ being the ultr...
+LaTeX Error::ch3.tex::114::0::Undefined control sequence. |$\rho_{i-1}(\ult)=j(\rho_{i-1}(\M ))$ with $j:\M\to\ult$ being the ultr...
+LaTeX Error::ch3.tex::114::0::Undefined control sequence. |...{i-1}(\ult)=j(\rho_{i-1}(\M))$ with $j:\M \to\ult$ being the ultrapo...
+LaTeX Error::ch3.tex::114::0::Undefined control sequence. |...ult)=j(\rho_{i-1}(\M))$ with $j:\M\to\ult $ being the ultrapower emb...
+hbox Warning::ch3.tex::114::0::Overfull \hbox (57.0689pt too wide) in paragraph at lines 114--116
+hbox Warning::ch3.tex::114::0::Overfull \hbox (38.98167pt too wide) in paragraph at lines 114--116
+hbox Warning::ch3.tex::114::0::Overfull \hbox (20.246pt too wide) in paragraph at lines 114--116
+LaTeX Error::ch3.tex::117::0::Undefined control sequence. |\cproof {
+LaTeX Error::ch3.tex::118::0::Undefined control sequence. |\todo {Missing proof.}
+LaTeX Error::ch3.tex::118::0::Missing \begin{document}. |\todo{M issing proof.} 
+hbox Warning::ch3.tex::118::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 118--120
+LaTeX Error::ch3.tex::121::0::Missing \begin{document}. |N ow this claim and (1) then implies that 
+LaTeX Error::ch3.tex::122::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::123::0::Misplaced alignment tab character &. |& \ult\models\dot T_{i-1}([c_1,g_1],[c_2,g_2],[a,f])\\
+LaTeX Error::ch3.tex::123::0::Undefined control sequence. |&\ult \models\dot T_{i-1}([c_1,g_1],[c_2,g_2],[a,f])\\
+LaTeX Error::ch3.tex::123::0::Missing $ inserted.
+LaTeX Error::ch3.tex::124::0::Misplaced alignment tab character &. |& \quad\text{iff}\quad\forall^{E_e}u:\M\models\dot T_{i-1}(g_1^{c_1,e}(...
+LaTeX Error::ch3.tex::124::0::Undefined control sequence. |&\quad\text {iff}\quad\forall^{E_e}u:\M\models\dot T_{i-1}(g_1^{c_1,e}(...
+LaTeX Error::ch3.tex::124::0::Undefined control sequence. |&\quad\text{iff}\quad\forall^{E_e}u:\M \models\dot T_{i-1}(g_1^{c_1,e}(...
+LaTeX Error::ch3.tex::125::0::Misplaced alignment tab character &. |& \quad\text{iff}\quad\forall^{E_d}u:\M\models\dot T_{i-1}(g_1^{c_1,d}(...
+LaTeX Error::ch3.tex::125::0::Undefined control sequence. |&\quad\text {iff}\quad\forall^{E_d}u:\M\models\dot T_{i-1}(g_1^{c_1,d}(...
+LaTeX Error::ch3.tex::125::0::Undefined control sequence. |&\quad\text{iff}\quad\forall^{E_d}u:\M \models\dot T_{i-1}(g_1^{c_1,d}(...
+LaTeX Error::ch3.tex::125::0::Undefined control sequence. |...c_1,d}(u),g_2^{c_2,d}(u),f^{a,d}(u)).\tag *{$(2)$}
+LaTeX Error::ch3.tex::125::0::Missing } inserted. |...,d}(u),g_2^{c_2,d}(u),f^{a,d}(u)).\tag*{$ (2)$}
+LaTeX Error::ch3.tex::125::0::Extra }, or forgotten $. |...),g_2^{c_2,d}(u),f^{a,d}(u)).\tag*{$(2)$} 
+LaTeX Error::ch3.tex::126::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::127::0::Missing $ inserted.
+hbox Warning::ch3.tex::121::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 121--127
+hbox Warning::ch3.tex::121::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 121--127
+hbox Warning::ch3.tex::121::0::Overfull \hbox (113.47292pt too wide) in paragraph at lines 121--127
+hbox Warning::ch3.tex::121::0::Overfull \hbox (51.3702pt too wide) in paragraph at lines 121--127
+hbox Warning::ch3.tex::121::0::Overfull \hbox (132.11028pt too wide) in paragraph at lines 121--127
+hbox Warning::ch3.tex::121::0::Overfull \hbox (51.68362pt too wide) in paragraph at lines 121--127
+hbox Warning::ch3.tex::121::0::Overfull \hbox (140.99435pt too wide) in paragraph at lines 121--127
+LaTeX Error::ch3.tex::128::0::Missing \begin{document}. |B ut then, for $E_d$-many $u$ it holds that 
+LaTeX Error::ch3.tex::129::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::130::0::Undefined control sequence. |\M \models\exists\eta\exists q\exists y(\dot T_{i-1}[\eta,q,y]\land\psi...
+LaTeX Error::ch3.tex::130::0::Missing $ inserted.
+LaTeX Error::ch3.tex::130::0::Undefined control sequence. |...]\land\psi[\eta,q,y,f_0^{a_0,d}(u),\hdots ,f_k^{a_k,d}(u)])
+LaTeX Error::ch3.tex::131::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::132::0::Missing $ inserted.
+hbox Warning::ch3.tex::128::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 128--132
+hbox Warning::ch3.tex::128::0::Overfull \hbox (12.04482pt too wide) in paragraph at lines 128--132
+hbox Warning::ch3.tex::128::0::Overfull \hbox (5.72458pt too wide) in paragraph at lines 128--132
+hbox Warning::ch3.tex::128::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 128--132
+hbox Warning::ch3.tex::128::0::Overfull \hbox (91.89305pt too wide) in paragraph at lines 128--132
+hbox Warning::ch3.tex::128::0::Overfull \hbox (123.92253pt too wide) in paragraph at lines 128--132
+LaTeX Error::ch3.tex::133::0::Missing \begin{document}. |a nd thus also for $E_b$-many $u$ by coherence again, which is what we ... 
+hbox Warning::ch3.tex::133::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 133--134
+hbox Warning::ch3.tex::133::0::Overfull \hbox (11.3986pt too wide) in paragraph at lines 133--134
+hbox Warning::ch3.tex::133::0::Overfull \hbox (5.72458pt too wide) in paragraph at lines 133--134
+LaTeX Error::ch3.tex::135::0::Missing \begin{document}. |\qquad Now assume this latter fact. Let $\tau_1,\tau_2,\tau_3$ be $r\S... 
+LaTeX Error::ch3.tex::136::0::Undefined control sequence. |\eq {
+LaTeX Error::ch3.tex::137::0::Undefined control sequence. |\M \models\dot T_{i-1}(\tau_1(u),\tau_2(u),\tau_3(u))
+LaTeX Error::ch3.tex::137::0::Missing $ inserted.
+LaTeX Error::ch3.tex::138::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::139::0::Extra }, or forgotten $. |} 
+LaTeX Error::ch3.tex::140::0::Missing $ inserted.
+hbox Warning::ch3.tex::135::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 135--140
+hbox Warning::ch3.tex::135::0::Overfull \hbox (35.46182pt too wide) in paragraph at lines 135--140
+hbox Warning::ch3.tex::135::0::Overfull \hbox (17.45493pt too wide) in paragraph at lines 135--140
+hbox Warning::ch3.tex::135::0::Overfull \hbox (8.88896pt too wide) in paragraph at lines 135--140
+hbox Warning::ch3.tex::135::0::Overfull \hbox (103.15594pt too wide) in paragraph at lines 135--140
+LaTeX Error::...m/Dropbox/Master's thesis/chapters/ch3.tex"::0::0::Emergency stop. (job aborted, no legal \end found)
+LaTeX Error::ch3.tex::0::0:: ==> Fatal error occurred, no output PDF file produced! 

@@ -1,0 +1,251 @@
+\chapter{Jensen's hierarchy}
+\thispagestyle{fancy}
+\label{ch1}
+
+\section{Rudimentary functions}
+\defi{
+Let $A$ be any predicate. A function $f$ is \textbf{rudimentary in $A$} (or just rud in $A$) if it is the composition of the following:
+\eq{
+&F_0(x,y):=\{x,y\}\\
+&F_1(x,y):=x-y\\
+&F_2(x,y):=x\times y\\
+&F_3(x,y):=\{(u,z,v)\mid z\in x\land (u,v)\in y\}\\
+&F_4(x,y):=\{(u,z,v)\mid v\in x\land (u,z)\in y\}\\
+&F_5(x,y):=\bigcup x\\
+&F_6(x,y):=\dom x\\
+&F_7(x,y):={\in\cap x^2}\\
+&F_8(x,y):=\{x"\{z\}\mid z\in y\}\\
+&F_9(x,y):=x\cap A
+}
+
+We say that $f$ is \textbf{rudimentary} (rud) if $A=\emptyset$. A predicate $R$ is rud in $A$ if the characteristic function $\chi_R$ is rud in $A$.
+}
+
+\defi{
+A function $f$ is \textbf{simple} if $\varphi(\vec v,f(x)/w)$ is $\Sigma_0$ whenever $\varphi(\vec v,w)$ is $\Sigma_0$.
+}
+
+\lemm{
+\label{lemm.simplefct}
+A function $f$ is simple iff $w\in f(\vec v)$ is $\Sigma_0$ and if $\varphi(v)$ is $\Sigma_0$ then so is $\forall w\in f(\vec v):\varphi(w)$.
+}
+\proof{
+$\Rightarrow$ is trivial, and $\Leftarrow$ is a straightforward induction on $\varphi$.
+}
+
+\lemm{
+\label{lemm.rudsimple}
+The following holds.
+\begin{enumerate}
+\item All rud functions are simple;
+\item A predicate is rud iff it is $\Sigma_0$.
+\end{enumerate}
+}
+\proof{
+(i): A simple check shows that each of the $F_i$'s, $i=0,\hdots,9$, satisfies the two conditions in Lemma \ref{lemm.simplefct}.
+
+\qquad (ii): $\Rightarrow$ is directly by Lemma \ref{lemm.simplefct}. As for $\Leftarrow$, we do an induction on a $\Sigma_0$ predicate $R(\vec v)$. If $R(\vec v)\equiv v_0\in v_1$ then $R(\vec v)$ iff $\{v_0\}-v_1=\emptyset$, so that
+\eq{
+\chi_R(\vec v)&=1-\chi_{\lnot R}(\vec v)=1-\dom(\{1\}\times(\{v_0\}-v_1)),
+}
+
+which is rud. Negation step is clear. If $R(\vec v)\equiv\varphi(\vec v)\land\psi(\vec v)$ then $\chi_R(\vec v)=\dom(\chi_\varphi(\vec v)\times\chi_\psi(\vec v))$. Lastly if $R(\vec v,w)\equiv\exists x\in w:\varphi(\vec v,x)$ then $R(\vec v,w)$ iff $\chi_\varphi(\vec v,x)=1$ for some $x\in w$, so that
+\eq{
+\chi_R(\vec v,w)=\bigcup\ran(\chi_\varphi\restr\{\vec v\}\times w)=\bigcup\ran(\chi_\varphi\cap\{\vec v\}\times w\times\{0,1\}),
+}
+
+making $R$ rud.
+}
+
+\defi{
+A structure $\mathcal M=(M,A)$ is \textbf{rudimentary closed} (rud closed) if $M$ is closed under functions which are rud in $A$. The \textbf{rudimentary closure} (rud closure) of $\mathcal M$ is $\{f(x)\mid x\in M\land\text{$f$ is rud in $A$}\}$.
+}
+
+\lemm{
+\label{lemm.rudtransistrans}
+The rud closure $C$ of any transitive $M$ is again transitive.
+}
+\proof{
+Define $\varphi(v):\equiv\trcl(\{v\})\subset C$. It then suffices to show that if $\varphi(v_i)$ holds for all $i=0,\hdots,n$ then $\varphi(f(\vec v))$ holds for any rud function $f$, but this is straightforward.
+}
+
+For transitive $M$, set $\rud M:=\text{rud closure of $M\cup\{M\}$}$.
+
+\lemm{
+\label{lemm.satrudrelation}
+For any transitive $M$ it holds that $\mathcal P(M)\cap\rud M=\Sigma_\omega(M)$.
+}
+\proof{
+This is by noting that $\mathcal P(M)\cap\Sigma_0(M\cup\{M\})=\Sigma_\omega(M)$ and using Lemma \ref{lemm.rudsimple}.
+}
+
+\lemm{
+\label{lemm.Sfct}
+There is a rud function $s$ such that $M\subset s(M)$ and $\bigcup_n s^n(M)$ is the rud closure of $M$.
+}
+\proof{
+Set $s(x):=x\cup\bigcup_{i=0}^8F_i"x^2$.
+}
+
+Now defining $S(M):=s(M\cup\{M\})$, we see that $\bigcup_n S^n(M)=\rud M$.
+
+\prop{
+\label{prop.wofct}
+There is a rud function $w$ such that if $r$ is a well ordering of $M$ then $w(r,M)$ is an end extension of $r$ which well orders $S(M)$.
+}
+\proof{
+\todo{Missing proof.}
+}
+
+\prop{
+\label{prop.sigma0sat}
+Let $\mathcal M=(M,A)$ be transitive rud closed. Then the $\Sigma_0$ satisfaction relation $\mathcal M\models^{\Sigma_0}\varphi[\nu]$ is uniformly $\Sigma_1(\mathcal M)$.\footnote{Here uniformly means that the formula does not depend upon $\mathcal M$.}
+}
+\proof{
+Define a language $\mathcal L:=\{\in,A,f_0,\hdots,f_9\}$ and consider $\widehat{\mathcal M}$ to be the $\mathcal L$-structure expanded from $\mathcal M$, where $f_i^{\widehat{\mathcal M}}=F_i$. Note that $M^{<\omega}$ is rud, as $f\in M^{<\omega}$ iff $f\text{ is a function }\land\exists n<\omega:\dom f=n$. Define furthermore the function $C:\text{Term}(\mathcal L)\to\text{Term}(\mathcal L)$ as
+\eq{
+C(t)=u\qquad\text{iff}\qquad\widehat{\mathcal M}\models\exists x\exists y\exists i<10:u=\{x,y\}\land t=f_i(xy),
+}
+
+i.e. that $C(t)$ is the set of component terms in a term $t$. Then $C$ is clearly $\Sigma_1(\widehat{\mathcal M})$, and as rud functions are $\Sigma_0$ by Lemma \ref{lemm.rudsimple}, $C$ is $\Sigma_1(\mathcal M)$.
+
+\qquad We can now define substitution of terms, $t[\nu]$ for $\nu\in M^{<\omega}$, as
+\eq{
+y=t[\nu]\qquad\text{iff}\qquad\exists g(\varphi(C(t),g,\nu)\land g(t)=y),
+}
+
+where
+\eq{
+\varphi(u,g,\nu):\equiv&\text{$g$ is a function}\land\dom g=u\land\\
+&\forall x\in u[\text{$x$ is a variable}\to(x\in\dom\nu\land g(x)=\nu(x))]\land\\
+&\forall i<10[\forall t_0,t_1\in u(x=f_i(t_0t_1)\to g(x)=F_i(g(t_0),g(t_1)))].
+}
+
+Of course, we interpret variables here as numbers $i<\omega$. Since $C$ is $\Sigma_1(\mathcal M)$, $t[\nu]$ is $\Sigma_1(\mathcal M)$ as well. Now, since the relation $\mathcal M\models^{\Sigma_0}\sigma$ is uniformly $\Sigma_0(\mathcal M)$ for $\Sigma_0$ sentences $\sigma$\todo{Check.}, we have that $\mathcal M\models^{\Sigma_0}\varphi[\nu]$ is uniformly $\Sigma_1(\mathcal M)$.
+}
+
+\coro{
+\label{coro.satdef}
+Let $\mathcal M=(M,A)$ be transitive rud closed and $n\geq 1$. Then the $\Sigma_n$ satisfaction relation $\mathcal M\models^{\Sigma_n}\varphi[\nu]$ is uniformly $\Sigma_n(\mathcal M)$.
+}
+\proof{
+Induction on $n\geq 1$. For $n=1$ let $\varphi\equiv\exists v\psi$ with $\psi$ being uniformly $\Sigma_0(\mathcal M)$. Then $\mathcal M\models^{\Sigma_1}\varphi[\nu]$ iff $\mathcal M\models\exists x(\mathcal M\models^{\Sigma_0}\psi[\nu])$, so since $\Sigma_0$ satisfaction is uniformly $\Sigma_1(\mathcal M)$ by Proposition \ref{prop.sigma0sat}, so is $\Sigma_1$ satisfaction.
+
+\qquad For $n=k+1$, let $\varphi\equiv\exists v\psi$ with $\psi$ being uniformly $\Pi_k$. Then $\mathcal M\models^{\Sigma_n}\varphi[\nu]$ iff $\mathcal M\models\exists x(\mathcal M\not\models^{\Sigma_k}\lnot\psi[\nu])$, making $\Sigma_n$ satisfaction uniformly $\Sigma_n(\mathcal M)$.
+}
+
+\section{The $J$-hierarchy}
+\defi{
+Set $J_0:=\emptyset$, $J_{\alpha+1}:=\rud J_\alpha$ and $J_\delta:=\bigcup_{\alpha<\delta}J_\alpha$ for limit $\delta$. Furthermore, define $L:=\bigcup_{\alpha\in\on}J_\alpha$.
+}
+
+\prop{\ 
+\begin{enumerate}
+\item $J_\alpha$ is transitive for all $\alpha$;
+\item If $\alpha\leq\beta$ then $J_\alpha\subset J_\beta$;
+\item $\rank J_\alpha=\on\cap J_\alpha=\omega\alpha$.
+\end{enumerate}
+}
+\proof{
+(i) is by Lemma \ref{lemm.rudtransistrans} and (ii) is by Lemma \ref{lemm.Sfct}. The first equality in (iii) is because the $J_\alpha$'s are transitive. The second equality is by induction on $\alpha$: if $\alpha=\beta+1$ then $J_\alpha=\rud(J_\beta)$ and since $\rank(\rud M)=\rank M+\omega$, $\rank J_\alpha=\omega\beta+\omega=\omega\alpha$.
+}
+
+We need a stratification of the $J$-hierarchy to prove finer properties of the $J_\alpha$'s. We thus define the hierarchy $S_\alpha$ as $S_0:=\emptyset$, $S_{\alpha+1}:=S(S_\alpha)$ and $S_\delta:=\bigcup_{\alpha<\delta}S_\alpha$ for $\delta$ limit.\footnote{Recall that $S(M)=s(M\cup\{M\})$ from the previous section.} It is clear from Lemma \ref{lemm.Sfct} that $J_\alpha=\bigcup_{\xi<\omega\alpha}S_\xi=S_{\omega\alpha}$.
+
+\lemm{
+\label{lemm.SfctSigma1}
+The function $\bra{S_\xi\mid\xi<\omega\alpha}$ is uniformly $\Sigma_1(J_\alpha)$.
+}
+\proof{
+We have that $y=S_\xi$ iff $\exists f(y=f(\xi)\land\varphi(f))$, where
+\eq{
+\varphi(f):\equiv&\text{$f$ is a function}\land\dom(f)\in\on\land f(0)=0\land\\
+&(\forall\xi+1\in\dom f)(f(\xi+1)=S(f(\xi)))\land\\
+&(\forall\delta\in\dom f)(\text{$\delta$ is limit}\to f(\delta)=\bigcup_{\xi<\delta}f(\xi)).
+}
+
+Since $\varphi$ is clearly uniformly $\Sigma_0(\mathcal M)$, we just need to show that the $f$ can be found inside $J_\alpha$. We'll show that $f\restr\beta\in J_\alpha$ for all $\beta<\omega\alpha$ by induction on $\alpha$.
+
+\qquad It's trivial for $\alpha$ limit, so assume that $\alpha=\beta+1$. Then $f\restr\omega\beta$ is $\Sigma_1(J_\beta)$ since $f\restr\xi\in J_\beta$ for all $\xi<\omega\beta$ by the induction hypothesis, so $f\restr\omega\beta\in J_\alpha$ by Lemma \ref{lemm.satrudrelation}. But then $S_{\omega\beta+n}=S^n(J_\beta)\in J_\alpha$ as well, so $f\restr\beta\in J_\alpha$ for all $\beta<\omega\alpha$.
+}
+
+\prop{
+\label{prop.JfctSigma1}
+The function $\bra{J_\xi\mid\xi<\alpha}$ is uniformly $\Sigma_1(J_\alpha)$.
+}
+\proof{
+Since $J_\xi=S_{\omega\xi}$, we just have to show that $\xi\mapsto\omega\xi$ is a uniformly $\Sigma_1(J_\alpha)$ function for $\xi<\alpha$, since $\xi\mapsto S_\xi$ is $\Sigma_1(J_\alpha)$ by Lemma \ref{lemm.SfctSigma1}. But $\xi\mapsto n\xi$ is $\Sigma_0(J_\alpha)$ by an easy induction and $\omega\xi=\bigcup_{n<\omega}n\xi$.
+}
+
+\defi{
+Define relations $<_\alpha$ on $S_\alpha$ as $<_0:=\emptyset$, $<_{\alpha+1}:=w(<_\alpha,S_\alpha)$ and $<_\delta:=\bigcup_{\alpha<\delta}<_\alpha$ for $\delta$ limit.\footnote{Here $w$ is the function defined in Proposition \ref{prop.wofct}.}
+}
+
+Proposition \ref{prop.wofct} implies that $<_\alpha$ well orders $S_\alpha$ and $<_\alpha$ is an end extension of $<_\beta$ for $\beta\leq\alpha$.
+
+\lemm{
+\label{lemm.SorderSigma1}
+The function $\bra{<_\xi\mid\xi<\omega\alpha}$ is uniformly $\Sigma_1(J_\alpha)$.
+}
+\proof{
+Same proof as Lemma \ref{lemm.SfctSigma1}, \textit{mutatis mutandis}.
+}
+
+Define $<_{J_\alpha}:=<_{\omega\alpha}$ and $<_L:=\bigcup_{\alpha\in\on}<_{J_\alpha}$. Then $<_{J_{\alpha}}$ well orders $J_\alpha$ and $<_L$ well orders $L$.
+
+\prop{
+The functions $\bra{<_{J_\xi}\mid\xi<\alpha}$ and $\bra{\{y\mid y<_{J_\alpha}x\}\mid x\in J_\alpha}$ are uniformly $\Sigma_1(J_\alpha)$.
+}
+\proof{
+An easy consequence of Lemma \ref{lemm.SorderSigma1}, using the method of Lemma \ref{lemm.SfctSigma1}.
+}
+
+\lemm[Condensation]{
+If $X\elsub_{\Sigma_1} J_\alpha$ then $X\cong J_\xi$ for some $\xi\leq\alpha$.
+}
+\proof{
+Since $X\elsub_{\Sigma_1} J_\alpha$, $X$ satisfies extensionality, so that we have a unique isomorphism $\pi:X\cong M$ with $M$ transitive. We will prove that $M=J_\xi$ with $\xi=\pi"\alpha$ by induction on $\alpha$.
+
+\qquad Assume it holds for all $\beta<\alpha$. Note that $\nu\in X\cap\alpha$ iff $J_\nu\in X$, since $\nu\mapsto J_\nu$ is $\Sigma_1(J_\alpha)$ by Proposition \ref{prop.JfctSigma1}. Recall that $\pi(x)\stackrel{\text{def}}{=}\{\pi(z)\mid z\in x\}$, so if $J_\nu\in X$ then $\pi(J_\nu)=\pi"(J_\nu\cap X)$. Furthermore, $J_\nu\in X$ would also imply that $J_\nu\cap X\elsub_{\Sigma_1} J_\nu$, so since $\nu<\alpha$, the induction hypothesis implies that $\pi"(J_\nu\cap X)=J_{\pi"(\nu\cap X)}=J_{\pi(\nu)}$. So, $\nu\in X\cap\alpha$ implies that $\pi(J_\nu)=J_{\pi(\nu)}$.
+
+\qquad Define $\rud_X(J_\nu)$ to be the rud closure of $X\cap(J_\nu\cup\{J_\nu\})$. We claim that $X=\bigcup_{\nu\in X\cap\alpha}\rud_X(J_\nu)$. Indeed, if $y\in X$ then there is a rud $f$ such that $J_\alpha\models\exists\nu\exists x:x\in J_\nu\land y=f(J_\nu,x)$. As this is a $\Sigma_1$ statement, it also holds in $X$, so there is some $\nu\in X\cap\alpha$ and $x\in X\cap J_\nu$ such that $y=f(J_\nu,x)$. Since $X$ is rud closed by $\Sigma_1$-elementarity, we have the equality.
+
+\qquad As every rud function $f$ is $\Sigma_0$, $\pi f(x)=f(\pi x)$ for every $x\in X$ and rud $f$.This means that $\pi"\rud_X(J_\nu)=\rud(\pi(J_\nu))$ for every $\nu\in X\cap\alpha$. We conclude that
+\eq{
+M=\pi"X=\bigcup_{\nu\in X\cap\alpha}\rud(J_{\pi(\nu)})=\bigcup_{\nu<\pi"\alpha}\rud(J_\nu)=J_{\pi"\alpha}.
+}
+}
+\todo{Maybe note here concerning that $\pi(\nu)\leq\nu$ and $\pi(x)\leq_J x$.}
+
+\section{Fine structural notions}
+\theo{
+\label{theo.projectum}
+Let $\alpha$ be an ordinal and $n<\omega$. Then for all $\rho\leq\alpha$, the following are equivalent:
+\begin{enumerate}
+\item $\rho$ is largest such that $(J_\rho,A)$ is amenable for all $\b\Sigma_n(J_\alpha)$ subsets $A$;
+\item $\rho$ is least such that $\mathcal P(\omega\rho)\cap\b\Sigma_n(J_\alpha)\not\subset J_\alpha$;
+\item $\rho$ is least such that there is a $\b\Sigma_n(J_\alpha)$ function which maps a subset of $\omega\rho$ onto $J_\alpha$.
+\end{enumerate}
+}
+\proof{
+\todo{Missing proof.}
+}
+
+\defi{
+The $\rho$ in Theorem \ref{theo.projectum} is called the \textbf{$\Sigma_n$ projectum of $\alpha$}, and is denoted $\rho_\alpha^n$.
+}
+
+Property (iii) in Theorem \ref{theo.projectum} explains why $\rho$ is called a projectum, as it\footnote{Or rather, a subset of it.} \textit{projects} onto $J_\alpha$. Note however that we're only talking about boldface definability here, i.e. only definability with parameters. We will make the parameter in (ii) canonical. First we need the following lemma.
+
+\lemm{
+For every $\alpha$, there is a $\Sigma_1(J_\alpha)$ surjection $\omega\alpha\to J_\alpha$, and thus also a $\Sigma_1(J_\alpha)$ surjection $(\omega\alpha)^{<\omega}\to J_\alpha$.\todo{Why do we need the finite subsets?}
+}
+\proof{
+\todo{Missing proof.}
+}
+
+Using this lemma, the parameter occuring in Theorem \ref{theo.projectum}(ii) can be interpreted as a finite set of ordinals, and we make this choice canonical by choosing the least such one:
+
+\defi{
+For any $\alpha$ and $n<\omega$, the $\Sigma_{n+1}$ \textbf{standard parameter} $p_\alpha^{n+1}$ is the lexicographically least $p\in(\omega\rho_\alpha^n)^{<\omega}$ such that there is a $A\subset\omega\rho_\alpha^{n+1}$ which is $\Sigma_{n+1}(J_{\rho_\alpha^n})$ in $p$ such that $A\notin J_{\rho_\alpha^n}$. We set $p_\alpha^0:=\emptyset$.
+}

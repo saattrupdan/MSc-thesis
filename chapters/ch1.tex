@@ -1,0 +1,352 @@
+\chapter{Extenders and potential premice}
+\thispagestyle{fancy}
+\label{ch1}
+
+Inner model theory is a field concerned about constructing canonical models of set theory admitting large cardinals. These canonical models can then be used in various different ways. They can shed more light on the behaviour of the large cardinals, provide lower consistency bounds on axioms of interest and also provide more knowledge on the structure of $V$ by studying \textit{core models}. We will be building a specific core model in the very last chapter.
+
+\qquad As large cardinal axioms are closely related to the existence of elementary embeddings, our models should somehow ``know" that these embeddings exist. At the level of measurable cardinals\footnote{Recall that a cardinal $\kappa$ is \textit{measurable} if there exists an elementary embedding $j:V\to L$ with $\kappa=\crit j$.} we're putting \textit{measures}\footnote{I.e. $\kappa$-complete non-principal ultrafilters.} into our models. If we want to admit stronger large cardinals we have to ``strengthen" our measures somehow. A way to do that is by using \textit{extenders}.\\
+
+\section{Extenders}
+Extenders will be a sequence of measures built in such a way that the ultrapowers of the measures will give rise to a ``limit" ultrapower of the extender.
+
+\defi{
+Let $\kappa<\lambda$ and assume $\M$ is transitive rud closed\footnote{See \cite{Jensen} or \cite{FS} for the definitions and results on rud functions and rud closed structures.}. Then $E$ is a (short) $(\kappa,\lambda)$-\textbf{extender} over $\M$ if there exists a $\Sigma_0$-embedding $j:\M\to\N$ to a transitive rud closed $\N$, such that $\kappa=\crit(j)$, $\lambda\leq j(\kappa)$ and
+\eq{
+E=\bigcup_{n<\omega}\{(a,x)\in[\lambda]^n\times\mathcal P^{\M}([\kappa]^n)\mid a\in j(x)\}.
+}
+
+If we relax the condition that $\N$ is transitive to $\lambda+1\subset\wfp(\N)$ then we call $E$ a \textbf{pre-extender}. We call $\kappa$ the \textit{critical point} of $E$, $\kappa=\crit E$, and $\lambda$ the \textit{length} of $E$, $\lambda=\lh E$.
+}
+
+The ``shortness'' of the extender is the condition that $\lambda\leq j(\kappa)$. If this condition is removed, these \textit{long} extenders will still have a lot of the same properties as the short ones, but will make the arguments more complex. By default ``pre-extender" and ``extender" will refer to the short variants, and long extenders won't be needed until the last chapters 7 and 8. Now, given a $(\kappa,\lambda)$ pre-extender $E$, we have for each $a\in[\lambda]^{<\omega}$ the cross-section
+\eq{
+E_a:=E\cap(\{a\}\times\M)=\{x\in\mathcal P^{\M}([\kappa]^{|a|})\mid a\in j(x)\}.
+}
+
+\prop{
+\label{prop.short}
+For each $a\in[\lambda]^{<\omega}$, $E_a$ is a $\kappa$-complete measure over $[\kappa]^{|a|}$ with critical point $\kappa$, which is principal iff $a\subset\kappa$.
+}
+\proof{
+By shortness of $E$ we get that $a\in[\lambda]^{|a|}\subset[j(\kappa)]^{|a|}=j([\kappa]^{|a|})$, so $[\kappa]^{|a|}\in E_a$. As $j$ is $\Sigma_0$-elementary it preserves both finite intersections and the subset relation, which implies that $E_a$ is a filter. If $a\notin j(x)$ then $a\in j(x)^c=j(x^c)$, with $(-)^c$ denoting the relative complement, so it's also an ultrafilter. As the critical point is $\kappa$, $j$ also preserves unions of $<\kappa$ many sets, making $E_a$ $\kappa$-complete.
+
+\qquad Finally, assume that $E_a$ is principal, so that $\{x\}\in E_a$ for some $x\in[\kappa]^{|a|}$. Then $a\in j(\{x\})=\{j(x)\}$, meaning $a=j(x)$. But $x$ is below the critical point, so $j(x)=x$, meaning $a\subset\kappa$. Conversely if $a\subset\kappa$, then we show that $\bigcap E_a\in E_a$. As $a$ is below the critical point, $a=j(a)$, implying that $j(a)=a\in j(\bigcap E_a)$ holds iff $a\in\bigcap E_a$ holds, of which the latter is true since $a\in j(x)\cap[\kappa]^{<\omega}=x$ for every $x\in E_a$.
+}
+
+This proposition thus justifies our intuitive notion of an extender being a sequence of measures. We will borrow the following convenient notation from measure theory.
+
+\defi{
+Let $E$ be a pre-extender over some $\M$, $a\in[\lh E]^{<\omega}$ and $\varphi(u)$ a predicate. Then we say that \textbf{$\varphi$ holds for $E_a$-a.e. $u$} if $\{u\mid\M\models\varphi[u]\}\in E_a$. We will also write $\forall^{E_a}u\varphi$, and we will leave out $E_a$ when it is understood.
+}
+
+Just as with usual measures, it's also possible to define the ultrapower of any $(\kappa,\lambda)$-pre-extender $E$. This is going to be a direct limit of the cross-section ultrapowers $\ult(\M,E_a)$, so we first need to show how these section ultrapowers form a directed system.\footnote{For the definition of directed system and direct limits of structures, see \cite{Kanamori}.}
+
+\qquad Let $a,b\in[\lambda]^{<\omega}$ satisfy $a\subset b$. Identifying such finite subsets of $\lambda$ with their corresponding increasing enumerations and letting $s$ be the increasing enumeration of $\{i<\omega\mid b(i)\in a\}$, we can define $x_{ab}\in\mathcal P^{\M}([\kappa]^{|b|})$ for $x\in\mathcal P^{\M}([\kappa]^{|a|})$ as $x_{ab}:=\{u\in[\kappa]^{|b|}\mid u\circ s\in x\}$. We can think of $x_{ab}$ as $x$ with ``added dummy variables".
+
+\prop[Coherence]{
+For any $x\in\mathcal P^{\M}([\kappa]^{|a|})$ and $a,b\in[\lambda]^{<\omega}$ such that $a\subset b$, it holds that $x\in E_a$ iff $x_{ab}\in E_b$.
+}
+\proof{
+If $x\in E_a$ then $a\in j(x)$. But as $b\circ s=a$ by definition, $b\in j(x_{ab})$ and thus $x_{ab}\in E_b$. Conversely, if $x_{ab}\in E_b$ then $b\in j(x_{ab})$, so $a=b\circ s\in x$ and $x\in E_a$.
+}
+
+Now, defining $f^{ab}:[\kappa]^{|b|}\to\M$ as $f^{ab}(u):=f(u\circ s)$ for $f:[\kappa]^{|a|}\to\M$, set $\Theta_{ab}:\ult(\M,E_a)\to\ult(\M,E_b)$ to be $\Theta_{ab}([f]_{E_a}):=[f^{ab}]_{E_b}$. To see that $\Theta_{ab}$ is well-defined, assume that $f^{ab}(u)=g^{ab}(u)$ for $E_b$-many $u$. This $E_b$ set then looks like
+\eq{
+X:=\{u\in[\kappa]^{|b|}\mid f(u\circ s)=g(u\circ s)\}.
+}
+
+But note that $X=x_{ab}$, where $x:=\{u\in[\kappa]^{|a|}\mid f(u)=g(u)\}$, so since $X\in E_b$, $x\in E_a$ by the above proposition and $f(u)=g(u)$ for $E_a$-many $u$. To show that $\{\Theta_{ab}\}_{a,b}$ form a directed set, just note that for any $a,b\in[\lambda]^{<\omega}$ we have maps $\Theta_{a,a\cup b}$ and $\Theta_{b,a\cup b}$. We can thus use these maps to define the ultrapower of a pre-extender.
+
+\defi{
+\label{defi.ultrapower}
+The \textbf{ultrapower} of a $(\kappa,\lambda)$-pre-extender $E$ is given by
+\eq{
+\ult(\M,E):=\colimm_{a\in[\lambda]^{<\omega}}\ult(\M,E_a),
+}
+
+where the direct limit is over the system $\{\Theta_{ab}\}_{a,b\in[\lambda]^{<\omega}}$ defined above.
+}
+
+Somewhat more concretely, we can write $[a,f]$ as the image of $[f]\in\ult(\M,E_a)$ under the direct limit map, so that the direct limit is isomorphic to
+\eq{
+\{(a,f)\mid a\in[\lambda]^{<\omega}\land f:[\kappa]^{|a|}\to\M\land f\in\M\}/\sim_E,
+}
+
+where $(a,f)\sim_E (b,g)$ iff for $E_{a\cup b}$-many $u$, $f^{a,a\cup b}(u)=g^{b,a\cup b}(u)$. As usual, $[a,f]\in_E[b,g]$ holds iff $f^{a,a\cup b}(u)\in g^{b,a\cup b}(u)$ for $E_{a\cup b}$-many $u$.
+
+\qquad Just as ultrapowers of measures, we get a version of \los' Theorem.
+
+\theo[\los]{
+\label{theo.los1}
+Let $\M$ be a transitive and rud closed structure with $\M\models\ac$. Let $E$ be a $(\kappa,\lambda)$-pre-extender over $\M$ and set $\ult:=\ult(\M,E)$. Then given any $\Sigma_0$-formula $\varphi(v_1,\hdots,v_n)$ in the language of $\M$ and elements $[a_i,f_i]\in\ult$ for $1\leq i\leq n$, setting $c:=\bigcup_i a_i$ we have that
+\eq{
+\ult\models\varphi[[a_1,f_1],\hdots,[a_n,f_n]]\quad\text{iff}\quad\forall^{E_c}u:\M\models\varphi[f_1^{a_1,c}(u),\hdots,f_n^{a_n,c}(u)].
+}
+}
+\proof{
+Induction on $\varphi$. If $\varphi$ is atomic then it's by definition of equality and $\in_E$ in the ultrapower. The conjunction and negation steps are trivial. If $\varphi$ is $\exists w\in v_1\psi$ and $\ult(\M,E)\models\varphi[[a_1,f_1],\hdots,[a_n,f_n]]$ there exists some $[a,f]\in_E[a_1,f_1]$ such that $\ult(\M,E)\models\psi[[a,f],[a_1,f_1],\hdots,[a_n,f_n]]$. This implies that for \mbox{$E_{c\cup a}$-many} $u$, $\M\models\psi[f^{a,c\cup a}(u),f_1^{a_1,c\cup a}(u),\hdots,f_n^{a_n,c\cup a}(u)]$, which by coherence implies that $\M\models\exists w\in f_1^{a_1,c}(u)\psi[w,f_1^{a_1,c}(u),\hdots,f_n^{a_n,c}(u)]$ for $E_c$-many $u$.
+
+\qquad If we conversely assume this latter statement, use $\ac$ in $\M$ to fix a wellordering ${<^*}\in\M$ on $\ran f_1$ and let $h:[\kappa]^{|c|}\to\ran f_1$ be defined as $h(u):=$ the $<^*$-smallest $x\in\ran f_1$ satisfying that $\M\models\psi[x,f_1^{a_1,c}(u),\hdots,f_n^{a_n,c}(u)]$ if such an $x$ exists and $h(u):=\emptyset$ otherwise. This condition is $\b\Sigma_0^{\M}$ \todo[color=yellow]{Is this true? The fact that $\Sigma_0$-definability is $\Sigma_1$ seems to ruin it?} and hence rud, so as $\M$ is rud closed, $h\in\M$. But then for $E_c$-many $u$,
+\eq{
+\mathcal M\models h(u)\in f_1^{a_1,c}(u)\land\psi[h(u),f_1^{a_1,c}(u),\hdots,f_n^{a_n,c}(u)],
+}
+
+so $\ult(\M,E)\models[c,h]\in[a_1,f_1]\land\psi[[c,h],[a_1,f_1],\hdots,[a_n,f_n]]$, concluding that $\ult(\M,E)\models\varphi[[a_1,f_1],\hdots,[a_n,f_n]]$.
+}
+
+Fix now a transitive and rud closed $\M$ for the remainder of this section. We have an ultrapower map $i_E:\M\to\ult(\M,E)$ given as $i_E(x):=[\{\kappa\},c_x]$ with $c_x$ the constant function on $x$, which is a $\Sigma_0$-embedding by \los' theorem. 
+
+\prop{
+The ultrapower embedding $i_E:\M\to\ult(\M,E)$ is cofinal\footnote{I.e. that given any $y\in\ult(\M,E)$ we can find an $x\in\M$ such that $y\in i_E(x)$.}, and thus a $\Sigma_1$-embedding.
+}
+\proof{
+Let $[a,f]\in\ult(\M,E)$ and $m:=\ran f\in\M$. Then $f^{a,a\cup\{\kappa\}}(u)\in m$ for a.e. $u$, so $[a,f]\in i_E(m)$, making $i_E$ cofinal. If $\ult(\M,E)\models\exists x\varphi$ with $\varphi$ $\Sigma_0$, then we can just find some $m\in\M$ such that $\ult(\M,E)\models\exists x\in i_E(m)\varphi$, and then $\M\models\exists x\in m\varphi$.
+}
+
+Now, there are a few notions concerning extenders which will be useful.
+
+\defin{
+Let $E$ be a $(\kappa,\lambda)$-pre-extender over $\M$. Then for $\xi\leq\lambda$ we set $E\restr\xi:=\{(a,x)\in E\mid a\subset\xi\}$. We then have an embedding
+\eq{
+\sigma_\xi:\ult(\M,E\restr\xi)\to\ult(\M,E)
+}
+
+given by $\sigma_\xi[a,f]_{E\restr\xi}:=[a,f]_E$. A \textbf{generator} of $E$ is an ordinal $\xi\leq\lambda$ such that $\xi=\crit(\sigma_\xi)$, i.e. that for every $a\in[\xi]^{<\omega}$ and $f$, $\xi\neq[a,f]_E$, so $\xi$ cannot be ``approximated from below". The \textbf{natural length} of $E$ is then defined as
+\eq{
+\nu_E:=\sup(\kappa^{+\M}\cup\{\xi+1\mid\xi\text{ is a generator of }E\}).\deq
+}
+}
+
+A generator thus marks the ``steps'' of an ultrapower, in that if $\xi$ is a generator then $E\restr\xi+1$ contains strictly more information that $E\restr\xi$. Note that $\kappa$ is the smallest generator and every other generator is $>\kappa^{+\M}$. To see this latter statement note that as generators $\xi$ are critical points they in particular are cardinals of $\ult(\M,E\restr\xi)$, and since $\kappa^{+\M}=\kappa^{+\ult(\M,E\restr\xi)}$ the next generator after $\kappa$ is $\geq\kappa^{+\M}$. To see that $\kappa^{+\M}$ is \textit{not} a generator, note that $\kappa^{+\M}=[\{\kappa\},f]$ with $f(\{\xi\})=\xi^+$, as $\kappa^{+\ult}=\kappa^{+\M}$.
+
+\defi{
+Two pre-extenders on the same critical point are \textbf{equivalent} if their ultrapowers are isomorphic.
+}
+
+Note that any extender $E$ is equivalent to $E\restr\nu_E$ since every $\gamma\geq\nu_E$ can be written as $[a,f]$ for some $a\subset\nu_E$ by definition of $\nu_E$, so we can always assume that $a\subset\nu_E$ whenever $\bra{a,x}\in E$. The connection between measures and extenders is then the following result.
+
+\prop{
+Measures are in a bijective correspondence to extenders with a single generator, up to equivalence.
+}
+\proof{
+For $U$ a measure just take $E$ with $E_{\{\kappa\}}=U$ and $E_a=\emptyset$ otherwise. We will show that every extender with a single generator is equivalent to one of the form $E_{\{\kappa\}}$. Let thus $E$ be a $(\kappa,\lambda)$-extender with a single generator. Then $\ult(\M,E)=\colimm_{a\in[\lambda]^{<\omega}}\ult(\M,E_a)$, so it suffices to show that if $a\in[\lambda]^{<\omega}$ with $a\not\subset\kappa$ and $\xi\in a-\kappa$ then $\ult(\M,E_{\{\xi\}})\cong\ult(\M,E_a)$. Since $E$ only has one generator, $\kappa$, we can assume that $a\in[\kappa+1]^{<\omega}$, so that $\xi=\kappa$.
+
+\qquad Define the map $\varphi$ as taking $[f]_{E_{\{\xi\}}}$ to $[f^{\{\xi\},a}]_{E_a}$, which is a well-defined homomorphism as $\{\xi\}\subset a$. For injectivity, assume $f^{\{\xi\},a}\sim_{E_a} g^{\{\xi\},a}$, so that $j(f^{\{\xi\},a})(a)=j(g^{\{\xi\},a})(a)$. But by definition of $f^{\{\xi\},a}$, $j(f^{\{\xi\},a})(a)=j(f)(\{\xi\})$ and likewise $j(g^{\{\xi\},a})(a)=j(g)(\{\xi\})$, so $f\sim_{E_{\{\xi\}}} g$.
+
+\qquad For surjectivity, let $[f]_{E_a}$ be given and define $\tilde f:[\kappa]^{|a|}\to\M$ as $\tilde f(u)=f(\{a_0,\hdots,a_{|a|-2},u_{|a|-1}\})$ with $u\in[\kappa]^{|a|}$. Then $\tilde f$ is clearly in the image of $\varphi$, so we need to show that $f\sim_{E_a}\tilde f$, i.e. $j(f)(a)=j(\tilde f)(a)$. But since $a_i<\kappa$ for $i<|a|-1$, $j(a_i)=a_i$, $j(\tilde f)(u)=j(f)(\{a_0,\hdots,a_{|a|-2},u_{|a|-1}\})$ and thus $j(f)(a)=j(\tilde f)(a)$.
+}
+
+Thus, extenders generalise measures. Moreover, an extender encodes more information about the elementary embedding $j$ than the derived measure of $j$ does\footnote{The derived measure of $j$ is $\{x\in\P^{\M}(\kappa)\mid \kappa\in j(x)\}$ -- see \cite{Kanamori}.}. To see this, first note that just as with measures we have a factorisation
+\cd{
+\M\ar[r]^j\ar[dr]_{i_E} & \N\\
+& \ult(\M,E)\ar[u]_k
+}
+
+where $k[a,f]:=j(f)(a)$, because we have that
+\eq{
+(k\circ i_E)(x)=k[\{\kappa\},c_x]=j(c_x)(\{\kappa\})=c_{j(x)}(\{\kappa\})=j(x).
+}
+
+When we form ultrapowers with measures we can only expect that $k\restr\kappa=\id$, but in this case with extenders we get more. Towards showing this, we first show an important property for pre-extenders called normality.
+
+\defi{
+Define $\pr:V\to V$ to be the union function: $\pr(u):=\bigcup u$.\footnote{This notation is from \cite{FS}.}
+}
+
+\lemm[Normality]{
+Let $E$ be a $(\kappa,\lambda)$-pre-extender over $\M$. Let $a\in[\lambda]^{<\omega}$ and $f\in\M$ such that $f:[\kappa]^{|a|}\to\kappa$. If $f(u)<\max(u)$ for $E_a$-many $u$ then there is some $\beta<\max(a)$ such that $f^{a,a\cup\{\beta\}}(u)=\pr^{\{\beta\},a\cup\{\beta\}}(u)$ holds for $E_{a\cup\{\beta\}}$-many $u$.
+}
+\proof{
+Let $j$ be the embedding derived from $E$ and set $\beta:=j(f)(a)$. Since $f(u)<\max(u)$ for $E_a$-many $u$, $\beta=j(f)(a)<\max(a)$. By the choice of $\beta$ we get that $f^{a,a\cup\{\beta\}}(u)\in u$ for a.e. $u$, so that $f^{a,a\cup\{\beta\}}(u)=\pr^{\{\gamma\},a\cup\{\beta\}}(u)$ for a.e. $u$ for some $\gamma\in a\cup\{\beta\}$ since $E_{a\cup\{\beta\}}$ is an ultrafilter. But then
+\eq{
+\beta=j(f)(a)=\pr^{\{\gamma\},a\cup\{\beta\}}(a\cup\{\beta\})=\gamma
+}
+
+and we're done.
+}
+
+One can show that a sequence $E=\bra{E_a\mid a\in[\lambda]^{<\omega}}$ of measures is a pre-extender iff it satisfies both coherence and normality, which can be used to define pre-extenderhood in a first-order fashion. For a proof this fact, see \cite[Section 2.1]{OIMT}. Now, we can finally show that extenders encode more information than measures -- they encode information up to their length.
+
+\prop{
+\label{prop.pr}
+Let $E$ be a $(\kappa,\lambda)$-pre-extender over $\M$. Then the following holds:
+\begin{enumerate}
+\item If $\alpha<\lambda$ and $[a,f]\in_E[\{\alpha\},\pr]$ then $[a,f]=[\{\beta\},\pr]$ for some $\beta<\alpha$;
+\item $\ult(\M,E)\models[\{\alpha\},\pr]=\alpha$ for every $\alpha<\lambda$;
+\item $\ult(\M,E)\models [a,\id]_E=a$ for every $a\in[\lambda]^{<\omega}$;
+\item $k\restr\lambda=\id$.
+\end{enumerate}
+}
+\proof{
+(i): Let $[a,f]\in_E[\{\alpha\},\pr]$ and set $b:=a\cup\{\alpha\}$. By \los, $f^{a,b}(u)\in\pr^{\{\alpha\},b}(u)$ for $E_b$-many $u$, so that $f(u)<\max(u)$. By normality, there is some $\beta<\alpha$ such that setting $c:=b\cup\{\beta\}$, $f^{a,c}(u)=\pr^{\{\beta\},c}(u)$ for $E_c$-many $u$. But then by {\los} again, $[a,f]=[\{\beta\},\pr]$. (ii) is easily proved by induction on $\alpha<\lambda$, using (i).
+
+\qquad (iii): If $[b,f]\in_E[a,\id]$ then setting $c:=a\cup b$ we have that $f^{b,c}(u)\in\id^{a,c}(u)$ for $E_c$-many $u$. But since $E_c$ is an ultrafilter there is some $\alpha\in a$ such that $f^{b,c}(u)=\id^{\{\alpha\},c}(u)$ for $E_c$-many $u$, so by (ii), $[b,f]=\alpha$. Conversely, if $\alpha\in a$ then $j(\pr)(\{\alpha\})=\alpha\in a=\id(a)$, so that $\pr^{\{\alpha\},a}(u)\in\id(u)$ for $E_a$-many $u$, meaning that $\alpha=[\{\alpha\},\pr]\in_E[a,\id]$. Thus $[a,\id]=a$.
+
+\qquad (iv): If $\alpha<\lambda$ then $k(\alpha)=k[\{\alpha\},\pr]=j(\pr)(\{\alpha\})=\alpha$, using (ii).
+}
+
+
+\section{Sequences of extenders}
+We are going to work with not only extenders, but \textit{sequences} of extenders. This is needed to make sure that our models will be able to contain several large cardinals, and also because some large cardinals require the existence of several embeddings.
+
+\qquad One of the properties that canonical inner models such as $L$ and $L[U]$ for $U$ a measure satisfy is $\gch$. A related property we will require of our models is the following.
+
+\defi{
+A set $A$ is \textbf{acceptable at $\b\alpha$} if given any $\beta<\alpha$ and any $\kappa$,
+\eq{
+J_{\beta+1}^A\models\exists x(x\subset\kappa\land x\notin J_{\beta}^A)\rightarrow |J_\beta^A|\leq\kappa.
+}
+
+Said in another way, if there is a new subset of $\kappa$ in $J_{\beta+1}^A$, then there is a surjection from $\kappa$ onto $J_\beta^A$ inside $J_{\beta+1}^A$ as well.
+}
+
+Note that if $A$ is acceptable at $\alpha$ and $J_\alpha^A\models\kappa^+\text{ exists}$, then $J_\alpha^A\models\gch$. We will need the following technical definition as well.
+
+\defin{
+Let $E$ be a $(\kappa,\lambda)$ pre-extender over $\M$, where $\M\models\kappa^+\text{ exists}$. Let $\eta:=(\nu_E)^{+\ult(\M,E)}$. Then the $(\kappa,\eta)$-pre-extender derived from $E$ is called the \textbf{trivial completion} of $E$, denoted by $E^*$. More concretely,
+\eq{
+E^*:=\bigcup_{n<\omega}\{(a,x)\mid a\in[\eta]^n\land x\subset\P^{\M}([\kappa]^n)\land a\in i_E(x)\}\deq
+}
+}
+
+Note that $\nu_E=\nu_{E^*}$ and $E\restr\nu_E=E^*\restr\nu_{E^*}$, so that $E$ and $E^*$ are equivalent and there's thus nothing harmful in working with $E^*$ instead of $E$. An even more technical property that we'll need is the following.
+
+\defi{
+Let $E$ be an pre-extender over $\M$. Then $E$ is of \textbf{type $Z$}\footnote{This was introduced in \cite{Deconstructing} to fix errors with the so-called ``good" extender sequences in \cite{FSIT}.} if there exists some limit ordinal $\delta$ of $\M$ such that $\nu_E=\delta+1$, $\delta=\nu_{E\restr\delta}$ and $\delta^{+\ult(\M,E)}=\delta^{+\ult(\M,E\restr\delta)}$. This implies that $\delta$ is the top generator which is itself a limit of generators (since $\delta=\nu_{E\restr\delta}$), and such that $E^*=(E\restr\delta)^*$.
+}
+
+As we plan on indexing our extenders on the lengths of their trivial completions, we would index $E$ and $E\restr\delta$ at the same spot since $E^*=(E\restr\delta)^*$. To avoid this, we make sure that type $Z$ extenders won't appear on our sequences. We now arrive at one of the most important definitions in this thesis.
+
+\defin{
+A \textbf{fine extender sequence} is a sequence $\E$ such that
+\begin{enumerate}
+\item $\E$ is acceptable at every $\alpha\in\dom\E$;
+\item Either $E_\alpha=\emptyset$ or $E_\alpha$ is a $(\kappa,\alpha)$ pre-extender over $J_\alpha^{\E}$ for some $\kappa$ such that $J_\alpha^{\E}\models\kappa^+\text{ exists}$;
+\item $E_\alpha=(E_\alpha\restr\nu_{E_\alpha})^*$ and $E_\alpha$ is not of type $Z$;
+\item (Coherence) Letting $i:J_\alpha^{\E}\to\ult(J_\alpha^{\E},E_\alpha)$ be the ultrapower embedding, $i(\E\restr\kappa)\restr\alpha=\E\restr\alpha$ and $i(\E\restr\kappa)_\alpha=\emptyset$;
+\item (Initial segment condition) For any $\eta$ satisfying $\kappa^{+J_\alpha^{\E}}\leq\eta<\nu_{E_\alpha}$, $\eta=\nu_{E_\alpha\restr\eta}$ and $E_\alpha\restr\eta$ is not of type $Z$, one of the following holds:
+  \begin{enumerate}
+  \item There exists some $\gamma<\alpha$ such that $(E_\alpha\restr\eta)^*=E_\gamma$;
+  \item $E_\eta\neq\emptyset$ and if $j:J_\eta^{\E}\to\ult(J_\eta^{\E},E_\eta)$ is the ultrapower embedding then there is $\gamma<\alpha$ such that $(E_\alpha\restr\eta)^*=j(\E\restr\crit j)_\gamma$.\dit
+  \end{enumerate}
+\end{enumerate}
+}
+
+A naive definition of our models would then be structures $\bra{J_\alpha^{\vec E},\in,\vec E\restr\alpha,F}$ with $\vec E$ being a fine extender sequence and $F$ being ``the top extender" with length $\alpha$. The problem with this approach is that it will \textit{not} give us an amenable structure\footnote{Recall that $\M=\bra{M,\in,A_0,\hdots,A_n}$ is \textbf{amenable} if $x\cap A_i\in M$ for every $x\in M$ and $i\leq n$. $\M$ is rud closed iff $M$ is rud closed and $\M$ is amenable \cite[Corollary 1.4]{Jensen}.}, so we lose out on important properties such as \los' Theorem \ref{theo.los1}. A way we can fix this is by not using $F$ as the predicate, but \textit{encoding} $F$ in such a way that we can recover $F$ from the code and using the code as the amenable predicate.\footnote{This amenable coding was noted in \cite{FSIT}, but not used. It is introduced in \cite{OIMT} and the following lemma is from that article.}
+
+\lemm[Amenability Lemma]{
+\label{lemm.amenability}
+Let $\E$ be a fine extender sequence and let $\alpha\in\dom\E$ be such that $E_\alpha\neq\emptyset$. Set $\kappa:=\crit E_\alpha$ and $\nu:=\nu_{E_\alpha}$. Then for every $\eta<\alpha$ and $\xi<\kappa^{+J_\alpha^{\E}}$ it holds that $E_{\eta,\xi}:=E_\alpha\cap([\eta]^{<\omega}\times J_\xi^{\E})\in J_\alpha^{\E}$. Moreover, if we define $\gamma_\xi$ to be the least $\gamma<\alpha$ such that $E_{\nu,\xi}\in J_\gamma^{\E}$, where $\xi<\kappa^{+J_\alpha^{\E}}$, then these $\gamma_\xi$ are cofinal in $\alpha$.
+}
+\proof{
+Fix $\eta<\alpha$ and $\xi<\kappa^{+J_\alpha^{\E}}$. Since $\bigcup_{n<\omega}\P([\kappa]^n)\cap J_\xi^{\E}$ has cardinality $\kappa$ in $J_\alpha^{\E}$, let $\bra{x_\beta\mid\beta<\kappa}\in J_\alpha^{\E}$ be an enumeration of it. Let $i:J_\alpha^{\E}\to\ult(J_\alpha^{\E},E_\alpha)$ be the ultrapower embedding -- write $\ult:=\ult(J_\alpha^{\E},E_\alpha)$. Since
+\eq{
+i(\bra{x_\beta\mid\beta<\kappa})\restr\kappa=\bra{i(x_\beta)\mid\beta<\kappa},
+}
+
+the latter function, call it $f$, is an element in the ultrapower. But now
+\eq{
+E_{\eta,\xi}=\{(a,x_\beta)\mid a\in[\eta]^{<\omega}\land a\in i(x_\beta)\},
+}
+
+which is a subset of $[\eta]^{<\omega}\times\ran f\in\ult$, so comprehension implies that $E_{\eta,\xi}\in\ult$. But since $\alpha$ is a cardinal in the ultrapower ($\alpha=\nu^{+\ult}$), acceptability at $\alpha$ implies that $E_{\eta,\xi}\in J_\alpha^{i(\E\restr\alpha)}$. But $J_\alpha^{i(\E\restr\alpha)}=J_\alpha^{\E}$ by coherence, so $E_{\eta,\xi}\in J_\alpha^{\E}$, as wanted.
+
+\qquad For the ``moreover'' part, it suffices to show that whenever $A\subset\nu$ and $A\in\ult$ then $A\in J_{\gamma_\xi+1}$, for some $\xi$, because $\P^{\ult}(\nu)$ is cofinal in $J_{\nu^{+\ult}}^{i(\E\restr\alpha)}=J_\alpha^{\E}$, using acceptability and coherence again. Fix thus $A\subset\nu$ and $A\in\ult$ -- write $A=[a,f]$ with $a\subset\nu$.
+
+\clai{
+We can assume that $f:J_\kappa^{\E}\to J_\kappa^{\E}$ and $\exists\xi<\kappa^{+J_\alpha^{\E}}:f\in J_\xi^{\E}$.
+}
+
+\cproof{
+Since $\dom f=[\kappa]^{|a|}$ and thus also $J_\alpha^{\E}\models|\dom f|=\kappa$, we can assume that $\dom f=J_\kappa^{\E}$. Furthermore, as $f^{a,a\cup\{\nu\}}(u)\subset\pr^{\{\nu\},a\cup\{\nu\}}(u)$ for $(E_\alpha)_{a\cup\{\nu\}}$-many $u$ and that $\pr(u)<\kappa$, we can assume that $\ran f\subset J_\alpha^{\E}$. But then we also have that $f\subset J_\kappa^{\E}\times J_\kappa^{\E}$, so acceptability of $\alpha$ implies that $J_\alpha^{\E}\models f\in J_{\kappa^+}^{\E}$ and thus $f\in J_\xi^{\E}$ for some $\xi<\kappa^{+J_\alpha^{\E}}$.
+}
+
+Now for $\eta<\nu$, it holds that $\eta\in A$ iff
+\eq{
+A_\eta:=\{u\in[\kappa]^{|a\cup\{\eta\}|}\mid\pr^{\{\eta\},a\cup\{\eta\}}(u)\in f(u)\}\in(E_\alpha)_{a\cup\{\eta\}},
+}
+
+but since $f\in J_\xi^{\E}$ by the above claim, $A_\eta\in J_\xi^{\E}$ as well. But then $A$ can be computed from $E_{\nu,\xi}$, which is an element of $J_{\gamma_\xi}^{\E}$, so $A\in J_{\gamma_\xi+1}^{\E}$.
+}
+
+Besides laying down the groundwork for our amenable encoding of the top extenders, it in fact also proves the non-amenability of the models -- namely, since the $\gamma_\xi$'s are cofinal in $\alpha$, we get that $E_\alpha\cap([\nu]^{<\omega}\times J_{\kappa^{+J_\alpha^{\E}}}^{\E}\notin J_\alpha^{\E}$.
+
+\qquad Before we introduce the amenable encoding, we will need the following general facts on fine extender sequences, which will often be used throughout the thesis.
+
+\prop{Let $\E$ be a fine extender sequence. Then the following holds:
+\begin{enumerate}
+\item There are no cardinals strictly above $\nu_{E_\alpha}$ in $J_\alpha^{\E}$;
+\item If $\nu_{E_\alpha}$ is a limit ordinal, then it's a cardinal in both $J_\alpha^{\E}$ and $\ult(J_\alpha^{\E\restr\alpha},E_\alpha)$;
+\item For every $\alpha\in\dom\E$, $\alpha$ is not a cardinal in $J_{\alpha+1}^{\E}$.
+\end{enumerate}
+}
+\proof{
+(i): Let $i:J_\alpha^{\E}\to\ult:=\ult(J_\alpha^{\E},E_\alpha)$ be the ultrapower embedding. Since $\alpha=\nu_{E_\alpha}^{+\ult}$, $\ult\models$ there are no cardinals $>\nu_{E_\alpha}$ in $J_\alpha^{i(\E\restr\alpha)}$. But since $i(\E\restr\alpha)$ is acceptable at every $\beta<\sup_{\gamma<\alpha}i(\gamma)$ as acceptability at a limit $\alpha$ is $\Pi_1$-definable, we also have that $J_\alpha^{i(\E\restr\alpha)}\models$ there are no cardinals $>\nu_{E_\alpha}$. But since $J_\alpha^{\E}=J_\alpha^{i(\E\restr\alpha)}$ by coherence, this also holds in $J_\alpha^{\E}$.
+
+\qquad (ii): Suppose not, and let $f:\eta\to\nu(E_\alpha)$ be a surjection such that $f\in J_\alpha^{\E}$ or equivalently $f\in\ult(J_\alpha^{\E},E_\alpha)$ by coherence. Write $f=[a,g]$ for $a\in[\nu(E_\alpha)]^{<\omega}$ and fix a generator $\xi\in(\max a\cup\{\eta\},\nu(E_\alpha))$. Note then that $f\in\ran\sigma_\xi$, so that $\xi$ isn't a cardinal in $\ult(J_\alpha^{\E},E_\alpha\restr\xi)$, contrary to $\xi$ being a generator.
+
+\qquad (iii): Writing $\nu:=\nu_{E_\alpha}$, define the function $\varphi:[\nu]^{<\omega}\times(\P(\kappa)\cap J_\nu^{\vec E})\to\alpha$ as $\varphi(a,x)=\beta$ iff $\ult(J_\alpha^{\E},E_\alpha)\models[a,f_x]=\beta$, where $f_x:[\kappa]^{|a|}\to\kappa$ corresponds to $x\in\P(\kappa)$. Since $J_\alpha^{\vec E}\models \P(\kappa)=\P(\kappa)\cap J_{\kappa^+}^{\vec E}$ and $\kappa^{+J_\alpha^{\vec E}}\leq\nu$, we have that $\varphi$ is surjective. As it's furthermore definable with parameters over $J_\alpha^{\vec E}$, using that the amenable encoding for $(E_\alpha)_a$ is in $J_\alpha^{\vec E}$, we have that $\varphi\in J_{\alpha+1}^{\vec E}$. Since we also have a definable surjection from $\nu$ onto $\dom\varphi$, we get that $\alpha$ is not a cardinal in $J_{\alpha+1}^{\vec E}$.
+}
+
+\defin{
+Let $\E$ be a fine extender sequence, $\kappa:=\crit E_\alpha$ and $\nu:=\nu_{E_\alpha}$. The \textbf{amenable encoding} of $E_\alpha$ is then the set $E_\alpha^c$ defined as
+\eq{
+\bra{\gamma,\xi,a,x}\in E_\alpha^c\quad\Leftrightarrow\quad & \gamma\in(\nu,\alpha)\land\xi\in(\kappa,\kappa^{+J_\alpha^{\E}})\\
+& \land \bra{a,x}\in E_{\gamma,\xi}\land E_{\nu,\xi}\in J_\gamma^{\E}\deq
+}
+}
+
+\prop{
+For any fine extender sequence $\E$ with $E_\alpha\neq\emptyset$, the structure $\bra{J_\alpha^{\E},\in,\E\restr\alpha,E_\alpha^c}$ is amenable.
+}
+\proof{
+Let $x\in J_\alpha^{\E}$. First of all $x\cap\E\in J_\alpha^{\E}$ by definition of $J_\alpha^{\E}$, so we need to show that $x\cap E_\alpha^c\in J_\alpha^{\E}$. But then there exists $\beta<\alpha$ and $\delta<\kappa^{+J_\alpha^{\E}}$ such that
+\eq{
+x\cap E_\alpha^c=\{\bra{\gamma,\xi,a,x}\mid \bra{\gamma,\xi}\in(\nu,\beta)\times(\kappa,\delta)\land\bra{a,x}\in E_{\gamma,\xi}\land E_{\nu,\xi}\in J_\gamma^{\E}\},
+}
+
+so since $\beta$, $\delta$ and $E_{\gamma,\xi}$ are all elements of $J_\alpha^{\E}$, the latter by the amenability lemma, $x\cap E_\alpha^c\in J_\alpha^{\E}$ as well.
+}
+
+Note that from an amenable encoding $E^c$ of an extender $E$, we can recover the extender itself - this should be fairly obvious using the Amenability Lemma \ref{lemm.amenability}. Due to this, if $F:=E^c$ we will sometimes write things like $\bra{a,x}\in F$; consider this merely an innocent rephrasing of $\bra{a,x}$ being an element of the extender that $F$ is encoding (namely $E$ in this case).
+
+\qquad The language that our models are built on will then contain symbols for the predicates $\in$, $\vec E$ and the top extender $F$. We will furthermore also put in some constant symbols for convenience, to make sure that they're put into all our hulls. Finally, we will include countably many predicate symbols $\dot T_n$'s, whose interpretation will be defined in the next chapter.
+
+\defi{
+Define the language $\mathcal L:=\{\in,\dot E,\dot F,\dot\kappa,\dot\nu,\dot\gamma\}\cup\{\dot T_n\mid 1\leq n<\omega\}$, with $\dot E$ a 4-ary relation symbol, $\dot F$ a unary relation symbol, $\dot\kappa$, $\dot\nu$ and $\dot\gamma$ constant symbols and the $\dot T_n$'s trinary relation symbols.
+}
+
+We've thus arrived at our definition of our models, which will be set approximations to the corresponding proper class models. These approximations will (eventually) be called \textit{mice}, but since we need to add some more properties to these structures, we will start off with the following \textit{potential premice}.
+
+\defin{
+A (fine structural) \textbf{potential premouse}\footnote{This definition is called a coded ppm in \cite{OIMT}. As we're only going to work with this code, we prefer to just call it a ppm.} (ppm) is an $\mathcal{L}$-structure $\M$ of the form $\bra{J_\alpha^{\E},\E\restr\alpha,(E_\alpha\restr\alpha)^c,\dot\kappa^{\M},\dot\nu^{\M},\dot\gamma^{\M},\dot T_n^{\M}}$ with $\E$ being a fine extender sequence, satisfying the following:
+\begin{itemize}
+
+\item If $\nu_{E_\alpha}$ is a limit ordinal strictly greater than $(\crit E_\alpha)^{+\M}$ then $\alpha=\nu_{E_\alpha}$, and otherwise $\alpha=(\nu_{E_\alpha})^{+\ult(\M,E_\alpha\restr\nu_{E_\alpha})}$;\todo{Argue that the extenders and ultrapowers make sense in the type III case.}
+
+\item If $E_\alpha\neq\emptyset$ then $\dot\kappa^{\M}=\crit E_\alpha$ and $\dot\nu^{\M}=\nu_{E_\alpha}$; otherwise $\dot\kappa^{\M}=\dot\nu^{\M}=0$;
+
+\item If $\nu_{E_\alpha}$ is a successor ordinal and $E_\alpha\neq\emptyset$ then there exists a longest non-type-$Z$ proper initial segment $F$ of $E_\alpha$ containing properly less information than $E_\alpha$ itself. Namely, $F:=(E_\alpha\restr\dot\nu^{\M}-1)^*$ if it's not of type $Z$, and $F:=(E_\alpha\restr\nu_{E_\alpha\restr\dot\nu^{\M}-1}-1)^*$ otherwise.
+
+\qquad Then $\dot\gamma^{\M}$ is the place on which $F$ appears on $\dot E^{\M}$ or an ultrapower of $\dot E^{\M}$; i.e. that $\dot\gamma^{\M}$ is the unique $\xi\in\dom\E$ such that $F=E_\xi$ if such a $\xi$ exists, and otherwise the intial segment condition implies that $F$ is on the extender sequence of $\ult(J_\eta^{\E},E_\eta)$ where $\eta=\nu_G$ and $\dot\gamma^{\M}=\bra{\eta,a,f}$ where $F=[a,f]_{E\eta}^{J_\eta^{\E}}$.\footnote{$\dot\gamma^{\M}$ is used to describe ppm-ness -- we'll get back to this in the following chapter.}
+
+\qquad If $E_\alpha=\emptyset$ or if $\nu_{E_\alpha}$ is not a successor ordinal, $\dot\gamma^{\M}=0$.\dit
+\end{itemize}
+}
+
+As mentioned earlier, we will postpone the interpretation of the $\dot T_n$'s until next chapter.
+
+\defi{
+A ppm $\M$ is \textbf{active} if $\dot F^{\M}\neq\emptyset$ and \textbf{passive} otherwise.
+}
+
+\defi{
+An active ppm $\mathcal M$ is said to be of \textbf{type I} if $\dot\nu^{\M}=(\dot\kappa^{\M})^{+\M}$, \textbf{type II} if $\dot\nu^{\M}$ is a successor ordinal, and \textbf{type III} if $\dot\nu^{\M}$ is a limit ordinal $>(\dot\kappa^{\M})^{+\M}$.
+}
+
+The reason why we treated the type III case in the definition of fine extender sequence differently, is that if we didn't ``cut down" the ppm to the natural length of the top extender then the ultrapower of that ppm using the top extender wouldn't be a ppm anymore\footnote{The initial segment condition is what would break down, as we wouldn't necessarily have that $\sup i_F"\nu_F=i_F(\nu_F)$. See \cite[Lemma 9.1]{FSIT}.}. 
+
+\defi{
+Let $\M$ be a ppm. Then we call $\dot F^{\M}$ the \textbf{last extender} of $\M$ and we say that an extender $E$ \textbf{is on the $\M$-sequence} if either $E=\dot E^{\M}_\gamma$ for some $\gamma\in\dom\dot E^{\M}$ or that $E=(\dot F^{\M})^*$.
+}
+

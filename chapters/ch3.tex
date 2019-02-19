@@ -1,0 +1,424 @@
+\chapter{Fine ultrapowers}
+\thispagestyle{fancy}
+\label{ch3}
+
+We're going to strengthen the ultrapower defined in \ref{defi.ultrapower} to accomodate for the fine structure from the previous chapter. We'd like to make sure that our ultrapowers preserve the fine structure, meaning that the ultrapower embeddings should be $n$-embeddings for a suitable $n$. We will therefore define $n$-ultrapowers and show that these actually satisfy this property.
+
+
+\section{\los' Theorem}
+
+\defi{
+Let $n<\omega$, $\M$ an $n$-sound ppm and let $E$ be a $(\kappa,\lambda)$-pre-extender over $\M$ such that $\kappa<\rho_n(\M)$. Then the \textbf{$n$-ultrapower} is defined as $\ult_0(\M,E):=\ult(\M,E)$ and for $n>0$ it is
+\eq{
+\ult_n(\M,E):=\{(a,f)\mid a\in[\lambda]^{<\omega}\land f:[\kappa]^{|a|}\to\M\land f\in\b{r\Sigma}_n^{\M}\}/\sim_E
+}
+
+with $\sim_E$ and $\in_E$ defined as usual. For $\N:=\ult_n(\M,E)$ we furthermore define
+\eq{
+&[a,f]\in\dot E^{\N}\quad\text{iff}\quad\forall^{E_a} u:f(u)\in\dot E^{\M}\\
+&[a,f]\in\dot F^{\N}\quad\text{iff}\quad\forall^{E_a} u:f(u)\in\dot F^{\M},
+}
+
+and $\dot\kappa^{N}$, $\dot\nu^{\N}$, $\dot\gamma^{\N}$, $\dot T_n^{\N}$ are defined as usual.
+}
+
+Whenever $\ult_n(\M,E)$ is wellfounded we will identify it with its transitive collapse. The reason why we require that $\kappa<\rho_n(\M)$ is because we want the ultrapower embedding to preserve the fine structure up to level $n$, so that if $\rho_n(\M)\leq\kappa$ then $\rho_n(\ult)\leq\kappa$ and then by $n$-soundness $\kappa$ would be definable in the ultrapower, a contradiction.
+
+\qquad We proceed now to a version of \los' Theorem for our fine ultrapowers. This will ensure that the ultrapower embedding into the $n$-ultrapower is $r\Sigma_n$-elementary.
+
+\pagebreak
+\theo[\los]{
+\label{theo.los2}
+Let $n<\omega$, $\M$ an $n$-sound ppm and $E$ a $(\kappa,\lambda)$-pre-extender over $\M$ where $\kappa<\rho_n(\M)$. Write $\ult:=\ult_n(\M,E)$. Then given $[a_i,f_i]\in\ult$ for $i\leq k$ it holds that, setting $b:=\bigcup_{i\leq k}a_i$,
+\eq{
+\ult\models\varphi[[a_0,f_0],\hdots,[a_k,f_k]]\quad\text{iff}\quad\forall^{E_b}u:\M\models\varphi[f_0^{a_0,b}(u),\hdots,f_k^{a_k,b}(u)]
+}
+
+for any $r\Sigma_n$ formula $\varphi$.
+}
+\proof{
+Since $\M$ is transitive and rud closed we get the result for $n=0$ by \los'\ Theorem \ref{theo.los1}. Assume thus that $n>0$. We will show that the result holds for $r\Sigma_i$ formulas, where $i\leq n$.
+
+\qquad If $i=0$ the usual argument for $\Sigma_0$ formulas goes through, see the proof of \los'\ Theorem \ref{theo.los1}. Assume $i=1$ and $\varphi$ be $\Sigma_1$, say $\varphi\equiv\exists x\psi$ for $\psi\in\Sigma_0$. Assume that $\ult\models\psi[[a,f],[a_0,f_0],\hdots,[a_k,f_k]]$ for some $[a,f]\in\ult$. Then by the $i=0$ case it holds that
+\eq{
+\M\models\psi[f^{a,a\cup b}(u),f_0^{a_0,a\cup b}(u),\hdots,f_k^{a_k,a\cup b}(u)]
+}
+
+for $E_{a\cup b}$-many $u$. Say $\theta\in\b{r\Sigma}_n$ defines $f$ in $\M$. Then
+\eq{
+\M\models\exists x(\theta[u,x]\land\psi[x,f_0^{a_0,a\cup b}(u),\hdots,f_k^{a_k,a\cup b}(u)])
+}
+
+for $E_{a\cup b}$-many $u$, and thus also for $E_b$-many $u$ by coherence. In particular we get that $\M\models\varphi[f_0^{a_0,b}(u),\hdots,f_k^{a_k,b}(u)]$ for $E_b$-many $u$, as wanted. Assume now this latter fact. Let $\tau$ be a $\Sigma_1$ Skolem function for $\varphi$, so that
+\eq{
+\M\models\psi[\tau[f_0^{a_0,b}(u),\hdots,f_k^{a_k,b}(u)],f_0^{a_0,b}(u),\hdots,f_k^{a_k,b}(u)]
+}
+
+for $E_b$-many $u$. Note that $h:=\tau\circ(f_0^{a_0,b},\hdots,f_k^{a_k,b})$ is $\b{r\Sigma}_n$ definable over $\M$, representing an element $[b,h]\in\ult$, so that
+\eq{
+\ult\models\psi[[b,h],[a_0,f_0],\hdots,[a_k,f_k]]
+}
+
+and thus also $\ult\models\varphi[[a_0,f_0],\hdots,[a_k,f_k]]$, which is what we wanted to show.
+
+\qquad Assume now that it holds for $i$ -- we'll show it holds for $i+1$. Let $\varphi(\vec v)\in r\Sigma_{i+1}$; write $\varphi\equiv\exists\eta\exists q\exists y(\dot T_i(\eta,q,y)\land\psi(\eta,q,y,\vec v))$ with $\psi$ being $\Sigma_1$. Assume first that $\ult\models\varphi[[a_0,f_0],\hdots,[a_k,f_k]]$ and write $\Th_i^{\ult}(\eta\cup\{q\})=[a,f],\linebreak \eta=[c_1,g_1],q=[c_2,g_2]\in\ult$. Then
+\eq{
+\ult\models\psi[[c_1,g_1],[c_2,g_2],[a,f],[a_0,f_0],\hdots,[a_k,f_k]]
+}
+
+and thus $\M\models\psi[g_1^{a_1,d}(u),g_2^{a_2,d}(u),f^{a,d}(u),f_0^{a_0,d}(u),\hdots,f_k^{a_k,d}(u)]$ for $E_d$-many $u$, where $d:=a_1\cup a_2\cup a\cup b$.
+
+\clai{
+\label{clai.Tdef}
+$a=\Th_j^{\N}(b)$ is uniformly $\Pi_1$ over $r\Sigma_j$ definable.
+}
+
+\cproof{
+Recall that
+\eq{
+\Th_j^{\N}=\{\bra{l,s}\mid l<\omega\land s\in[b]^{<\omega}\land\N\models\varphi_l[s]\}
+}
+
+where $\bra{\varphi_l\mid l<\omega}$ is a recursive enumeration of all $r\Sigma_j$ formulae. Then $a=\Th_j^{\N}$ iff the following formula holds:
+\eq{
+\forall x[x\in a\leftrightarrow(\textsf{fst}(x)\in\omega\land\textsf{snd}(x)\in[b]^{<\omega}\land\N\models\varphi_l[\textsf{snd}(x)])]
+}
+
+Since $r\Sigma_j$ satisfaction is $r\Sigma_j$ definable, $a=\Th_j^{\N}(b)$ is thus uniformly $\Pi_1$ over $r\Sigma_j$ definable.
+}
+
+The claim, induction hypothesis and coherence then implies that
+\eq{
+&\ult\models[a,f]=r\Sigma_i([c_1,g_1]\cup\{[c_2,g_2]\})\\
+&\quad\text{iff}\quad\forall^{E_e}u:\M\models f^{a,e}(u)=r\Sigma_i(g_1^{c_1,e}(u)\cup\{g_2^{c_2,e}(u)\})\tag*{$(1)$}
+}
+
+where $e:=a\cup c_1\cup c_2$. Here the last equivalence is due to coherence.
+
+\clai{
+\label{clai.rho}
+$\rho_i(\ult)=j(\rho_i(\M))$ if $\rho_i(\M)<\on^{\M}$ and $\rho_i(\ult)=\on^{\ult}$ otherwise, with $j:\M\to\ult$ being the ultrapower embedding.
+}
+
+\cproof{
+Assume first $\rho_i(\M)<\on^{\M}$. To show $\rho_i(\ult)\leq j(\rho_i(\M))$ pick $q\in\M$ such that $\Th_i^{\M}(\rho_i(\M)\cup\{q\})\notin\M$, whence Claim \ref{clai.Tdef} ensures $\Th_i^{\ult}(j(\rho_i(\M))\cup\{j(q)\})\notin\ult$, so that $\rho_i(\ult)\leq j(\rho_i(\M))$.
+
+\qquad Conversely, let $\alpha=[a,f]<j(\rho_i(\M))$ and let $q=[a,g]$. Without loss of generality $f(u)<\rho_i(\M)$ for every $u$. Define $h:[\kappa]^{|a|}\to\M$ as given by $h(u):=\Th_i^{\M}(f(u)\cup\{g(u)\})$, so that $h$ is $\b{r\Sigma}_n^{\M}$ definable and then by Claim \ref{clai.Tdef} we get that $\Th_i^{\ult}(\alpha\cup\{q\})=[a,h]\in\ult$. Since $\alpha$ was arbitrary, $j(\rho_i(\M))\leq\rho_i(\ult)$.
+
+\qquad If $\rho_i(\M)=\on^{\M}$ then repeat the argument in the previous paragraph to show that given any $\alpha\in\on^{\ult}$ and $q\in\ult$, $\Th_i^{\ult}(\alpha\cup\{q\})\in\ult$, so that $\rho_i(\ult)=\on^{\ult}$, as wanted.
+}
+
+Now this claim, (1) and coherence implies that
+\eq{
+&\ult\models\dot T_i([c_1,g_1],[c_2,g_2],[a,f])\\
+&\quad\text{iff}\quad\forall^{E_e}u:\M\models\dot T_i(g_1^{c_1,e}(u),g_2^{c_2,e}(u),f^{a,e}(u)).\tag*{$(2)$}
+}
+
+But then, for $E_e$-many $u$ it holds that
+\eq{
+\M\models\exists\eta\exists q\exists y(\dot T_i[\eta,q,y]\land\psi[\eta,q,y,f_0^{a_0,e}(u),\hdots,f_k^{a_k,e}(u)])
+}
+
+and thus also for $E_b$-many $u$ by coherence again, which is what we wanted to show. Now assume this latter fact. Let $\tau_1,\tau_2,\tau_3$ be $r\Sigma_n$ Skolem functions such that
+\eq{
+\M\models\dot T_i(\tau_1[u],\tau_2[u],\tau_3[u])\land\psi[\tau_1[u],\tau_2[u],\tau_3[u],f_0^{a_0,b}(u),\hdots,f_k^{a_k,b}(u)]
+}
+
+so that (2) and the $i=1$ case implies that $\ult$ satisfies
+\eq{
+\dot T_i([b,\tau_1],[b,\tau_2],[b,\tau_3])\land\psi[[b,\tau_1],[b,\tau_2],[b,\tau_3],[a_0,f_0],\hdots,[a_k,f_k]]
+}
+
+concluding that $\ult\models\varphi[[a_0,f_0],\hdots,[a_k,f_k]]$ holds as well.
+}
+
+As usual, \los' Theorem implies that the $n$-ultrapower embedding is $r\Sigma_n$-elemen-tary. We can use this to prove that ppmness is preserved under taking ultrapowers.
+
+\prop{
+Let $n<\omega$, $\M$ an $n$-sound ppm and $E$ a $(\kappa,\lambda)$-extender over $\M$ such that $\kappa<\rho_n(\M)$. Then $\ult:=\ult_n(\M,E)$ is a ppm as well, of the same kind as $\M$.
+}
+\proof{
+We just have to check that the ultrapower embedding $j:\M\to\ult$ is $Q$-preserving by Corollary \ref{coro.ppmdef}, so it's enough to check that it's cofinal $\Sigma_0$ preserving. It's clearly $\Sigma_0$-preserving by \los' Theorem \ref{theo.los2}, so we show that it's cofinal. Let $[a,f]\in\ult$. Then $f(u)\in\ran f$ for a.e. $u$, so $[a,f]\in j(\ran f)$. Furthermore we have that $\kappa^{+\M}=\kappa^{+\ult}$, so that $\sup j"\kappa^{+\M}=\kappa^{+\ult}=j(\kappa^{+\M})$, making it cofinal.
+}
+
+
+\section{The ultrapower embedding is an $n$-embedding}
+
+We will work towards proving that the ultrapower embedding associated to an $n$-ultrapower is not only just $r\Sigma_n$-elementary, but also an $n$-embedding. We first focus on the preservation of the projecta.
+
+\lemm{
+\label{lemm.nembrho}
+Let $n<\omega$, $\M$ an $n$-sound ppm and $E$ a $(\kappa,\lambda)$-pre-extender over $\M$ such that $\kappa<\rho_n(\M)$. Letting $\ult:=\ult_n(\M,E)$, $j:\M\to\ult$ be the ultrapower embedding and $i<n$, it holds that
+\begin{enumerate}
+\item $\rho_i(\M)<\on^{\M}$ iff $\rho_i(\ult)<\on^{\ult}$;
+\item $\rho_i(\ult)=j(\rho_i(\M))$ if $\rho_i(\M)<\on^{\M}$.
+\end{enumerate}
+
+Moreover, $\rho_n(\ult)=\sup j"\rho_n(\M)$.
+}
+\proof{
+(i) and (ii) is by Claim \ref{clai.rho} in the proof of \los' Theorem \ref{theo.los2}, so we just have to prove that $\rho_n(\ult)=\sup j"\rho_n(\M)$. We start by proving $\leq$. Here it suffices to show that
+\eq{
+\hull_n^{\ult}(\sup j"\rho_n(\M)\cup\{j(p_n(\M))\})=\ult\tag*{$(1)$}
+}
+
+since $\rho_n(\ult)$ is least with this property. Let thus $[a,f]\in\ult$, where $f\in\b{r\Sigma}_n^{\M}$, $\varphi$ is $r\Sigma_n$ and $q\in[\rho_n(\M)\cup\{p_n(\M)\}]^{<\omega}$ be such that
+\eq{
+f(u)=y\quad\text{iff}\quad\M\models\varphi[u,y,q],
+}
+
+using that $\M$ is $n$-sound. But then by \los' Theorem \ref{theo.los2} we get that
+\eq{
+[a,f]=y\quad&\text{iff}\quad\ult\models\varphi[[a,\id],y,[\{\kappa\},c_q]]\\
+&\text{iff}\quad\ult\models\varphi[a,y,j(q)],
+}
+
+where the last bi-implication is by Proposition \ref{prop.pr}. But since
+\eq{
+j(q)\in[\sup j"\rho_n(\M)\cup\{j(p_n(\M))\}]^{<\omega}
+}
+
+and $a\in[\lambda]^{<\omega}\subset[j(\kappa)]^{<\omega}\subset[\sup j"\rho_n(\M)]^{<\omega}$ by shortness and assumption,
+\eq{
+[a,f]\in\hull^{\ult}_n(\sup j"\rho_n(\M)\cup\{j(p_n(\M))\})
+}
+
+and we've shown $(1)$ and thus also $\leq$. For $\geq$, \los' Theorem \ref{theo.los2} gives us that
+\eq{
+\Th_n^{\M}(a)=b\quad\text{iff}\quad \Th_n^{\ult}(j(a))=j(b),
+}
+
+which entails that
+\eq{
+\Th_n^{\ult}(\gamma\cup\{j(p)\})\in\ult\text{ for every $\gamma<\sup j"\rho_n(\M)$ and $p\in\M$}\tag*{$(2)$}
+}
+
+Let $\alpha<\sup j"\rho_n(\M)$ and $q\in\ult$ (so that now our parameter $q$ is arbitrary, where in (2) we required that it was in $\ran j$); it suffices to show that
+\eq{
+\Th_n^{\ult}(\alpha\cup\{q\})\in\ult.\tag*{$(3)$}
+}
+
+Let $\gamma$ be such that $\gamma\in(\alpha,\sup j"\rho_n(\M))$ and that $q\in\hull_n^{\ult}(\gamma\cup\{j(p_n(\M))\})$, which is possible by $(1)$. Then $\Th_n^{\ult}(\gamma\cup\{j(p_n(\M))\})\in\ult$ by $(2)$, so since $\alpha<\gamma$ and $q\in\hull_n^{\ult}(\gamma\cup\{j(p_n(\M))\})$, $(3)$ holds as well. We conclude that $\rho_n(\ult)=\sup j"\rho_n(\M)$.
+}
+
+\lemm{
+\label{lemm.nembelem}
+Let $n<\omega$, $\M$ an $n$-sound ppm and $E$ a $(\kappa,\lambda)$-pre-extender over $\M$ such that $\kappa<\rho_n(\M)$. Then the ultrapower embedding $j:\M\to\ult_n(\M,E)$ is $r\Sigma_{n+1}$ elementary.
+}
+\proof{
+Write $\ult:=\ult_n(\M,E)$. Let $\alpha<\rho_n(\ult)$ and $q=[a,f]\in\ult$. The substantial part of the proof will be to show that for every $[b,g]\in\ult$,
+\eq{
+\dot T_n^{\ult}(\alpha,q,[b,g])\quad\text{iff}\quad\forall^*u:\dot T_n^{\M}(\pr(u),f(u),g(u)).\tag*{$(1)$}
+}
+
+The $\Leftarrow$ direction is directly by \los' Theorem \ref{theo.los2} as $\dot T_n^{\N}(\gamma,r,y)$ is $r\Sigma_n$ definable. Assume thus the left-hand side of $(1)$. In the proof of Lemma \ref{lemm.nembrho} we showed that
+\eq{
+\ult=\hull_n^{\ult}(\rho_n(\ult)\cup\{j(p_n(\M))\}),
+}
+
+so fix some $r\Sigma_n$ formula $\theta$ such that $\ult\models\theta[x,j(p_n(\M)),s]$ iff $x=q$, where $s\in[\rho_n(\ult)]^{<\omega}$. Pick $\gamma<\rho_n(\M)$ such that $\max(s\cup\{\alpha\})<j(\gamma)$, which is possible as $\rho_n(\ult)=\sup j"\rho_n(\M)$ by Lemma \ref{lemm.nembrho}. Set $b:=\Th_n^{\M}(\gamma\cup\{p_n(\M)\})$, so that $j(b)=\Th_n^{\ult}(j(\gamma)\cup\{j(p_n(\M))\})$. Now define the map
+\eq{
+\pi:\Th_n^{\ult}(\alpha\cup\{q\})\to\Th_n^{\ult}(j(\gamma)\cup\{j(p_n(\M))\})
+}
+
+given as $\bra{i,t}\mapsto\bra{\hat i,\hat t}$, where $\varphi_{\hat i}$ is the formula obtained from $\varphi_i$ by replacing all occurences of $q$ with the corresponding use of $\theta$. As $\theta$ uniquely defines $q$ in $\ult$, $\pi$ is $\Delta_1^{\ult}(\{\alpha,q,s\})$. Now it holds that
+\eq{
+\bra{i,t}\in[b,g]\quad\text{iff}\quad\varphi_i\in r\Sigma_n\land t\in[\alpha\cup\{q\}]^{<\omega}\land\bra{\hat i,\hat t}\in j(b).\tag*{$(2)$}
+}
+
+Writing $s=[d,h]$, $(2)$ is a $\Pi_1$ statement over $\ult$ with parameters in $[\{\alpha\},\pr]$, $[a,f]$, $[b,g]$ and $[d,h]$. By \los' Theorem \ref{theo.los2} we get that
+\eq{
+\bra{i,t}\in g(u)\quad\text{iff}\quad\varphi_i\in r\Sigma_n\land t\in[\pr(u)\cup\{f(u)\}]^{<\omega}\land\bra{\tilde i,\tilde t}\in b,
+}
+
+where $\bra{\tilde i,\tilde t}$ is the analogoue of $\bra{\hat i,\hat t}$ in $\ult$, replacing occurences of $f(u)$ in $\varphi_i$ with the corresponding use of $\theta$ with parameters in $h(u)$ and $p_n(\M)$. Since $f(u)=y$ iff $\M\models\theta[y,p_n(\M),h(u)]$ for a.e. $u$, $g(u)=\Th_n^{\M}(\pr(u)\cup\{f(u)\})$ holds for a.e. $u$ as well. As $\pr(u)<\rho_n(\M)$ holds for a.e. $u$ because $\alpha<\rho_n(\ult)=\sup j"\rho_n(\M)$, we get that $\dot T_n(\pr(u),f(u),g(u))$ holds for a.e. $u$, showing $(1)$.
+
+\qquad Now let $\varphi(\vec v)$ be an $r\Sigma_{n+1}$ formula for $n\geq 1$. If $\M\models\varphi[\vec x]$ then pick $\eta$, $q$ and $y$ in $\M$ such that $\M\models\dot T_n[\eta,q,y]\land\psi[\eta,q,y,\vec x]$ and then
+\eq{
+\ult\models\dot T_n[j(\eta),j(q),j(y)]\land\psi[j(\eta),j(q),j(y),j(\vec x)]
+}
+
+by $(1)$ and that $j$ is $\Sigma_1$ preserving. Conversely, if $\ult\models\varphi[j(\vec x)]$ then we get $\alpha<\rho_n(\ult)$ and $a$, $f$, $b$, $g$ such that
+\eq{
+\ult\models\dot T_n[[\{\alpha\},\pr],[a,f],[b,g]]\land\psi[[\{\alpha\},\pr],[a,f],[b,g],j(\vec x)].
+}
+
+By $(1)$ again we get that
+\eq{
+\M\models\dot T_n[\pr(u),f(u),g(u)]\land\psi[\pr(u),f(u),g(u),\vec x]
+}
+
+for a.e. $u$, so $\M\models\varphi[\vec x]$.
+}
+
+\theo{
+\label{theo.nemb}
+Let $n<\omega$, $\M$ an $n$-sound ppm and $E$ a $(\kappa,\lambda)$-extender over $\M$ such that $\kappa<\rho_n(\M)$. Then the ultrapower embedding $j:\M\to\ult_n(\M,E)$ is an $n$-embedding.
+}
+\proof{
+Write $\ult:=\ult_n(\M,E)$. By Lemmata \ref{lemm.nembrho} and \ref{lemm.nembelem}, we need to show that, for every $i\leq n$,
+\begin{enumerate}
+\item $p_i(\ult)=j(p_i(\M))$;
+\item $p_i(\ult)$ is solid and universal;
+\item $\core_i(\ult)=\ult$.\\
+\end{enumerate}
+
+We prove (i)-(iii) by induction on $i$. If $i=0$ there's nothing to show, so assume it holds for some $i\in(0,n)$ -- we'll show it holds for $i+1$. Since $\M$ is $(i+1)$-sound, $p_{i+1}(\M)$ is both solid and universal. Let $p:=\bra{\alpha_0,\hdots,\alpha_l}$ be the last parameter of $p_{i+1}(\M)$.
+
+\qquad Assume first that $s$ is the last parameter of $p_{i+1}(\ult)$ and that $s<_{\text{lex}} j(p)$. Let $A\subset\rho_{i+1}(\ult)$ be such that $A\in r\Sigma_{i+1}^{\ult}(\{p_{i+1}(\ult)\})$ and $A\notin\ult$. Write $s=[a,f]$, so that for some $r\Sigma_{i+1}$ formula $\theta$,
+\eq{
+[a,g]\in A\quad &\text{iff}\quad\ult\models\theta[[a,g],p_i(\ult),s]\\
+&\text{iff}\quad\M\models\theta[g(u),p_i(\M),f(u)]\text{ for a.e. }u.\tag*{$(1)$}
+}
+
+But $(1)$ defines sets $B_u\subset\rho_{i+1}(\M)$ such that $B_u\in r\Sigma_{i+1}^{\M}(\{p_i(\M),f(u)\})$, where $f(u)<_{\text{lex}}p$, so that $B_u\in\core_i(\M)=\M$ by solidity of $p_{i+1}(\M)$. Then
+\eq{
+\M\models\forall x(x\in B_u\leftrightarrow\theta[x,p_i(\M),f(u)])
+}
+
+for a.e. $u$, so
+\eq{
+\ult\models\forall x(x\in[a,\lambda u.B_u]\leftrightarrow\theta[x,p_i(\ult),s]),
+}
+
+meaning that $A=[a,\lambda u.B_u]\in\ult$, $\contr$. This means that $j(p)\leq_{\text{lex}} s$. To show the converse, we show that
+\eq{
+\hull_{i+1}^{\ult}(\rho_{i+1}(\ult)\cup\{j(p_{i+1}(\M))\})=\ult.\tag*{$(2)$}
+}
+
+If $i=n$ then this was proven in the proof of Lemma \ref{lemm.nembrho}, so assume that $i<n$ and let $[a,f]\in\ult$ be any element. Let now $\theta(x,y,q)$ be the formula
+\eq{
+y=&<_L\text{-least $\bra{k,t}$ such that $\varphi_k$ is $\Sigma_{i+1}$, $t\in[\rho_{i+1}(\M)]^{<\omega}$}\\
+&\text{and $z=x$ iff $\M\models\varphi_k[t,q,z]$},
+}
+
+which can be seen to be $\Sigma_1$ over $r\Sigma_{i+1}$, i.e. $r\Sigma_{i+1}$. Let $\psi(v_0,v_1,v_2)$ be the $r\Sigma_n$ formula and $q\in\M$ such that $f(u)=x$ iff $\M\models\psi[u,x,q]$. Consider now
+\eq{
+\chi(u):\equiv\exists y\exists x(\psi(u,x,q)\land\theta(x,y,p_{i+1}(\M))),
+}
+
+which is $\Sigma_1$ over $r\Sigma_n$ with parameters $q$ and $p_{i+1}(\M)$. Let $h$ be an $r\Sigma_n$ Skolem function for $\chi$, so that
+\eq{
+[a,h]=&<_L\text{-least $\bra{k,t}$ such that $\varphi_k$ is $r\Sigma_{i+1}$, $t\in[\rho_{i+1}(\ult)]^{<\omega}$}\\
+&\text{and $z=[a,f]$ iff $\ult\models\varphi_k[t,j(p_{i+1}(\M)),z]$},
+}
+
+where we used Lemma \ref{lemm.nembrho} which can be used as $i+1<n$, so
+\eq{
+[a,f]\in\hull_{i+1}^{\ult}(\rho_{i+1}(\ult)\cup\{j(p_{i+1}(\M))\}),
+}
+
+concluding $(2)$ and thus also that $p_{i+1}(\ult)=j(p_{i+1}(\M))$ and $\core_{i+1}(\ult)=\ult$.
+
+\qquad It remains to show that $p_{i+1}(\ult)$ is universal and solid. Universality follows from $\core_{i+1}(\ult)=\ult$, so assume that $p_{i+1}(\ult)$ isn't solid and let $s\leq l$ be least such that there is a set $A\in r\Sigma_{i+1}^{\ult}(\{j(\alpha_0),\hdots,j(\alpha_{s-1})\})$ satisfying that $A\cap j(\alpha_s)\notin\ult$. Say $\varphi(x)$ is $r\Sigma_{i+1}$ defining $A$. Then
+\eq{
+[a,g]\in A\cap j(\alpha_s)\quad&\text{iff}\quad\ult\models [a,g]\in j(\alpha_s)\land\varphi[[a,g],j(\alpha_0),\hdots,j(\alpha_{s-1})]\\
+&\text{iff}\quad\M\models g(u)\in\alpha_s\land\varphi[f(u),\alpha_0,\hdots,\alpha_{s-1}]\text{ for a.e. }u.
+}
+
+Define $B_u:=\{z\in\alpha_s\mid\M\models\varphi[z,\alpha_0,\hdots,\alpha_{s-1}]\}$. Then $B_u\in\M$ by definition of $p_{i+1}(\M)$, so just like before we get that $A=[a,\lambda u.B_u]\in\ult$, $\contr$. Thus $p_{i+1}(\M)$ is indeed solid.
+}
+
+
+\section{Preserving degree $n+1$ fine structure}
+
+That the ultrapower embedding is an $n$-embedding means that it preserves the fine structure up to degree $n$. If we require some more of the extender we can ensure that the degree $n+1$ fine structure is preserved as well.
+
+\defin{
+Let $\M$ be a ppm and $E$ a $(\kappa,\lambda)$-extender over $\M$. Then $E$ is \textbf{close to $\M$} if for every $a\in[\lambda]^{<\omega}$ it holds that
+\begin{enumerate}
+\item $E_a$ is $\b{\Sigma}_1^{\M}$;
+\item $E_a\cap A\in\M$ for every $A\in\M$ such that $\M\models|A|\leq\kappa$.
+\dit
+\end{enumerate}
+}
+
+We start again with preservation of the projectum.
+
+\lemm{
+\label{lemm.n+1rho}
+Let $n<\omega$, $\M$ an $n$-sound ppm and $E$ a $(\kappa,\lambda)$-extender which is close to $\M$ such that $\kappa<\rho_n(\M)$. Set $\ult:=\ult_n(\M,E)$. Then $\P^{\M}(\kappa)=\P^{\ult}(\kappa)$. If furthermore $\rho_{n+1}(\M)\leq\kappa$ then $\rho_{n+1}(\M)=\rho_{n+1}(\ult)$.
+}
+\proof{
+Let $j:\M\to\ult$ be the ultrapower embedding. Since $\P^{\M}(\kappa)\subset\P^{\ult}(\kappa)$ always holds as $A=j(A)\cap\kappa$ for every $A\in\P^{\M}(\kappa)$, let $[a,f]\subset\kappa$ where we without loss of generality can assume that $f:[\kappa]^{|a|}\to\P(\kappa)$. Since $f$ is $\b{r\Sigma}_n^{\M}$ and can be coded as a subset of $\kappa<\rho_n$, it holds that $f\in\M$. For $\alpha<\kappa$ define
+\eq{
+A_\alpha:=\{u\mid\alpha\in f(u)\},
+}
+
+so that $\alpha\in[a,f]$ iff $A_\alpha\in E_{a\cup\{\kappa\}}$. Since $E$ is close to $\M$, $E_{a\cup\{\kappa\}}\cap A_\alpha\in\M$ for every $\alpha$, so that $[a,f]\in\M$ as it can be computed from the $A_\alpha$'s.
+
+\qquad Now assume that $\rho_{n+1}(\M)\leq\kappa$. To show that $\rho_{n+1}(\M)\geq\rho_{n+1}(\ult)$, let $A\subset\rho_{n+1}(\M)$ be $\b{r\Sigma}_{n+1}^{\M}$ such that $A\notin\M$. We show that $A\notin\ult$. Since $j$ is $r\Sigma_{n+1}$-elementary by Lemma \ref{lemm.nembelem}, $A$ is $\b{r\Sigma}_{n+1}^{\ult}$ as well. But $\rho_{n+1}(\M)\leq\kappa$ and we just showed that $\P^{\M}(\kappa)=\P^{\ult}(\kappa)$, so $A\notin\ult$. Hence $\rho_{n+1}(\M)\geq\rho_{n+1}(\ult)$.
+
+\qquad Now to show that $\rho_{n+1}(\M)\leq\rho_{n+1}(\ult)$. Let $\alpha<\rho_{n+1}(\M)$ and $B\subset\alpha$ be $\b{r\Sigma}_{n+1}^{\ult}$; we show that $B\in\ult$. It suffices to show that $B$ is $\b{r\Sigma}_{n+1}^{\M}$, because then $B\in\M$ as $\alpha<\rho_{n+1}(\M)$, and as $\P^{\M}(\kappa)=\P^{\ult}(\kappa)$ and $\rho_{n+1}(\M)\leq\kappa$, $B\in\ult$ as well.
+
+\qquad Let $\psi$ be $r\Sigma_{n+1}$ and $q=[a,f]\in\ult$ be such that $\psi$ and $q$ defines $B$. Then for every $\gamma\in\alpha$ it holds that
+\eq{
+\gamma\in B\quad&\text{iff}\quad\ult\models\psi[\gamma,q]\\
+&\text{iff}\quad\M\models\psi[\gamma,f(u)]\text{ for a.e. }u\\
+&\text{iff}\quad\M\models\theta[\{u\mid\M\models\psi[\gamma,f(u)]\},r],
+}
+
+where $\theta$ is $\Sigma_1$ and $r\in\M$ are such that $x\in E_a$ iff $\M\models\theta[x,r]$, which is possible since $E$ is close to $\M$. This latter formula is $\Sigma_1$ over $r\Sigma_{n+1}$ with parameters from $\M$, so $B$ is $\b{r\Sigma}_{n+1}^{\M}$ and we're done.
+}
+
+Next, we deal with the standard parameter.
+
+\lemm{
+\label{lemm.n+1para}
+Let $n<\omega$, $\M$ an $n$-sound ppm and $E$ a $(\kappa,\lambda)$-extender which is close to $\M$ such that $\kappa\in[\rho_{n+1}(\M),\rho_n(\M))$. Assume that $p_{n+1}(\M)$ is solid and let $j:\M\to\ult:=\ult_n(\M,E)$ be the ultrapower embedding. Then $p_{n+1}(\ult)$ is solid as well and $j(p_{n+1}(\M))=p_{n+1}(\ult)$.
+}
+\proof{
+Since $j(p_n(\M))=p_n(\ult)$ by Theorem \ref{theo.nemb} as $\M$ is $n$-sound, we just need to show that $j(p)=q$, where $p$ and $q$ are the last parameters of $p_{n+1}(\M)$ and $p_{n+1}(\ult)$, respectively. To see that $j(p)\geq_{\text{lex}} q$, let $A\subset\rho_{n+1}(\M)$ be such that $A\in r\Sigma_{n+1}^{\M}(\{p\})$ and $A\notin\M$. By Lemma \ref{lemm.n+1rho} $\rho_{n+1}(\ult)=\rho_{n+1}(\M)$, so $A\subset\rho_{n+1}(\ult)$ as well. Let $\psi$ witness that $A\in r\Sigma_{n+1}^{\M}(\{p\})$, so that
+\eq{
+x\in A\quad&\text{iff}\quad\M\models\psi[x,p]\quad\text{iff}\quad\ult\models\psi[x,j(p)],
+}
+
+where we used that $\rho_{n+1}(\M)\subset\kappa$. Thus $A$ is also $r\Sigma_{n+1}^{\ult}(\{j(p)\})$ and since $A\notin\M$ we have $A\notin\ult$, concluding that $j(p)\geq_{\text{lex}} q$. If we can show that $j(p)$ is $(n+1)$-solid then Proposition \ref{prop.solidity} implies that $j(p)\leq_{\text{lex}} q$, so write $p=\bra{\alpha_0,\hdots,\alpha_l}$ and let $i\leq l$. Then we need to show that
+\eq{
+\P(j(\alpha_i))\cap r\Sigma_n^{\ult}(\{j(\alpha_0),\hdots,j(\alpha_{i-1})\})\subset\ult.\tag*{$(1)$}
+}
+
+Let $A\subset j(\alpha_i)$ and let $\psi\in r\Sigma_n$ be such that, for all $\gamma=[a,f]\in j(\alpha_i)$,
+\eq{
+\gamma\in A\quad&\text{iff}\quad\ult\models\psi[\gamma,j(\alpha_0),\hdots,j(\alpha_{i-1})]\\
+&\text{iff}\quad\M\models\psi[f(u),\alpha_0,\hdots,\alpha_{i-1}]\text{ for a.e. }u.
+}
+
+Define $B:=\{x\in\alpha_i\mid\M\models\psi[x,\alpha_0,\hdots,\alpha_{i-1}]\}$, a $r\Sigma_n^{\M}(\{\alpha_0,\hdots,\alpha_{i-1}\})$-definable set, so $(n+1)$-solidity of $p$ implies that $B\in\M$. Then
+\eq{
+\gamma\in A\quad&\text{iff}\quad\M\models f(u)\in c_B(u)\text{ for a.e. }u,
+}
+
+meaning that $A=[a\cup\{\kappa\},c_B]\in\ult$, showing $(1)$. We conclude that $p_{n+1}(\ult)$ is solid and that $j(p_{n+1}(\M))=p_{n+1}(\ult)$.
+}
+
+The following theorem summarises the previous lemmata as well as treating general iterations of ppms.
+
+\theo{
+\label{theo.ppmiteration}
+Let $n\leq\omega$, $\M$ an $n$-sound ppm and $\theta\in\on$. Assume that we have a linear directed system $\bra{\M_\alpha,i_{\alpha,\beta}\mid\alpha,\beta\leq\theta}$ of wellfounded ppms with
+\begin{itemize}
+\item $\M_0=\M$;
+\item $\M_{\alpha+1}=\ult_n(\M_\alpha,E_\alpha)$ with $E_\alpha$ some extender close to $\M_\alpha$;
+\item $\M_\lambda=\colimm_{\alpha<\lambda}\M_\alpha$ for $\lambda$ limit;
+\item $i_{\alpha\beta}:\M_\alpha\to\M_\beta$ is the canonical map.
+\end{itemize}
+
+Assume that $\crit i_{0\theta}<\rho_n(\M)$. Then $i_{0\theta}$ is an $n$-embedding. If furthermore $\M$ is $(n+1)$-solid and $\rho_{n+1}(\M)\leq\crit i_{0\theta}$ then
+\begin{enumerate}
+\item $\rho_{n+1}(\M)=\rho_{n+1}(\M_\theta)$;
+\item $i_{0\theta}(p_{n+1}(\M))=p_{n+1}(\M_\theta)$;
+\item $\M_\theta$ is $(n+1)$-solid, $\core_{n+1}(\M_\theta)=\core_{n+1}(\M)$ and $i_{0\theta}\restr\core_{n+1}(\M)=\sigma$, where $\sigma:\core_{n+1}(\M_\theta)\to\core_n(\M_\theta)$ is the uncollapse.
+\end{enumerate}
+}
+\proof{
+To show that $i_{0\theta}$ is an $n$-embedding follows from Theorem \ref{theo.nemb} in the case where $\theta$ is a successor and only an exercise in direct limits of models if $\theta$ is a limit, so we omit it. Let thus $n<\omega$ be given. If $\theta$ is a successor then (i)-(iii) is directly by Lemmata \ref{lemm.n+1rho} and \ref{lemm.n+1para}, so let $\theta$ be a limit. In this case (i) is the same argument as in showing $i_{0\theta}$ is an $n$-embedding.
+
+\qquad Note that $p_{n+1}(\M_\theta)\leq_{\text{lex}}i_{0\theta}(p_{n+1}(\M))$ since if it was the case that every $r\Sigma^{\M_\theta}_{n+1}(\{i_{0\theta}(p_{n+1}(\M))\})$ subset $A\subset\rho_{n+1}(\M_\theta)$ was an element of $\M_\theta$, it would be of the form $i_{\alpha\theta}(B)$ for some $\alpha<\theta$ and $B\subset\rho_{n+1}(\M_\alpha)$ by (i). But as $i_{\alpha\theta}$ is an $n$-embedding, $B$ is $r\Sigma_{n+1}^{\M_\alpha}(\{i_{0\alpha}(p_{n+1}(\M))\})=r\Sigma_{n+1}^{\M_\alpha}(\{p_{n+1}(\M_\alpha)\})$ as well. But then every such $B$ is in $\M_\alpha$, contradicting the definition of $p_{n+1}(\M_\alpha)$.
+
+\qquad To show that $i_{0\theta}(p_{n+1}(\M))\leq_{\text{lex}} p_{n+1}(\M_\theta)$ it suffices by Proposition \ref{prop.solidity} to show that $i_{0\theta}(p_{n+1}(\M))$ is solid. Let thus $p=\bra{\alpha_0,\hdots,\alpha_l}$ be the last parameter of $p_{n+1}(\M)$ and $t\leq l$. We have to show that any $A\subset i_{0\theta}(\alpha_t)$ which is $r\Sigma_{n+1}^{\M_\theta}(\{i_{0\theta}(p_n(\M)),i_{0\theta}(p)\restr t\})$ is a member of $\M_\theta$.
+
+\qquad Define $A_\alpha:=i_{\alpha\theta}^{-1}"A$, so that $A_\alpha\subset A_\beta$ for every $\alpha\leq\beta<\theta$ as we're working in a directed system. By solidity of the $p_{n+1}(\M_\alpha)$'s we get that $A_\alpha\in\M_\alpha$, so $i_{\alpha\theta}(A_\alpha)\in\M_\theta$ for every $\alpha<\theta$. As $A=\bigcup_{\alpha<\theta}i_{\alpha\theta}"A_\alpha$ by definition of direct limit, we then have $A\in\M_\theta$, showing solidity and therefore also (ii).
+
+\qquad Points (i) and (ii) readily implies that $\core_{n+1}(\M_\theta)=\core_{n+1}(\M)$. Finally $i_{0\theta}$ being an $n$-embedding entails $i_{0\theta}\restr\core_{n+1}(\M)=\sigma$, by just moving $r\Sigma_{n+1}$ definitions around between $\core_{n+1}(\M)$, $\core_{n+1}(\M_\theta)$ and $\core_n(\M_\theta)=\M_\theta$.
+}

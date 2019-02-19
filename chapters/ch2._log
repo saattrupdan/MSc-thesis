@@ -1,0 +1,32 @@
+Input File::ch2.tex::0::0::Input File
+LaTeX Error::ch2.tex::1::0::Undefined control sequence. |\chapter {Fine structure and premice}
+LaTeX Error::ch2.tex::1::0::Missing \begin{document}. |\chapter{F ine structure and premice} 
+LaTeX Error::ch2.tex::2::0::Undefined control sequence. |\thispagestyle{fancy}  | <argument> \undefinedpagestyle  
+hbox Warning::ch2.tex::1::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 1--4
+LaTeX Error::ch2.tex::5::0::Undefined control sequence. |\section {Projecta and parameters}
+LaTeX Error::ch2.tex::5::0::Missing \begin{document}. |\section{P rojecta and parameters} 
+LaTeX Error::ch2.tex::6::0::Undefined control sequence. |\defi {
+hbox Warning::ch2.tex::5::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 5--7
+LaTeX Error::ch2.tex::10::0::Missing \begin{document}. |[ Use $r\Sigma_1=\Sigma_1$, and maybe even $r\Sigma_n=\Sigma_n$?]\\ 
+LaTeX Font Info::ch2.tex::10::0::   External font `cmex10' loaded for size <7>.
+LaTeX Font Info::ch2.tex::10::0::   External font `cmex10' loaded for size <5>.
+hbox Warning::ch2.tex::10::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 10--11
+hbox Warning::ch2.tex::10::0::Overfull \hbox (27.05324pt too wide) in paragraph at lines 10--11
+hbox Warning::ch2.tex::10::0::Overfull \hbox (11.70836pt too wide) in paragraph at lines 10--11
+hbox Warning::ch2.tex::10::0::Overfull \hbox (28.01044pt too wide) in paragraph at lines 10--11
+hbox Warning::ch2.tex::10::0::Overfull \hbox (12.66556pt too wide) in paragraph at lines 10--11
+LaTeX Error::ch2.tex::12::0::Missing \begin{document}. |[ Define projecta with new-set definition]\\ 
+hbox Warning::ch2.tex::12::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 12--13
+LaTeX Error::ch2.tex::14::0::Undefined control sequence. |\lipsum 
+LaTeX Error::ch2.tex::16::0::Undefined control sequence. |\section {Hulls and cores}
+LaTeX Error::ch2.tex::16::0::Missing \begin{document}. |\section{H ulls and cores} 
+hbox Warning::ch2.tex::16::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 16--18
+LaTeX Error::ch2.tex::19::0::Undefined control sequence. |\lipsum 
+LaTeX Error::ch2.tex::21::0::Undefined control sequence. |\section {Premice}
+LaTeX Error::ch2.tex::21::0::Missing \begin{document}. |\section{P remice} 
+hbox Warning::ch2.tex::21::0::Overfull \hbox (20.0pt too wide) in paragraph at lines 21--23
+hbox Warning::ch2.tex::21::0::Overfull \hbox (40.09372pt too wide) in paragraph at lines 21--23
+hbox Warning::ch2.tex::21::0::Overfull \hbox (12.00899pt too wide) in paragraph at lines 21--23
+LaTeX Error::ch2.tex::24::0::Undefined control sequence. |\lipsum 
+LaTeX Error::...m/Dropbox/Master's thesis/chapters/ch2.tex"::0::0::Emergency stop. (job aborted, no legal \end found)
+LaTeX Error::0::0::0:: ==> Fatal error occurred, no output PDF file produced! 

@@ -1,0 +1,212 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\citation{Kanamori}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}$K$ below a Woodin}{73}{chapter.7}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch7}{{7}{73}{$K$ below a Woodin}{chapter.7}{}}
+\newlabel{ch7@cref}{{[chapter][7][]7}{73}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Weasels and stability}{73}{section.7.1}}
+\newlabel{}{{7.1}{73}{}{theorem.7.1}{}}
+\newlabel{@cref}{{[definition][1][7]7.1}{73}}
+\@writefile{tdo}{\contentsline {todo}{KwoM just says ``iterable"; is this what they mean?}{73}{section*.2}}
+\newlabel{}{{7.2}{73}{}{theorem.7.2}{}}
+\newlabel{@cref}{{[definition][2][7]7.2}{73}}
+\newlabel{}{{7.3}{73}{}{theorem.7.3}{}}
+\newlabel{@cref}{{[proposition][3][7]7.3}{73}}
+\newlabel{prop.weaselfacts}{{7.3}{73}{}{theorem.7.3}{}}
+\newlabel{prop.weaselfacts@cref}{{[proposition][3][7]7.3}{73}}
+\@writefile{tdo}{\contentsline {todo}{Missing proof.}{74}{section*.3}}
+\newlabel{}{{7.4}{74}{}{theorem.7.4}{}}
+\newlabel{@cref}{{[definition][4][7]7.4}{74}}
+\@writefile{tdo}{\contentsline {todo}{Change definition of of phalanx to the definition in KwoM.}{74}{section*.4}}
+\newlabel{}{{7.5}{74}{}{theorem.7.5}{}}
+\newlabel{@cref}{{[lemma][5][7]7.5}{74}}
+\@writefile{tdo}{\contentsline {todo}{Why?}{75}{section*.5}}
+\@writefile{tdo}{\contentsline {todo}{Why?}{75}{section*.6}}
+\newlabel{}{{7.6}{75}{}{theorem.7.6}{}}
+\newlabel{@cref}{{[lemma][6][7]7.6}{75}}
+\@writefile{tdo}{\contentsline {todo}{Where's the mini-universe bit used in the proof?}{75}{section*.7}}
+\@writefile{tdo}{\contentsline {todo}{Generalise the Condensation Theorem to $\rho _k$.}{75}{section*.8}}
+\@writefile{tdo}{\contentsline {todo}{Check the argument in this paragraph.}{75}{section*.9}}
+\newlabel{}{{7.7}{75}{}{theorem.7.7}{}}
+\newlabel{@cref}{{[definition][7][7]7.7}{75}}
+\newlabel{}{{7.8}{76}{}{theorem.7.8}{}}
+\newlabel{@cref}{{[proposition][8][7]7.8}{76}}
+\@writefile{tdo}{\contentsline {todo}{What hull is this, $r\Sigma _k$?}{76}{section*.10}}
+\@writefile{tdo}{\contentsline {todo}{Doublecheck proof.}{76}{section*.11}}
+\newlabel{}{{7.9}{76}{}{theorem.7.9}{}}
+\newlabel{@cref}{{[lemma][9][7]7.9}{76}}
+\newlabel{lemm.stabunirho}{{7.9}{76}{}{theorem.7.9}{}}
+\newlabel{lemm.stabunirho@cref}{{[lemma][9][7]7.9}{76}}
+\@writefile{tdo}{\contentsline {todo}{Missing argument.}{76}{section*.12}}
+\@writefile{tdo}{\contentsline {todo}{Check.}{76}{section*.13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces The situation in the proof of Lemma \ref  {lemm.stabunirho}}}{77}{figure.7.1}}
+\@writefile{tdo}{\contentsline {todo}{Maybe sketch a little less in this paragraph.}{77}{section*.14}}
+\newlabel{}{{7.10}{78}{}{theorem.7.10}{}}
+\newlabel{@cref}{{[corollary][10][7]7.10}{78}}
+\@writefile{tdo}{\contentsline {todo}{Check proof.}{78}{section*.15}}
+\@writefile{tdo}{\contentsline {todo}{Why is this guy countably iterable premouse with $S(\W  )$ as a cutpoint initial segment?}{78}{section*.16}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Thickness}{78}{section.7.2}}
+\newlabel{}{{7.11}{78}{}{theorem.7.11}{}}
+\newlabel{@cref}{{[definition][11][7]7.11}{78}}
+\newlabel{}{{7.12}{78}{}{theorem.7.12}{}}
+\newlabel{@cref}{{[proposition][12][7]7.12}{78}}
+\newlabel{prop.thickness}{{7.12}{78}{}{theorem.7.12}{}}
+\newlabel{prop.thickness@cref}{{[proposition][12][7]7.12}{78}}
+\@writefile{tdo}{\contentsline {todo}{Missing argument.}{78}{section*.17}}
+\newlabel{}{{7.13}{78}{}{theorem.7.13}{}}
+\newlabel{@cref}{{[definition][13][7]7.13}{78}}
+\citation{StackingMice}
+\citation{StackingMice}
+\newlabel{}{{7.14}{79}{}{theorem.7.14}{}}
+\newlabel{@cref}{{[lemma][14][7]7.14}{79}}
+\newlabel{}{{7.15}{79}{}{theorem.7.15}{}}
+\newlabel{@cref}{{[definition][15][7]7.15}{79}}
+\newlabel{}{{7.16}{79}{}{theorem.7.16}{}}
+\newlabel{@cref}{{[definition][16][7]7.16}{79}}
+\newlabel{}{{7.17}{79}{}{theorem.7.17}{}}
+\newlabel{@cref}{{[theorem][17][7]7.17}{79}}
+\newlabel{theo.minithick}{{7.17}{79}{}{theorem.7.17}{}}
+\newlabel{theo.minithick@cref}{{[theorem][17][7]7.17}{79}}
+\@writefile{tdo}{\contentsline {todo}{Read this if there's time.}{79}{section*.18}}
+\newlabel{}{{7.18}{79}{}{theorem.7.18}{}}
+\newlabel{@cref}{{[theorem][18][7]7.18}{79}}
+\newlabel{theo.collthick}{{7.18}{79}{}{theorem.7.18}{}}
+\newlabel{theo.collthick@cref}{{[theorem][18][7]7.18}{79}}
+\@writefile{tdo}{\contentsline {todo}{Rearrange so that we're not referring forwards.}{80}{section*.19}}
+\newlabel{}{{7.19}{80}{}{theorem.7.19}{}}
+\newlabel{@cref}{{[corollary][19][7]7.19}{80}}
+\newlabel{}{{7.20}{80}{}{theorem.7.20}{}}
+\newlabel{@cref}{{[lemma][20][7]7.20}{80}}
+\newlabel{lemm.ultstack}{{7.20}{80}{}{theorem.7.20}{}}
+\newlabel{lemm.ultstack@cref}{{[lemma][20][7]7.20}{80}}
+\@writefile{tdo}{\contentsline {todo}{Where's this used?}{80}{section*.20}}
+\@writefile{tdo}{\contentsline {todo}{What does collapsing here mean? Is it the first stacked mouse?}{81}{section*.21}}
+\@writefile{tdo}{\contentsline {todo}{Why's that, and what is this used for?}{81}{section*.22}}
+\@writefile{tdo}{\contentsline {todo}{Why's that?}{81}{section*.23}}
+\@writefile{tdo}{\contentsline {todo}{Why?}{81}{section*.24}}
+\@writefile{tdo}{\contentsline {todo}{Why?}{81}{section*.25}}
+\@writefile{tdo}{\contentsline {todo}{Why?}{81}{section*.26}}
+\@writefile{tdo}{\contentsline {todo}{Shouldn't we have that $\overline  {S(\W  )}\lhd \W  |\mu $ to conclude this?}{81}{section*.27}}
+\newlabel{}{{7.21}{81}{}{theorem.7.21}{}}
+\newlabel{@cref}{{[theorem][21][7]7.21}{81}}
+\newlabel{theo.itstack}{{7.21}{81}{}{theorem.7.21}{}}
+\newlabel{theo.itstack@cref}{{[theorem][21][7]7.21}{81}}
+\@writefile{tdo}{\contentsline {todo}{Is this precedent actually true?}{81}{section*.28}}
+\newlabel{}{{7.22}{82}{}{theorem.7.22}{}}
+\newlabel{@cref}{{[theorem][22][7]7.22}{82}}
+\newlabel{theo.unicof}{{7.22}{82}{}{theorem.7.22}{}}
+\newlabel{theo.unicof@cref}{{[theorem][22][7]7.22}{82}}
+\@writefile{tdo}{\contentsline {todo}{Is this true?}{82}{section*.29}}
+\@writefile{tdo}{\contentsline {todo}{Why is $\U  $ of length $\Omega $?}{82}{section*.30}}
+\@writefile{tdo}{\contentsline {todo}{Check the inequality.}{82}{section*.31}}
+\@writefile{tdo}{\contentsline {todo}{Why?}{83}{section*.32}}
+\@writefile{tdo}{\contentsline {todo}{Why does such a $\mu $ exist?}{83}{section*.33}}
+\newlabel{}{{7.23}{83}{}{theorem.7.23}{}}
+\newlabel{@cref}{{[lemma][23][7]7.23}{83}}
+\newlabel{lemm.hullstack}{{7.23}{83}{}{theorem.7.23}{}}
+\newlabel{lemm.hullstack@cref}{{[lemma][23][7]7.23}{83}}
+\@writefile{tdo}{\contentsline {todo}{Why?}{83}{section*.34}}
+\@writefile{tdo}{\contentsline {todo}{Why?}{83}{section*.35}}
+\@writefile{tdo}{\contentsline {todo}{Why does cofinal imply this?}{83}{section*.36}}
+\@writefile{tdo}{\contentsline {todo}{How does the club look like?}{84}{section*.37}}
+\newlabel{}{{7.24}{84}{}{theorem.7.24}{}}
+\newlabel{@cref}{{[definition][24][7]7.24}{84}}
+\@writefile{tdo}{\contentsline {todo}{In KwoM they require that hull is the transitive collapse. Maybe the previous hulls are uncollapsed.}{84}{section*.38}}
+\newlabel{}{{7.25}{84}{}{theorem.7.25}{}}
+\newlabel{@cref}{{[lemma][25][7]7.25}{84}}
+\@writefile{tdo}{\contentsline {todo}{Check.}{84}{section*.39}}
+\@writefile{tdo}{\contentsline {todo}{Requires $\W  $ to be countable! Can we assume that by taking a hull or something?}{84}{section*.40}}
+\@writefile{tdo}{\contentsline {todo}{Why's that, and where's the contradiction?}{85}{section*.41}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Pseudo-$K$}{85}{section.7.3}}
+\newlabel{}{{7.26}{85}{}{theorem.7.26}{}}
+\newlabel{@cref}{{[definition][26][7]7.26}{85}}
+\newlabel{}{{7.27}{85}{}{theorem.7.27}{}}
+\newlabel{@cref}{{[lemma][27][7]7.27}{85}}
+\newlabel{}{{7.28}{85}{}{theorem.7.28}{}}
+\newlabel{@cref}{{[definition][28][7]7.28}{85}}
+\newlabel{}{{7.29}{85}{}{theorem.7.29}{}}
+\newlabel{@cref}{{[lemma][29][7]7.29}{85}}
+\newlabel{lemm.pKistall}{{7.29}{85}{}{theorem.7.29}{}}
+\newlabel{lemm.pKistall@cref}{{[lemma][29][7]7.29}{85}}
+\@writefile{tdo}{\contentsline {todo}{Why?}{86}{section*.42}}
+\@writefile{tdo}{\contentsline {todo}{Check.}{87}{section*.43}}
+\@writefile{tdo}{\contentsline {todo}{Elaborate. This is like in the end of chapter 1.}{87}{section*.44}}
+\@writefile{tdo}{\contentsline {todo}{Why?}{87}{section*.45}}
+\@writefile{tdo}{\contentsline {todo}{Define this somewhere; it's just the language of the Chang model.}{88}{section*.46}}
+\@writefile{tdo}{\contentsline {todo}{What's the point of this clause?}{88}{section*.47}}
+\@writefile{tdo}{\contentsline {todo}{Why's that?}{88}{section*.48}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Weak covering}{90}{section.7.4}}
+\newlabel{}{{7.30}{90}{Weak covering}{theorem.7.30}{}}
+\newlabel{@cref}{{[theorem][30][7]7.30}{90}}
+\newlabel{theo.wkcov}{{7.30}{90}{Weak covering}{theorem.7.30}{}}
+\newlabel{theo.wkcov@cref}{{[theorem][30][7]7.30}{90}}
+\@writefile{tdo}{\contentsline {todo}{KwoM says $>$ here. Is that true?}{91}{section*.49}}
+\@writefile{tdo}{\contentsline {todo}{Define this somewhere. Maybe at the claim in the last section.}{91}{section*.50}}
+\@writefile{tdo}{\contentsline {todo}{Argue that these are true.}{91}{section*.51}}
+\@writefile{tdo}{\contentsline {todo}{Check.}{92}{section*.52}}
+\@writefile{tdo}{\contentsline {todo}{Elaborate.}{92}{section*.53}}
+\@writefile{tdo}{\contentsline {todo}{This is impossible by construction of $\W  $? Maybe it should be $\W  _0$ here?}{92}{section*.54}}
+\newlabel{}{{7.31}{92}{}{theorem.7.31}{}}
+\newlabel{@cref}{{[lemma][31][7]7.31}{92}}
+\newlabel{lemm.wkcovittree}{{7.31}{92}{}{theorem.7.31}{}}
+\newlabel{lemm.wkcovittree@cref}{{[lemma][31][7]7.31}{92}}
+\@writefile{tdo}{\contentsline {todo}{Missing proof}{92}{section*.55}}
+\@writefile{tdo}{\contentsline {todo}{Missing argument.}{92}{section*.56}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.5}Definition of $K$}{92}{section.7.5}}
+\newlabel{}{{7.32}{92}{}{theorem.7.32}{}}
+\newlabel{@cref}{{[definition][32][7]7.32}{92}}
+\@writefile{tdo}{\contentsline {todo}{Can this definition be simplified somehow?}{92}{section*.57}}
+\citation{CMIP}
+\newlabel{}{{7.33}{93}{}{theorem.7.33}{}}
+\newlabel{@cref}{{[definition][33][7]7.33}{93}}
+\newlabel{}{{7.34}{93}{}{theorem.7.34}{}}
+\newlabel{@cref}{{[lemma][34][7]7.34}{93}}
+\newlabel{lemm.pKinddef}{{7.34}{93}{}{theorem.7.34}{}}
+\newlabel{lemm.pKinddef@cref}{{[lemma][34][7]7.34}{93}}
+\@writefile{tdo}{\contentsline {todo}{Define this somewhere. It's from CMIP chapter 6.}{93}{section*.58}}
+\@writefile{tdo}{\contentsline {todo}{Why?}{93}{section*.59}}
+\@writefile{tdo}{\contentsline {todo}{Does this hold?}{93}{section*.60}}
+\@writefile{tdo}{\contentsline {todo}{Elaborate if there's time.}{93}{section*.61}}
+\citation{CMIP}
+\@writefile{tdo}{\contentsline {todo}{Here we use that $\tau \subseteq \Def  ^{\W  }$ -- why?}{94}{section*.62}}
+\newlabel{}{{7.35}{94}{}{theorem.7.35}{}}
+\newlabel{@cref}{{[corollary][35][7]7.35}{94}}
+\@writefile{tdo}{\contentsline {todo}{How so? Thickness depends on $\tau $, no?}{94}{section*.63}}
+\newlabel{}{{7.36}{94}{}{theorem.7.36}{}}
+\newlabel{@cref}{{[definition][36][7]7.36}{94}}
+\newlabel{}{{7.37}{94}{}{theorem.7.37}{}}
+\newlabel{@cref}{{[theorem][37][7]7.37}{94}}
+\@writefile{tdo}{\contentsline {todo}{Give reference.}{95}{section*.64}}
+\@setckpt{chapters/ch7}{
+\setcounter{page}{96}
+\setcounter{equation}{0}
+\setcounter{enumi}{5}
+\setcounter{enumii}{2}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{2}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{7}
+\setcounter{section}{5}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{1}
+\setcounter{table}{0}
+\setcounter{Item}{123}
+\setcounter{Hfootnote}{13}
+\setcounter{bookmark@seq@number}{26}
+\setcounter{lips@count}{7}
+\setcounter{BibCnt}{0}
+\setcounter{parentequation}{0}
+\setcounter{cp@cntr}{0}
+\setcounter{@todonotes@numberoftodonotes}{126}
+\setcounter{theorem}{37}
+\setcounter{claim}{0}
+\setcounter{section@level}{0}
+\setcounter{maskedRefs}{0}
+}

@@ -1,0 +1,136 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Iterability and mice}{30}{chapter.4}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch4}{{4}{30}{Iterability and mice}{chapter.4}{}}
+\newlabel{ch4@cref}{{[chapter][4][]4}{30}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Iteration trees and mice}{30}{section.4.1}}
+\newlabel{}{{4.1}{30}{}{theorem.4.1}{}}
+\newlabel{@cref}{{[definition][1][4]4.1}{30}}
+\newlabel{}{{4.2}{30}{}{theorem.4.2}{}}
+\newlabel{@cref}{{[definition][2][4]4.2}{30}}
+\newlabel{}{{4.3}{31}{}{theorem.4.3}{}}
+\newlabel{@cref}{{[proposition][3][4]4.3}{31}}
+\newlabel{}{{4.4}{32}{}{theorem.4.4}{}}
+\newlabel{@cref}{{[proposition][4][4]4.4}{32}}
+\newlabel{}{{4.5}{33}{}{theorem.4.5}{}}
+\newlabel{@cref}{{[definition][5][4]4.5}{33}}
+\newlabel{}{{4.6}{33}{}{theorem.4.6}{}}
+\newlabel{@cref}{{[definition][6][4]4.6}{33}}
+\newlabel{}{{4.7}{34}{}{theorem.4.7}{}}
+\newlabel{@cref}{{[proposition][7][4]4.7}{34}}
+\newlabel{clai.close1}{{4.7.1}{34}{}{claim.4.7.1}{}}
+\newlabel{clai.close1@cref}{{[claim][1][]4.7.1}{34}}
+\newlabel{clai.close2}{{4.7.2}{34}{}{claim.4.7.2}{}}
+\newlabel{clai.close2@cref}{{[claim][2][]4.7.2}{34}}
+\@writefile{tdo}{\contentsline {todo}{Missing this part.}{35}{section*.29}}
+\newlabel{}{{4.8}{36}{}{theorem.4.8}{}}
+\newlabel{@cref}{{[theorem][8][4]4.8}{36}}
+\@writefile{tdo}{\contentsline {todo}{Missing proof, should be almost directly from Theorem \ref  {theo.ppmiteration}.}{36}{section*.30}}
+\newlabel{}{{4.9}{36}{}{theorem.4.9}{}}
+\newlabel{@cref}{{[definition][9][4]4.9}{36}}
+\newlabel{}{{4.10}{36}{}{theorem.4.10}{}}
+\newlabel{@cref}{{[definition][10][4]4.10}{36}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Comparison}{36}{section.4.2}}
+\newlabel{}{{4.11}{36}{}{theorem.4.11}{}}
+\newlabel{@cref}{{[definition][11][4]4.11}{36}}
+\newlabel{}{{4.12}{36}{Comparison}{theorem.4.12}{}}
+\newlabel{@cref}{{[theorem][12][4]4.12}{36}}
+\newlabel{theo.comparison}{{4.12}{36}{Comparison}{theorem.4.12}{}}
+\newlabel{theo.comparison@cref}{{[theorem][12][4]4.12}{36}}
+\@writefile{tdo}{\contentsline {todo}{Check that this is in fact a contradiction.}{38}{section*.31}}
+\newlabel{clai.incomp}{{4.12.2}{38}{}{claim.4.12.2}{}}
+\newlabel{clai.incomp@cref}{{[claim][2][]4.12.2}{38}}
+\@writefile{tdo}{\contentsline {todo}{Elaborate on this.}{38}{section*.32}}
+\@writefile{tdo}{\contentsline {todo}{Show this.}{38}{section*.33}}
+\@writefile{tdo}{\contentsline {todo}{Elaborate on this.}{38}{section*.34}}
+\newlabel{clai.bartrees}{{4.12.3}{38}{}{claim.4.12.3}{}}
+\newlabel{clai.bartrees@cref}{{[claim][3][]4.12.3}{38}}
+\@writefile{tdo}{\contentsline {todo}{Elaborate.}{39}{section*.35}}
+\@writefile{tdo}{\contentsline {todo}{Elaborate.}{40}{section*.36}}
+\newlabel{}{{4.13}{40}{}{theorem.4.13}{}}
+\newlabel{@cref}{{[corollary][13][4]4.13}{40}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Copying construction}{41}{section.4.3}}
+\newlabel{}{{4.14}{41}{Shift lemma}{theorem.4.14}{}}
+\newlabel{@cref}{{[lemma][14][4]4.14}{41}}
+\newlabel{lemm.shift}{{4.14}{41}{Shift lemma}{theorem.4.14}{}}
+\newlabel{lemm.shift@cref}{{[lemma][14][4]4.14}{41}}
+\@writefile{tdo}{\contentsline {todo}{Check that statement is correct (also, isn't $n$-embeddings good enough?)}{41}{section*.37}}
+\@writefile{tdo}{\contentsline {todo}{Is this correct?}{43}{section*.38}}
+\newlabel{}{{4.15}{43}{Copying construction}{theorem.4.15}{}}
+\newlabel{@cref}{{[lemma][15][4]4.15}{43}}
+\newlabel{lemm.copy}{{4.15}{43}{Copying construction}{theorem.4.15}{}}
+\newlabel{lemm.copy@cref}{{[lemma][15][4]4.15}{43}}
+\@writefile{tdo}{\contentsline {todo}{Define the terms not defined yet.}{43}{section*.39}}
+\@writefile{tdo}{\contentsline {todo}{Is this equivalent to agreeing below $\lh  E_\beta $?}{43}{section*.40}}
+\@writefile{tdo}{\contentsline {todo}{Note that $\mathaccentV {bar}016\N  \in \dom  \pi _\beta $.}{44}{section*.41}}
+\@writefile{tdo}{\contentsline {todo}{Missing reference.}{45}{section*.42}}
+\@writefile{tdo}{\contentsline {todo}{Why is $\N  _\alpha ^*=\mathcal  {J}_{\pi _\eta (\gamma )}^{\N  _\eta }$?}{45}{section*.43}}
+\@writefile{tdo}{\contentsline {todo}{Missing. I think only $n\leq m$ holds.}{45}{section*.44}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Dodd-Jensen lemma}{45}{section.4.4}}
+\newlabel{}{{4.16}{46}{}{theorem.4.16}{}}
+\newlabel{@cref}{{[definition][16][4]4.16}{46}}
+\newlabel{}{{4.17}{46}{}{theorem.4.17}{}}
+\newlabel{@cref}{{[definition][17][4]4.17}{46}}
+\newlabel{}{{4.18}{46}{}{theorem.4.18}{}}
+\newlabel{@cref}{{[theorem][18][4]4.18}{46}}
+\newlabel{}{{4.19}{46}{}{theorem.4.19}{}}
+\newlabel{@cref}{{[definition][19][4]4.19}{46}}
+\newlabel{}{{4.20}{46}{Dodd-Jensen}{theorem.4.20}{}}
+\newlabel{@cref}{{[theorem][20][4]4.20}{46}}
+\@writefile{tdo}{\contentsline {todo}{Don't we only need $\lh  \mathaccentV {vec}17E\T  <\lambda $ and $\qopname  \relax o{deg}^{\mathaccentV {vec}17E\T  }=k$?}{46}{section*.45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces The construction of $\mathaccentV {vec}17E\T  _\omega $}}{47}{figure.4.1}}
+\newlabel{fig.Tomega}{{4.1}{47}{The construction of $\vec \T _\omega $}{figure.4.1}{}}
+\newlabel{fig.Tomega@cref}{{[figure][1][4]4.1}{47}}
+\@writefile{tdo}{\contentsline {todo}{Here we're using that the strategy is $(k,\lambda ,\theta )$..}{47}{section*.46}}
+\newlabel{}{{4.21}{48}{}{theorem.4.21}{}}
+\newlabel{@cref}{{[definition][21][4]4.21}{48}}
+\newlabel{}{{4.22}{48}{}{theorem.4.22}{}}
+\newlabel{@cref}{{[definition][22][4]4.22}{48}}
+\newlabel{}{{4.23}{49}{Weak Dodd-Jensen}{theorem.4.23}{}}
+\newlabel{@cref}{{[theorem][23][4]4.23}{49}}
+\newlabel{theo.wkDJ}{{4.23}{49}{Weak Dodd-Jensen}{theorem.4.23}{}}
+\newlabel{theo.wkDJ@cref}{{[theorem][23][4]4.23}{49}}
+\@writefile{tdo}{\contentsline {todo}{Why's this?}{50}{section*.47}}
+\@writefile{tdo}{\contentsline {todo}{Check up on this.}{51}{section*.48}}
+\@writefile{tdo}{\contentsline {todo}{Check up on this.}{51}{section*.49}}
+\@writefile{tdo}{\contentsline {todo}{Is it equivalent that a branch doesn't drop and that the embedding exists?}{51}{section*.50}}
+\newlabel{}{{4.24}{51}{}{theorem.4.24}{}}
+\newlabel{@cref}{{[theorem][24][4]4.24}{51}}
+\newlabel{theo.uniquewkDJ}{{4.24}{51}{}{theorem.4.24}{}}
+\newlabel{theo.uniquewkDJ@cref}{{[theorem][24][4]4.24}{51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces The situation in the proof of Theorem \ref  {theo.uniquewkDJ}.}}{52}{figure.4.2}}
+\@writefile{tdo}{\contentsline {todo}{Maybe elaborate and/or show this somewhere?}{52}{section*.51}}
+\@writefile{tdo}{\contentsline {todo}{Show this somewhere.}{52}{section*.52}}
+\@setckpt{chapters/ch4}{
+\setcounter{page}{53}
+\setcounter{equation}{0}
+\setcounter{enumi}{3}
+\setcounter{enumii}{2}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{4}
+\setcounter{section}{4}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{2}
+\setcounter{table}{0}
+\setcounter{Item}{49}
+\setcounter{Hfootnote}{7}
+\setcounter{bookmark@seq@number}{14}
+\setcounter{lips@count}{7}
+\setcounter{BibCnt}{0}
+\setcounter{parentequation}{0}
+\setcounter{cp@cntr}{0}
+\setcounter{@todonotes@numberoftodonotes}{51}
+\setcounter{theorem}{24}
+\setcounter{claim}{0}
+\setcounter{section@level}{0}
+\setcounter{maskedRefs}{0}
+}
